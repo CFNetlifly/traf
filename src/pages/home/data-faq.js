@@ -13,12 +13,6 @@ const faq = [
         question: "WHAT I’M I BUYING EXACTLY?",
         answer: "A piece of NFT history! A super NFT that represents a full Episode of The Red Ape Family!"
     }, {
-        question: "HOW ARE YOU MANAGING THE ROYALTIES?", //7
-        answer: "Royalties will be managed in a U-shaped manner throughout the season. Royalties = 7.5% </br></br>" +
-        "2.5% of secondary market sales royalties will go to the first minters of our tokens* (Payments will be processed every first Monday of a quarter), and 5% will go to the TRAF Team. </br></br>" +
-        "*Episode 1 and Episode 10: 1st minter royalties = 2.5% </br>" +        
-        "*Episode 2 to Episode 9: 1st minter royalties = 1.5%"        
-    }, {
         question: "WHICH NFTs ARE YOU USING IN THE SHOW?", //8
         answer: "The story is centered on BAYC NFTs. However, MAYC, BAKC, Coolcats, Craniums and Lions will also play a major role, forming the backbone of the main cast. In addition, the stage is set for many different NFTs to join the show as recurring cast members and in supporting roles. The more the merrier."
 
