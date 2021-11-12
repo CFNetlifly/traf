@@ -1,10 +1,10 @@
 const data = [
     {
-        body: "25% of OTT streaming revenue will go to TRAF holders"
+        body: "25% of OTT streaming revenue will go to TRAF holders in the form of fractions of blue chip NFTs."
     }, {
-        body: "Additional 24% will go to Red Ape Masters (Holders of all Episodes of S1)"
+        body: "Additional 24% of OTT streaming revenue will go to the Red Ape Masters in the form of fractions of blue chip NFTs."
     }, {
-        body: "First minters get 1.5% to 2.5% royalties for life."
+        body: "A % from TRAF's royalties will be used to offer the first minters the possibility to own fractions of blue chip NFTs. "
     }, {
         body: "Possibility to win 1 BAYC and 3 MAYC in episode 1 of S1."
     }, {
