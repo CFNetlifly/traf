@@ -1,10 +1,14 @@
 //react router
+import { useState, useEffect} from "react";
+
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect
 } from "react-router-dom";
+
+import LoadingComponent from "components/loading-screen";
 
 import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
@@ -23,6 +27,17 @@ initWeb3();
 
 
 const App = () => {
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(
+        () => {
+            setTimeout(() => {
+                setLoading(false);
+            }, 8 * 1000);
+        }, []
+    );
+
     return (
         <Router>
 
@@ -33,7 +48,12 @@ const App = () => {
                 </Route>
 
                 <Route exact path="/home">
-                    <HomePage/>
+                    {
+                        loading ?
+                            <LoadingComponent/>
+                        :
+                            <HomePage/>
+                    }
                 </Route>
 
                 <Route exact path="/team">

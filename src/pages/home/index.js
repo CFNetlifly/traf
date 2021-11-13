@@ -2,7 +2,7 @@ import {useEffect, useRef} from 'react';
 import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
 
-import {
+import {    
     cloudsBanner,
     titleImg,
     movie,
