@@ -335,7 +335,7 @@ const HomePage = props => {
                         <div className="columns is-multiline px-3">
                             <div className="column"></div>
                             {
-                                [...teamData].splice(8, 4).map( (t, i) =>
+                                [...teamData].splice(8, 3).map( (t, i) =>
                                     <div className="column has-text-centered" key={i}>
 
                                         {
@@ -395,7 +395,7 @@ const HomePage = props => {
                         <div className="columns ">
                             <div className="column"></div>
                             {
-                                [...castData].splice(5, 3).map( (c, i) =>
+                                [...castData].splice(5, 4).map( (c, i) =>
                                     <div className="column has-text-centered" key={i}>
                                         <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
                                         <br/><br/>
