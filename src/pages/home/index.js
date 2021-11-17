@@ -123,7 +123,7 @@ const HomePage = props => {
                             </div>
                             <br/><br/>
                             <div className="pl-0 has-backgroand-danger">
-                                <video playsInline autoPlay muted loop >
+                                <video playsInline autoPlay muted loop controls>
                                     <source src={chuckyVideo} type="video/mp4"/>
                                 </video> 
                             </div>
