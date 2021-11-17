@@ -122,8 +122,8 @@ const HomePage = props => {
                                 {/* <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1> */}
                             </div>
                             <br/><br/>
-                            <div className="pl-5">
-                                <video playsInline autoPlay muted loop style={{width:'350px'}}>
+                            <div className="pl-0 has-backgroand-danger">
+                                <video playsInline autoPlay muted loop >
                                     <source src={chuckyVideo} type="video/mp4"/>
                                 </video> 
                             </div>
@@ -152,12 +152,10 @@ const HomePage = props => {
                             Muskville Let’s Fucking go!
                         </p>
                         <br/><br/>
-                        <div className="columns" >
-                            <div className="column">                                
-                                <video controls>
-                                    <source src={trailerVideo} type="video/mp4"/>
-                                </video>                                
-                            </div>                            
+                        <div className="has-backgroaund-danger" style={{width: '100%'}}>                            
+                            <video controls>
+                                <source src={trailerVideo} type="video/mp4"/>
+                            </video>                            
                         </div>
                     </div>
                 }
