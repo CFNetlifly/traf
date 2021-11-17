@@ -45,10 +45,8 @@ const Form = props => {
                     ...webData,
                     mintsLeft: webData.maxMint - webData.userMints
                 }                
-                webData.giveaway1 = 84 - (333 - Number(webData.leftNFT));      
+                webData.giveaway1 = 84 - (333 - Number(webData.leftNFT));
                 
-                console.log(webData);
-
             } catch (e) {
                 console.log('ERROR CONSULTING DATA', e);
             }finally{
