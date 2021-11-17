@@ -45,7 +45,10 @@ const Form = props => {
                     ...webData,
                     mintsLeft: webData.maxMint - webData.userMints
                 }                
-                webData.giveaway1 = 84 - (333 - Number(webData.leftNFT));                
+                webData.giveaway1 = 84 - (333 - Number(webData.leftNFT));      
+                
+                console.log(webData);
+
             } catch (e) {
                 console.log('ERROR CONSULTING DATA', e);
             }finally{
@@ -158,7 +161,7 @@ const Form = props => {
                 <br/><br/>                
                 <p className="has-text-centered has-text-weight-bold has-text-light has-font-audiowide is-size-6">
                     <div style={{color: '#d1d1d1'}}>
-                        Presale of Ep1 is LIVE (0.95 Eth + Gas)<br/>
+                        Pre-reveal sale of Ep1 is LIVE (0.95 Eth + Gas)<br/>
                         Reveal of Ep1 on November 25<br/>
                         10 Tokens per wallet / MetaMask only<br/>
                     </div>
