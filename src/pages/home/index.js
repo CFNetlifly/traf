@@ -119,7 +119,7 @@ const HomePage = props => {
                         <div className="column">
                             <div className="pl-5" style={{borderLeft: '3px solid #FFC000'}}>                                
                                 <h1 className="title has-text-white is-size-5 has-text-weight-bold">Welcome to The Red Ape Family!</h1>
-                                <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1>
+                                {/* <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1> */}
                             </div>
                             <br/><br/>
                             <div className="pl-5">
