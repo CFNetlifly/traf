@@ -10,7 +10,7 @@ const faq = [
         answer: "Season 1 will have 10 episodes (5 to 10 minutes per episode). </br>" +
         "Regarding the number of seasons, the sky (and universe) is the limit! We currently have 10 seasons in the pipeline and a whole galaxy of surprises in store." 
     }, {
-        question: "WHAT I’M I BUYING EXACTLY?",
+        question: "WHAT AM I BUYING EXACTLY?",
         answer: "A piece of NFT history! A super NFT that represents a full Episode of The Red Ape Family!"
     }, {
         question: "WHICH NFTs ARE YOU USING IN THE SHOW?", //8
