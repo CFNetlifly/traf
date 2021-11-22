@@ -50,8 +50,7 @@ const HomePage = props => {
 
     const {navbarReducer} = props;
 
-    const [assetsLoaded, setAssetsLoaded] = useState(0);
-    console.log(assetsLoaded);
+    const [assetsLoaded, setAssetsLoaded] = useState(0);    
 
     useEffect(
         () => {
