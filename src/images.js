@@ -45,18 +45,20 @@ export const trailerVideo = baseURL + "19AHk8gtGkSgrT7yM0F_dxM9D6crm-FDR";
 
 
 //team members
-export const member1 = baseURL + "1112q475SaP5ZvT2ethi7KV5hgw1QyB3B";
-export const member2 = baseURL + "1YyWZcc3b33kV6gUXv-f6Nb8qVxZeLozR";
-export const member3 = baseURL + "1wu6caXHWoIdXLv_FIUUeoyYI0Sd_EdQe";
-export const member4 = baseURL + "1XNxf3hqty9zWvEfLpJFIJjCfSkss3cov";
-export const member5 = baseURL + "13AaLJOhXWF9r4uZa1o1bgG9rVW0toemv";
-export const member6 = baseURL + "1slc93m97UE2iVBF_AzMupMZdiLRsVXh5";
-export const member7 = baseURL + "1qokAgN5vQHeroYXmXVTcSz6pAf1x7Hkz";
-export const member8 = baseURL + "1PYDWaZIKzeTPr9WveikcUVoKzg6RI9HN";
-export const member9 = baseURL + "1OheSpqtMDVwww1p5ZUyVt_iIn9MtUNTg";
-export const member10 = baseURL + "1PnJW5A5mZZoEhqLoBCB9f-SL0MvqHn-u";
-export const member11 = baseURL + "1LAtdHXglT0rCApFLul-nbel_nP4c8spv";
-export const member12 = baseURL + "1-RjaK0XE0YpcmuqaiZa4aH8DSufxpPfD";
+export const member1 = baseURL + "1112q475SaP5ZvT2ethi7KV5hgw1QyB3B";   //Youssef
+export const member2 = baseURL + "1YyWZcc3b33kV6gUXv-f6Nb8qVxZeLozR";   //2 chainz
+export const member3 = baseURL + "1wu6caXHWoIdXLv_FIUUeoyYI0Sd_EdQe";   //Hashem zaino
+export const member4 = baseURL + "1XNxf3hqty9zWvEfLpJFIJjCfSkss3cov";   //Chris Goward
+export const member5 = baseURL + "13AaLJOhXWF9r4uZa1o1bgG9rVW0toemv";   //Neil Jacques
+export const member6 = baseURL + "1BrtGREco3602UE7hFykyJk0UT67nwr8O";   //Dr. Maher F Shirah
+export const member7 = baseURL + "1qokAgN5vQHeroYXmXVTcSz6pAf1x7Hkz";   //Naji Aljabiri
+export const member8 = baseURL + "1PYDWaZIKzeTPr9WveikcUVoKzg6RI9HN";   //Don Fuego
+export const member9 = baseURL + "1OheSpqtMDVwww1p5ZUyVt_iIn9MtUNTg";   //Sarah Khorbtli
+export const member10 = baseURL + "1slc93m97UE2iVBF_AzMupMZdiLRsVXh5";  //Eric Spivak
+export const member11 = baseURL + "1PnJW5A5mZZoEhqLoBCB9f-SL0MvqHn-u";  //Zaini Media
+export const member12 = baseURL + "1LAtdHXglT0rCApFLul-nbel_nP4c8spv";  //Crypto Family
+export const member13 = baseURL + "1-RjaK0XE0YpcmuqaiZa4aH8DSufxpPfD";  //Adel Antablih
+export const member14 = baseURL + "1Iz-vd4Ks2M_1Rh6jt9xizJDuR6Nu6bxB";  //Ramzi Faris
 
 //team cast
 export const ape1 = baseURL + "1HboNi021nN9laRJmGtbF46FGsi0Xjn-_";

@@ -10,7 +10,9 @@ import {
     member9,
     member10,
     member11,
-    member12
+    member12,
+    member13,
+    member14
 } from 'images';
 
 const team = [
@@ -52,10 +54,13 @@ const team = [
     }, {
         sortId: 6,
         imageurl: member6,
-        name: 'Eric Spivak "Motivate"',
-        charge: 'Strategic Marketing Advisor',
-        link: '<a href="https://twitter.com/ericspivak?s=20" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-twitter"></i></span></a>',
-        info: 'Eric Spivak, A.K.A. “Motivate” is a KOL in the digital art, blockchain & cryptocurrency space as well as the Co-Founder to the Largest and Fastest Growing NFT & DeFi Community in the World. Beyond his contributions to these fast-paced environments. He’s been making waves with his successful boutique creative agency Urconduit. Working with internationally recognized brands, artists, and musicians alike. His creative work & curatorial abilities are seen throughout his projects in the diversity, quality and consistency of his work.'
+        name: 'Dr. Maher F Shirah',
+        charge: 'AI & Blockchain Guru',
+        link: '<a href="https://twitter.com/maherfshirah" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-twitter"></i></span></a>',
+        // name: 'Eric Spivak "Motivate"',
+        // charge: 'Strategic Marketing Advisor',
+        // link: '<a href="https://twitter.com/ericspivak?s=20" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-twitter"></i></span></a>',
+        // info: 'Eric Spivak, A.K.A. “Motivate” is a KOL in the digital art, blockchain & cryptocurrency space as well as the Co-Founder to the Largest and Fastest Growing NFT & DeFi Community in the World. Beyond his contributions to these fast-paced environments. He’s been making waves with his successful boutique creative agency Urconduit. Working with internationally recognized brands, artists, and musicians alike. His creative work & curatorial abilities are seen throughout his projects in the diversity, quality and consistency of his work.'
 
     },{
         sortId: 7,
@@ -82,21 +87,35 @@ const team = [
     }, {
         sortId: 10,
         imageurl: member10,
+        name: 'Eric Spivak',
+        charge: 'Strategic Marketing Advisor',
+        link: '<a href="https://twitter.com/ericspivak?s=20" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-twitter"></i></span></a>',
+        info: 'Eric Spivak, A.K.A. “Motivate” is a KOL in the digital art, blockchain & cryptocurrency space as well as the Co-Founder to the Largest and Fastest Growing NFT & DeFi Community in the World. Beyond his contributions to these fast-paced environments. He’s been making waves with his successful boutique creative agency Urconduit. Working with internationally recognized brands, artists, and musicians alike. His creative work & curatorial abilities are seen throughout his projects in the diversity, quality and consistency of his work.'
+
+    }, {
+        sortId: 11,
+        imageurl: member11,
         name: 'Zaini Media',
         charge: 'Creative Studio',
         link: '<a href="http://www.zainimedia.com/" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fal fa-globe"></i></span></a>',
     }, {
-        sortId: 11,
-        imageurl: member11,
+        sortId: 12,
+        imageurl: member12,
         name: 'Crypto Family',
         charge: 'Blockchain Team',
         link: '<a href="https://www.cryptofamily.tech/" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fal fa-globe"></i></span></a>',
     }, {
-        sortId: 12,
-        imageurl: member12,
+        sortId: 13,
+        imageurl: member13,
         name: 'Adel Antabli',
         charge: 'Producer',
         link: '<a href="https://www.instagram.com/tablino/" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-instagram"></i></span></a>',
+    }, {
+        sortId: 14,
+        imageurl: member14,
+        name: 'Ramzi Faris',
+        charge: 'Brand Development Guru',
+        link: '<a href="https://www.instagram.com/ramzifaris/" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-instagram"></i></span></a>',        
     } 
 ];
 
