@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
 
@@ -33,6 +33,8 @@ import {connect} from 'react-redux';
 import {set_section} from 'redux/actions/navbarActions';
 import {set_member} from 'redux/actions/teamMembersActions';
 
+import LoadingScreen from 'components/loading-screen';
+
 import sectionLayout from 'layouts/section';
 
 import './home.scss';
@@ -48,6 +50,8 @@ const HomePage = props => {
 
     const {navbarReducer} = props;
 
+    const [assetsLoaded, setAssetsLoaded] = useState(0);
+    console.log(assetsLoaded);
 
     useEffect(
         () => {
@@ -82,13 +86,15 @@ const HomePage = props => {
     );
 
     return (
-        <div>
-            
+        <div className={`${assetsLoaded >= 37 ? '' : 'home-sizer'}`} style={{position: 'relative'}}>
+            <div className={`has-background-primary ${assetsLoaded >= 37 ? 'is-hidden' : ''}`} style={{width: '100vw', height: '100vh', position: 'absolute', left:'0', top: '0', zIndex: 1}}>
+                <LoadingScreen />
+            </div>
 
             <section className="hero is-medium banner-home" ref={homeSection} style={{position: 'relative', height: '666px'}} ref={homeSection}>
 
                 <div className="video-container">
-                    <video playsInline autoPlay muted loop>
+                    <video playsInline autoPlay muted loop onLoadEnd={() => console.log('same ')}>
                         <source src={bannerVideo} type="video/mp4"/>
                     </video>
                     <div className="invisible-panel">
@@ -178,7 +184,7 @@ const HomePage = props => {
                                             <li className="media is-size-6" key={i}>
                                                 <div className="media-left">      
                                                     <figure className="image is-24x24">
-                                                        <img src={bananaIcon} alt=""/>                                        
+                                                        <img src={bananaIcon} alt="" onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>                                        
                                                     </figure>
                                                 </div>
                                                 <div className="media-content has-text-left">
@@ -191,7 +197,7 @@ const HomePage = props => {
                             </div>                            
                             <div className="column" style={{position: 'relative'}}>                            
                                 <div className="pl-5">
-                                    <img src={benefits} alt="" width="400"/>
+                                    <img src={benefits} alt="" width="400" onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                 </div>                
                             </div>
                         </div>
@@ -217,12 +223,12 @@ const HomePage = props => {
                         <div className="columns is-vcentered" style={{background: '#FBDD1D'}}>
                             <div className="column p-0">
                                 <figure className="image is-16x9">
-                                    <img src={episodesRoadmap} alt=""/>
+                                    <img src={episodesRoadmap} alt="" onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                 </figure>
                             </div>
                             <div className="column p-0 is-4">
                                 <figure className="image">
-                                    <img src={giveaways} alt=""/>
+                                    <img src={giveaways} alt="" onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                 </figure>
                             </div>
                         </div>
@@ -241,12 +247,12 @@ const HomePage = props => {
                         <div className="columns is-vcentered" style={{background: '#FCE711'}}>                             
                             <div className="column p-0 is-4" >
                                 <figure className="image">
-                                    <img src={guest} alt=""/>
+                                    <img src={guest} alt="" onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                 </figure>
                             </div>     
                             <div className="column p-0">
                                 <figure className="image is-16x9">
-                                    <img src={projectRoadmap} alt=""/>
+                                    <img src={projectRoadmap} alt="" onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                 </figure>
                             </div>                    
                         </div>
@@ -291,7 +297,7 @@ const HomePage = props => {
                                     <div className="column has-text-centered" key={i}>
 
                                         <Link to="/team">
-                                            <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                            <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}} onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                         </Link>
 
                                         <br/>
@@ -314,7 +320,7 @@ const HomePage = props => {
                                     <div className="column has-text-centered" key={i} >
 
                                         <Link to="/team">
-                                            <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i+3)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                            <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i+3)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}} onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                         </Link>
 
                                         <br/>
@@ -338,7 +344,7 @@ const HomePage = props => {
 
                                         {
                                             i == 1 || i == 2 ?
-                                                <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                                <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}} onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                             :
                                                 <Link to="/team">
                                                     <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i+8)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
@@ -375,7 +381,7 @@ const HomePage = props => {
                             {
                                 [...castData].splice(0, 5).map( (c, i) =>
                                     <div className="column has-text-centered" key={i}>
-                                        <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}} onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                         <br/><br/>
                                         <div className="" style={{height:"80px"}}>
                                             <h1 className="title is-5 has-text-centered has-text-white">{c.name}</h1>
@@ -395,7 +401,7 @@ const HomePage = props => {
                             {
                                 [...castData].splice(5, 4).map( (c, i) =>
                                     <div className="column has-text-centered" key={i}>
-                                        <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
+                                        <img className="is-rounded" src={c.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}} onLoad={() => setAssetsLoaded(assetsLoaded+1)}/>
                                         <br/><br/>
                                         <div className="" style={{height:"80px"}}>
                                             <h1 className="title is-5 has-text-centered has-text-white">{c.name}</h1>

@@ -48,12 +48,7 @@ const App = () => {
                 </Route>
 
                 <Route exact path="/home">
-                    {
-                        loading ?
-                            <LoadingComponent/>
-                        :
-                            <HomePage/>
-                    }
+                    <HomePage/>
                 </Route>
 
                 <Route exact path="/team">
