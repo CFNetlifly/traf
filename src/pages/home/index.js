@@ -86,7 +86,7 @@ const HomePage = props => {
 
     return (
         <div className={`${assetsLoaded >= 37 ? '' : 'home-sizer'}`} style={{position: 'relative'}}>
-            <div className={`has-background-primary ${assetsLoaded >= 37 ? 'is-hidden' : ''}`} style={{width: '100vw', height: '100vh', position: 'absolute', left:'0', top: '0', zIndex: 1}}>
+            <div className={`has-background-primary is-hidden-mobile ${assetsLoaded >= 37 ? 'is-hidden' : ''}`} style={{width: '100vw', height: '100vh', position: 'absolute', left:'0', top: '0', zIndex: 1}}>
                 <LoadingScreen />
             </div>
 
