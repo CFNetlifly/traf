@@ -335,8 +335,7 @@ const HomePage = props => {
                             }
                         </div>
                         <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>
-                        <div className="columns is-multiline px-3">        
-                            <div className="column"></div>                    
+                        <div className="columns is-multiline px-3">                                                        
                             {
                                 [...teamData].splice(9, 5).map( (t, i) =>
                                     <div className="column has-text-centered" key={i}>
@@ -360,8 +359,7 @@ const HomePage = props => {
                                         <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
                                     </div>
                                 )
-                            }   
-                            <div className="column"></div>                         
+                            }                                                        
                         </div>
 
                     </div>
@@ -396,7 +394,7 @@ const HomePage = props => {
                         <br/>
 
                         <div className="columns ">
-                            <div className="column"></div>
+                        <div className="column"></div>
                             {
                                 [...castData].splice(5, 4).map( (c, i) =>
                                     <div className="column has-text-centered" key={i}>
