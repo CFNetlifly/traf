@@ -137,7 +137,13 @@ const SocketPage = props => {
                         <ConnectBtn/>
                 }     
                 <br/>
-                <div className="has-text-white has-text-centered">Please stay in the website until verification is done</div>           
+                {
+                    signResult.done?
+                        null
+                    :
+                        <div className="has-text-white has-text-centered">Please stay in the website until verification is done</div>               
+                }
+                
             </div>
         </div>
     );
