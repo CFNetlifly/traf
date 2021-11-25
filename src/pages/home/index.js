@@ -117,9 +117,9 @@ const HomePage = props => {
             <SectionLayout
                 className="has-background-primary"
                 content={
-                    <div className="columns">
+                    <div className="columns is-ventered">
                         <div className="column has-text-centered  px-4">
-                            <h1 className="title is-3 has-text-white">
+                            <h1 className="title is-4 has-text-white">
                                 EPISODE 1 IS SOLD OUT <br/>
                                 BUY NOW ON OPENSEA
                             </h1>
