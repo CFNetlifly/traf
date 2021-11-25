@@ -119,7 +119,10 @@ const HomePage = props => {
                 content={
                     <div className="columns">
                         <div className="column has-text-centered  px-4">
-                            <MintSection/>
+                            <h1 className="title is-3 has-text-white">
+                                EPISODE 1 IS SOLD OUT <br/>
+                                BUY NOW ON OPENSEA
+                            </h1>
                         </div>
                         <br/>
                         <div className="column">
