@@ -28,6 +28,7 @@ import benefitsData from './benefits-data';
 
 import ReactHtml from 'raw-html-react';
 import MintSection from './mint-section';
+import MintSection2 from './mint2-section';
 
 import {connect} from 'react-redux';
 import {set_section} from 'redux/actions/navbarActions';
@@ -134,6 +135,17 @@ const HomePage = props => {
                             </div>
 
                         </div>
+                    </div>
+                }
+            />
+
+            {/* mint section episode 2 */}
+            <SectionLayout
+                className="has-background-primary is-hidden"
+                content={
+                    <div>
+                        <h1 className="has-text-white subtitle">Episode 2 mints</h1>
+                        <MintSection2/>
                     </div>
                 }
             />
