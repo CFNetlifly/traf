@@ -12,6 +12,7 @@ import Web3 from 'web3';
 
 import ERCABI from 'abis/ERC1155.json';
 import verifyABI from 'abis/verification.json';
+import ERCABI2 from 'abis/ERC11552.json';
 
 
 const initWeb3 = async () => {
@@ -36,14 +37,14 @@ const initWeb3 = async () => {
              store.dispatch( set_networkd_id( await web3.eth.getChainId() ) );
         }
 
-        // const chainId = await web3.eth.getChainId();
-
-        const ethId = '4';
-        const bscId = '97';
-
         //instance contracts
         const ercContract = new web3.eth.Contract(ERCABI, '0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD');
         store.dispatch( add_contract(`ERC_CONTRACT`, ercContract) );
+
+        const erc2Contract = new web3.eth.Contract(ERCABI2, '0x2870BF614e3a772FA251dda2ba37890932C841da');
+        store.dispatch( add_contract(`ERC_CONTRACT2`, erc2Contract) );
+
+        console.log(erc2Contract.methods);
 
         //listen to eth change events
         ethereum.on('accountsChanged', accounts => {

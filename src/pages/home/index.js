@@ -334,11 +334,12 @@ const HomePage = props => {
                                 )
                             }
                         </div>
-                        <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>
-                        <div className="columns is-multiline px-3">                                                        
+                        <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>                        
+                        <div className="columns px-3">
+                            <div className="column"></div>
                             {
                                 [...teamData].splice(9, 5).map( (t, i) =>
-                                    <div className="column has-text-centered" key={i}>
+                                    <div className="column is-2 has-text-centered" key={i}>
 
                                         {
                                             i == 1 || i == 2 ?
@@ -359,7 +360,8 @@ const HomePage = props => {
                                         <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
                                     </div>
                                 )
-                            }                                                        
+                            }    
+                            <div className="column"></div>                                                                 
                         </div>
 
                     </div>

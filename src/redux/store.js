@@ -7,6 +7,7 @@ import web3Reducer from './reducers/web3Reducer';
 import walletReducer from './reducers/walletReducer';
 import navbarReducer from './reducers/navbarReducer';
 import teamMemberReducer from './reducers/teamMembersReducer';
+import mint2Reducer from './reducers/mint2Reducer';
 
 
 const reducer = combineReducers({
@@ -14,7 +15,8 @@ const reducer = combineReducers({
     web3Reducer,
     walletReducer,
     navbarReducer,
-    teamMemberReducer
+    teamMemberReducer,
+    mint2Reducer
 });
 
 const store = createStore(reducer, applyMiddleware(thunk));
