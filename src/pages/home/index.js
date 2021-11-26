@@ -121,7 +121,7 @@ const HomePage = props => {
                         <div className="column has-text-centered  px-4">
                             <h1 className="title is-4 has-text-white">
                                 EPISODE 1 IS SOLD OUT <br/>
-                                BUY NOW ON OPENSEA
+                                BUY NOW ON <a className="has-text-white" href="https://opensea.io/collection/theredapefamily" target="_blank">OPENSEA</a>
                             </h1>
                         </div>
                         <br/>
