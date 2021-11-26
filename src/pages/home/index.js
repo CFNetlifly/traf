@@ -120,8 +120,7 @@ const HomePage = props => {
                     <div className="columns is-ventered">
                         <div className="column has-text-centered  px-4">
                             <h1 className="title is-4 has-text-white">
-                                EPISODE 1 IS SOLD OUT <br/>
-                                BUY NOW ON <a className="has-text-white" href="https://opensea.io/collection/theredapefamily" target="_blank">OPENSEA</a>
+                                <MintSection2/>
                             </h1>
                         </div>
                         <br/>
@@ -142,7 +141,7 @@ const HomePage = props => {
                 }
             />
 
-            {/* mint section episode 2 */}
+            {/* mint section episode 2 
             <SectionLayout
                 className="has-background-primary"
                 content={
@@ -151,7 +150,7 @@ const HomePage = props => {
                         <MintSection2/>
                     </div>
                 }
-            />
+            />*/}
 
             <SectionLayout
                 className="has-background-primary p-0 m-0"

@@ -42,16 +42,16 @@ const reducer = (state = defaultState, action) => {
                 }
             };
 
-            case TX_SUCCESS:
-                return{
-                    ...state,
-                    [action.txType]: {
-                        loading: false,
-                        error: false,
-                        success: true,
-                        resData: action.payload
-                    }
-                };
+        case TX_SUCCESS:
+            return{
+                ...state,
+                [action.txType]: {
+                    loading: false,
+                    error: false,
+                    success: true,
+                    resData: action.payload
+                }
+            };
 
         default:
             return {...state};

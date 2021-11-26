@@ -41,66 +41,44 @@ export const start_minting_ep2_tx = txData => {
         const wallet = getState().walletReducer;
 
         const amount = txData.amount;
-
-        const ercContract = contracts['ERC_CONTRACT2'];
-        console.log(ercContract);
-
-
-        const balanceOfUser = await ercContract.methods.balanceOf(wallet.currentAccount, 0).call();                    
-        let pureAmount = await ercContract.methods.pureNFTsOf(wallet.currentAccount).call();        
-
-        const {purePrice, impurePrice} = await ercContract.methods.prices().call();
         
-        pureAmount = pureAmount > amount ? amount : pureAmount;
-        const impureAmount = amount - pureAmount;
+        const mintPassContract = contracts['MINT_PASS'];
+        
+        
+        // console.log(mintPassContract.methods);
+        // console.log(ercContract.methods);
 
-        const cost = (pureAmount * purePrice) + (impureAmount  * impurePrice);
+        const balanceOfUser = await mintPassContract.methods.balanceOf(wallet.currentAccount, 0).call();                    
+        let pureAmount = await mintPassContract.methods.pureNFTsOf(wallet.currentAccount).call();        
+
+        const {purePrice, impurePrice} = await mintPassContract.methods.prices().call();
+
+        console.log(impurePrice);
 
         
-        // // console.log(erc_contract.methods);
-        const tx = await ercContract.methods.mint( wallet.currentAccount, txData.amount.toString() );
+        // pureAmount = pureAmount > amount ? amount : pureAmount;
+        // const impureAmount = amount - pureAmount;
+
+        // const cost = (pureAmount * purePrice) + (impureAmount  * impurePrice);
+
+        
+        // // // console.log(erc_contract.methods);
+        // const tx = await mintPassContract.methods.mint( wallet.currentAccount, txData.amount.toString() );
 
 
         try{
-            tx.send({
-                from: wallet.currentAccount,
-                value: cost
-            });
-            dispatch( tx_success( 'MINT_EP2_TX' ) );
+            // await tx.send({
+            //     from: wallet.currentAccount,
+            //     value: cost
+            // });
+            
+            // dispatch( tx_success( 'MINT_EP2_TX' ) );
         }
         catch(err){
-            dispatch( tx_failed( 'MINT_EP2_TX' ) );
+            
             console.log(err);
+            dispatch( tx_failed( 'MINT_EP2_TX' ) );
         }
 
-        // try {
-        //     // const estimatedGas = await tx.estimateGas({
-        //     //     from: walletReducer.currentAccount,
-        //     //     value: txData.value,
-        //     //     gas: web3.eth.
-        //     // });
-
-        //     await tx.send({
-        //         from: walletReducer.currentAccount,
-        //         value: txData.value,
-        //         gas: 100000,
-        //         maxPriorityFeePerGas: null,
-        //         maxFeePerGas: null
-        //     });
-        //     dispatch( tx_success( 'MINT_EP2_TX' ) );
-        // } catch (e) {
-        //     dispatch( tx_failed( 'MINT_EP2_TX' ) );
-        //     console.log(e);
-        // }
-        // finally{
-        //     // const txStatus = getState().txReducer[txs.TRANSFER_REGULAR_TKN];
-
-        //     // if(txStatus.success)
-        //     //     notificationStore.addNotification( successNotification("Tx successful", `sent ${amount} ${tokenData.name} to ${receiver}`) );
-        //     //
-        //     // if(txStatus.error)
-        //     //     notificationStore.addNotification( errorNotification("Tx failed", "sorry, something wen't wrong") );
-
-        // }
     }
 }

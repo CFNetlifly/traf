@@ -17,6 +17,7 @@ import Web3 from 'web3';
 import ERCABI from 'abis/ERC1155.json';
 import verifyABI from 'abis/verification.json';
 import ERCABI2 from 'abis/ERC11552.json';
+import mintABI from 'abis/MintPass.json';
 
 
 const initWeb3 = async () => {
@@ -45,8 +46,11 @@ const initWeb3 = async () => {
         const ercContract = new web3.eth.Contract(ERCABI, '0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD');
         store.dispatch( add_contract(`ERC_CONTRACT`, ercContract) );
 
-        const erc2Contract = new web3.eth.Contract(ERCABI2, '0xE56d7dA142Bd14fdF267225fE5ae2ee18F65855D');
+        const erc2Contract = new web3.eth.Contract(ERCABI2, '0x939Aa942fa2666f3d73a11f26b327945506E3294');
         store.dispatch( add_contract(`ERC_CONTRACT2`, erc2Contract) );
+
+        const mintContract = new web3.eth.Contract(mintABI, '0x8D6E134687D91085B6B9129a9d0763C999B1B85a');
+        store.dispatch( add_contract('MINT_PASS', mintContract) );
         
         store.dispatch( set_web3_initialized(true) );
 
@@ -59,9 +63,7 @@ const initWeb3 = async () => {
             else{
                 store.dispatch( set_connection(false) );
                 store.dispatch( set_current_account('') );
-
             }
-
         });
 
         ethereum.on('connect', connectInfo => {
