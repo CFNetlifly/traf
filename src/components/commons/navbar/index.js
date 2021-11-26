@@ -45,20 +45,20 @@ const Navbar = props => {
     return(
         <nav className={`navbar is-fixed-top ${scroll > 100 ? 'navbar-grey' : 'has-background-black'}`} role="navigation" aria-label="main navigation">
             <div className="container">
-                <div class="navbar-brand">
-                    <Link to="/home" class="navbar-item" onClick={e => {props.set_section("HOME")}}>
+                <div className="navbar-brand">
+                    <Link to="/home" className="navbar-item" onClick={e => {props.set_section("HOME")}}>
                       <img src={logo} alt="" width="32" />
                     </Link>
 
-                    <a  id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar" onClick={onBurgerClicked}>
+                    <a  id="navbar-burger" role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar" onClick={onBurgerClicked}>
                       <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
                       <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
                       <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
                     </a>
                 </div>
 
-                <div id="navbar" class="navbar-menu">
-                <div class="navbar-start">
+                <div id="navbar" className="navbar-menu">
+                <div className="navbar-start">
                     <Link to="/home" className="has-text-white navbar-item has-text-centered-mobile" onClick={e => {props.set_section("HOME"); onBurgerIClicked(e)}}>
                         Home
                     </Link>
@@ -86,37 +86,37 @@ const Navbar = props => {
 
                 </div>
 
-                <div class="navbar-end">
-                    <div class="navbar-item has-text-centered-mobile">
-                        <a class="is-size-4 " href="https://twitter.com/TheRedApeFamily" target="_blank" onClick={onBurgerIClicked}>
+                <div className="navbar-end">
+                    <div className="navbar-item has-text-centered-mobile">
+                        <a className="is-size-4 " href="https://twitter.com/TheRedApeFamily" target="_blank" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white" >
-                                <i class="fab fa-twitter"></i>
+                                <i className="fab fa-twitter"></i>
                             </span>
                         </a>
                     </div>
-                    <div class="navbar-item has-text-centered-mobile">
-                        <a class="is-size-4 " href="https://www.instagram.com/theredapefamily/" target="_blank" onClick={onBurgerIClicked}>
+                    <div className="navbar-item has-text-centered-mobile">
+                        <a className="is-size-4 " href="https://www.instagram.com/theredapefamily/" target="_blank" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white" >
-                                <i class="fab fa-instagram"></i>
+                                <i className="fab fa-instagram"></i>
                             </span>
                         </a>
                     </div>
-                    <div class="navbar-item has-text-centered-mobile">
-                        <a class="is-size-4 " href="https://www.youtube.com/channel/UCLCsACZQEeKOzjfbK2kIo9A" target="_blank" onClick={onBurgerIClicked}>
+                    <div className="navbar-item has-text-centered-mobile">
+                        <a className="is-size-4 " href="https://www.youtube.com/channel/UCLCsACZQEeKOzjfbK2kIo9A" target="_blank" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
-                                <i class="fab fa-youtube"></i>
+                                <i className="fab fa-youtube"></i>
                             </span>
                         </a>
                     </div>
-                    <div class="navbar-item has-text-centered-mobile">
-                        <a class="is-size-4 " href="https://discord.gg/HxE754wj9r" target="_blank" onClick={onBurgerIClicked}>
+                    <div className="navbar-item has-text-centered-mobile">
+                        <a className="is-size-4 " href="https://discord.gg/HxE754wj9r" target="_blank" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
-                                <i class="fab fa-discord"></i>
+                                <i className="fab fa-discord"></i>
                             </span>
                         </a>
                     </div>
-                    <div class="navbar-item has-text-centered-mobile">
-                        <a class="is-size-4 " href="https://opensea.io/collection/theredapefamily" target="_blank" onClick={onBurgerIClicked}>
+                    <div className="navbar-item has-text-centered-mobile">
+                        <a className="is-size-4 " href="https://opensea.io/collection/theredapefamily" target="_blank" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
                                 <img src={opensea} alt=""/>
                             </span>

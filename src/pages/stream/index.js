@@ -28,8 +28,8 @@ const Stream = props => {
                     {
                         episodes.map( (e,i) =>
                             <div className="column is-3-desktop is-6-tablet" key={i}>
-                                <figure class="image is-16by9">
-                                    <iframe class="has-ratio" width="640" height="360" src={"https://www.youtube.com/embed/"+e.video_id} frameborder="0" allowfullscreen></iframe>
+                                <figure className="image is-16by9">
+                                    <iframe className="has-ratio" width="640" height="360" src={"https://www.youtube.com/embed/"+e.video_id} frameBorder="0" allowFullScreen></iframe>
                                 </figure>
                                 <div className="mt-4" style={{height: '200px'}}>
                                     <h1 className="title has-text-white is-5">{e.name}</h1>

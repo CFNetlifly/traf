@@ -1,5 +1,9 @@
 import store from 'redux/store';
-import {set_web3_instance, add_contract} from 'redux/actions/web3Actions';
+import {
+    set_web3_instance,
+    add_contract,
+    set_web3_initialized
+} from 'redux/actions/web3Actions';
 import {
     set_metamask_installed,
     set_connection,
@@ -41,10 +45,10 @@ const initWeb3 = async () => {
         const ercContract = new web3.eth.Contract(ERCABI, '0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD');
         store.dispatch( add_contract(`ERC_CONTRACT`, ercContract) );
 
-        const erc2Contract = new web3.eth.Contract(ERCABI2, '0x2870BF614e3a772FA251dda2ba37890932C841da');
+        const erc2Contract = new web3.eth.Contract(ERCABI2, '0xE56d7dA142Bd14fdF267225fE5ae2ee18F65855D');
         store.dispatch( add_contract(`ERC_CONTRACT2`, erc2Contract) );
-
-        console.log(erc2Contract.methods);
+        
+        store.dispatch( set_web3_initialized(true) );
 
         //listen to eth change events
         ethereum.on('accountsChanged', accounts => {

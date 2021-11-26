@@ -2,10 +2,10 @@ const data = [
     {
         title: "WHAT IS TRAF",
         body:
-            "The Red Ape Family (TRAF) is a sci-fi comedy show. It is the first the first of its kind as it is built around, and starring NFTs, episodes are sold as individual NFTs and The stars are all <span class='has-text-cyellow2'>Bored Ape Yacht Club</span> OGs; other NFTs also feature throughout, both as characters and featured art. The project is all about bringing the NFT community together and preceding preconceptions of what is possible in this space."
+            "The Red Ape Family (TRAF) is a sci-fi comedy show. It is the first the first of its kind as it is built around, and starring NFTs, episodes are sold as individual NFTs and The stars are all <span className='has-text-cyellow2'>Bored Ape Yacht Club</span> OGs; other NFTs also feature throughout, both as characters and featured art. The project is all about bringing the NFT community together and preceding preconceptions of what is possible in this space."
     }, {
         title: "WHO'S BEHIND THE PROJECT?",
-        body: "TRAF is the brainchild of Youssouf Bedraoui Drissi and Hashem Zaini, who joined forces with comedy writing duo: Chris Goward and Erik Jaques, and then was backed by 2Chainz as an Executive Producer. Full details on the brains and creativity behind TRAF are available in the <span class='has-text-cyellow2'>Team</span> section of our website."
+        body: "TRAF is the brainchild of Youssouf Bedraoui Drissi and Hashem Zaini, who joined forces with comedy writing duo: Chris Goward and Erik Jaques, and then was backed by 2Chainz as an Executive Producer. Full details on the brains and creativity behind TRAF are available in the <span className='has-text-cyellow2'>Team</span> section of our website."
     }, {
         title: "WHEN IS TRAF GOING TO BE AVAILABLE?",
         body: "The mint of episode 1 is available now. Episode 1 will drop in November 23rd and additional episodes will be available each month. Make sure you're following us on Discord and Twitter for all the latest news and announcements."
@@ -48,16 +48,16 @@ const data = [
         title: "WHAT ARE THE DIFFERENT TRAF TIERS?",
         body:
          "There are 10 different TRAF Tiers. <br/><br/>" +
-         "<span class='has-text-cyellow2'>Tier (1)</span> - <span class='has-text-cyellow'>Baby Ape</span> - Holder of <span class='has-text-cyellow2'>1</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (2)</span> - <span class='has-text-cyellow'>Gibbon </span> - Holder of <span class='has-text-cyellow2'>2</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (3)</span> - <span class='has-text-cyellow'>Bonobo </span> - Holder of <span class='has-text-cyellow2'>3</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (4)</span> - <span class='has-text-cyellow'>Pongo  </span> - Holder of <span class='has-text-cyellow2'>4</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (5)</span> - <span class='has-text-cyellow'>Orangutan   </span> - Holder of <span class='has-text-cyellow2'>5</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (6)</span> - <span class='has-text-cyellow'>Chimp    </span> - Holder of <span class='has-text-cyellow2'>6</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (7)</span> - <span class='has-text-cyellow'>Alpha    </span> - Holder of <span class='has-text-cyellow2'>7</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (8)</span> - <span class='has-text-cyellow'>Gorilla     </span> - Holder of <span class='has-text-cyellow2'>8</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (9)</span> - <span class='has-text-cyellow'>Silverback      </span> - Holder of <span class='has-text-cyellow2'>9</span> Episode from a specific Season </br>" +
-         "<span class='has-text-cyellow2'>Tier (10)</span> - <span style='color: red'>Red Ape Master      </span> - Holder of <span class='has-text-cyellow2'>10</span> Episode from a specific Season </br>" 
+         "<span className='has-text-cyellow2'>Tier (1)</span> - <span className='has-text-cyellow'>Baby Ape</span> - Holder of <span className='has-text-cyellow2'>1</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (2)</span> - <span className='has-text-cyellow'>Gibbon </span> - Holder of <span className='has-text-cyellow2'>2</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (3)</span> - <span className='has-text-cyellow'>Bonobo </span> - Holder of <span className='has-text-cyellow2'>3</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (4)</span> - <span className='has-text-cyellow'>Pongo  </span> - Holder of <span className='has-text-cyellow2'>4</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (5)</span> - <span className='has-text-cyellow'>Orangutan   </span> - Holder of <span className='has-text-cyellow2'>5</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (6)</span> - <span className='has-text-cyellow'>Chimp    </span> - Holder of <span className='has-text-cyellow2'>6</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (7)</span> - <span className='has-text-cyellow'>Alpha    </span> - Holder of <span className='has-text-cyellow2'>7</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (8)</span> - <span className='has-text-cyellow'>Gorilla     </span> - Holder of <span className='has-text-cyellow2'>8</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (9)</span> - <span className='has-text-cyellow'>Silverback      </span> - Holder of <span className='has-text-cyellow2'>9</span> Episode from a specific Season </br>" +
+         "<span className='has-text-cyellow2'>Tier (10)</span> - <span style='color: red'>Red Ape Master      </span> - Holder of <span className='has-text-cyellow2'>10</span> Episode from a specific Season </br>" 
 
 
 

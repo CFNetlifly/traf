@@ -1,6 +1,7 @@
 import {
     SET_WEB3_INSTANCE,
-    ADD_CONTRACT
+    ADD_CONTRACT,
+    SET_WEB3_INITIALIZED
 } from '../constants';
 
 const defaultState = {
@@ -16,8 +17,7 @@ const reducer = (state = defaultState, action) => {
         case SET_WEB3_INSTANCE:
             return{
                 ...state,
-                web3: action.payload,
-                initialized: true
+                web3: action.payload
             };
 
         case ADD_CONTRACT:
@@ -28,6 +28,13 @@ const reducer = (state = defaultState, action) => {
                 ...state,
                 contracts: contracts
             };
+
+        case SET_WEB3_INITIALIZED: 
+            return{
+                ...state,
+                initialized: action.payload
+            };
+
 
         default:
             return {...state};

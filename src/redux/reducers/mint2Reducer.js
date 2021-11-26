@@ -5,7 +5,7 @@ import {
 } from '../constants';
 
 const defaultState = {
-    MINT_TX: {
+    MINT_EP2_TX: {
         loading: false,
         error: false,
         success: false,

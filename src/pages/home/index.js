@@ -144,7 +144,7 @@ const HomePage = props => {
 
             {/* mint section episode 2 */}
             <SectionLayout
-                className="has-background-primary is-hidden"
+                className="has-background-primary"
                 content={
                     <div>
                         <h1 className="has-text-white subtitle">Episode 2 mints</h1>

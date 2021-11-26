@@ -109,14 +109,14 @@ const Form = props => {
 
     return(
         <form onSubmit={formik.handleSubmit}>
-            <div class={`modal ${videoOpen ? 'is-active' : ''}`}>
-                <div class="modal-background"></div>
-                <div class="modal-content">
-                    <figure class="image is-16by9">
-                        <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/kuWPm0w1bfE" frameborder="0" allowFullscreen></iframe>
+            <div className={`modal ${videoOpen ? 'is-active' : ''}`}>
+                <div className="modal-background"></div>
+                <div className="modal-content">
+                    <figure className="image is-16by9">
+                        <iframe className="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/kuWPm0w1bfE" frameBorder="0" allowFullScreen></iframe>
                     </figure>
                 </div>
-                <button class="modal-close is-large" aria-label="close" onClick={e => setVideoOpen(false)}></button>
+                <button className="modal-close is-large" aria-label="close" onClick={e => setVideoOpen(false)}></button>
             </div>
             <div className="has-text-centered" >
 
@@ -157,7 +157,7 @@ const Form = props => {
 
                 <div>{(webData && webData.mintsLeft == 0) ? 'You have reached the minting limit for this episode! Thank you so much!' : ''}</div>
                 <br/><br/>                
-                <p className="has-text-centered has-text-weight-bold has-text-light has-font-audiowide is-size-6">
+                <div className="has-text-centered has-text-weight-bold has-text-light has-font-audiowide is-size-6">
                     <div style={{color: '#d1d1d1'}}>
                         Pre-reveal sale of Ep1 is LIVE (0.95 Eth + Gas)<br/>
                         Reveal of Ep1 on November 25<br/>
@@ -184,7 +184,7 @@ const Form = props => {
                     </span>
                     
                     
-                </p>
+                </div>
                 
             </div>
         </form>

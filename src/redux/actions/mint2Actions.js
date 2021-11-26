@@ -31,50 +31,76 @@ const tx_success = txType => {
 }
 
 /* *~~*~~*~~*~~*~~*~~* TX THUNK ACTIONS *~~*~~*~~*~~*~~*~~* */
-export const start_minting_tx = txData => {
+export const start_minting_ep2_tx = txData => {
     return async (dispatch, getState) => {
 
-        dispatch( tx_loading( 'MINT_TX' ) );
+        dispatch( tx_loading( 'MINT_EP2_TX' ) );
 
         const {web3Reducer, walletReducer} = getState();
         const {contracts} = web3Reducer;
+        const wallet = getState().walletReducer;
 
-        const erc_contract = web3Reducer.contracts['ERC_CONTRACT'];
-        // console.log(erc_contract.methods);
-        const tx = await erc_contract.methods._mint( walletReducer.currentAccount, txData.amount.toString() );
+        const amount = txData.amount;
+
+        const ercContract = contracts['ERC_CONTRACT2'];
+        console.log(ercContract);
 
 
+        const balanceOfUser = await ercContract.methods.balanceOf(wallet.currentAccount, 0).call();                    
+        let pureAmount = await ercContract.methods.pureNFTsOf(wallet.currentAccount).call();        
+
+        const {purePrice, impurePrice} = await ercContract.methods.prices().call();
+        
+        pureAmount = pureAmount > amount ? amount : pureAmount;
+        const impureAmount = amount - pureAmount;
+
+        const cost = (pureAmount * purePrice) + (impureAmount  * impurePrice);
+
+        
+        // // console.log(erc_contract.methods);
+        const tx = await ercContract.methods.mint( wallet.currentAccount, txData.amount.toString() );
 
 
-
-        try {
-            // const estimatedGas = await tx.estimateGas({
-            //     from: walletReducer.currentAccount,
-            //     value: txData.value,
-            //     gas: web3.eth.
-            // });
-
-            await tx.send({
-                from: walletReducer.currentAccount,
-                value: txData.value,
-                gas: 100000,
-                maxPriorityFeePerGas: null,
-                maxFeePerGas: null
+        try{
+            tx.send({
+                from: wallet.currentAccount,
+                value: cost
             });
-            dispatch( tx_success( 'MINT_TX' ) );
-        } catch (e) {
-            dispatch( tx_failed( 'MINT_TX' ) );
-            console.log(e);
+            dispatch( tx_success( 'MINT_EP2_TX' ) );
         }
-        finally{
-            // const txStatus = getState().txReducer[txs.TRANSFER_REGULAR_TKN];
-
-            // if(txStatus.success)
-            //     notificationStore.addNotification( successNotification("Tx successful", `sent ${amount} ${tokenData.name} to ${receiver}`) );
-            //
-            // if(txStatus.error)
-            //     notificationStore.addNotification( errorNotification("Tx failed", "sorry, something wen't wrong") );
-
+        catch(err){
+            dispatch( tx_failed( 'MINT_EP2_TX' ) );
+            console.log(err);
         }
+
+        // try {
+        //     // const estimatedGas = await tx.estimateGas({
+        //     //     from: walletReducer.currentAccount,
+        //     //     value: txData.value,
+        //     //     gas: web3.eth.
+        //     // });
+
+        //     await tx.send({
+        //         from: walletReducer.currentAccount,
+        //         value: txData.value,
+        //         gas: 100000,
+        //         maxPriorityFeePerGas: null,
+        //         maxFeePerGas: null
+        //     });
+        //     dispatch( tx_success( 'MINT_EP2_TX' ) );
+        // } catch (e) {
+        //     dispatch( tx_failed( 'MINT_EP2_TX' ) );
+        //     console.log(e);
+        // }
+        // finally{
+        //     // const txStatus = getState().txReducer[txs.TRANSFER_REGULAR_TKN];
+
+        //     // if(txStatus.success)
+        //     //     notificationStore.addNotification( successNotification("Tx successful", `sent ${amount} ${tokenData.name} to ${receiver}`) );
+        //     //
+        //     // if(txStatus.error)
+        //     //     notificationStore.addNotification( errorNotification("Tx failed", "sorry, something wen't wrong") );
+
+        // }
     }
 }
