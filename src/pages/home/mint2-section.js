@@ -118,19 +118,19 @@ const MintSection2 = props => {
             </form>
             <br/><br/> 
             <div className="has-text-centered has-text-weight-bold has-text-light has-font-audiowide is-size-6">
-                    <div style={{color: '#d1d1d1'}}>
-                            333 tokens available only! <br/><br/>
+                <div style={{color: '#d1d1d1'}}>
+                        333 tokens available only! <br/><br/>
 
-                        Use your mint pass to mint Episode 2 before the public sale<br/>
-                        Episode 2 token with a mint pass = 0.5 ETH<br/>
-                        Episode 2 token without a mint pass = 0.95 ETH<br/>
-                    </div>
-                    <br/>
-                    <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
-                    <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
-                    <span className="has-text-warning">REVEAL <br/> <CountDown className="is-uppercase"/></span>
-                    
+                    Use your mint pass to mint Episode 2 before the public sale<br/>
+                    Episode 2 token with a mint pass = 0.5 ETH<br/>
+                    Episode 2 token without a mint pass = 0.95 ETH<br/>
                 </div>
+                <br/>
+                <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
+                <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
+                <span className="has-text-warning">REVEAL <br/> <CountDown className="is-uppercase"/></span>
+                
+            </div>
         </div>
     );
 }

@@ -49,7 +49,7 @@ const initWeb3 = async () => {
         const erc2Contract = new web3.eth.Contract(ERCABI2, '0x939Aa942fa2666f3d73a11f26b327945506E3294');
         store.dispatch( add_contract(`ERC_CONTRACT2`, erc2Contract) );
 
-        const mintContract = new web3.eth.Contract(mintABI, '0x8D6E134687D91085B6B9129a9d0763C999B1B85a');
+        const mintContract = new web3.eth.Contract(mintABI, '0xE242300ada476825A2fD39C9F8BF4d3376db20b1');
         store.dispatch( add_contract('MINT_PASS', mintContract) );
         
         store.dispatch( set_web3_initialized(true) );

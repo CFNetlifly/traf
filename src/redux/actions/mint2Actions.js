@@ -52,27 +52,27 @@ export const start_minting_ep2_tx = txData => {
         let pureAmount = await mintPassContract.methods.pureNFTsOf(wallet.currentAccount).call();        
 
         const {purePrice, impurePrice} = await mintPassContract.methods.prices().call();
+        
+        pureAmount = pureAmount > amount ? amount : pureAmount;
+        const impureAmount = amount - pureAmount;
 
-        console.log(impurePrice);
+        const cost = (pureAmount * purePrice) + (impureAmount  * impurePrice);
 
         
-        // pureAmount = pureAmount > amount ? amount : pureAmount;
-        // const impureAmount = amount - pureAmount;
-
-        // const cost = (pureAmount * purePrice) + (impureAmount  * impurePrice);
-
-        
-        // // // console.log(erc_contract.methods);
-        // const tx = await mintPassContract.methods.mint( wallet.currentAccount, txData.amount.toString() );
+        // // console.log(erc_contract.methods);
+        const tx = await mintPassContract.methods.mint( wallet.currentAccount, txData.amount.toString() );
 
 
         try{
-            // await tx.send({
-            //     from: wallet.currentAccount,
-            //     value: cost
-            // });
+            await tx.send({
+                from: wallet.currentAccount,
+                value: cost,
+                gas: 150000,
+                maxPriorityFeePerGas: null,
+                maxFeePerGas: null
+            });
             
-            // dispatch( tx_success( 'MINT_EP2_TX' ) );
+            dispatch( tx_success( 'MINT_EP2_TX' ) );
         }
         catch(err){
             
