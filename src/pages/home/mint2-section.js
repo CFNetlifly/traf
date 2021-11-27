@@ -128,7 +128,7 @@ const MintSection2 = props => {
                 <br/>
                 <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
                 <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
-                <span className="has-text-warning">REVEAL <br/> <CountDown className="is-uppercase"/></span>
+                <span className="has-text-warning"> PUBLIC MINT WILL OPEN IN <br/> <CountDown className="is-uppercase"/></span>
                 
             </div>
         </div>
