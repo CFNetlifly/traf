@@ -122,8 +122,8 @@ const MintSection2 = props => {
                         333 tokens available only! <br/><br/>
 
                     Use your mint pass to mint Episode 2 before the public sale<br/>
-                    Episode 2 token with a mint pass = 0.5 ETH<br/>
-                    Episode 2 token without a mint pass = 0.95 ETH<br/>
+                    Episode 2 token with a pure mint pass = 0.5 ETH<br/>
+                    Episode 2 token with an impure mint pass = 0.95 ETH<br/>
                 </div>
                 <br/>
                 <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
