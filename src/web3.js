@@ -51,6 +51,8 @@ const initWeb3 = async () => {
 
         const mintContract = new web3.eth.Contract(mintABI, '0xE242300ada476825A2fD39C9F8BF4d3376db20b1');
         store.dispatch( add_contract('MINT_PASS', mintContract) );
+
+        console.log(mintContract.methods);
         
         store.dispatch( set_web3_initialized(true) );
 

@@ -57,6 +57,7 @@ export const start_minting_ep2_tx = txData => {
         const impureAmount = amount - pureAmount;
 
         const cost = (pureAmount * purePrice) + (impureAmount  * impurePrice);
+       
 
         
         // // console.log(erc_contract.methods);

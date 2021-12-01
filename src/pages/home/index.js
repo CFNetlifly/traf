@@ -164,7 +164,7 @@ const HomePage = props => {
                 className="has-background-primary"
                 content={
                     <div>
-                        <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">SEASON 1 <span className="has-text-warning">TRAILER</span></h1>
+                        <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">SEASON 1 <span className="has-text-warning">EP 1</span></h1>
                         <p className="title has-text-white is-6 mb-0">
                             It’s 2130. The earth is dying. But all is not lost! Four Bored Apes. One Dog. A Lazy Lion with a stethoscope. On a mission to Mars!
                             <br/><br/>
@@ -172,9 +172,12 @@ const HomePage = props => {
                         </p>
                         <br/><br/>
                         <div className="has-backgroaund-danger" style={{width: '100%'}}>                            
-                            <video controls>
+                            {/* <video controls>
                                 <source src={trailerVideo} type="video/mp4"/>
-                            </video>                            
+                            </video>                             */}
+                            <figure className="image is-16by9">
+                                <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/8K-xkPP7Hfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </figure>
                         </div>
                     </div>
                 }
