@@ -23,7 +23,7 @@ const footer = props => {
                             <i className="fab fa-youtube"></i>
                         </span>
                     </a>
-                    <a  href="https://discord.gg/HxE754wj9r" target="_blank" className="ml-4">
+                    <a  href="https://discord.gg/JeqSUsVQQC" target="_blank" className="ml-4">
                         <span className="icon has-text-white is-size-4">
                             <i className="fab fa-discord"></i>
                         </span>
