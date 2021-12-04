@@ -5,7 +5,7 @@ const CountDown = props => {
 
     const [timeLeft, setTimeLeft] = useState("");
 
-    const countDownDate = new Date("Dec 3, 2021 14:00:00 GMT-05:00").getTime();
+    const countDownDate = new Date("Dec 4, 2021 17:45:00 GMT-05:00").getTime();
 
     useEffect(() => {
         const interval = setInterval(() => {
