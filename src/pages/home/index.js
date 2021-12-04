@@ -120,7 +120,7 @@ const HomePage = props => {
                     <div className="columns is-ventered">
                         <div className="column has-text-centered  px-4">
                             <h1 className="title is-4 has-text-white">
-                                <MintSection2/>
+                                <MintSection/>
                             </h1>
                         </div>
                         <br/>

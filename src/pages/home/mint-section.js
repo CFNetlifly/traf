@@ -140,7 +140,7 @@ const Form = props => {
                                     :
                                         <div className="">
                                             <h1 className="subtitle mb-0 has-text-white has-text-weight-bold is-hidden">Your mints: {webData.userMints}</h1>
-                                            <h1 className="has-text-white has-text-weight-bold"> Episode 1 Tokens Left: {webData.leftNFT}</h1>
+                                            <h1 className="has-text-white has-text-weight-bold"> Episode 2 Tokens Left: {webData.leftNFT}</h1>
                                         </div>
                                 }
                             </div>
@@ -161,16 +161,14 @@ const Form = props => {
                     <div style={{color: '#d1d1d1'}}>
                         Pre-reveal sale of Ep1 is LIVE (0.95 Eth + Gas)<br/>
                         Reveal of Ep1 on November 25<br/>
-                        10 Tokens per wallet / MetaMask only<br/>
+                        5 Tokens per wallet / MetaMask only<br/>
                     </div>
                     <br/>
-                    <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>
-                    <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
-                    <span className="has-text-warning" onClick={e => setVideoOpen(true)}>REVEAL <br/> <CountDown className="is-uppercase"/></span>
+                    <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>                    
                     <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
                     <span className="has-text-warning" onClick={e => setVideoOpen(true)}>
                         
-                        {
+                        {/*
                             webData && webData.giveaway1 ?
 
                                 <div>
@@ -179,7 +177,7 @@ const Form = props => {
                                     {webData.giveaway1}
                                 </div>
                             :
-                               <div> CONNECT YOUR WALLET TO SEE HOW MANY MINTS LEFT UNTILL BORED APE GIVEAWAY</div>
+                               <div> CONNECT YOUR WALLET TO SEE HOW MANY MINTS LEFT UNTILL BORED APE GIVEAWAY</div>*/
                         }                        
                     </span>
                     
