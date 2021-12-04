@@ -159,8 +159,7 @@ const Form = props => {
                 <br/><br/>                
                 <div className="has-text-centered has-text-weight-bold has-text-light has-font-audiowide is-size-6">
                     <div style={{color: '#d1d1d1'}}>
-                        Pre-reveal sale of Ep1 is LIVE (0.95 Eth + Gas)<br/>
-                        Reveal of Ep1 on November 25<br/>
+                        Public sale of episode 2 is LIVE (0.95 Eth + Gas)<br/>                        
                         5 Tokens per wallet / MetaMask only<br/>
                     </div>
                     <br/>
