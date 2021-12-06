@@ -1,14 +1,12 @@
 const data = [
     {
-        body: "25% of OTT streaming revenue will go to TRAF holders in the form of fractions of blue chip NFTs."
-    }, {
-        body: "Additional 24% of OTT streaming revenue will go to the Red Ape Masters in the form of fractions of blue chip NFTs."
-    }, {
+        body: "25% to 49% of OTT streaming revenue will go to TRAF holders in the form of fractions of blue chip NFTs."
+    // }, {
+    //     body: "Additional 24% of OTT streaming revenue will go to the Red Ape Masters in the form of fractions of blue chip NFTs."
+    }, {    
         body: "A % from TRAF's royalties will be used to offer the first minters the possibility to own fractions of blue chip NFTs. "
     }, {
-        body: "Possibility to win 1 BAYC and 3 MAYC in episode 1 of S1."
-    }, {
-        body: "Possibility to win other blue-chip NFTs throughout S1"
+        body: "Possibility to win blue-chip NFTs throughout S1 (We gave away 3 Mutant Apes and 1 Bored Ape to 4 Episode 1 holders)"
     }, {
         body: "Possibility to have your NFT star in the show and get paid for it."
     }, {
