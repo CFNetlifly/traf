@@ -1,14 +1,9 @@
-//react router
-import { useState, useEffect} from "react";
-
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect
 } from "react-router-dom";
-
-import LoadingComponent from "components/loading-screen";
 
 import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
@@ -19,6 +14,7 @@ import FaqPage from 'pages/faq';
 import Stream from 'pages/stream';
 import Whitepaper from 'pages/whitepaper';
 import SocketPage from 'pages/sockets';
+import SneakersPage from 'pages/sneakers';
 
 import 'scss/main.scss';
 
@@ -27,16 +23,6 @@ initWeb3();
 
 
 const App = () => {
-
-    const [loading, setLoading] = useState(true);
-
-    useEffect(
-        () => {
-            setTimeout(() => {
-                setLoading(false);
-            }, 8 * 1000);
-        }, []
-    );
 
     return (
         <Router>
@@ -65,6 +51,11 @@ const App = () => {
 
                 <Route exact path="/verify/:id">
                     <SocketPage/>
+                </Route> 
+                
+
+                <Route exact path="/gravity">
+                    <SneakersPage/>
                 </Route>
                 
             </Switch>

@@ -8,6 +8,10 @@ import ConnectButton from 'components/connect-btn';
 
 import {Link} from 'react-router-dom';
 
+import {useSpring, animated} from 'react-spring';
+
+
+
 import {connect} from 'react-redux';
 import {set_section} from 'redux/actions/navbarActions';
 import {opensea} from 'images';
@@ -17,6 +21,7 @@ import './navbar.scss';
 const Navbar = props => {
 
     const [scroll, setScroll] = useState(0);
+    const styles = useSpring({ background: scroll > 100 ? '#3A3A3A' : 'black' });
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -43,14 +48,14 @@ const Navbar = props => {
 
 
     return(
-        <nav className={`navbar is-fixed-top ${scroll > 100 ? 'navbar-grey' : 'has-background-black'}`} role="navigation" aria-label="main navigation">
+        <animated.nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation" style={styles}>
             <div className="container">
                 <div className="navbar-brand">
                     <Link to="/home" className="navbar-item" onClick={e => {props.set_section("HOME")}}>
                       <img src={logo} alt="" width="32" />
                     </Link>
 
-                    <a  id="navbar-burger" role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar" onClick={onBurgerClicked}>
+                    <a href="#" id="navbar-burger" role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar" onClick={onBurgerClicked}>
                       <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
                       <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
                       <span aria-hidden="true" style={{backgroundColor: 'white'}}></span>
@@ -75,7 +80,7 @@ const Navbar = props => {
                         Team
                     </Link>
 
-                    <a href="https://whitepaper.theredapefamily.com/" target="_blank" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
+                    <a href="https://whitepaper.theredapefamily.com/" target="_blank" rel="noopener noreferrer" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Whitepaper
                     </a>
 
@@ -88,35 +93,35 @@ const Navbar = props => {
 
                 <div className="navbar-end">
                     <div className="navbar-item has-text-centered-mobile">
-                        <a className="is-size-4 " href="https://twitter.com/TheRedApeFamily" target="_blank" onClick={onBurgerIClicked}>
+                        <a className="is-size-4 " href="https://twitter.com/TheRedApeFamily" target="_blank" rel="noopener noreferrer" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white" >
                                 <i className="fab fa-twitter"></i>
                             </span>
                         </a>
                     </div>
                     <div className="navbar-item has-text-centered-mobile">
-                        <a className="is-size-4 " href="https://www.instagram.com/theredapefamily/" target="_blank" onClick={onBurgerIClicked}>
+                        <a className="is-size-4 " href="https://www.instagram.com/theredapefamily/" target="_blank" rel="noopener noreferrer" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white" >
                                 <i className="fab fa-instagram"></i>
                             </span>
                         </a>
                     </div>
                     <div className="navbar-item has-text-centered-mobile">
-                        <a className="is-size-4 " href="https://www.youtube.com/channel/UCLCsACZQEeKOzjfbK2kIo9A" target="_blank" onClick={onBurgerIClicked}>
+                        <a className="is-size-4 " href="https://www.youtube.com/channel/UCLCsACZQEeKOzjfbK2kIo9A" target="_blank" rel="noopener noreferrer" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
                                 <i className="fab fa-youtube"></i>
                             </span>
                         </a>
                     </div>
                     <div className="navbar-item has-text-centered-mobile">
-                        <a className="is-size-4 " href="https://discord.gg/JeqSUsVQQC" target="_blank" onClick={onBurgerIClicked}>
+                        <a className="is-size-4 " href="https://discord.gg/JeqSUsVQQC" target="_blank" rel="noopener noreferrer" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
                                 <i className="fab fa-discord"></i>
                             </span>
                         </a>
                     </div>
                     <div className="navbar-item has-text-centered-mobile">
-                        <a className="is-size-4 " href="https://opensea.io/collection/theredapefamily" target="_blank" onClick={onBurgerIClicked}>
+                        <a className="is-size-4 " href="https://opensea.io/collection/theredapefamily" target="_blank" rel="noopener noreferrer" onClick={onBurgerIClicked}>
                             <span className="icon has-text-white">
                                 <img src={opensea} alt=""/>
                             </span>
@@ -130,7 +135,7 @@ const Navbar = props => {
                 </div>
                 </div>
             </div>
-        </nav>
+        </animated.nav>
     );
 }
 

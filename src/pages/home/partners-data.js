@@ -8,7 +8,7 @@ const data = [
     {
         name: 'CRAZYSKULLZ',
         imgSrc: partner1,
-        width: "150"
+        width: "100"
     }, { 
         name: 'PARTY APES BC',
         imgSrc: partner2,
@@ -16,7 +16,7 @@ const data = [
     }, {
         name: 'FAT APES',
         imgSrc: partner3,
-        width: "150"
+        width: "100"
     }
 ];
 

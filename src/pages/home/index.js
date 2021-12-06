@@ -1,11 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
-import Navbar from 'components/commons/navbar';
-import Footer from 'components/commons/footer';
 
-import {    
-    cloudsBanner,
-    titleImg,
-    movie,
+import {        
     episodesRoadmap,
     projectRoadmap,
     giveaways,
@@ -20,7 +15,6 @@ from 'images';
 
 import {Link} from 'react-router-dom';
 
-import {data, data2, data3} from './data-roadmap';
 import teamData from '../data-team';
 import castData from './data-cast';
 import faqData from './data-faq';
@@ -29,15 +23,13 @@ import benefitsData from './benefits-data';
 
 import ReactHtml from 'raw-html-react';
 import MintSection from './mint-section';
-import MintSection2 from './mint2-section';
+// import MintSection2 from './mint2-section';
 
 import {connect} from 'react-redux';
 import {set_section} from 'redux/actions/navbarActions';
 import {set_member} from 'redux/actions/teamMembersActions';
 
-import LoadingScreen from 'components/loading-screen';
-
-import sectionLayout from 'layouts/section';
+// import LoadingScreen from 'components/loading-screen';
 
 import './home.scss';
 import SectionLayout from 'layouts/section';
@@ -237,7 +229,7 @@ const HomePage = props => {
                     <div>
                         <h1 className="title has-text-white is-4 has-text-left ">SEASON 1 MIDSEASON <span className="has-text-warning">ROADMAP</span> </h1>
                         <br/><br/>
-                        <div className="columns is-vcentered" >
+                        <div className="columns is-vcentered" style={{background: '#FCE711'}}>
                             <div className="column p-0">
                                 <figure className="image is-16x9">
                                     <img src={episodesRoadmap} alt="" />
@@ -466,7 +458,7 @@ const HomePage = props => {
                                     <div className="column has-text-centered" key={i}>
                                         <h1 className="title is-5 has-text-centered has-text-warning">{p.name}</h1>
                                         <img src={p.imgSrc} alt="" width={p.width}  />
-                                        <br/><br/>
+                                        
                                         {/* <div className="" style={{height:"80px"}}>
                                             
                                             <h1 className="subtitle is-5 has-text-centered mb-0 has-text-white">{c.discord}</h1>

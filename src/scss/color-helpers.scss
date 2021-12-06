@@ -1,34 +1,71 @@
 @import './vars';
 
-.has-background-cyellow{
-    background: $cyellow !important;
+@import './vars';
+@use 'sass:color';
+@use "sass:map";
+
+$levels: 10;
+$corners: "top", "right", "bottom", "left";
+
+@mixin bg-blur-list {
+  @for $i from 1 through 4 {
+      .has-bg-blur-#{$i} {
+          backdrop-filter: blur(#{$i*5}px);
+          -webkit-backdrop-filter: blur(#{$i*5}px);
+      }
+  }
 }
 
-.is-cyellow{
-    background: $cyellow !important;
-    border-color: $cyellow !important;
-    color: black;
-    font-weight: bold !important;
+@include bg-blur-list;
+
+@mixin generate-color-classes($color, $colorName){
+
+    .has-background-#{$colorName}{
+        background: $color !important;
+    }
+
+    .is-#{$colorName}{
+        background: $color !important;
+        border-color: $color !important;
+        color: black !important;
+    }
+
+    @for $i from 1 through $levels {
+        .has-background-#{$colorName}-o-#{$i} { background-color: rgba($color, $i/10) !important; }
+    }
+
+    @for $i from 1 through 10 {
+        @for $j from 1 through 5{
+            .has-border-#{$j}-#{$colorName}-o-#{$i} { border: #{$j}px solid rgba($color, $i/10) !important; }
+        }
+    }
+
+    @each $corner in $corners{
+        .has-#{$corner}-border-#{$colorName}{
+            border-#{$corner}: 1px solid $color;
+        }
+    }
+
+    .has-text-#{$colorName}{
+        color: $color !important;
+    }
 }
 
-.has-background-cpurple{
-    background: $cpurple !important;
+@include generate-color-classes($redape, "redape");
+@include generate-color-classes($cyellow, "cyellow");
+@include generate-color-classes($cpurple, "cpurple");
+@include generate-color-classes($yellow, "yellow");
+@include generate-color-classes($hbrown, "hbrown");
+@include generate-color-classes($hgold, "hgold");
+
+.has-background-transparent{
+    background: rgba(0,0,0,0) !important;
+};
+
+.is-borderless{
+    border: none !important;
 }
 
-.is-cpurple{
-    background: $cpurple !important;
-    border-color: $cpurple !important;
-}
-
-
-.has-text-cyellow{
-    color: #FEE599 !important;
-}
-
-.has-text-cyellow2{
-    color: $cyellow !important;
-}
-
-.has-text-cpurple{
-    color: $cpurple !important;
+.has-no-box-shadow{
+    box-shadow: none !important;
 }
