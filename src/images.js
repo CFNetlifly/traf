@@ -31,8 +31,15 @@ import castQuestionPng from 'media/question.gif';
 
 import episodesRoadmapPng from 'media/episodes-roadmap.png';
 import projectRoadmapPng from 'media/project-roadmap.png';
+import giveawaysLoopVideo from 'media/giveaways-loop.mp4';
 import giveawaysPng from 'media/giveaways.png';
 import guestPng from 'media/guest.png';
+
+import partner1Png from 'media/partners/partner1.png';
+import partner2Png from 'media/partners/partner2.png';
+import partner3Png from 'media/partners/partner3.png';
+
+/* *~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~* */ 
 
 export const baseURL = "https://drive.google.com/uc?export=view&id=";
 
@@ -74,5 +81,10 @@ export const opensea = baseURL + "1qbEWtD4TUKBU_T01fozvj5xvXJ4fTnOx";
 //roadmap section images
 export const episodesRoadmap = episodesRoadmapPng;
 export const projectRoadmap = projectRoadmapPng;
-export const giveaways = giveawaysPng;
+export const giveaways = giveawaysLoopVideo;
 export const guest = guestPng;
+
+//patners section
+export const partner1 = partner1Png;
+export const partner2 = partner2Png;
+export const partner3 = partner3Png;

@@ -24,6 +24,7 @@ import {data, data2, data3} from './data-roadmap';
 import teamData from '../data-team';
 import castData from './data-cast';
 import faqData from './data-faq';
+import partnersData from './partners-data';
 import benefitsData from './benefits-data';
 
 import ReactHtml from 'raw-html-react';
@@ -94,7 +95,7 @@ const HomePage = props => {
             <section className="hero is-medium banner-home" ref={homeSection} style={{position: 'relative', height: '666px'}} ref={homeSection}>
 
                 <div className="video-container">
-                    <video playsInline autoPlay muted loop onLoadEnd={() => console.log('same ')}>
+                    <video playsInline autoPlay muted loop>
                         <source src={bannerVideo} type="video/mp4"/>
                     </video>
                     <div className="invisible-panel">
@@ -228,7 +229,7 @@ const HomePage = props => {
                 }
             />            
 
-            {/*roadmap*/}
+            {/*roadmap and giveaways*/}
             <SectionLayout                
                 _ref={roadMapSection}
                 className="has-background-black"
@@ -236,7 +237,7 @@ const HomePage = props => {
                     <div>
                         <h1 className="title has-text-white is-4 has-text-left ">SEASON 1 MIDSEASON <span className="has-text-warning">ROADMAP</span> </h1>
                         <br/><br/>
-                        <div className="columns is-vcentered" style={{background: '#FBDD1D'}}>
+                        <div className="columns is-vcentered" >
                             <div className="column p-0">
                                 <figure className="image is-16x9">
                                     <img src={episodesRoadmap} alt="" />
@@ -244,7 +245,9 @@ const HomePage = props => {
                             </div>
                             <div className="column p-0 is-4">
                                 <figure className="image">
-                                    <img src={giveaways} alt="" />
+                                    <video playsInline autoPlay muted loop alt="">
+                                        <source src={giveaways} type="video/mp4"/>
+                                    </video>
                                 </figure>
                             </div>
                         </div>
@@ -330,9 +333,9 @@ const HomePage = props => {
                             <div className="column"></div>
                         </div>
                         <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>
-                        <div className="columns is-multiline px-3">
+                        <div className="columns is-multiline px-3">                                
                             {
-                                [...teamData].splice(3, 6).map( (t, i) =>
+                                [...teamData].splice(3, 5).map( (t, i) =>
                                     <div className="column has-text-centered" key={i} >
 
                                         <Link to="/team">
@@ -349,23 +352,19 @@ const HomePage = props => {
                                         <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
                                     </div>
                                 )
-                            }
+                            }                            
                         </div>
                         <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>                        
-                        <div className="columns px-3">
+
+                        <div className="columns is-multiline px-3">
                             <div className="column"></div>
                             {
-                                [...teamData].splice(9, 5).map( (t, i) =>
-                                    <div className="column is-2 has-text-centered" key={i}>
+                                [...teamData].splice(8, 2).map( (t, i) =>
+                                    <div className="column has-text-centered" key={i}>
 
-                                        {
-                                            i == 1 || i == 2 ?
-                                                <img className="is-rounded bwToColorImg" src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}} />
-                                            :
-                                                <Link to="/team">
-                                                    <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i+8)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}}/>
-                                                </Link>
-                                        }
+                                        <Link to="/team">
+                                            <img className="is-rounded bwToColorImg" onClick={() => props.set_member(i)} src={t.imageurl} alt="" width="150" style={{boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)', borderRadius: '50%'}} />
+                                        </Link>
 
                                         <br/>
                                         <br/>
@@ -377,8 +376,8 @@ const HomePage = props => {
                                         <h1 className="subtitle has-text-white is-5 has-text-centered"><ReactHtml html={t.link}/></h1>
                                     </div>
                                 )
-                            }    
-                            <div className="column"></div>                                                                 
+                            }
+                            <div className="column"></div>
                         </div>
 
                     </div>
@@ -446,6 +445,39 @@ const HomePage = props => {
                         <br/>                        
                     </div>
                 }                
+            />
+
+            <SectionLayout
+                className="has-background-black p-0 m-0"
+                content={
+                    <hr style={{margin: '0', background: '#393939'}}/>
+                }
+            />  
+
+            <SectionLayout
+                className="has-background-black"
+                content={
+                    <div>
+                        <h1 className="title has-text-white has-text-weight-bold has-text-centered is-4">OFFICIAL PARTNERS</h1>
+                        <br/><br/><br/>
+                        <div className="columns">
+                            {
+                                [...partnersData].splice(0, 3).map( (p, i) =>
+                                    <div className="column has-text-centered" key={i}>
+                                        <h1 className="title is-5 has-text-centered has-text-warning">{p.name}</h1>
+                                        <img src={p.imgSrc} alt="" width={p.width}  />
+                                        <br/><br/>
+                                        {/* <div className="" style={{height:"80px"}}>
+                                            
+                                            <h1 className="subtitle is-5 has-text-centered mb-0 has-text-white">{c.discord}</h1>
+                                        </div>
+                                        <h1 className="subtitle is-5 has-text-centered"><ReactHtml html={c.link}/></h1> */}
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+                }
             />
 
             <SectionLayout
