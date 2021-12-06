@@ -88,6 +88,10 @@ const Navbar = props => {
                         Stream
                     </Link>
 
+                    <Link to="/gravity" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
+                        Gravity Sneaker
+                    </Link>
+
 
                 </div>
 

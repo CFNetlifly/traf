@@ -1,6 +1,7 @@
 import { baseURL } from "images";
 import SectionLayout from "layouts/section";
 
+import { opensea } from "images";
 import goldLogo from 'media/sneakers/gravity-gold-logo.png';
 
 import faqData from './faq-data';
@@ -19,10 +20,11 @@ const SneakersPage = props => {
                             <source src={baseURL + "1ouGZpXQ3z9cTLIh2l0gA5ZjRdJVl0VrH"} type="video/mp4" />
                         </video>
                         
-                        <div className="has-background-hbrown is-flex-grow-1">
-                            <div className="container has-text-white p-5" style={{display: 'grid', placeItems: 'center', height: '100%'}}>
-                                <h1 className="title has-text-white has-text-centered">Coming Soon</h1>
-                            </div>
+                        <div className="has-background-hbrown is-flex-grow-1" style={{display: 'grid', placeItems: 'center'}}>
+                            <h1 className="title has-text-white has-text-centered">Coming Soon</h1>
+                            {/* <div className="container has-text-white p-5" style={{display: 'grid', placeItems: 'center', height: '100%'}}>
+                                
+                            </div> */}
                         </div>     
                     </div>
                     <div className="column px-3 ">
@@ -109,6 +111,64 @@ const SneakersPage = props => {
                 }       
             />
 
+            <SectionLayout
+                className="has-background-black"
+                content={
+                    <div className="columns is-vcentered">
+                        <div className="column">
+                            <h1 className="title has-text-white is-3 has-text-centered">BUY FROM OPENSEA</h1>
+                            <br/><br/>
+                            <p className="title has-text-white is-4 has-text-centered">
+                                The Gravity Sneakers were made available for
+                                our Episode 1 token holders only!
+                            </p>
+                            <p className="title has-text-white is-4 has-text-centered">
+                                If you want to snag one, you can get it now on OpenSea!
+                            </p>
+                            <br/><br/>
+                            <div className="has-text-centered">
+                                <a>
+                                    <figure class="image is-64x64 is-inline-block">
+                                        <img src={opensea} alt="" />                                
+                                    </figure>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="column">
+                            <video playsInline autoPlay muted loop src={baseURL+'1TJHksoycz9EV9GeBgLnfHsfjQBENR3vM'}></video>
+                        </div>
+                    </div>
+                }
+            />
+
+            <SectionLayout
+                className="has-background-black p-0 m-0"
+                content={
+                    <hr style={{margin: '0', background: '#393939'}}/>
+                }
+            />  
+
+            <SectionLayout
+                className="has-background-black"
+                content={
+                    <div className="has-text-centered">
+                        <h1 className="title has-text-warning is-4">MUSKVILLE IS WAITING!</h1>
+                        <h1 className="title has-text-white is-3">Get your ticket to Mars and Join our Discord!</h1>
+                        <br/>
+                        <a href="https://discord.gg/HxE754wj9r" target="_blank" className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide" style={{width: '200px'}}>
+                            <strong>HOP ON!</strong></a>
+                        <br/>                        
+                    </div>
+                }                
+            />
+
+            
+            <SectionLayout
+                className="has-background-black p-0 m-0"
+                content={
+                    <hr style={{margin: '0', background: '#393939'}}/>
+                }
+            /> 
             
         </div>
     );
