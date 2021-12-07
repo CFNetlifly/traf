@@ -205,7 +205,7 @@ const HomePage = props => {
                                 </ul>
                             </div>                            
                             <div className="column" style={{position: 'relative'}}>                            
-                                <div className="pl-5">
+                                <div className="pl-5 has-text-right">
                                     <img src={benefits} alt="" width="400" />
                                 </div>                
                             </div>
