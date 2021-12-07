@@ -124,7 +124,7 @@ const SneakersPage = props => {
                                 our Episode 1 token holders only!
                             </p>
                             <p className="title has-text-white is-4 has-text-centered">
-                                If you want to snag one, you can get it now on OpenSea!
+                                If you want to snag one, you can get it soon on OpenSea!
                             </p>
                             <br/><br/>
                             <div className="has-text-centered">
