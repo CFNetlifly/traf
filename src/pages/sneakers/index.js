@@ -17,7 +17,7 @@ const SneakersPage = props => {
                     <div className="column is-flex is-flex-direction-column p-0" style={{minHeight: 'inherit'}}>
                         
                         <video autoPlay loop muted>
-                            <source src={baseURL + "1ouGZpXQ3z9cTLIh2l0gA5ZjRdJVl0VrH"} type="video/mp4" />
+                            <source src={baseURL + "1D9271Uiy0cTgxZpc_bQ8JLOb3YH2KEmq"} type="video/mp4" />
                         </video>
                         
                         <div className="has-background-hbrown is-flex-grow-1" style={{display: 'grid', placeItems: 'center'}}>
@@ -111,6 +111,7 @@ const SneakersPage = props => {
                 }       
             />
 
+            {/* BUY ON OPENSEA */}
             <SectionLayout
                 className="has-background-black"
                 content={
@@ -135,7 +136,7 @@ const SneakersPage = props => {
                             </div>
                         </div>
                         <div className="column">
-                            <video playsInline autoPlay muted loop src={baseURL+'1TJHksoycz9EV9GeBgLnfHsfjQBENR3vM'}></video>
+                            <video playsInline autoPlay muted loop controls src={baseURL+'11gzuadsJOrAPhmAd6x2PqcYG1_yIARxD'}></video>
                         </div>
                     </div>
                 }
