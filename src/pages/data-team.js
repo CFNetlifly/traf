@@ -1,18 +1,14 @@
 import {
     member1,
     member2,
-    member3,
-    member4,
-    member5,
+    member3,    
     member6,
     member7,
     member8,
-    member9,
-    member10,
+    member9,    
     member11,
     member12,
-    member13,
-    member14
+    member13
 } from 'images';
 
 const team = [
