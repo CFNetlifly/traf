@@ -48,6 +48,7 @@ const footer = props => {
                     <a className="has-text-warning" href=" https://etherscan.io/address/0xce0aD44D305f803BBbA241B8cba8F2A975a88600" target="_blank" rel="noopener noreferrer">Episode 2 Royalties Wallet</a>
                 </h1>
                 <h1 className="subtitle has-text-warning is-6 mb-3">0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD</h1>                
+                <h1 className="subtitle has-text-warning is-6 mb-3">traf@zainimedia.com</h1>     
                 <h1 className="subtitle has-text-warning is-6 mb-3">© 2021 The Red Ape Family. All rights reserved</h1>
             </div>
         </footer>
