@@ -327,7 +327,7 @@ const HomePage = props => {
                         <br className="is-hidden-mobile"/><br className="is-hidden-mobile"/>
                         <div className="columns is-multiline px-3">                                
                             {
-                                [...teamData].splice(3, 5).map( (t, i) =>
+                                [...teamData].splice(3, 4).map( (t, i) =>
                                     <div className="column has-text-centered" key={i} >
 
                                         <Link to="/team">
@@ -351,7 +351,7 @@ const HomePage = props => {
                         <div className="columns is-multiline px-3">
                             <div className="column"></div>
                             {
-                                [...teamData].splice(8, 2).map( (t, i) =>
+                                [...teamData].splice(7, 2).map( (t, i) =>
                                     <div className="column has-text-centered" key={i}>
 
                                         <Link to="/team">
