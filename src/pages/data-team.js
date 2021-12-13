@@ -68,13 +68,13 @@ const team = [
         link: '<a href="https://instagram.com/najialjabri?utm_medium=copy_link" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-instagram"></i></span></a>',
         info: ''
 
-    }, {
+    }/*, {
         sortId: 13,
         imageurl: member13,
         name: 'Adel Antabli',
         charge: 'Producer',
         link: '<a href="https://www.instagram.com/tablino/" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-instagram"></i></span></a>',
-    }, {
+    }*/, {
         sortId: 8,
         imageurl: member8,
         name: 'Don Fuego',
