@@ -43,18 +43,17 @@ const SneakersPage = props => {
             const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
             const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
     
-            let claims = await sneakersContract.methods.mints(walletReducer.currentAccount).call();
-    
+            let claims = await sneakersContract.methods.mints(walletReducer.currentAccount).call();    
                     
             let balance = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call() /2 ;
+            balance = Math.floor(balance);
             balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
             balance = Math.floor(balance);
     
             if(balance < claims){
                 claims = balance;
                 setClaimable(claims);
-            }
-        
+            }        
         }
     }
     
@@ -62,19 +61,17 @@ const SneakersPage = props => {
     const onClaimClicked = async () => {
 
         const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
-        const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
+        const traf = web3Reducer.contracts[`ERC_CONTRACT`];
 
         let claims = await sneakersContract.methods.mints(walletReducer.currentAccount).call();
-
                 
-        let balance = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call() /2 ;
-        balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
+        let balance = await traf.methods.balanceOf(walletReducer.currentAccount, 0).call() / 2 ;
+        balance = Math.floor(balance);
+        balance += await traf.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
         balance = Math.floor(balance);
 
         if(balance < claims)
-            claims = balance;            
-        
-            
+            claims = balance;
 
         if(claims > 0){
             const tx = await sneakersContract.methods.mint();
@@ -105,15 +102,10 @@ const SneakersPage = props => {
                                 {
                                     props.wallet.currentAccount
                                     ? (
-                                        props.wallet.connectedToOperatingNetwork ?
-                                            claimable > 0 ? 
-                                                <div>
-                                                    <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
-                                                </div>
-                                            :
-                                                <div>
-                                                    <h1 className="has-text-white has-text-weight-bold">You have no claimables in your address</h1>
-                                                </div>
+                                        props.wallet.connectedToOperatingNetwork ?                                            
+                                            <div>
+                                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
+                                            </div>
                                         :
                                         <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
                                             Switch to ETH Mainnet
