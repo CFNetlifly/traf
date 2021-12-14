@@ -29,6 +29,34 @@ const SneakersPage = props => {
             props.check_connected_to_operating_network();
         }, [walletReducer.networkId]
     );
+
+    useEffect(
+        () => {
+            getWebData();
+        }, [web3Reducer.web3, walletReducer]
+    );
+
+    const getWebData = async () => {
+        
+        if(walletReducer.currentAccount != '' &&  web3Reducer.initialized && walletReducer.connectedToOperatingNetwork) {
+
+            const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
+            const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
+    
+            let claims = await sneakersContract.methods.mints(walletReducer.currentAccount).call();
+    
+                    
+            let balance = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call() /2 ;
+            balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
+            balance = Math.floor(balance);
+    
+            if(balance < claims){
+                claims = balance;
+                setClaimable(claims);
+            }
+        
+        }
+    }
     
 
     const onClaimClicked = async () => {
@@ -43,10 +71,9 @@ const SneakersPage = props => {
         balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
         balance = Math.floor(balance);
 
-        if(balance < claims){
-            claims = balance;
-            setClaimable(claims);
-        }
+        if(balance < claims)
+            claims = balance;            
+        
             
 
         if(claims > 0){
@@ -82,6 +109,7 @@ const SneakersPage = props => {
                                             claimable > 0 ? 
                                                 <div>
                                                     <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
+                                                    <h1 className="has-text-white has-text-weight-bold">{claimable} Claimable(s)</h1>
                                                 </div>
                                             :
                                                 <div>
