@@ -109,7 +109,6 @@ const SneakersPage = props => {
                                             claimable > 0 ? 
                                                 <div>
                                                     <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
-                                                    <h1 className="has-text-white has-text-weight-bold">{claimable} Claimable(s)</h1>
                                                 </div>
                                             :
                                                 <div>
@@ -128,7 +127,7 @@ const SneakersPage = props => {
                                 <br/><br/>
                                 <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
                                 <br/>
-                                <h1 className="has-text-white has-text-weight-bold">You can claim XYZ Gravity Sneakers</h1>
+                                <h1 className="has-text-white has-text-weight-bold">You can claim {claimable} Gravity Sneakers</h1>
                                 <br/>
                                 <h1 className="has-text-white">Free + Gas / MetaMask only</h1>                            
                                 <br/>
