@@ -26,7 +26,7 @@ const SneakersPage = props => {
     useEffect(
         () => {
             props.check_connected_to_operating_network();
-        }, [props.wallet.networkId]
+        }, [walletReducer.wallet.networkId]
     );
     
 
