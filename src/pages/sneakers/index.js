@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { baseURL } from "images";
 import SectionLayout from "layouts/section";
 
@@ -9,7 +11,53 @@ import ReactHtml from 'raw-html-react';
 
 import sneakersData from './skeakers-data';
 
+import { useSelector } from "react-redux";
+
 const SneakersPage = props => {
+
+    const {web3Reducer, walletReducer} = useSelector(state => state);
+
+    useEffect(
+        () => {
+            
+            
+        
+        }, []
+    );
+
+    const onClaimClicked = async () => {
+
+        const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
+        const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
+
+        let claims = await sneakersContract.methods.mints(walletReducer.currentAccount).call();
+
+                
+        let balance = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call() /2 ;
+        balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
+        balance = Math.floor(balance);
+
+        if(balance < claims)
+            claims = balance;
+
+
+        console.log(balance);
+        console.log(claims);
+
+        if(claims > 0){
+            const tx = await sneakersContract.methods.mint();
+
+            try{
+                tx.send({
+                    from: '0x327864708eA978ce473E02900755c2746c0Cb7dd'
+                });
+            }
+            catch(e){
+                console.log(e);
+            }
+        }  
+    }
+
     return(        
         <div>
             <section className="banner " style={{minHeight: '100vh', position: 'relative'}}>
@@ -21,10 +69,18 @@ const SneakersPage = props => {
                         </video>
                         
                         <div className="has-background-hbrown is-flex-grow-1" style={{display: 'grid', placeItems: 'center'}}>
-                            <h1 className="title has-text-white has-text-centered">Coming Soon</h1>
-                            {/* <div className="container has-text-white p-5" style={{display: 'grid', placeItems: 'center', height: '100%'}}>
-                                
+                            {/* <div className="has-text-centered">
+                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>
+                                <br/><br/>
+                                <h1 className="has-text-white has-text-weight-bold">You can claim XYZ Gravity Sneakers</h1>
+                                <br/>                                
+                                <h1 className="has-text-white">Free + Gas / MetaMask only</h1>                            
+                                <br/>
+                                <h1 className="has-text-warning">HOW TO CLAIM YOUR SNEAKERS FROM YOUR SMARTPHONE</h1>
                             </div> */}
+                            <div className="container has-text-white p-5" style={{display: 'grid', placeItems: 'center', height: '100%'}}>
+                            <h1 className="has-text-white has-text-weight-bold title ">Cooming soon</h1>
+                            </div>
                         </div>     
                     </div>
                     <div className="column px-3 ">
