@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+
+
 import { baseURL } from "images";
 import SectionLayout from "layouts/section";
 
@@ -13,17 +15,13 @@ import sneakersData from './skeakers-data';
 
 import { useSelector } from "react-redux";
 
+import { connect } from "react-redux";
+import {request_change_network, check_connected_to_operating_network, request_connection} from 'redux/actions/walletActions';
+
 const SneakersPage = props => {
 
     const {web3Reducer, walletReducer} = useSelector(state => state);
-
-    useEffect(
-        () => {
-            
-            
-        
-        }, []
-    );
+    
 
     const onClaimClicked = async () => {
 
@@ -40,16 +38,12 @@ const SneakersPage = props => {
         if(balance < claims)
             claims = balance;
 
-
-        console.log(balance);
-        console.log(claims);
-
         if(claims > 0){
             const tx = await sneakersContract.methods.mint();
 
             try{
                 tx.send({
-                    from: '0x327864708eA978ce473E02900755c2746c0Cb7dd'
+                    from: walletReducer.currentAccount
                 });
             }
             catch(e){
@@ -69,18 +63,33 @@ const SneakersPage = props => {
                         </video>
                         
                         <div className="has-background-hbrown is-flex-grow-1" style={{display: 'grid', placeItems: 'center'}}>
-                            {/* <div className="has-text-centered">
-                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>
+                            <div className="has-text-centered">
+                                {
+                                    props.wallet.currentAccount
+                                    ? (
+                                        props.wallet.connectedToOperatingNetwork ?
+                                        <div>
+                                            <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>
+                                        </div>
+                                        :
+                                        <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
+                                            Switch to ETH Mainnet
+                                        </button>
+                                    )
+                                    :
+                                    <button type="button" className="button is-cyellow" onClick={async e => await props.request_connection()}>
+                                        Connect wallet
+                                    </button>                                    
+                                }
                                 <br/><br/>
+                                <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
+                                <br/>
                                 <h1 className="has-text-white has-text-weight-bold">You can claim XYZ Gravity Sneakers</h1>
-                                <br/>                                
+                                <br/>
                                 <h1 className="has-text-white">Free + Gas / MetaMask only</h1>                            
                                 <br/>
                                 <h1 className="has-text-warning">HOW TO CLAIM YOUR SNEAKERS FROM YOUR SMARTPHONE</h1>
-                            </div> */}
-                            <div className="container has-text-white p-5" style={{display: 'grid', placeItems: 'center', height: '100%'}}>
-                            <h1 className="has-text-white has-text-weight-bold title ">Cooming soon</h1>
-                            </div>
+                            </div>                             
                         </div>     
                     </div>
                     <div className="column px-3 ">
@@ -231,4 +240,16 @@ const SneakersPage = props => {
     );
 }
 
-export default SneakersPage;
+const mapStateToProps = state => ({
+    wallet: state.walletReducer,
+    web3Reducer: state.web3Reducer,    
+});
+
+export default connect(
+    mapStateToProps,
+    {
+        request_change_network,
+        check_connected_to_operating_network,
+        request_connection
+    }
+)(SneakersPage);

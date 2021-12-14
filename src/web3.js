@@ -50,8 +50,8 @@ const initWeb3 = async () => {
         const mintContract = new web3.eth.Contract(mintABI, '0xE242300ada476825A2fD39C9F8BF4d3376db20b1');
         store.dispatch( add_contract('MINT_PASS', mintContract) );
 
-        // const sneakersContract = new web3.eth.Contract(sneakersABI, '0xc51b57E711a8fc04bf8903bf07D2b82e755BD1c4');
-        // store.dispatch( add_contract(`SNEAKERS`, sneakersContract) );
+        const sneakersContract = new web3.eth.Contract(sneakersABI, '0x5D16e6E3c3Aa1B01F9d63C0287eD7919502B2f36');
+        store.dispatch( add_contract(`SNEAKERS`, sneakersContract) );
 
         // const traf_testnet = new web3.eth.Contract(ERCABI2, '0xA6af4f6c9763D471daFd4334b9A14a7F5f7545A9');
         // store.dispatch( add_contract(`TRAF`, traf_testnet) );
