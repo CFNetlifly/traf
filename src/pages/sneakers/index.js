@@ -21,6 +21,13 @@ import {request_change_network, check_connected_to_operating_network, request_co
 const SneakersPage = props => {
 
     const {web3Reducer, walletReducer} = useSelector(state => state);
+
+    
+    useEffect(
+        () => {
+            props.check_connected_to_operating_network();
+        }, [props.wallet.networkId]
+    );
     
 
     const onClaimClicked = async () => {
