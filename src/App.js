@@ -21,7 +21,6 @@ import 'scss/main.scss';
 import {initWeb3} from './web3';
 initWeb3();
 
-
 const App = () => {
 
     return (

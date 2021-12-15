@@ -22,7 +22,7 @@ const SneakersPage = props => {
 
     const {web3Reducer, walletReducer} = useSelector(state => state);
 
-    const [claimables, setClaimables] = useState(0);    
+    const [claimables, setClaimables] = useState(0);       
     
     useEffect(
         () => {
@@ -32,15 +32,15 @@ const SneakersPage = props => {
 
     useEffect(
         () => {
-            getWebData();
-        }, [web3Reducer.web3, walletReducer.currentAccount, walletReducer.networkId]
+            getWebData();            
+        }, [web3Reducer, walletReducer]
     );
 
     const getWebData = async () => {
         
         
         if(walletReducer.currentAccount != '' &&  web3Reducer.initialized && walletReducer.connectedToOperatingNetwork) {
-
+            
             const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
             const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
     
@@ -49,10 +49,10 @@ const SneakersPage = props => {
             let balance = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call() /2 ;
             balance = Math.floor(balance);
             balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
-            balance = Math.floor(balance);
-    
+            balance = Math.floor(balance);            
+            
             if(balance < claims)
-                claims = balance;                                
+                claims = balance;
             
             setClaimables(claims);
         }
