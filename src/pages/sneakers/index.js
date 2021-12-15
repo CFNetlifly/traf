@@ -105,7 +105,12 @@ const SneakersPage = props => {
                                     ? (
                                         props.wallet.connectedToOperatingNetwork ?                                            
                                             <div>
-                                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
+                                                {
+                                                    claimable > 0 ?
+                                                        <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
+                                                    :
+                                                    <h1 className="has-text-white has-text-weight-bold">Your wallet doesn't own any claimable</h1>
+                                                }                                                
                                             </div>
                                         :
                                         <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
@@ -120,7 +125,7 @@ const SneakersPage = props => {
                                 <br/><br/>
                                 <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
                                 <br/>
-                                <h1 className="has-text-white has-text-weight-bold is-hidden">You can claim {claimable} Gravity Sneakers</h1>
+                                <h1 className="has-text-white has-text-weight-bold">You can claim {claimable} Gravity Sneakers</h1>
                                 <br/>
                                 <h1 className="has-text-white">Free + Gas / MetaMask only</h1>                            
                                 <br/>
@@ -139,7 +144,7 @@ const SneakersPage = props => {
                                 <hr className="has-background-hbrown" style={{width:'250px', margin: '40px auto'}}/>
 
                                 <h1 className="title has-text-hgold is-4">
-                                    GRAVITY SNEAKES
+                                    GRAVITY SNEAKERS
                                     <br/>
                                     BY THE RED APE FAMILY
                                 </h1>
