@@ -22,7 +22,8 @@ const SneakersPage = props => {
 
     const {web3Reducer, walletReducer} = useSelector(state => state);
 
-    const [claimable, setClaimable] = useState(0);
+    const [claimables, setClaimables] = useState(0);
+    console.log(claimables);
     
     useEffect(
         () => {
@@ -33,10 +34,11 @@ const SneakersPage = props => {
     useEffect(
         () => {
             getWebData();
-        }, [web3Reducer.web3, walletReducer]
+        }, [web3Reducer.web3, walletReducer.currentAccount, walletReducer.networkId]
     );
 
     const getWebData = async () => {
+        
         
         if(walletReducer.currentAccount != '' &&  web3Reducer.initialized && walletReducer.connectedToOperatingNetwork) {
 
@@ -50,10 +52,10 @@ const SneakersPage = props => {
             balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
             balance = Math.floor(balance);
     
-            if(balance < claims){
-                claims = balance;
-                setClaimable(claims);
-            }        
+            if(balance < claims)
+                claims = balance;                                
+            
+            setClaimables(claims);
         }
     }
     
@@ -106,7 +108,7 @@ const SneakersPage = props => {
                                         props.wallet.connectedToOperatingNetwork ?                                            
                                             <div>
                                                 {
-                                                    claimable > 0 ?
+                                                    claimables > 0 ?
                                                         <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
                                                     :
                                                     <h1 className="has-text-white has-text-weight-bold">Your wallet doesn't own any claimable</h1>
@@ -125,7 +127,7 @@ const SneakersPage = props => {
                                 <br/><br/>
                                 <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
                                 <br/>
-                                <h1 className="has-text-white has-text-weight-bold">You can claim {claimable} Gravity Sneakers</h1>
+                                <h1 className="has-text-white has-text-weight-bold">You can claim {claimables} Gravity Sneakers</h1>
                                 <br/>
                                 <h1 className="has-text-white">Free + Gas / MetaMask only</h1>                            
                                 <br/>
