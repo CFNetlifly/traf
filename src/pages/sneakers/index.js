@@ -22,8 +22,7 @@ const SneakersPage = props => {
 
     const {web3Reducer, walletReducer} = useSelector(state => state);
 
-    const [claimables, setClaimables] = useState(0);
-    console.log(claimables);
+    const [claimables, setClaimables] = useState(0);    
     
     useEffect(
         () => {
