@@ -62,31 +62,18 @@ const SneakersPage = props => {
     const onClaimClicked = async () => {
 
         const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
-        const traf = web3Reducer.contracts[`ERC_CONTRACT`];
+    
+        const tx = await sneakersContract.methods.mint();
 
-        let claims = await sneakersContract.methods.mints(walletReducer.currentAccount).call();
-                
-        let balance = await traf.methods.balanceOf(walletReducer.currentAccount, 0).call() / 2 ;
-        balance = Math.floor(balance);
-        balance += await traf.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
-        balance = Math.floor(balance);
-
-        if(balance < claims)
-            claims = balance;
-
-        if(claims > 0){
-            const tx = await sneakersContract.methods.mint();
-
-            try{
-                tx.send({
-                    from: walletReducer.currentAccount,
-                    gas: 100000
-                });
-            }
-            catch(e){
-                console.log(e);
-            }
-        }  
+        try{
+            await tx.send({
+                from: walletReducer.currentAccount,
+                gas: 100000
+            });
+        }
+        catch(e){
+            console.log(e);
+        }
     }
 
     return(        
