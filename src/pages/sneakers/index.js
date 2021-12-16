@@ -126,7 +126,7 @@ const SneakersPage = props => {
                                 <br/><br/>
                                 <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
                                 <br/>
-                                <h1 className="has-text-white has-text-weight-bold">You can claim {claimables} Gravity Sneakers</h1>
+                                    {/* <h1 className="has-text-white has-text-weight-bold">You can claim {claimables} Gravity Sneakers</h1> */}
                                 <br/>
                                 <h1 className="has-text-white">Free + Gas / MetaMask only</h1>                            
                                 <br/>
