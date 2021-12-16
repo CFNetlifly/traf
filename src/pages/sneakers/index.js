@@ -124,7 +124,7 @@ const SneakersPage = props => {
                             <source src={baseURL + "1D9271Uiy0cTgxZpc_bQ8JLOb3YH2KEmq"} type="video/mp4" />
                         </video>
                         
-                        <div className="has-background-hbrown is-flex-grow-1" style={{display: 'grid', placeItems: 'center'}}>
+                        <div className="has-background-hbrown is-flex-grow-1 py-6" style={{display: 'grid', placeItems: 'center'}}>
                             <div className="has-text-centered has-background-dangaer">
                                 {
                                     props.wallet.currentAccount
