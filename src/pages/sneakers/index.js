@@ -106,12 +106,13 @@ const SneakersPage = props => {
                                     ? (
                                         props.wallet.connectedToOperatingNetwork ?                                            
                                             <div>
-                                                {
+                                                {/* {
                                                     claimables > 0 ?
                                                         <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
                                                     :
                                                     <h1 className="has-text-white has-text-weight-bold">Your wallet doesn't own any claimable</h1>
-                                                }                                                
+                                                }                                                 */}
+                                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>
                                             </div>
                                         :
                                         <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
