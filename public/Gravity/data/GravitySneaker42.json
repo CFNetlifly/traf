@@ -1,0 +1,21 @@
+{
+
+"description": "Designed as a futuristic hi-top basketball shoe, the Gravity Sneaker counteracts the difference in gravity on the red planet and stops wearers from floating away to certain death.", 
+"external_url": "https://theredapefamily.com/gravity", 
+"image": "https://theredapefamily.com/sneakers/animations/GravitySneaker42.mp4", 
+"name": "Gravity Sneaker #42",
+
+"attributes":
+[
+{"trait_type":"Material","value":""},
+{"trait_type":"Color","value":""},
+{"trait_type":"Sole","value":""},
+
+{"trait_type":"Gravity level","value":""},
+{"trait_type":"Speed","value":""},
+{"trait_type":"Acceleration ","value":""},
+{"trait_type":"Stability","value":""}
+
+]
+
+}
