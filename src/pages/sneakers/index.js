@@ -22,7 +22,10 @@ const SneakersPage = props => {
 
     const {web3Reducer, walletReducer} = useSelector(state => state);
 
-    const [claimables, setClaimables] = useState(0);       
+    const [triggerer, setTriggerer] = useState(0);
+
+    const [foundationClaimables, setFoundationClaimables] = useState(0);
+    const [normalClaimables, setNormalClaimables] = useState(0);
     
     useEffect(
         () => {
@@ -33,35 +36,48 @@ const SneakersPage = props => {
     useEffect(
         () => {
             getWebData();            
-        }, [web3Reducer, walletReducer]
+        }, [web3Reducer, walletReducer, triggerer]
     );
 
-    const getWebData = async () => {
+    const getWebData = async () => {        
+        
+        if(walletReducer.currentAccount === '' ||  !web3Reducer.initialized || !walletReducer.connectedToOperatingNetwork)
+            return; 
+
+        const sneakersContract_f = web3Reducer.contracts[`SNEAKERS_F`];
+        const sneakersContract = web3Reducer.contracts[`SNEAKERS_N`];
+        const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
+        
+
+        /* *~~*~~*~~*~~*~~*~~*~~* FOUNDATION EDITION *~~*~~*~~*~~*~~*~~*~~* */ 
+        let claims = await sneakersContract_f.methods.mints(walletReducer.currentAccount).call();
+                
+        let balance = (await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call()) / 2;
+        balance = Math.floor(balance);
+        balance += (await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call()) / 2;
+        balance = Math.floor(balance);
+        
+        if(balance < claims)
+            claims = balance;
+        
+        setFoundationClaimables(claims);
+
+        /* *~~*~~*~~*~~*~~*~~*~~* NORMAL EDITION *~~*~~*~~*~~*~~*~~*~~* */
+        let claims_n = await sneakersContract.methods.mints(walletReducer.currentAccount).call();
+                
+        let balance_n = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call();            
+        balance_n += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call();
         
         
-        if(walletReducer.currentAccount != '' &&  web3Reducer.initialized && walletReducer.connectedToOperatingNetwork) {
-            
-            const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
-            const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
-    
-            let claims = await sneakersContract.methods.mints(walletReducer.currentAccount).call();    
-                    
-            let balance = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call() /2 ;
-            balance = Math.floor(balance);
-            balance += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call() / 2;        
-            balance = Math.floor(balance);            
-            
-            if(balance < claims)
-                claims = balance;
-            
-            setClaimables(claims);
-        }
-    }
-    
+        if(balance_n < claims_n)
+        claims_n = balance_n;
+        
+        setNormalClaimables(claims_n);
+    }    
 
-    const onClaimClicked = async () => {
+    const onFoundationClaimClicked = async () => {
 
-        const sneakersContract = web3Reducer.contracts[`SNEAKERS`];
+        const sneakersContract = web3Reducer.contracts[`SNEAKERS_F`];
     
         const tx = await sneakersContract.methods.mint();
 
@@ -74,6 +90,28 @@ const SneakersPage = props => {
         catch(e){
             console.log(e);
         }
+        finally{
+            setTriggerer(triggerer + 1);
+        }
+    }
+
+    const onNormalClaimClicked = async () => {
+
+        const sneakersContract = web3Reducer.contracts[`SNEAKERS_N`];
+
+        const tx = await sneakersContract.methods.mint();
+
+        try {
+            await tx.send({
+                from: walletReducer.currentAccount,
+                gas: 100000
+            });
+        } catch (e) {
+            console.log(e);
+        }finally{
+            setTriggerer(triggerer + 1);
+        }
+
     }
 
     return(        
@@ -87,19 +125,46 @@ const SneakersPage = props => {
                         </video>
                         
                         <div className="has-background-hbrown is-flex-grow-1" style={{display: 'grid', placeItems: 'center'}}>
-                            <div className="has-text-centered">
+                            <div className="has-text-centered has-background-dangaer">
                                 {
                                     props.wallet.currentAccount
                                     ? (
                                         props.wallet.connectedToOperatingNetwork ?                                            
-                                            <div>
-                                                {/* {
-                                                    claimables > 0 ?
-                                                        <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>                                                    
-                                                    :
-                                                    <h1 className="has-text-white has-text-weight-bold">Your wallet doesn't own any claimable</h1>
-                                                }                                                 */}
-                                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onClaimClicked}>CLAIM NOW</button>
+                                            <div className="columns has-background-daark">
+                                                <div className="column">
+                                                    <h1 className="has-text-white has-text-weight-bold">Founder edition</h1>
+                                                    <br/>
+                                                    {
+                                                        foundationClaimables > 0 ?
+                                                            <div>   
+                                                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onFoundationClaimClicked}>CLAIM NOW</button>
+                                                                <br/>
+                                                            </div>
+                                                            
+                                                        :
+                                                            <h1 className="has-text-white has-text-weight-bold">Your wallet doesn't own any foundation claimable</h1>
+                                                    }
+                                                    <br/>
+                                                    <h1 className="has-text-white">{foundationClaimables} claimable(s)</h1>
+                                                    
+                                                </div>
+                                                <div className="column">
+                                                    <h1 className="has-text-white has-text-weight-bold">Normal edition</h1>
+                                                    <br/>
+                                                    {
+                                                        normalClaimables > 0 ?
+                                                            <div>
+                                                                <button className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow" onClick={onNormalClaimClicked}>CLAIM NOW</button>
+                                                                <br/>
+                                                            </div>
+                                                            
+                                                        :
+                                                            <h1 className="has-text-white has-text-weight-bold">Your wallet doesn't own any normal claimable</h1> 
+                                                    }
+                                                    <br/>
+                                                    <h1 className="has-text-white">{normalClaimables} claimable(s)</h1>
+                                                    
+                                                </div>                                                
                                             </div>
                                         :
                                         <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
@@ -111,7 +176,7 @@ const SneakersPage = props => {
                                         Connect wallet
                                     </button>                                    
                                 }
-                                <br/><br/>
+                                <br/>
                                 <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
                                 <br/>
                                     {/* <h1 className="has-text-white has-text-weight-bold">You can claim {claimables} Gravity Sneakers</h1> */}
