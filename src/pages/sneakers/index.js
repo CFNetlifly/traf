@@ -103,8 +103,7 @@ const SneakersPage = props => {
 
         try {
             await tx.send({
-                from: walletReducer.currentAccount,
-                gas: 100000
+                from: walletReducer.currentAccount             
             });
         } catch (e) {
             console.log(e);
