@@ -287,7 +287,7 @@ const SneakersPage = props => {
                             </p>
                             <br/><br/>
                             <div className="has-text-centered">
-                                <a>
+                                <a href="https://opensea.io/assets/gravity-sneakers" target="_blank">
                                     <figure class="image is-64x64 is-inline-block">
                                         <img src={opensea} alt="" />                                
                                     </figure>
