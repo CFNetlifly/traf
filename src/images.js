@@ -35,6 +35,16 @@ import partner1Png from 'media/partners/partner1.png';
 import partner2Png from 'media/partners/partner2.png';
 import partner3Png from 'media/partners/partner3.png';
 
+import tclPng from 'media/brand-logos/tcl.png';
+import plexPng from 'media/brand-logos/plex.png';
+import roninPng from 'media/brand-logos/ronin.png';
+import androidtvPng from 'media/brand-logos/androidtv.png';
+import appletvPng from 'media/brand-logos/appletv.png';
+import samsungPng from 'media/brand-logos/samsung.png';
+import rokuPng from 'media/brand-logos/roku.png';
+import sonyPng from 'media/brand-logos/sony.png';
+import lgPng from 'media/brand-logos/lg.png';
+
 /* *~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~* */ 
 
 export const baseURL = "https://drive.google.com/uc?export=view&id=";
@@ -84,3 +94,13 @@ export const guest = guestPng;
 export const partner1 = partner1Png;
 export const partner2 = partner2Png;
 export const partner3 = partner3Png;
+
+export const tcl = tclPng;
+export const plex = plexPng;
+export const ronin = roninPng;
+export const androidtv = androidtvPng;
+export const appletv = appletvPng;
+export const samsung = samsungPng;
+export const roku = rokuPng;
+export const sony = sonyPng;
+export const lg = lgPng;

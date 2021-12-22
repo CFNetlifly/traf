@@ -8,18 +8,20 @@ import {
     bannerVideo,
     bananaIcon,
     benefits,
-    chuckyVideo,
-    // trailerVideo
+    opensea,
+    chuckyVideo   
 }
 from 'images';
 
 import {Link} from 'react-router-dom';
 
+import brandData from './brands-data';
 import teamData from '../data-team';
 import castData from './data-cast';
 import faqData from './data-faq';
 import partnersData from './partners-data';
 import benefitsData from './benefits-data';
+
 
 import ReactHtml from 'raw-html-react';
 import MintSection from './mint-section';
@@ -30,7 +32,7 @@ import {set_section} from 'redux/actions/navbarActions';
 import {set_member} from 'redux/actions/teamMembersActions';
 
 // import LoadingScreen from 'components/loading-screen';
-
+import './brands.scss';
 import './home.scss';
 import SectionLayout from 'layouts/section';
 
@@ -108,27 +110,37 @@ const HomePage = props => {
             
              {/* mint section */}
             <SectionLayout
-                className="has-background-primary"
+                className="has-background-black"
                 content={
-                    <div className="columns is-ventered">
-                        <div className="column has-text-centered  px-4">
-                            <h1 className="title is-4 has-text-white">
-                                <MintSection/>
-                            </h1>
-                        </div>
-                        <br/>
-                        <div className="column">
-                            <div className="pl-5" style={{borderLeft: '3px solid #FFC000'}}>                                
-                                <h1 className="title has-text-white is-size-5 has-text-weight-bold">Welcome to The Red Ape Family!</h1>
-                                {/* <h1 className="title has-text-warning is-size-6 has-text-weight-bold">MEET CHUCKY!</h1> */}
-                            </div>
-                            <br/><br/>
-                            <div className="pl-0 has-backgroand-danger">
-                                <video playsInline autoPlay muted loop controls>
-                                    <source src={chuckyVideo} type="video/mp4"/>
-                                </video> 
-                            </div>
+                    <div className="">
 
+                        <h1 className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered is-size-4">JANUARY 10!</h1>
+                        <h1 className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered">The Red Ape Family will be streaming on!</h1>
+
+                        <div className="has-text-centered my-5">
+                            <div className="columns is-vcentered">
+                                {
+                                    brandData.map((brand, i) => 
+                                        <div className="column" key={i}>                                            
+                                            <img className={`brand-tv ${brand.className}`} src={brand.src} alt=""></img>                                            
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        </div>
+                        <hr style={{margin: '0', background: '#393939'}}/>
+                        <div className="has-text-centered my-6">
+                            <h1 className="subtitle has-text-white has-text-weight-bold mb-0"> Episode 1 is <span className="has-text-warning">SOLD OUT!</span> </h1>
+                            <h1 className="subtitle has-text-white has-text-weight-bold"> Get it on OpenSea </h1>
+                            <a href="https://opensea.io/assets/0xa803144e27aef2ac95e7ab49214bd2f802c883dd/0" target="_blank">
+                                <figure class="image is-32x32 is-inline-block">
+                                    <img src={opensea} alt="" />                                
+                                </figure>
+                            </a>
+                        </div>
+                        <hr style={{margin: '0', background: '#393939'}}/>
+                        <div className="my-6">      
+                            <MintSection/>
                         </div>
                     </div>
                 }
@@ -145,12 +157,12 @@ const HomePage = props => {
                 }
             />*/}
 
-            <SectionLayout
+            {/* <SectionLayout
                 className="has-background-primary p-0 m-0"
                 content={
                     <hr style={{margin: '0', background: '#393939'}}/>
                 }
-            />    
+            />     */}
 
             {/* trailer */}
             <SectionLayout
@@ -158,19 +170,38 @@ const HomePage = props => {
                 content={
                     <div>
                         <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">SEASON 1 <span className="has-text-warning">EP 1</span></h1>
-                        <p className="title has-text-white is-6 mb-0">
+                        {/* <p className="title has-text-white is-6 mb-0">
                             It’s 2130. The earth is dying. But all is not lost! Four Bored Apes. One Dog. A Lazy Lion with a stethoscope. On a mission to Mars!
                             <br/><br/>
                             Muskville Let’s Fucking go!
-                        </p>
-                        <br/><br/>
-                        <div className="has-backgroaund-danger" style={{width: '100%'}}>                            
-                            {/* <video controls>
-                                <source src={trailerVideo} type="video/mp4"/>
-                            </video>                             */}
-                            <figure className="image is-16by9">
-                                <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/8K-xkPP7Hfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </figure>
+                        </p> */}
+                        <br/>
+                        <div className="columns is-vcentered" style={{width: '100%'}}>                            
+                            <div className="column ">
+                                <figure className="image is-16by9">
+                                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/8K-xkPP7Hfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </figure>
+                            </div>
+                            <div className="column">
+                                <p className="has-text-white is-size-6 has-text-weight-bold nm-np-mobile">
+                                    <span className="has-text-yellow is-size-5">Our Episode 1 Token Holders got the following:</span>  <br/> <br/>
+
+                                    <ul className="ul2">
+                                        <li> 1 token holder won a <span className="has-text-yellow">Bored Ape YC</span> </li>
+                                        <li> 3 token holders won 3 <span className="has-text-yellow">Mutant Apes YC</span> </li>
+                                        <li> Ep1 Poster Airdropped </li>
+                                        <li> Gravity Sneakers  </li>
+                                        <li> Mint Passes to mint Ep2 at half the price </li>
+                                    </ul>                                    
+                                    
+                                     
+                                    <br/>
+                                    <br/>
+
+                                    And we delivered on our promise to bring TRAF to TV!! Let it rain $$$
+
+                                </p>
+                            </div>                            
                         </div>
                     </div>
                 }

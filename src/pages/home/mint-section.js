@@ -164,10 +164,10 @@ const Form = props => {
                     </div>
                     <br/>
                     <a className="has-text-warning" onClick={e => setVideoOpen(true)}>HOW TO MINT FROM YOUR SMARTPHONE </a>                    
-                    <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
+                    {/* <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
                     <span className="has-text-warning" onClick={e => setVideoOpen(true)}>
                         
-                        {/*
+                        {
                             webData && webData.giveaway1 ?
 
                                 <div>
@@ -176,9 +176,9 @@ const Form = props => {
                                     {webData.giveaway1}
                                 </div>
                             :
-                               <div> CONNECT YOUR WALLET TO SEE HOW MANY MINTS LEFT UNTILL BORED APE GIVEAWAY</div>*/
+                               <div> CONNECT YOUR WALLET TO SEE HOW MANY MINTS LEFT UNTILL BORED APE GIVEAWAY</div>
                         }                        
-                    </span>
+                    </span> */}
                     
                     
                 </div>
