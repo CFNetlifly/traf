@@ -78,3 +78,53 @@ export const start_minting_tx = txData => {
         }
     }
 }
+
+export const daw_minting_tx = txData => {
+    return async (dispatch, getState) => {
+
+        dispatch( tx_loading( 'MINT_DAW_TX' ) );
+
+        const {web3Reducer, walletReducer} = getState();
+        const {contracts} = web3Reducer;
+
+        const {
+            value,
+            amount
+        } = txData;
+
+        const daw_contract = web3Reducer.contracts['DAW_TRAF'];
+        
+        // console.log(erc_contract.methods);
+        const tx = await daw_contract.methods.mint( amount );
+
+
+        try {
+            // const estimatedGas = await tx.estimateGas({
+            //     from: walletReducer.currentAccount,
+            //     value: txData.value,
+            //     gas: web3.eth.
+            // });
+
+            await tx.send({
+                from: walletReducer.currentAccount,
+                value: txData.value,                
+                maxPriorityFeePerGas: null,
+                maxFeePerGas: null
+            });
+            dispatch( tx_success( 'MINT_DAW_TX' ) );
+        } catch (e) {
+            dispatch( tx_failed( 'MINT_DAW_TX' ) );
+            console.log(e);
+        }
+        finally{
+            // const txStatus = getState().txReducer[txs.TRANSFER_REGULAR_TKN];
+
+            // if(txStatus.success)
+            //     notificationStore.addNotification( successNotification("Tx successful", `sent ${amount} ${tokenData.name} to ${receiver}`) );
+            //
+            // if(txStatus.error)
+            //     notificationStore.addNotification( errorNotification("Tx failed", "sorry, something wen't wrong") );
+
+        }
+    }
+}

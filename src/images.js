@@ -34,6 +34,7 @@ import guestPng from 'media/guest.png';
 import partner1Png from 'media/partners/partner1.png';
 import partner2Png from 'media/partners/partner2.png';
 import partner3Png from 'media/partners/partner3.png';
+import dawPng from 'media/partners/daw.jpg';
 
 import tclPng from 'media/brand-logos/tcl.png';
 import plexPng from 'media/brand-logos/plex.png';
@@ -94,6 +95,7 @@ export const guest = guestPng;
 export const partner1 = partner1Png;
 export const partner2 = partner2Png;
 export const partner3 = partner3Png;
+export const daw = dawPng;
 
 export const tcl = tclPng;
 export const plex = plexPng;

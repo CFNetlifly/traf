@@ -4,6 +4,13 @@ import {
     TX_SUCCESS
 } from '../constants';
 
+const genericTx = {
+    loading: false,
+    error: false,
+    success: false,
+    resData: {}
+}
+
 const defaultState = {
     MINT_TX: {
         loading: false,
@@ -11,11 +18,7 @@ const defaultState = {
         success: false,
         resData: {}
     },
-    genericTx: {
-        loading: false,
-        error: false,
-        success: false
-    }
+    MINT_DAW_TX: {...genericTx}
 };
 
 const reducer = (state = defaultState, action) => {

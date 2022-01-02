@@ -92,6 +92,10 @@ const Navbar = props => {
                         Gravity Sneaker
                     </Link>
 
+                    <Link to="/daw" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
+                        Daw
+                    </Link>
+
 
                 </div>
 

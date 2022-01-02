@@ -15,6 +15,7 @@ import Stream from 'pages/stream';
 import Whitepaper from 'pages/whitepaper';
 import SocketPage from 'pages/sockets';
 import SneakersPage from 'pages/sneakers';
+import DawPage from 'pages/daw';
 
 import 'scss/main.scss';
 
@@ -55,6 +56,10 @@ const App = () => {
 
                 <Route exact path="/gravity">
                     <SneakersPage/>
+                </Route>
+
+                <Route exact path="/daw">
+                    <DawPage/>
                 </Route>
                 
             </Switch>

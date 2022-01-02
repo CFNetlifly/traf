@@ -17,8 +17,11 @@ import Web3 from 'web3';
 import ERCABI from 'abis/ERC1155.json';
 import verifyABI from 'abis/verification.json';
 import ERCABI2 from 'abis/ERC11552.json';
+import ERC721ABI from 'abis/erc721.json';
+import dawABI from 'abis/daw.json';
 import mintABI from 'abis/MintPass.json';
 import sneakersABI from 'abis/sneakers.json';
+import dawTrafABI from 'abis/daw_traf.json';
 
 
 const initWeb3 = async () => {
@@ -56,7 +59,14 @@ const initWeb3 = async () => {
         const sneakersContract_n = new web3.eth.Contract(sneakersABI, '0xF92Fa322a26DD859d3d7a3B1e0b58102B66E5417');
         store.dispatch( add_contract(`SNEAKERS_N`, sneakersContract_n) );
 
+        const dawContract = new web3.eth.Contract(ERC721ABI, '0xf1268733c6fb05ef6be9cf23d24436dcd6e0b35e');
+        store.dispatch( add_contract(`DAW`, dawContract) );
 
+        const dawTrafContract = new web3.eth.Contract(dawTrafABI, '0xcb650DB1740DF5306aA0179419b1888326b5db97');
+        store.dispatch( add_contract(`DAW_TRAF`, dawTrafContract) );
+        
+
+       
 
         // const traf_testnet = new web3.eth.Contract(ERCABI2, '0xA6af4f6c9763D471daFd4334b9A14a7F5f7545A9');
         // store.dispatch( add_contract(`TRAF`, traf_testnet) );
