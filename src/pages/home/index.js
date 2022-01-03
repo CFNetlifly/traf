@@ -485,7 +485,7 @@ const HomePage = props => {
                         <br/><br/><br/>
                         <div className="columns">
                             {
-                                [...partnersData].splice(0, 3).map( (p, i) =>
+                                [...partnersData].splice(0, 4).map( (p, i) =>
                                     <div className="column has-text-centered" key={i}>
                                         <h1 className="title is-5 has-text-centered has-text-warning">{p.name}</h1>
                                         <img src={p.imgSrc} alt="" width={p.width}  />
