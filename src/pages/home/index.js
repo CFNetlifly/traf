@@ -130,7 +130,8 @@ const HomePage = props => {
                         </div>
                         <hr style={{margin: '0', background: '#393939'}}/>
                         <div className="has-text-centered my-6">
-                            <h1 className="subtitle has-text-white has-text-weight-bold mb-0"> Episode 1 is <span className="has-text-warning">SOLD OUT!</span> </h1>                            
+                            <h1 className="subtitle has-text-white has-text-weight-bold mb-3"> Episode 1 is <span className="has-text-warning">SOLD OUT!</span> </h1>                            
+                            <h1 className="subtitle has-text-white has-text-weight-bold mb-3"> GET YOURS ON OPENSEA </h1>                            
                             <a href="https://opensea.io/assets/0xa803144e27aef2ac95e7ab49214bd2f802c883dd/0" target="_blank">
                                 <figure class="image is-32x32 is-inline-block">
                                     <img src={opensea} alt="" />                                
