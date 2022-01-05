@@ -161,7 +161,7 @@ const Form = props => {
                                 }
                             </div>
                         :
-                            <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(4)}>
+                            <button type="button" className="button is-cyellow" onClick={e => props.request_change_network(1)}>
                                 Switch to ETH Mainnet
                             </button>
                     ) : (
