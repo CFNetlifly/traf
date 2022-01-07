@@ -16,7 +16,7 @@ const Daw = props => {
                     <div className="">
                         
                         <div className="has-text-centered my-6">
-                            <h1 className="subtitle has-text-white has-text-weight-bold mb-0"> ARE YOU A <span className="has-text-warning">DAW</span> HOLDER? </h1>
+                            {/* <h1 className="subtitle has-text-white has-text-weight-bold mb-0"> ARE YOU A <span className="has-text-warning">DAW</span> HOLDER? </h1> */}
                             <br/>
                             <div className="has-text-centered">
                                 <img src={daw} alt="" width="128"/>
@@ -24,15 +24,14 @@ const Daw = props => {
                             <br/>
 
                             <p className="has-text-white title is-5">
-                                As a DAW token holder, you can mint TRAF tokens at <br/>
-                                0.55 ETH instead of 0.95 ETH and get the same <br/>
-                                benefits and utilities as our TRAF holders. 
+                                Thee DAW x TRAF offer ended on January 7, 2022. <br/>
+                                We are glad to welcome all our new TRAFers to The Red Ape Family
                             </p>
                         </div>
                         {/* <hr style={{margin: '0', background: '#393939'}}/> */}
                         <div className="my-6">
                            
-                            <MintSection/>
+                            {/* <MintSection/> */}
                         </div>
                     </div>
                 }
