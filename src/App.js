@@ -58,9 +58,9 @@ const App = () => {
                     <SneakersPage/>
                 </Route>
 
-                <Route exact path="/daw">
+                {/* <Route exact path="/daw">
                     <DawPage/>
-                </Route>
+                </Route> */}
                 
             </Switch>
             <Footer/>

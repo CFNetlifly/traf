@@ -114,8 +114,8 @@ const HomePage = props => {
                 content={
                     <div className="">
 
-                        <h1 className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered is-size-4">JANUARY 10!</h1>
-                        <h1 className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered">The Red Ape Family will be streaming on!</h1>
+                        <h1 className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered is-size-4">THE RED APE FAMILY IS STREAMING ON</h1>
+                        {/* <h1 className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered">The Red Ape Family will be streaming on!</h1> */}
 
                         <div className="has-text-centered my-5">
                             <div className="columns is-vcentered">

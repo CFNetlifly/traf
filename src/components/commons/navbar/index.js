@@ -91,10 +91,10 @@ const Navbar = props => {
                     <Link to="/gravity" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Gravity Sneaker
                     </Link>
-
+{/* 
                     <Link to="/daw" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Daw
-                    </Link>
+                    </Link> */}
 
 
                 </div>
