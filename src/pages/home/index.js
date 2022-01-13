@@ -119,7 +119,7 @@ const HomePage = props => {
                             href="https://www.thesocialclub.tv/shows/red-ape-family"
                             target= "_blank"
                             rel="noopener"
-                            className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered is-size-4">CLICK HERE</a>
+                            className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered is-size-4 has-text-centered">CLICK HERE</a>
                         {/* <h1 className="subtitle has-text-white has-text-weight-bold mb-0 has-text-centered">The Red Ape Family will be streaming on!</h1> */}
 
                         <div className="has-text-centered my-5">
