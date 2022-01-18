@@ -135,19 +135,44 @@ const HomePage = props => {
                             </div>
                         </div>
                         <hr style={{margin: '0', background: '#393939'}}/>
-                        <div className="has-text-centered my-6">
-                            <h1 className="subtitle has-text-white has-text-weight-bold mb-3"> Episode 1 is <span className="has-text-warning">SOLD OUT!</span> </h1>                            
-                            <h1 className="subtitle has-text-white has-text-weight-bold mb-3"> GET YOURS ON OPENSEA </h1>                            
-                            <a href="https://opensea.io/assets/0xa803144e27aef2ac95e7ab49214bd2f802c883dd/0" target="_blank">
-                                <figure class="image is-32x32 is-inline-block">
-                                    <img src={opensea} alt="" />                                
-                                </figure>
+                        <div className="my-6">
+                            <div className="columns">
+                                <div className="column has-text-centered">
+                                    <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-3"> EPISODE 1 </h1>                            
+                                    <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-3"><span className="has-text-warning">SOLD OUT</span></h1>
+                                    <a href="https://opensea.io/assets/0xa803144e27aef2ac95e7ab49214bd2f802c883dd/0" target="_blank" rel="noreferrer">
+                                        <figure class="image is-32x32 is-inline-block">
+                                            <img src={opensea} alt="" />                                
+                                        </figure>
+                                    </a>
+                                </div>
+                                <div className="column has-text-centered">
+                                    <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-3"> EPISODE 2 </h1>                            
+                                    <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-3"><span className="has-text-warning">SOLD OUT</span></h1>
+                                    <a href="https://opensea.io/assets/0xa803144e27aef2ac95e7ab49214bd2f802c883dd/1" target="_blank" rel="noreferrer">
+                                        <figure class="image is-32x32 is-inline-block">
+                                            <img src={opensea} alt="" />                                
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <hr style={{margin: '0', background: '#393939'}}/>
+                        <div className="my-6 has-text-centered">
+                            <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-4"> EPISODE 3 </h1>
+                            <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-4"><span className="has-text-warning">COMING SOON</span></h1>
+                            <br/>
+                            <h1 className="subtitle has-text-warning has-text-weight-bold mb-3 is-4"> JOIN OUR DISCORD FOR A <br/> POSSIBILITY TO GET WHITELISTED</h1>
+                            <br/>
+                            <br/>
+                            <a href="https://discord.gg/HxE754wj9r" target="_blank" className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide">
+                                <strong>JOIN DISCORD</strong>
                             </a>
                         </div>
                        
                         {/* <hr style={{margin: '0', background: '#393939'}}/> */}
                         <div className="my-6">      
-                            <MintSection/>
+                            {/* <MintSection/> */}
                         </div>
                     </div>
                 }
