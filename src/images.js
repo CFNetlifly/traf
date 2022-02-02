@@ -9,7 +9,7 @@ import member3Png from "media/member3.png";
 // import member4Png from 'media/member4.png';
 // import member5Png from 'media/member5.png';
 import member6Png from "media/member6.jpg";
-import member7Png from "media/member7.png";
+import member7Png from "media/member7.jpg";
 import member8Png from "media/member8.png";
 import member9Png from "media/member9.png";
 // import member10Png from 'media/member10.png';
