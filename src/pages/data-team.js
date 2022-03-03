@@ -89,9 +89,9 @@ const team = [
   {
     sortId: 12,
     imageurl: member12,
-    name: "Crypto Family",
+    name: "Orcania",
     charge: "Blockchain Team",
-    link: '<a href="https://www.cryptofamily.tech/" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fal fa-globe"></i></span></a>',
+    link: '<a href="https://orcania.io" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fal fa-globe"></i></span></a>',
   } /*, {
         sortId: 14,
         imageurl: member14,
