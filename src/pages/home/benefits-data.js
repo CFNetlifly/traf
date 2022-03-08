@@ -9,10 +9,7 @@ const data = [
   },
   {
     body: "Possibility to win blue-chip NFTs throughout S1 (We gave away 3 Mutant Apes and 1 Bored Ape to 4 Episode 1 holders)",
-  },
-  {
-    body: "Possibility to have your NFT star in the show and get paid for it.",
-  },
+  }, 
   {
     body: "Possibility to have your in real life business advertised for free in the show.",
   },
