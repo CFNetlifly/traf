@@ -63,14 +63,15 @@ const team = [
     link: '<a href="https://www.instagram.com/donfuego.beats/?hl=en" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-instagram"></i></span></a>',
     info: "Don Fuego, music producer, sound engineer and musician.Don Fuego is a producer of exceptional creative talent and musical diversity. He has collaborated with a wide range of world renowned international recording artists across diverse genres, and also has a  successful career making music jingles and compositions for  tv, radio and other media outlets. His corporate clients include large international corporations, media and telecommunications companies. He is now widening his professional portfolio by including voice-over and associated musical compositions and productions.",
   },
-  {
+
+  /* {
     sortId: 9,
     imageurl: member9,
     name: "Sarah Khorbtli",
     charge: "Art director",
     link: '<a href="https://twitter.com/SarahKhorbtli" target="_blank" ><span class="icon is-size-2 has-text-white"><i class="fab fa-twitter"></i></span></a>',
     info: "Sarah Khorbtli, Syrian-American Art Director based in Dubai, ‏Started her career as a motion design and animation instructor at IUST and later moved here expertise to work on various projects and clients in the MENA region., Sarah joined the creative team at Zaini Media to utilize here motion design skills and unique art direction, to bring even more ideas to life.",
-  } /*, {
+  }, {
         sortId: 10,
         imageurl: member10,
         name: 'Eric Spivak',
@@ -78,8 +79,7 @@ const team = [
         link: '<a href="https://twitter.com/ericspivak?s=20" target="_blank"><span class="icon is-size-2 has-text-white"><i class="fab fa-twitter"></i></span></a>',
         info: 'Eric Spivak, A.K.A. “Motivate” is a KOL in the digital art, blockchain & cryptocurrency space as well as the Co-Founder to the Largest and Fastest Growing NFT & DeFi Community in the World. Beyond his contributions to these fast-paced environments. He’s been making waves with his successful boutique creative agency Urconduit. Working with internationally recognized brands, artists, and musicians alike. His creative work & curatorial abilities are seen throughout his projects in the diversity, quality and consistency of his work.'
 
-    }*/,
-  {
+    }*/ {
     sortId: 11,
     imageurl: member11,
     name: "Zaini Media",

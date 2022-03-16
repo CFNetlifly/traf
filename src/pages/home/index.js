@@ -136,7 +136,11 @@ const HomePage = (props) => {
               <div className="columns is-vcentered">
                 {brandData.map((brand, i) => (
                   <div className="column" key={i}>
-                    <a href="https://www.altrd.tv/shows/red-ape-family" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://www.altrd.tv/shows/red-ape-family"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img
                         className={`brand-tv ${brand.className}`}
                         src={brand.src}
@@ -357,17 +361,15 @@ const HomePage = (props) => {
             </h1>
             <br />
             <br />
-            <div
-              className="columns is-vcentered"              
-            >
+            <div className="columns is-vcentered">
               <div className="column p-0">
                 <figure className="image is-16x9">
                   <img src={episodesRoadmap} alt="" />
                 </figure>
               </div>
               <div className="column p-0 is-4">
-                <figure className="image">                  
-                  <img src={giveaways} alt="" />                  
+                <figure className="image">
+                  <img src={giveaways} alt="" />
                 </figure>
               </div>
             </div>
@@ -444,7 +446,6 @@ const HomePage = (props) => {
             <br />
 
             <div className="columns is-multiline px-3">
-              <div className="column"></div>
               {[...teamData].splice(0, 3).map((t, i) => (
                 <div className="column has-text-centered" key={i}>
                   <Link to="/team">
@@ -478,12 +479,11 @@ const HomePage = (props) => {
                   </h1>
                 </div>
               ))}
-              <div className="column"></div>
             </div>
             <br className="is-hidden-mobile" />
             <br className="is-hidden-mobile" />
             <div className="columns is-multiline px-3">
-              {[...teamData].splice(3, 4).map((t, i) => (
+              {[...teamData].splice(3, 3).map((t, i) => (
                 <div className="column has-text-centered" key={i}>
                   <Link to="/team">
                     <img
@@ -522,7 +522,7 @@ const HomePage = (props) => {
 
             <div className="columns is-multiline px-3">
               <div className="column"></div>
-              {[...teamData].splice(7, 2).map((t, i) => (
+              {[...teamData].splice(6, 2).map((t, i) => (
                 <div className="column has-text-centered" key={i}>
                   <Link to="/team">
                     <img
