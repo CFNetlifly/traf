@@ -1,0 +1,17 @@
+{
+
+"description": "Our heroes arrive in Muskville after stealing the golden NFT from Paris. But all is not as it seems. Or is it?", 
+"external_url": "https://theredapefamily.com", 
+"image": "https://theredapefamily.com/Episode1-Poster.png", 
+"name": "TRAF S01-E01",
+
+"attributes":
+[
+{"trait_type":"Season","value":"1"},
+{"trait_type":"Episode","value":"1"},
+{"trait_type":"Type","value":"Genesis"}
+
+
+]
+
+}
