@@ -163,7 +163,7 @@ const HomePage = (props) => {
                     <span className="has-text-warning">SOLD OUT</span>
                   </h1>
                   <a
-                    href="https://opensea.io/assets/0xa803144e27aef2ac95e7ab49214bd2f802c883dd/0"
+                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -181,7 +181,7 @@ const HomePage = (props) => {
                     <span className="has-text-warning">SOLD OUT</span>
                   </h1>
                   <a
-                    href="https://opensea.io/assets/0xa803144e27aef2ac95e7ab49214bd2f802c883dd/1"
+                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=2&search[sortAscending]=true&search[sortBy]=PRICE"
                     target="_blank"
                     rel="noreferrer"
                   >
