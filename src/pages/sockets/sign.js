@@ -1,5 +1,4 @@
 const sign = (chainId, id, wallet) => {
-
     const msgParams = JSON.stringify({
         domain: {
             // Defining the chain aka Rinkeby testnet or Ethereum Main Net
@@ -9,16 +8,15 @@ const sign = (chainId, id, wallet) => {
             // Just let's you know the latest version. Definitely make sure the field name is correct.
             version: '1',
         },
-    
+
         // Defining the message signing data content.
         message: {
-            
             // - Anything you want. Just a JSON Blob that encodes the data you want to send
             // - No required fields
             // - This is DApp Specific
             // - Be as explicit as possible when building out the message schema.
-            
-            id: id
+
+            id: id,
         },
         // Refers to the keys of the *types* object below.
         primaryType: 'VerifyData',
@@ -27,18 +25,14 @@ const sign = (chainId, id, wallet) => {
             EIP712Domain: [
                 { name: 'name', type: 'string' },
                 { name: 'version', type: 'string' },
-                { name: 'chainId', type: 'uint256' },                
-            ],              
+                { name: 'chainId', type: 'uint256' },
+            ],
             // Refer to PrimaryType
-            VerifyData: [
-                { name: 'id', type: 'string' }
-            ]
-        }
-    
+            VerifyData: [{ name: 'id', type: 'string' }],
+        },
     });
 
     return msgParams;
-
 };
 
-export default sign; 
+export default sign;

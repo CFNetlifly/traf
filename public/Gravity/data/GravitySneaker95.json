@@ -1,24 +1,20 @@
 {
+    "description": "Designed as a futuristic hi-top basketball shoe, the Gravity Sneaker counteracts the difference in gravity on the red planet and stops wearers from floating away to certain death.",
+    "external_url": "https://theredapefamily.com/gravity",
+    "image": "https://theredapefamily.com/sneakers/animations/GravitySneaker95.mp4",
+    "name": "Gravity Sneaker #95",
 
-"description": "Designed as a futuristic hi-top basketball shoe, the Gravity Sneaker counteracts the difference in gravity on the red planet and stops wearers from floating away to certain death.", 
-"external_url": "https://theredapefamily.com/gravity", 
-"image": "https://theredapefamily.com/sneakers/animations/GravitySneaker95.mp4", 
-"name": "Gravity Sneaker #95",
+    "attributes": [
+        { "trait_type": "Material", "value": "Venusian Poly" },
+        { "trait_type": "Color", "value": "Yellow" },
+        { "trait_type": "Skin", "value": "LA Street Art" },
+        { "trait_type": "Strap Color", "value": "Yellow" },
+        { "trait_type": "Strap Skin", "value": "LA Street Art" },
+        { "trait_type": "LED", "value": "White" },
 
-"attributes":
-[
-{"trait_type":"Material","value":"Venusian Poly"},
-{"trait_type":"Color","value":"Yellow"},
-{"trait_type":"Skin","value":"LA Street Art"},
-{"trait_type":"Strap Color","value":"Yellow"},
-{"trait_type":"Strap Skin","value":"LA Street Art"},
-{"trait_type":"LED","value":"White"},
-
-{"trait_type":"Gravity level","value":6},
-{"trait_type":"Speed","value":8},
-{"trait_type":"Acceleration ","value":10},
-{"trait_type":"Stability","value":4}
-
-]
-
+        { "trait_type": "Gravity level", "value": 6 },
+        { "trait_type": "Speed", "value": 8 },
+        { "trait_type": "Acceleration ", "value": 10 },
+        { "trait_type": "Stability", "value": 4 }
+    ]
 }

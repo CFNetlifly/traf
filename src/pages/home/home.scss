@@ -1,90 +1,79 @@
-.video-container{
-    position: absolute;    
+.video-container {
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;   
-    
+    z-index: -1;
 
-
-
-    video{
+    video {
         display: block;
         width: 100%; /* Could also use width: 100%; */
         height: 100%;
         object-fit: cover;
         position: absolute; /* Change position to absolute if you don't want it to take up the whole page */
         left: 0px;
-        top: 0px;        
+        top: 0px;
     }
 }
 
-.home-sizer{
-    
-
-    @media screen and (min-width: 769px){
+.home-sizer {
+    @media screen and (min-width: 769px) {
         max-height: 100vh;
-        overflow: hidden;    
-    }        
-    
+        overflow: hidden;
+    }
 }
 
-
-.roadmap-list{
-    li figure, li span{
+.roadmap-list {
+    li figure,
+    li span {
         display: inline-block;
     }
-
 }
 
-.bg-gradient{
+.bg-gradient {
     // background: linear-gradient(0deg, rgba(14,19,25,0.5) 0%, rgba(53,19,60,0) 100%);
 }
 
-.mint-panel{
+.mint-panel {
     background: rgba(white, 0.05) !important;
     backdrop-filter: blur(8px);
 }
 
-.centered-mobile{
-    @media (max-width: 769px){
+.centered-mobile {
+    @media (max-width: 769px) {
         width: auto !important;
-        img{
+        img {
             width: 95% !important;
         }
     }
 }
 
-.media + .media{
+.media + .media {
     margin: 8px 0 !important;
     border: none !important;
     padding: 0 !important;
-
-
 }
 
-details>summary {
- 
+details > summary {
     list-style: none;
 }
 summary::-webkit-details-marker {
-    display: none
+    display: none;
 }
 
-summary::after {    
-    position: absolute;    
-    left: 100%;    
+summary::after {
+    position: absolute;
+    left: 100%;
     transform: translate(-100%, -10px);
     font-size: 2rem;
     content: '+';
 }
 details[open] summary:after {
     font-size: 2rem;
-    content: " -";
+    content: ' -';
 }
 details {
-    
     border-radius: 0.2rem;
     padding: 1rem;
 }

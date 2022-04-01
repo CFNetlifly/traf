@@ -4,57 +4,52 @@ import {
     SET_NETWORK_ID,
     SET_CURRENT_ACCOUNT,
     SET_CONNECTION,
-    SET_CONNECTED_TO_OPERATING_NETWORK
+    SET_CONNECTED_TO_OPERATING_NETWORK,
 } from '../constants';
-
-
 
 const defaultState = {
     isMetamaskInstalled: false,
     currentAccount: '',
     networkId: null,
     isConnected: false,
-    connectedToOperatingNetwork: false
+    connectedToOperatingNetwork: false,
 };
 
 const reducer = (state = defaultState, action) => {
-
     switch (action.type) {
-
         case SET_METAMASK_INSTALLED:
-            return{
+            return {
                 ...state,
-                isMetamaskInstalled: action.payload
+                isMetamaskInstalled: action.payload,
             };
 
         case SET_NETWORK_ID:
-            return{
+            return {
                 ...state,
-                networkId: action.payload
+                networkId: action.payload,
             };
 
         case SET_CURRENT_ACCOUNT:
-            return{
+            return {
                 ...state,
-                currentAccount: action.payload
+                currentAccount: action.payload,
             };
 
         case SET_CONNECTION:
-            return{
+            return {
                 ...state,
-                isConnected: action.payload
+                isConnected: action.payload,
             };
 
         case SET_CONNECTED_TO_OPERATING_NETWORK:
-            return{
+            return {
                 ...state,
-                connectedToOperatingNetwork: action.payload
+                connectedToOperatingNetwork: action.payload,
             };
 
         default:
-            return {...state};
+            return { ...state };
     }
-
 };
 
 export default reducer;

@@ -1,22 +1,18 @@
 {
+    "description": "Designed as a futuristic hi-top basketball shoe, the Gravity Sneaker counteracts the difference in gravity on the red planet and stops wearers from floating away to certain death.",
+    "external_url": "https://theredapefamily.com/gravity",
+    "image": "https://theredapefamily.com/sneakers/animations/GravitySneaker13.mp4",
+    "name": "Gravity Sneaker #13",
 
-"description": "Designed as a futuristic hi-top basketball shoe, the Gravity Sneaker counteracts the difference in gravity on the red planet and stops wearers from floating away to certain death.", 
-"external_url": "https://theredapefamily.com/gravity", 
-"image": "https://theredapefamily.com/sneakers/animations/GravitySneaker13.mp4", 
-"name": "Gravity Sneaker #13",
+    "attributes": [
+        { "trait_type": "Material", "value": "Carbon Fiber" },
+        { "trait_type": "Color", "value": "Black" },
+        { "trait_type": "Strap Color", "value": "Yellow" },
+        { "trait_type": "LED", "value": "Yellow" },
 
-"attributes":
-[
-{"trait_type":"Material","value":"Carbon Fiber"},
-{"trait_type":"Color","value":"Black"},
-{"trait_type":"Strap Color","value":"Yellow"},
-{"trait_type":"LED","value":"Yellow"},
-
-{"trait_type":"Gravity level","value":7},
-{"trait_type":"Speed","value":7},
-{"trait_type":"Acceleration ","value":7},
-{"trait_type":"Stability","value":7}
-
-]
-
+        { "trait_type": "Gravity level", "value": 7 },
+        { "trait_type": "Speed", "value": 7 },
+        { "trait_type": "Acceleration ", "value": 7 },
+        { "trait_type": "Stability", "value": 7 }
+    ]
 }

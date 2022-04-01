@@ -1,23 +1,20 @@
-.brand-tv{
-    
-    @media (max-width: 760px){
-        width: 125px !important; 
+.brand-tv {
+    @media (max-width: 760px) {
+        width: 125px !important;
     }
 }
 
-.nm-np-mobile{
-
+.nm-np-mobile {
     margin-left: 3rem;
     padding-left: 3rem;
 
-    
-    @media (max-width: 760px){
+    @media (max-width: 760px) {
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
 }
 
-.ul2{
+.ul2 {
     list-style: disc !important;
     padding-left: 15px;
 }

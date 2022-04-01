@@ -1,9 +1,4 @@
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
@@ -19,53 +14,49 @@ import DawPage from 'pages/daw';
 
 import 'scss/main.scss';
 
-import {initWeb3} from './web3';
+import { initWeb3 } from './web3';
 initWeb3();
 
 const App = () => {
-
     return (
         <Router>
-
-            <Navbar/>
+            <Navbar />
             <Switch>
                 <Route exact path="/">
-                    <Redirect to="/home"/>
+                    <Redirect to="/home" />
                 </Route>
 
                 <Route exact path="/home">
-                    <HomePage/>
+                    <HomePage />
                 </Route>
 
                 <Route exact path="/team">
-                    <TeamPage/>
+                    <TeamPage />
                 </Route>
 
                 <Route exact path="/stream">
-                    <Stream/>
+                    <Stream />
                 </Route>
 
                 <Route exact path="/whitepaper">
-                    <Whitepaper/>
+                    <Whitepaper />
                 </Route>
 
                 <Route exact path="/verify/:id">
-                    <SocketPage/>
-                </Route> 
-                
+                    <SocketPage />
+                </Route>
 
                 <Route exact path="/gravity">
-                    <SneakersPage/>
+                    <SneakersPage />
                 </Route>
 
                 {/* <Route exact path="/daw">
                     <DawPage/>
                 </Route> */}
-                
             </Switch>
-            <Footer/>
+            <Footer />
         </Router>
     );
-}
+};
 
 export default App;

@@ -1,63 +1,58 @@
-import {
-    TX_LOADING,
-    TX_FAILED,
-    TX_SUCCESS
-} from '../constants';
+import { TX_LOADING, TX_FAILED, TX_SUCCESS } from '../constants';
 
 const genericTx = {
     loading: false,
     error: false,
     success: false,
-    resData: {}
-}
+    resData: {},
+};
 
 const defaultState = {
     MINT_TX: {
         loading: false,
         error: false,
         success: false,
-        resData: {}
+        resData: {},
     },
-    MINT_DAW_TX: {...genericTx}
+    MINT_DAW_TX: { ...genericTx },
 };
 
 const reducer = (state = defaultState, action) => {
     switch (action.type) {
-
         case TX_LOADING:
-            return{
+            return {
                 ...state,
-                [action.txType]:{
+                [action.txType]: {
                     loading: true,
                     error: false,
-                    success: false
-                }
+                    success: false,
+                },
             };
 
         case TX_FAILED:
-            return{
+            return {
                 ...state,
                 [action.txType]: {
                     loading: false,
                     error: true,
                     success: false,
-                    resData: action.payload
-                }
+                    resData: action.payload,
+                },
             };
 
-            case TX_SUCCESS:
-                return{
-                    ...state,
-                    [action.txType]: {
-                        loading: false,
-                        error: false,
-                        success: true,
-                        resData: action.payload
-                    }
-                };
+        case TX_SUCCESS:
+            return {
+                ...state,
+                [action.txType]: {
+                    loading: false,
+                    error: false,
+                    success: true,
+                    resData: action.payload,
+                },
+            };
 
         default:
-            return {...state};
+            return { ...state };
     }
 };
 

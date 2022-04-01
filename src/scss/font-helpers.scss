@@ -1,20 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=BioRhyme:wght@300;400&family=Cormorant&family=Open+Sans&family=Playfair+Display&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 // .has-font-audiowide{
 //     font-family: 'Audiowide', cursive;
 // }
 
-.has-font-montserrat{
+.has-font-montserrat {
     // font-family: 'Open Sans', sans-serif;
     font-family: 'Montserrat', sans-serif;
     // font-weight: bold;
 }
 
-.has-font-title{
-    font-weight: 700;    
+.has-font-playfair {
+    font-family: 'Playfair Display', serif;
 }
 
-*:not(i){
+.has-font-alegreya {
+    font-family: 'Alegreya', serif;
+}
+
+.has-font-bioRhyme {
+    font-family: 'BioRhyme', serif;
+}
+
+.has-font-title {
+    font-weight: 700;
+}
+
+*:not(i) {
     @extend .has-font-montserrat;
 }

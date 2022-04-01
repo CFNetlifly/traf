@@ -1,30 +1,28 @@
 // .navbar{
 //     position: fixed !important;
 //     top: 0 !important;
-//     width: 100% !important;    
-    
+//     width: 100% !important;
 
 // }
 
-.navbar-start{
-    .navbar-item{
-        &:hover{
-            background: #FFC200 !important;
+.navbar-start {
+    .navbar-item {
+        &:hover {
+            background: #ffc200 !important;
             color: black !important;
         }
 
-        &:focus{
+        &:focus {
             background: none;
         }
     }
 }
-.navbar-menu{
-
-    @media (max-width: 769px){
+.navbar-menu {
+    @media (max-width: 769px) {
         background: black !important;
     }
 }
 
-.navbar-grey{
+.navbar-grey {
     background: #3a3a3a !important;
 }

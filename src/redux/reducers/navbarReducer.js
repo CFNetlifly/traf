@@ -1,26 +1,20 @@
-import {
-    SET_SECTION
-} from '../constants';
+import { SET_SECTION } from '../constants';
 
 const defaultState = {
-    section: "HOME"
+    section: 'HOME',
 };
 
 const reducer = (state = defaultState, action) => {
-
     switch (action.type) {
-
         case SET_SECTION:
-            return{
+            return {
                 ...state,
-                section: action.payload
-            };        
+                section: action.payload,
+            };
 
         default:
-            return {...state};
-
+            return { ...state };
     }
-
 };
 
 export default reducer;

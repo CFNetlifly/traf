@@ -2,13 +2,19 @@
 @import './font-helpers.scss';
 @import './color-helpers.scss';
 @import '~bulma';
+@import './scroll-helpers.scss';
 
-html, body, #root{
+html,
+body,
+#root {
     width: 100%;
     height: 100%;
-    
+
+    @extend .coolscroll;
+    scroll-behavior: smooth;
+    // overflow: hidden;
 }
 
-#root{
+#root {
     padding-top: 52px;
 }

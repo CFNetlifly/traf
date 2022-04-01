@@ -22,8 +22,8 @@ export const form_states = {
     ERROR: 'ERROR',
     APPROVE: 'APPROVE',
     SWITCH_TO_CHAIN: 'SWITCH_TO_CHAIN',
-    SEND_TX: 'SEND_TX'
-}
+    SEND_TX: 'SEND_TX',
+};
 
 export const SET_TOKEN_APPROVED = 'SET_TOKEN_APPROVED';
 export const SET_CHAINS_MATCH = 'SET_CHAINS_MATCH';

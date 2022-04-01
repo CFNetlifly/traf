@@ -1,20 +1,18 @@
-import {
-    SET_MEMBER
-} from '../constants';
+import { SET_MEMBER } from '../constants';
 
-export const _set_member = member => {
-    return{
+export const _set_member = (member) => {
+    return {
         type: SET_MEMBER,
-        payload: member
+        payload: member,
     };
-}
+};
 
-export const set_member = member => {
+export const set_member = (member) => {
     return (dispatch) => {
         dispatch(_set_member(member));
 
         setTimeout(() => {
             dispatch(_set_member(null));
         }, 1000);
-    }
-}
+    };
+};

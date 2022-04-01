@@ -1,34 +1,39 @@
-import {connect} from 'react-redux';
-import {request_connection} from 'redux/actions/walletActions';
+import React from 'react';
+
+import { connect } from 'react-redux';
+import { request_connection } from 'redux/actions/walletActions';
 import './connect-btn.scss';
+import PropTypes from 'prop-types';
 
 const getAddressReduced = (address) => `${address.slice(0, 6)}...${address.slice(-4)}`;
 
-const ConnectBtn = props => {
-
-    const {wallet} = props;
+const ConnectBtn = (props) => {
+    const { wallet } = props;
     //console.log(wallet);
 
-    const onClicked = e => {
-        if(wallet.isMetamaskInstalled && !wallet.isConnected)
-            props.request_connection();
-    }
+    const onClicked = () => {
+        if (wallet.isMetamaskInstalled && !wallet.isConnected) props.request_connection();
+    };
 
-    return(
-        <button className="button is-rounded is-cyellow" onClick={onClicked}>
-            {wallet.isConnected && wallet.currentAccount != null? getAddressReduced(wallet.currentAccount) : 'Connect'}
+    return (
+        <button
+            className="connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold"
+            onClick={onClicked}
+        >
+            {wallet.isConnected && wallet.currentAccount != null ? getAddressReduced(wallet.currentAccount) : 'Connect'}
         </button>
     );
+};
 
-}
-
-const mapStateToProps = state => ({
-    wallet: state.walletReducer
+const mapStateToProps = (state) => ({
+    wallet: state.walletReducer,
 });
 
-export default connect(
-    mapStateToProps,
-    {
-        request_connection
-    }
-)(ConnectBtn);
+ConnectBtn.propTypes = {
+    wallet: PropTypes.object.isRequired,
+    request_connection: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, {
+    request_connection,
+})(ConnectBtn);
