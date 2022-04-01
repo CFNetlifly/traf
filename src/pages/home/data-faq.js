@@ -1,3 +1,5 @@
+import React from 'react';
+
 const faq = [
     {
         question: 'WHAT IS THE RED APE FAMILY?',

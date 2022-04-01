@@ -1,7 +1,9 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
-import CountDown from 'components/count-down';
+import PropTypes from 'prop-types';
+// import CountDown from 'components/count-down';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+// import * as Yup from 'yup';
 
 import { connect } from 'react-redux';
 import {
@@ -11,12 +13,12 @@ import {
 } from 'redux/actions/walletActions';
 import { start_minting_tx, daw_minting_tx } from 'redux/actions/txActions';
 
-const Form = (props) => {
+const Form = props => {
     const [videoOpen, setVideoOpen] = useState(false);
 
     const [webData, setWebData] = useState(null);
     // console.log(webData);
-    const erc_contract = props.web3Reducer.contracts['DAW'];
+    // const erc_contract = props.web3Reducer.contracts['DAW'];
 
     const { web3Reducer } = props;
     //console.log(props.wallet.con);
@@ -65,18 +67,18 @@ const Form = (props) => {
     };
     // console.log(webData);
 
-    const validationSchema = Yup.object().shape({
-        mintQuantity: Yup.number(),
-    });
+    // const validationSchema = Yup.object().shape({
+    //     mintQuantity: Yup.number(),
+    // });
 
     const formik = useFormik({
         initialValues: {
             mintQuantity: 1,
         },
         // validationSchema: validationSchema,
-        onSubmit: async (values) => {
+        onSubmit: async values => {
             // alert(JSON.stringify(values, null, 2));
-            const wallet = props.wallet;
+            // const wallet = props.wallet;
 
             // const webData = await erc_contract.methods.webData(props.wallet.currentAccount).call();
 
@@ -92,7 +94,7 @@ const Form = (props) => {
         formik.setFieldValue('mintQuantity', 1);
     }, [props.txReducer.MINT_DAW_TX.success]);
 
-    const onIncreaseClicked = (e) => {
+    const onIncreaseClicked = () => {
         if (webData == null) return;
 
         if (Number(formik.values.mintQuantity) < webData.leftNFT) {
@@ -100,7 +102,7 @@ const Form = (props) => {
         }
     };
 
-    const onDecreaseClicked = (e) => {
+    const onDecreaseClicked = () => {
         if (webData == null) return;
 
         if (Number(formik.values.mintQuantity) > 1)
@@ -126,7 +128,7 @@ const Form = (props) => {
                 <button
                     className="modal-close is-large"
                     aria-label="close"
-                    onClick={(e) => setVideoOpen(false)}
+                    onClick={() => setVideoOpen(false)}
                 ></button>
             </div>
             <div className="has-text-centered">
@@ -192,7 +194,7 @@ const Form = (props) => {
                         <button
                             type="button"
                             className="button is-cyellow"
-                            onClick={(e) => props.request_change_network(1)}
+                            onClick={() => props.request_change_network(1)}
                         >
                             Switch to ETH Mainnet
                         </button>
@@ -201,7 +203,7 @@ const Form = (props) => {
                     <button
                         type="button"
                         className="button is-cyellow"
-                        onClick={async (e) => await props.request_connection()}
+                        onClick={async () => await props.request_connection()}
                     >
                         Connect wallet
                     </button>
@@ -222,7 +224,7 @@ const Form = (props) => {
                         <br />
                     </div>
                     <br />
-                    <a className="has-text-warning" onClick={(e) => setVideoOpen(true)}>
+                    <a className="has-text-warning" onClick={() => setVideoOpen(true)}>
                         HOW TO MINT FROM YOUR SMARTPHONE{' '}
                     </a>
                     {/* <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
@@ -246,7 +248,17 @@ const Form = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+Form.propTypes = {
+    wallet: PropTypes.object.isRequired,
+    txReducer: PropTypes.object.isRequired,
+    request_connection: PropTypes.func.isRequired,
+    request_change_network: PropTypes.func.isRequired,
+    web3Reducer: PropTypes.object.isRequired,
+    daw_minting_tx: PropTypes.func.isRequired,
+    check_connected_to_operating_network: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
     wallet: state.walletReducer,
     web3Reducer: state.web3Reducer,
     txReducer: state.txReducer,

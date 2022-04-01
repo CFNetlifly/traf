@@ -1,9 +1,11 @@
+import React from 'react';
 import SectionLayout from 'layouts/section';
-import MintSection from './mint-section';
+
+// import MintSection from './mint-section';
 
 import { daw } from 'images';
 
-const Daw = (props) => {
+const Daw = () => {
     return (
         <div>
             <SectionLayout

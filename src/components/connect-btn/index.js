@@ -5,9 +5,9 @@ import { request_connection } from 'redux/actions/walletActions';
 import './connect-btn.scss';
 import PropTypes from 'prop-types';
 
-const getAddressReduced = (address) => `${address.slice(0, 6)}...${address.slice(-4)}`;
+const getAddressReduced = address => `${address.slice(0, 6)}...${address.slice(-4)}`;
 
-const ConnectBtn = (props) => {
+const ConnectBtn = props => {
     const { wallet } = props;
     //console.log(wallet);
 
@@ -25,7 +25,7 @@ const ConnectBtn = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     wallet: state.walletReducer,
 });
 

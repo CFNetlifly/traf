@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { baseURL } from 'images';
 import SectionLayout from 'layouts/section';
@@ -19,8 +19,8 @@ import {
     request_connection,
 } from 'redux/actions/walletActions';
 
-const SneakersPage = (props) => {
-    const { web3Reducer, walletReducer } = useSelector((state) => state);
+const SneakersPage = props => {
+    const { web3Reducer, walletReducer } = useSelector(state => state);
 
     const [triggerer, setTriggerer] = useState(0);
 
@@ -170,7 +170,7 @@ const SneakersPage = (props) => {
                                         <button
                                             type="button"
                                             className="button is-cyellow"
-                                            onClick={(e) => props.request_change_network(1)}
+                                            onClick={e => props.request_change_network(1)}
                                         >
                                             Switch to ETH Mainnet
                                         </button>
@@ -179,7 +179,7 @@ const SneakersPage = (props) => {
                                     <button
                                         type="button"
                                         className="button is-cyellow"
-                                        onClick={async (e) => await props.request_connection()}
+                                        onClick={async e => await props.request_connection()}
                                     >
                                         Connect wallet
                                     </button>
@@ -355,7 +355,7 @@ const SneakersPage = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     wallet: state.walletReducer,
     web3Reducer: state.web3Reducer,
 });

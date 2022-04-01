@@ -97,7 +97,7 @@ const initWeb3 = async () => {
         store.dispatch(set_web3_initialized(true));
 
         //listen to eth change events
-        ethereum.on('accountsChanged', (accounts) => {
+        ethereum.on('accountsChanged', accounts => {
             // console.log('accounts: ' + accounts);
             if (accounts.length > 0) {
                 store.dispatch(set_current_account(accounts[0]));
@@ -107,7 +107,7 @@ const initWeb3 = async () => {
             }
         });
 
-        ethereum.on('connect', (connectInfo) => {
+        ethereum.on('connect', connectInfo => {
             // if(accounts[0] != null)
             //     store.dispatch( set_current_account(accounts[0]) );
 
@@ -115,12 +115,12 @@ const initWeb3 = async () => {
             console.log('cnx');
         });
 
-        ethereum.on('disconnect', (error) => {
+        ethereum.on('disconnect', error => {
             // store.dispatch( set_current_account('') );
             console.log(error);
         });
 
-        ethereum.on('chainChanged', async (chainId) => {
+        ethereum.on('chainChanged', async chainId => {
             // window.location.reload();
             store.dispatch(set_networkd_id(await web3.eth.getChainId()));
             store.dispatch(check_connected_to_operating_network());

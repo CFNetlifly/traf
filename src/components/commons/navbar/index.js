@@ -17,7 +17,7 @@ import { opensea } from 'images';
 
 import './navbar.scss';
 
-const Navbar = (props) => {
+const Navbar = props => {
     const [scroll, setScroll] = useState(0);
     const styles = useSpring({ background: scroll > 100 ? '#3A3A3A' : 'black' });
 
@@ -27,7 +27,7 @@ const Navbar = (props) => {
         });
     }, []);
 
-    const onBurgerClicked = (e) => {
+    const onBurgerClicked = e => {
         e.preventDefault();
 
         const target = e.currentTarget.dataset.target;
@@ -79,7 +79,7 @@ const Navbar = (props) => {
                         <Link
                             to="/home"
                             className="has-text-white navbar-item has-text-centered-mobile"
-                            onClick={(e) => {
+                            onClick={e => {
                                 props.set_section('HOME');
                                 onBurgerIClicked(e);
                             }}
@@ -98,7 +98,7 @@ const Navbar = (props) => {
                         <Link
                             to="/team"
                             className="has-text-white navbar-item has-text-centered-mobile"
-                            onClick={(e) => {
+                            onClick={e => {
                                 onBurgerIClicked(e);
                             }}
                         >
@@ -110,7 +110,7 @@ const Navbar = (props) => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="has-text-white navbar-item has-text-centered-mobile"
-                            onClick={(e) => {
+                            onClick={e => {
                                 onBurgerIClicked(e);
                             }}
                         >
@@ -124,7 +124,7 @@ const Navbar = (props) => {
                         <Link
                             to="/gravity"
                             className="has-text-white navbar-item has-text-centered-mobile"
-                            onClick={(e) => {
+                            onClick={e => {
                                 onBurgerIClicked(e);
                             }}
                         >
@@ -133,7 +133,7 @@ const Navbar = (props) => {
                         <Link
                             to="/mint"
                             className="has-text-white navbar-item has-text-centered-mobile"
-                            onClick={(e) => {
+                            onClick={e => {
                                 onBurgerIClicked(e);
                             }}
                         >

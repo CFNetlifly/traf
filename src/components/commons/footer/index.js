@@ -76,7 +76,7 @@ const footer = () => {
                         Giveaways&#39; Vault
                     </a>
                 </h1>
-                <h1 className="subtitle has-text-warning is-6 mb-3">
+                {/* <h1 className="subtitle has-text-warning is-6 mb-3">
                     <a
                         className="has-text-warning"
                         href=" https://etherscan.io/address/0x38Ef1bF1503eFe695525211f5E2cEa9F7BD01cc3"
@@ -94,10 +94,19 @@ const footer = () => {
                     >
                         Episode 2 Royalties Wallet
                     </a>
+                </h1> */}
+                <h1 className="subtitle has-text-warning is-6 mb-3">
+                    <a
+                        href="https://etherscan.io/address/0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD "
+                        className="has-text-warning"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD
+                    </a>
                 </h1>
-                <h1 className="subtitle has-text-warning is-6 mb-3">0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD</h1>
                 <h1 className="subtitle has-text-warning is-6 mb-3">traf@zainimedia.com</h1>
-                <h1 className="subtitle has-text-warning is-6 mb-3">© 2021 The Red Ape Family. All rights reserved</h1>
+                <h1 className="subtitle has-text-warning is-6 mb-3">© 2022 The Red Ape Family. All rights reserved</h1>
             </div>
         </footer>
     );

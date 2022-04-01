@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import _teamData from '../data-team';
 
 import { connect } from 'react-redux';
@@ -15,7 +15,7 @@ const teamData = [..._teamData].sort((a, b) => {
     return 0;
 });
 
-const Team = (props) => {
+const Team = props => {
     const refs = [];
 
     console.log(props.teamMemberReducer);
@@ -41,7 +41,7 @@ const Team = (props) => {
                     <ul>
                         {teamData.map((t, i) => {
                             return (
-                                <li className=" mb-6" key={i} ref={(ref) => (refs[i] = ref)}>
+                                <li className=" mb-6" key={i} ref={ref => (refs[i] = ref)}>
                                     <div className="columns is-vcentered">
                                         <div className="column is-3" style={{ borderRight: '2px solid #585858' }}>
                                             <div
@@ -88,7 +88,7 @@ const Team = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     teamMemberReducer: state.teamMemberReducer,
 });
 

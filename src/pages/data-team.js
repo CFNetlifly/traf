@@ -1,3 +1,4 @@
+import React from 'react';
 import { member1, member2, member3, member4, member5, member6, member7, member8, member9, member10 } from 'images';
 
 const team = [

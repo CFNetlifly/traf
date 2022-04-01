@@ -1,6 +1,8 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
+import Proptypes from 'prop-types';
 
-const CountDown = (props) => {
+const CountDown = props => {
     const [timeLeft, setTimeLeft] = useState('');
 
     const countDownDate = new Date('Dec 4, 2021 17:45:00 GMT-05:00').getTime();
@@ -30,6 +32,10 @@ const CountDown = (props) => {
     });
 
     return <div className={props.className}>{timeLeft}</div>;
+};
+
+CountDown.propTypes = {
+    className: Proptypes.string,
 };
 
 export default CountDown;

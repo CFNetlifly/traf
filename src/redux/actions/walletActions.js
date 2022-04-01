@@ -7,28 +7,28 @@ import {
     SET_CONNECTED_TO_OPERATING_NETWORK,
 } from '../constants';
 
-export const set_networkd_id = (id) => {
+export const set_networkd_id = id => {
     return {
         type: SET_NETWORK_ID,
         payload: id,
     };
 };
 
-export const set_metamask_installed = (value) => {
+export const set_metamask_installed = value => {
     return {
         type: SET_METAMASK_INSTALLED,
         payload: value,
     };
 };
 
-export const set_current_account = (address) => {
+export const set_current_account = address => {
     return {
         type: SET_CURRENT_ACCOUNT,
         payload: address,
     };
 };
 
-export const set_connection = (value) => {
+export const set_connection = value => {
     return {
         type: SET_CONNECTION,
         payload: value,
@@ -36,7 +36,7 @@ export const set_connection = (value) => {
 };
 
 const OPERATING_NETWORK = 1;
-const set_connected_to_operating_network = (value) => {
+const set_connected_to_operating_network = value => {
     return {
         type: SET_CONNECTED_TO_OPERATING_NETWORK,
         payload: value,
@@ -64,7 +64,7 @@ export const request_connection = () => {
     };
 };
 
-export const request_change_network = (networkId) => {
+export const request_change_network = networkId => {
     return async (dispatch, getState) => {
         try {
             // if(networkId != 1 || networkId != 4) throw {msg: 'network not supported'};

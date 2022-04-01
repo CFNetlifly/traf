@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import CountDown from 'components/count-down';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -11,7 +11,7 @@ import {
 } from 'redux/actions/walletActions';
 import { start_minting_tx } from 'redux/actions/txActions';
 
-const Form = (props) => {
+const Form = props => {
     const [videoOpen, setVideoOpen] = useState(false);
 
     const [webData, setWebData] = useState(null);
@@ -62,7 +62,7 @@ const Form = (props) => {
             mintQuantity: 1,
         },
         // validationSchema: validationSchema,
-        onSubmit: async (values) => {
+        onSubmit: async values => {
             // alert(JSON.stringify(values, null, 2));
             const wallet = props.wallet;
 
@@ -81,14 +81,14 @@ const Form = (props) => {
         formik.setFieldValue('mintQuantity', 1);
     }, [props.txReducer.MINT_TX.success]);
 
-    const onIncreaseClicked = (e) => {
+    const onIncreaseClicked = e => {
         if (webData == null) return;
 
         if (Number(formik.values.mintQuantity) < webData.mintsLeft)
             formik.setFieldValue('mintQuantity', Number(formik.values.mintQuantity) + 1);
     };
 
-    const onDecreaseClicked = (e) => {
+    const onDecreaseClicked = e => {
         if (webData == null) return;
 
         if (Number(formik.values.mintQuantity) > 1)
@@ -111,11 +111,7 @@ const Form = (props) => {
                         ></iframe>
                     </figure>
                 </div>
-                <button
-                    className="modal-close is-large"
-                    aria-label="close"
-                    onClick={(e) => setVideoOpen(false)}
-                ></button>
+                <button className="modal-close is-large" aria-label="close" onClick={e => setVideoOpen(false)}></button>
             </div>
             <div className="has-text-centered">
                 {/* hidden input to count mints quantity */}
@@ -181,7 +177,7 @@ const Form = (props) => {
                         <button
                             type="button"
                             className="button is-cyellow"
-                            onClick={(e) => props.request_change_network(1)}
+                            onClick={e => props.request_change_network(1)}
                         >
                             Switch to ETH Mainnet
                         </button>
@@ -190,7 +186,7 @@ const Form = (props) => {
                     <button
                         type="button"
                         className="button is-cyellow"
-                        onClick={async (e) => await props.request_connection()}
+                        onClick={async e => await props.request_connection()}
                     >
                         Connect wallet
                     </button>
@@ -211,7 +207,7 @@ const Form = (props) => {
                         <br />
                     </div>
                     <br />
-                    <a className="has-text-warning" onClick={(e) => setVideoOpen(true)}>
+                    <a className="has-text-warning" onClick={e => setVideoOpen(true)}>
                         HOW TO MINT FROM YOUR SMARTPHONE{' '}
                     </a>
                     {/* <hr style={{width:'200px', margin: '40px auto', background: '#4E4E4E' }}/>
@@ -235,7 +231,7 @@ const Form = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     wallet: state.walletReducer,
     web3Reducer: state.web3Reducer,
     txReducer: state.txReducer,

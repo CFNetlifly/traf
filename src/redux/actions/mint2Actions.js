@@ -4,21 +4,21 @@ import { TX_LOADING, TX_FAILED, TX_SUCCESS } from '../constants';
 // import {successNotification, errorNotification} from 'notifications';
 
 /* *~~*~~*~~*~~*~~*~~* TX PLAIN ACTIONS *~~*~~*~~*~~*~~*~~* */
-const tx_loading = (txType) => {
+const tx_loading = txType => {
     return {
         type: TX_LOADING,
         txType: txType,
     };
 };
 
-const tx_failed = (txType) => {
+const tx_failed = txType => {
     return {
         type: TX_FAILED,
         txType: txType,
     };
 };
 
-const tx_success = (txType) => {
+const tx_success = txType => {
     return {
         type: TX_SUCCESS,
         txType: txType,
@@ -26,7 +26,7 @@ const tx_success = (txType) => {
 };
 
 /* *~~*~~*~~*~~*~~*~~* TX THUNK ACTIONS *~~*~~*~~*~~*~~*~~* */
-export const start_minting_ep2_tx = (txData) => {
+export const start_minting_ep2_tx = txData => {
     return async (dispatch, getState) => {
         dispatch(tx_loading('MINT_EP2_TX'));
 

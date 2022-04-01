@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import CountDown from 'components/count-down';
@@ -11,7 +11,7 @@ import {
 } from 'redux/actions/walletActions';
 import { start_minting_ep2_tx } from 'redux/actions/mint2Actions';
 
-const MintSection2 = (props) => {
+const MintSection2 = props => {
     const [videoOpen, setVideoOpen] = useState(false);
     const { wallet } = props;
     const { web3, contracts } = props.web3Reducer;
@@ -25,7 +25,7 @@ const MintSection2 = (props) => {
         initialValues: {
             mintQuantity: 1,
         },
-        onSubmit: async (values) => {
+        onSubmit: async values => {
             await props.start_minting_ep2_tx({
                 amount: values.mintQuantity,
             });
@@ -83,11 +83,7 @@ const MintSection2 = (props) => {
                         ></iframe>
                     </figure>
                 </div>
-                <button
-                    className="modal-close is-large"
-                    aria-label="close"
-                    onClick={(e) => setVideoOpen(false)}
-                ></button>
+                <button className="modal-close is-large" aria-label="close" onClick={e => setVideoOpen(false)}></button>
             </div>
             <form onSubmit={formik.handleSubmit}>
                 {props.wallet.currentAccount ? (
@@ -136,7 +132,7 @@ const MintSection2 = (props) => {
                         <button
                             type="button"
                             className="button is-cyellow"
-                            onClick={(e) => props.request_change_network(1)}
+                            onClick={e => props.request_change_network(1)}
                         >
                             Switch to ETH Mainnet
                         </button>
@@ -145,7 +141,7 @@ const MintSection2 = (props) => {
                     <button
                         type="button"
                         className="button is-cyellow"
-                        onClick={async (e) => await props.request_connection()}
+                        onClick={async e => await props.request_connection()}
                     >
                         Connect wallet
                     </button>
@@ -165,7 +161,7 @@ const MintSection2 = (props) => {
                     <br />
                 </div>
                 <br />
-                <a className="has-text-warning" onClick={(e) => setVideoOpen(true)}>
+                <a className="has-text-warning" onClick={e => setVideoOpen(true)}>
                     HOW TO MINT FROM YOUR SMARTPHONE{' '}
                 </a>
                 <hr style={{ width: '200px', margin: '40px auto', background: '#4E4E4E' }} />
@@ -178,7 +174,7 @@ const MintSection2 = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     wallet: state.walletReducer,
     web3Reducer: state.web3Reducer,
     mint2Reducer: state.mint2Reducer,

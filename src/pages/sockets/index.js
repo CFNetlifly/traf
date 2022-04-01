@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Web3 from 'web3';
 import HDWalletProvider from '@truffle/hdwallet-provider';
@@ -23,7 +23,7 @@ let provider = new HDWalletProvider({
     providerOrUrl: 'https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
 });
 
-const SocketPage = (props) => {
+const SocketPage = props => {
     const web3Reducer = props.web3Reducer;
     const { web3 } = web3Reducer;
     const wallet = props.wallet;
@@ -86,7 +86,7 @@ const SocketPage = (props) => {
             return;
         }
 
-        web3.eth.getChainId().then((id) => (id == 1 ? setRinkeby(true) : setRinkeby(false)));
+        web3.eth.getChainId().then(id => (id == 1 ? setRinkeby(true) : setRinkeby(false)));
 
         if (!rinkeby) return;
 
@@ -139,7 +139,7 @@ const SocketPage = (props) => {
                         <button
                             type="button"
                             className="button is-cyellow"
-                            onClick={(e) => props.request_change_network(1)}
+                            onClick={e => props.request_change_network(1)}
                         >
                             Switch network
                         </button>
@@ -158,7 +158,7 @@ const SocketPage = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     web3Reducer: state.web3Reducer,
     wallet: state.walletReducer,
 });

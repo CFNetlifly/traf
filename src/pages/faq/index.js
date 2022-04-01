@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import faqData from './faq-data';
 
-const Faq = (props) => {
+const Faq = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);

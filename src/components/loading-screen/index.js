@@ -1,6 +1,7 @@
+import React from 'react';
 import './loading.scss';
 
-const LoadingComponent = (props) => {
+const LoadingComponent = () => {
     return (
         <div
             className="has-background-primary"

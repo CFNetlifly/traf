@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Stream = (props) => {
+const Stream = props => {
     const [episodes, setEpisodes] = useState([]);
 
     console.log(episodes);

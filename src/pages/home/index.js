@@ -1,18 +1,21 @@
-import { useEffect, useRef, useState } from 'react';
-
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import {
-    episodesRoadmap,
-    projectRoadmap,
-    giveaways,
-    guest,
+    // episodesRoadmap,
+    // projectRoadmap,
+    // giveaways,
+    // guest,
     bannerVideo,
     bananaIcon,
     benefits,
     opensea,
     episode1Spaceship,
-} from 'images';
+} from '../../images';
 
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { set_section } from 'redux/actions/navbarActions';
+import { set_member } from 'redux/actions/teamMembersActions';
 
 import brandData from './brands-data';
 import teamData from '../data-team';
@@ -21,34 +24,29 @@ import faqData from './data-faq';
 import partnersData from './partners-data';
 import benefitsData from './benefits-data';
 
-import MintSection from './mint-section';
+// import MintSection from './mint-section';
 // import MintSection2 from './mint2-section';
-
-import { connect } from 'react-redux';
-import { set_section } from 'redux/actions/navbarActions';
-import { set_member } from 'redux/actions/teamMembersActions';
 
 // import LoadingScreen from 'components/loading-screen';
 import './brands.scss';
 import './home.scss';
 import SectionLayout from 'layouts/section';
-import React from 'react';
 
-const HomePage = (props) => {
+const HomePage = props => {
     const homeSection = useRef(null);
-    const faqSection = useRef(null);
-    const roadMapSection = useRef(null);
-    const teamSection = useRef(null);
+    // const faqSection = useRef(null);
+    // const roadMapSection = useRef(null);
+    // const teamSection = useRef(null);
 
     const { navbarReducer } = props;
 
-    const [assetsLoaded, setAssetsLoaded] = useState(0);
+    const [assetsLoaded] = useState(0);
 
     useEffect(() => {
-        let y = 0;
+        // let y = 0;
         switch (navbarReducer.section) {
             case 'HOME':
-                y = homeSection.current.scrollIntoView();
+                // y = homeSection.current.scrollIntoView();
                 break;
 
             // case "FAQ":
@@ -57,7 +55,7 @@ const HomePage = (props) => {
             //     break;
 
             case 'ROADMAP':
-                y = roadMapSection.current.scrollIntoView();
+                // y = roadMapSection.current.scrollIntoView();
                 window.scrollBy(0, -45);
                 break;
 
@@ -158,7 +156,7 @@ const HomePage = (props) => {
                                             <h1 className="subtitle has-text-white has-text-weight-bold mb-1 is-3">
                                                 <span className="has-text-hred is-italic">SOLD OUT</span>
                                             </h1>
-                                            <h1 className="subtitle has-text-white has-text-weight-bold mb-5 is-3">
+                                            <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
                                                 BUY AN OPENSEA
                                             </h1>
                                             <a
@@ -188,7 +186,7 @@ const HomePage = (props) => {
                                             <h1 className="subtitle has-text-white has-text-weight-bold mb-1 is-3">
                                                 <span className="has-text-hred is-italic">SOLD OUT</span>
                                             </h1>
-                                            <h1 className="subtitle has-text-white has-text-weight-bold mb-5 is-3">
+                                            <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
                                                 BUY AN OPENSEA
                                             </h1>
                                             <a
@@ -307,7 +305,7 @@ const HomePage = (props) => {
                                         title="YouTube video player"
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
+                                        allowFullScreen
                                     ></iframe>
                                 </figure>
                             </div>
@@ -353,7 +351,7 @@ const HomePage = (props) => {
                                         title="YouTube video player"
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen
+                                        allowFullScreen
                                     ></iframe>
                                 </figure>
                             </div>
@@ -362,8 +360,23 @@ const HomePage = (props) => {
                 }
             />
 
-            {/* exclusive benefits */}
             <SectionLayout
+                className="has-background-black"
+                content={
+                    <div>
+                        <div className="columns">
+                            <div className="column">
+                                <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">
+                                    THE RED APE FAMILY UTILITY
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                }
+            />
+
+            {/* exclusive benefits */}
+            {/* <SectionLayout
                 className="has-background-black"
                 content={
                     <div>
@@ -397,7 +410,7 @@ const HomePage = (props) => {
                         </div>
                     </div>
                 }
-            />
+            /> */}
 
             {/*F.A.Q*/}
 
@@ -679,7 +692,14 @@ const HomePage = (props) => {
     );
 };
 
-const mapStateToProps = (state) => ({
+HomePage.propTypes = {
+    data: PropTypes.object.isRequired,
+    set_member: PropTypes.func.isRequired,
+    section: PropTypes.string.isRequired,
+    navbarReducer: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = state => ({
     navbarReducer: state.navbarReducer,
 });
 
