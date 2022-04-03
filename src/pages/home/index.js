@@ -10,6 +10,8 @@ import {
     benefits,
     opensea,
     episode1Spaceship,
+    episode2Spaceship,
+    question,
 } from '../../images';
 
 import { Link } from 'react-router-dom';
@@ -17,12 +19,13 @@ import { connect } from 'react-redux';
 import { set_section } from 'redux/actions/navbarActions';
 import { set_member } from 'redux/actions/teamMembersActions';
 
+import roadMapData from './data-roadmap';
 import brandData from './brands-data';
 import teamData from '../data-team';
 import castData from './data-cast';
 import faqData from './data-faq';
 import partnersData from './partners-data';
-import benefitsData from './benefits-data';
+import utilityData from './data-utility';
 
 // import MintSection from './mint-section';
 // import MintSection2 from './mint2-section';
@@ -37,10 +40,12 @@ const HomePage = props => {
     // const faqSection = useRef(null);
     // const roadMapSection = useRef(null);
     // const teamSection = useRef(null);
-
     const { navbarReducer } = props;
 
     const [assetsLoaded] = useState(0);
+    console.log('🚀 ~ file: index.js ~ line 21 ~ roadMapData', roadMapData);
+    console.log('🚀 ~ file: index.js ~ line 24 ~ teamData', teamData);
+    console.log('🚀 ~ file: index.js ~ line 24 ~ castData', castData);
 
     useEffect(() => {
         // let y = 0;
@@ -157,7 +162,7 @@ const HomePage = props => {
                                                 <span className="has-text-hred is-italic">SOLD OUT</span>
                                             </h1>
                                             <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
-                                                BUY AN OPENSEA
+                                                BUY ON OPENSEA
                                             </h1>
                                             <a
                                                 href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
@@ -174,7 +179,7 @@ const HomePage = props => {
                                 <div className="column">
                                     <div className="column">
                                         <figure className="image">
-                                            <img src={episode1Spaceship} alt="Episode 1 Spaceship" />
+                                            <img src={episode2Spaceship} alt="Episode 1 Spaceship" />
                                         </figure>
                                     </div>
 
@@ -187,7 +192,7 @@ const HomePage = props => {
                                                 <span className="has-text-hred is-italic">SOLD OUT</span>
                                             </h1>
                                             <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
-                                                BUY AN OPENSEA
+                                                BUY ON OPENSEA
                                             </h1>
                                             <a
                                                 href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=2&search[sortAscending]=true&search[sortBy]=PRICE"
@@ -204,7 +209,7 @@ const HomePage = props => {
                                 <div className="column">
                                     <div className="column">
                                         <figure className="image">
-                                            <img src={episode1Spaceship} alt="Episode 1 Spaceship" />
+                                            <img src={question} alt="Episode 1 Spaceship" />
                                         </figure>
                                     </div>
 
@@ -367,8 +372,91 @@ const HomePage = props => {
                         <div className="columns">
                             <div className="column">
                                 <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">
-                                    THE RED APE FAMILY UTILITY
+                                    THE RED APE FAMILY <br />
+                                    UTILITY
                                 </h1>
+                                <div className="pt-5 pl-5">
+                                    <h2 className="title has-text-white is-6 has-text-left has-text-weight-bold">
+                                        GENESIS EPISODES (EP1 & EP2)
+                                    </h2>
+                                    <p className="has-text-white is-size-6 has-text-left pt-5">
+                                        Holders of Genesis Episodes are Executive Producers who get rewarded for their
+                                        contribution to the show
+                                    </p>
+                                    <ul className="pt-5">
+                                        {utilityData.slice(0, 4).map(utility => (
+                                            <li className="media is-size-6" key={utility.id}>
+                                                <div className="media-left">
+                                                    <figure className="image is-24x24">
+                                                        <img src={bananaIcon} alt="" />
+                                                    </figure>
+                                                </div>
+                                                <div className="media-content has-text-left">
+                                                    <span className="has-text-white">{utility.body}</span>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <h2 className="title has-text-yellow is-6 has-text-left has-text-weight-bold pt-5">
+                                        OTHER EPISODES (FROM EP3 ONWARDS)
+                                    </h2>
+                                    <ul className="pt-5">
+                                        {utilityData.slice(4, 10).map(utility => (
+                                            <li className="media is-size-6" key={utility.id}>
+                                                <div className="media-left">
+                                                    <figure className="image is-24x24">
+                                                        <img src={bananaIcon} alt="" />
+                                                    </figure>
+                                                </div>
+                                                <div className="media-content has-text-left">
+                                                    <span className="has-text-white">{utility.body}</span>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="column pl-6">
+                                <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">
+                                    THE RED APE FAMILY <br />
+                                    ROADMAP
+                                </h1>
+                                <div className="pt-5 pl-5">
+                                    <h2 className="title has-text-info is-6 has-text-left has-text-weight-bold has-text-success-dark">
+                                        ACHIEVED
+                                    </h2>
+                                    <ul className="pt-5">
+                                        {roadMapData.slice(0, 6).map(roadmap => (
+                                            <li className="media is-size-6" key={roadmap.id}>
+                                                <div className="media-left">
+                                                    <figure className="image is-24x24">
+                                                        <img src={bananaIcon} alt="" />
+                                                    </figure>
+                                                </div>
+                                                <div className="media-content has-text-left">
+                                                    <roadmap.body />
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <h2 className="title has-text-yellow is-6 has-text-left has-text-weight-bold pt-6">
+                                        UPCOMING
+                                    </h2>
+                                    <ul className="pt-4">
+                                        {roadMapData.slice(6, 12).map(roadmap => (
+                                            <li className="media is-size-6" key={roadmap.id}>
+                                                <div className="media-left">
+                                                    <figure className="image is-24x24">
+                                                        <img src={bananaIcon} alt="" />
+                                                    </figure>
+                                                </div>
+                                                <div className="media-content has-text-left">
+                                                    <roadmap.body />
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -666,17 +754,37 @@ const HomePage = props => {
                 className="has-background-black"
                 content={
                     <div>
-                        <h1 className="title has-text-white has-text-weight-bold has-text-centered is-4">
+                        <h1 className="title has-text-white has-text-weight-bold has-text-centered is-4 pb-4">
                             OFFICIAL PARTNERS
                         </h1>
-                        <br />
-                        <br />
-                        <br />
+
                         <div className="columns">
-                            {[...partnersData].splice(0, 5).map((p, i) => (
+                            {[...partnersData].splice(0, 1).map((p, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <h1 className="title is-5 has-text-centered has-text-warning">{p.name}</h1>
-                                    <img src={p.imgSrc} alt="" width={p.width} />
+                                    <a
+                                        className="has-text-centered"
+                                        href={p.link}
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <img src={p.imgSrc} alt="" className="" width={p.width} />
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="columns pt-5">
+                            {[...partnersData].splice(1, 6).map((p, i) => (
+                                <div className="column has-text-centered" key={i}>
+                                    <h1 className="title is-5 has-text-centered has-text-warning">{p.name}</h1>
+                                    <a
+                                        className="has-text-centered"
+                                        href={p.link}
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        <img src={p.imgSrc} alt="" className="" width={p.width} />
+                                    </a>
                                 </div>
                             ))}
                         </div>
@@ -693,9 +801,7 @@ const HomePage = props => {
 };
 
 HomePage.propTypes = {
-    data: PropTypes.object.isRequired,
     set_member: PropTypes.func.isRequired,
-    section: PropTypes.string.isRequired,
     navbarReducer: PropTypes.object.isRequired,
 };
 

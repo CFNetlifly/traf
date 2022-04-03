@@ -1,62 +1,81 @@
 import React from 'react';
 
-export const data = [
+const roadMapData = [
     {
+        id: 1,
         body: () => (
             <p className="has-text-white">
-                Put TRAF on TV <span className="has-text-info has-text-weight-bold">(DONE)</span>.
+                Put TRAF on TV <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
             </p>
         ),
     },
     {
+        id: 2,
         body: () => (
             <p className="has-text-white">
-                Opening guest-staring for holders <span className="has-text-info has-text-weight-bold">(DONE)</span>.
+                Opening guest-staring for holders{' '}
+                <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+            </p>
+        ),
+    },
+    {
+        id: 3,
+        body: () => (
+            <p className="has-text-white">
+                Gift 1 BAYC & 3 MAYC for Episode 1 holders
+                <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+            </p>
+        ),
+    },
+    {
+        id: 4,
+        body: () => (
+            <p className="has-text-white">
+                Buy land in the Metaverse <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
             </p>
         ),
     },
 
-    // {
-    //     title: '25% OF SALES UNLOCKS: ',
-    //     body: "1 <span className='has-text-cyellow'>MUTANT APE YACHT CLUB </span> NFT GIVEAWAY",
-    // },
-    // {
-    //     title: '50% OF SALES UNLOCKS: ',
-    //     body: "1 <span className='has-text-cyellow'>MUTANT APE YACHT CLUB </span> NFT GIVEAWAY",
-    // },
-    // {
-    //     title: '75% OF SALES UNLOCKS: ',
-    //     body: "1 <span className='has-text-cyellow'>MUTANT APE YACHT CLUB </span> NFT GIVEAWAY",
-    // },
-    // {
-    //     title: '100% OF SALES UNLOCKS: ',
-    //     body: "<span style='color: red'>1 BORED APE YACHT CLUB NFT GIVEAWAY</span>",
-    // },
+    {
+        id: 5,
+        body: () => (
+            <p className="has-text-white">
+                Build GRAVITY brand & have holders claim it{' '}
+                <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+            </p>
+        ),
+    },
+
+    {
+        id: 6,
+        body: () => (
+            <p className="has-text-white">
+                Sign a large fashion brand <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+            </p>
+        ),
+    },
+
+    {
+        id: 7,
+        body: () => <p className="has-text-white">TRAF Cinema in the Metaverse</p>,
+    },
+
+    {
+        id: 8,
+        body: () => <p className="has-text-white">Wen Merch.</p>,
+    },
+    {
+        id: 9,
+        body: () => <p className="has-text-white">PPV</p>,
+    },
+    {
+        id: 10,
+        body: () => <p className="has-text-white">TRAF.M 👀</p>,
+    },
+    {
+        id: 11,
+        body: () => <p className="has-text-white">D:TRAF 👀</p>,
+    },
 ];
 
-// export const data2 = [
-//     {
-//         body: "1  BAYC WILL STAR AS <span className='has-text-cyellow'>MAIN CHARACTER</span> AND BE PAID <span style='color: red'>44 ETH.</span>",
-//     },
-//     {
-//         body: "1  BAYC WILL STAR AS <span className='has-text-cyellow'>SECONDARY CHARACTER</span> AND BE PAID <span style='color: red'>22 ETH.</span>",
-//     },
-//     {
-//         body: "1  RANDOM NFT WILL STAR AS <span className='has-text-cyellow'>GUEST CHARACTER</span> AND BE PAID <span style='color: red'>2 ETH.</span>",
-//     },
-// ];
-
-// export const data3 = [
-//     {
-//         title: 'AFTER EPISODE 1 SELLS OUT:',
-//         body: 'SEASON 1 POSTER NFTS CAN BE CLAIMED BY TRAF HOLDERS',
-//     },
-//     {
-//         title: 'AFTER EPISODE 3 SELLS OUT:',
-//         body: 'MERCH SHOP',
-//     },
-//     {
-//         title: 'AFTER EPISODE 5 SELLS OUT:',
-//         body: 'SANDBOX & CRYPTOVOXELS LAND WILL BE PURCHASED FOR TRAF CINEMA',
-//     },
-// ];
+export default roadMapData;

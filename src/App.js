@@ -7,7 +7,6 @@ import HomePage from 'pages/home';
 import TeamPage from 'pages/team';
 import FaqPage from 'pages/faq';
 import Stream from 'pages/stream';
-import Whitepaper from 'pages/whitepaper';
 import SocketPage from 'pages/sockets';
 import SneakersPage from 'pages/sneakers';
 import DawPage from 'pages/daw';
@@ -36,10 +35,6 @@ const App = () => {
 
                 <Route exact path="/stream">
                     <Stream />
-                </Route>
-
-                <Route exact path="/whitepaper">
-                    <Whitepaper />
                 </Route>
 
                 <Route exact path="/verify/:id">

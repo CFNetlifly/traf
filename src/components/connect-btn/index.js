@@ -20,7 +20,11 @@ const ConnectBtn = props => {
             className="connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold"
             onClick={onClicked}
         >
-            {wallet.isConnected && wallet.currentAccount != null ? getAddressReduced(wallet.currentAccount) : 'Connect'}
+            <span>
+                {wallet.isConnected && wallet.currentAccount != null
+                    ? getAddressReduced(wallet.currentAccount)
+                    : 'Connect'}
+            </span>
         </button>
     );
 };

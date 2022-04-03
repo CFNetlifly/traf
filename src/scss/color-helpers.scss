@@ -1,8 +1,9 @@
 @import './vars';
 
-@import './vars';
 @use 'sass:color';
 @use 'sass:map';
+
+
 
 $levels: 10;
 $corners: 'top', 'right', 'bottom', 'left';
@@ -75,3 +76,62 @@ $corners: 'top', 'right', 'bottom', 'left';
 .has-no-box-shadow {
     box-shadow: none !important;
 }
+
+// .has-background-section-1{
+//     background-image : url("../media/backgrounds/section1-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+// }
+
+// .has-background-section-2{
+//     background-image : url("../media/backgrounds/section2-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-3{
+//     background-image : url("../media/backgrounds/section3-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-4{
+//     background-image : url("../media/backgrounds/section4-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-5{
+//     background-image : url("../media/backgrounds/section5-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-6{
+//     background-image : url("../media/backgrounds/section6-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-7{
+//     background-image : url("../media/backgrounds/section7-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-8{
+//     background-image : url("../media/backgrounds/section8-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-9{
+//     background-image : url("../media/backgrounds/section9-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }
+
+// .has-background-section-10{
+//     background-image : url("../media/backgrounds/section10-background.jpg");
+//     background-color: rgba(0, 0, 0, 0.5);
+    
+// }

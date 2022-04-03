@@ -14,6 +14,17 @@ import member8Jpg from 'media/member8.jpg';
 import member9Jpg from 'media/member9.jpg';
 import member10Svg from 'media/member10.svg';
 
+import background1SectionJpg from 'media/backgrounds/section1-background.jpg';
+import background2SectionJpg from 'media/backgrounds/section2-background.jpg';
+import background3SectionJpg from 'media/backgrounds/section3-background.jpg';
+import background4SectionJpg from 'media/backgrounds/section4-background.jpg';
+import background5SectionJpg from 'media/backgrounds/section5-background.jpg';
+import background6SectionJpg from 'media/backgrounds/section6-background.jpg';
+import background7SectionJpg from 'media/backgrounds/section7-background.jpg';
+import background8SectionJpg from 'media/backgrounds/section8-background.jpg';
+import background9SectionJpg from 'media/backgrounds/section9-background.jpg';
+import background10SectionJpeg from 'media/backgrounds/section10-background.jpeg';
+
 import cast1Png from 'media/cast1.png';
 import cast2Png from 'media/cast2.png';
 import cast3Png from 'media/cast3.png';
@@ -30,7 +41,6 @@ import cast13Png from 'media/cast13.png';
 import cast14Jpeg from 'media/cast14.jpeg';
 import cast15Png from 'media/cast15.png';
 
-import castQuestionPng from 'media/question.gif';
 // import openseaPng from 'media/opensea.png';
 
 import episodesRoadmapPng from 'media/episodes-roadmap.png';
@@ -39,12 +49,15 @@ import giveawaysLoopVideo from 'media/giveaways-loop.gif';
 import guestPng from 'media/guest.jpg';
 
 import episode1SpaceshipJPG from 'media/ep1-poster-from-spaceship.jpg';
+import episode2SpaceshipJPG from 'media/ep2-poster-from-spaceship.jpg';
 
 import partner1Png from 'media/partners/partner1.png';
 import partner2Png from 'media/partners/partner2.png';
 import partner3Png from 'media/partners/partner3.png';
 import partner4Png from 'media/partners/partner4.png';
 import dawPng from 'media/partners/daw.jpg';
+import dieselLogoJpeg from 'media/partners/diesel-logo.jpeg';
+import eldApePng from 'media/partners/eldape.png';
 
 import tclPng from 'media/brand-logos/tcl.png';
 import plexPng from 'media/brand-logos/plex.png';
@@ -97,6 +110,17 @@ export const ape13 = cast13Png;
 export const ape14 = cast14Jpeg;
 export const ape15 = cast15Png;
 
+export const background1Section = background1SectionJpg;
+export const background2Section = background2SectionJpg;
+export const background3Section = background3SectionJpg;
+export const background4Section = background4SectionJpg;
+export const background5Section = background5SectionJpg;
+export const background6Section = background6SectionJpg;
+export const background7Section = background7SectionJpg;
+export const background8Section = background8SectionJpg;
+export const background9Section = background9SectionJpg;
+export const background10Section = background10SectionJpeg;
+
 // export const mistery = "175iHNW8OIryfZeqd5yPPnM5zW0h1gvW7";
 export const question = baseURL + '10Fz_bXT7fvm-cIfzTzSl4oRzQlQLx6SZ';
 export const opensea = baseURL + '1qbEWtD4TUKBU_T01fozvj5xvXJ4fTnOx';
@@ -108,6 +132,7 @@ export const giveaways = giveawaysLoopVideo;
 export const guest = guestPng;
 
 export const episode1Spaceship = episode1SpaceshipJPG;
+export const episode2Spaceship = episode2SpaceshipJPG;
 
 //patners section
 export const partner1 = partner1Png;
@@ -115,6 +140,8 @@ export const partner2 = partner2Png;
 export const partner3 = partner3Png;
 export const partner4 = partner4Png;
 export const daw = dawPng;
+export const dieselLogo = dieselLogoJpeg;
+export const eldApe = eldApePng;
 
 export const tcl = tclPng;
 export const plex = plexPng;

@@ -66,14 +66,15 @@ const footer = () => {
                         Whitepaper
                     </a>
                 </h1>
-                <h1 className="subtitle has-text-warning is-6 mb-3">
+                <h1 className="subtitle has-text-warning is-6 mb-5">
+                    <h1 className="subtitle has-text-warning is-6 mb-3">Royalties Wallet</h1>
                     <a
                         className="has-text-warning"
-                        href="https://opensea.io/TRAF_VAULT"
+                        href="https://etherscan.io/address/0x38ef1bf1503efe695525211f5e2cea9f7bd01cc3"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Giveaways&#39; Vault
+                        0x38ef1bf1503efe695525211f5e2cea9f7bd01cc3
                     </a>
                 </h1>
                 {/* <h1 className="subtitle has-text-warning is-6 mb-3">
@@ -95,9 +96,11 @@ const footer = () => {
                         Episode 2 Royalties Wallet
                     </a>
                 </h1> */}
-                <h1 className="subtitle has-text-warning is-6 mb-3">
+                <h1 className="subtitle has-text-warning is-6 mb-5">
+                    <h1 className="subtitle has-text-warning is-6 mb-3">Contract Address</h1>
+
                     <a
-                        href="https://etherscan.io/address/0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD "
+                        href="https://etherscan.io/address/0x81f296145c5555d7b4b426d97e4e2260c017f5d0"
                         className="has-text-warning"
                         target="_blank"
                         rel="noopener noreferrer"

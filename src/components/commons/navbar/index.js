@@ -131,7 +131,7 @@ const Navbar = props => {
                             Gravity
                         </Link>
                         <Link
-                            to="/mint"
+                            to="#"
                             className="has-text-white navbar-item has-text-centered-mobile"
                             onClick={e => {
                                 onBurgerIClicked(e);
@@ -175,7 +175,7 @@ const Navbar = props => {
                         <div className="navbar-item has-text-centered-mobile">
                             <a
                                 className="is-size-4 "
-                                href="https://www.youtube.com/channel/UCLCsACZQEeKOzjfbK2kIo9A"
+                                href="https://www.youtube.com/c/TheRedApeFamily"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={onBurgerIClicked}
@@ -188,7 +188,7 @@ const Navbar = props => {
                         <div className="navbar-item has-text-centered-mobile">
                             <a
                                 className="is-size-4 "
-                                href="https://discord.gg/JeqSUsVQQC"
+                                href="https://discord.gg/traf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={onBurgerIClicked}
