@@ -130,15 +130,17 @@ const Navbar = props => {
                         >
                             Gravity
                         </Link>
-                        <Link
-                            to="#"
+                        <a
+                            href="https://www.premint.xyz/traf-ep3/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="has-text-white navbar-item has-text-centered-mobile"
                             onClick={e => {
                                 onBurgerIClicked(e);
                             }}
                         >
                             Mint
-                        </Link>
+                        </a>
                         {/* 
                     <Link to="/daw" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
                         Daw
