@@ -5,7 +5,7 @@ const roadMapData = [
         id: 1,
         body: () => (
             <p className="has-text-white">
-                Put TRAF on TV <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+                Put TRAF on TV <span className="has-text-hlime has-text-weight-bold">(DONE)</span>.
             </p>
         ),
     },
@@ -13,8 +13,7 @@ const roadMapData = [
         id: 2,
         body: () => (
             <p className="has-text-white">
-                Opening guest-staring for holders{' '}
-                <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+                Opening guest-staring for holders <span className="has-text-hlime has-text-weight-bold">(DONE)</span>.
             </p>
         ),
     },
@@ -23,7 +22,7 @@ const roadMapData = [
         body: () => (
             <p className="has-text-white">
                 Gift 1 BAYC & 3 MAYC for Episode 1 holders
-                <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+                <span className="has-text-hlime has-text-weight-bold"> (DONE)</span>.
             </p>
         ),
     },
@@ -31,7 +30,7 @@ const roadMapData = [
         id: 4,
         body: () => (
             <p className="has-text-white">
-                Buy land in the Metaverse <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+                Buy land in the Metaverse <span className="has-text-hlime has-text-weight-bold">(DONE)</span>.
             </p>
         ),
     },
@@ -41,7 +40,7 @@ const roadMapData = [
         body: () => (
             <p className="has-text-white">
                 Build GRAVITY brand & have holders claim it{' '}
-                <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+                <span className="has-text-hlime has-text-weight-bold">(DONE)</span>.
             </p>
         ),
     },
@@ -50,7 +49,7 @@ const roadMapData = [
         id: 6,
         body: () => (
             <p className="has-text-white">
-                Sign a large fashion brand <span className="has-text-success-dark has-text-weight-bold">(DONE)</span>.
+                Sign a large fashion brand <span className="has-text-hlime has-text-weight-bold">(DONE)</span>.
             </p>
         ),
     },

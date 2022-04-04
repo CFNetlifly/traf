@@ -55,6 +55,15 @@ $corners: 'top', 'right', 'bottom', 'left';
     }
 }
 
+
+
+
+// @mixin generateClasses ($number) {
+//     .has-background-section- #{$number} {
+        
+//     }
+// }
+
 @include generate-color-classes($redape, 'redape');
 @include generate-color-classes($cyellow, 'cyellow');
 @include generate-color-classes($cpurple, 'cpurple');
@@ -64,6 +73,7 @@ $corners: 'top', 'right', 'bottom', 'left';
 @include generate-color-classes($hred, 'hred');
 @include generate-color-classes($hgreen, 'hgreen');
 @include generate-color-classes($hdarkgreen, 'hdarkgreen');
+@include generate-color-classes($hlime, 'hlime');
 
 .has-background-transparent {
     background: rgba(0, 0, 0, 0) !important;
@@ -149,3 +159,10 @@ $corners: 'top', 'right', 'bottom', 'left';
     background-position: center;
 }
 
+.has-background-section-10{
+    background-image : url("../media/backgrounds/section10-background.jpg");
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

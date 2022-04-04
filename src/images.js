@@ -23,6 +23,7 @@ import background6SectionJpg from 'media/backgrounds/section6-background.jpg';
 import background7SectionJpg from 'media/backgrounds/section7-background.jpg';
 import background8SectionJpg from 'media/backgrounds/section8-background.jpg';
 import background9SectionJpg from 'media/backgrounds/section9-background.jpg';
+import background10SectionJpg from 'media/backgrounds/section10-background.jpg';
 
 import cast1Png from 'media/cast1.png';
 import cast2Png from 'media/cast2.png';
@@ -118,6 +119,7 @@ export const background6Section = background6SectionJpg;
 export const background7Section = background7SectionJpg;
 export const background8Section = background8SectionJpg;
 export const background9Section = background9SectionJpg;
+export const background10Section = background10SectionJpg;
 
 // export const mistery = "175iHNW8OIryfZeqd5yPPnM5zW0h1gvW7";
 export const question = baseURL + '10Fz_bXT7fvm-cIfzTzSl4oRzQlQLx6SZ';

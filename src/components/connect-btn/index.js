@@ -17,7 +17,7 @@ const ConnectBtn = props => {
 
     return (
         <button
-            className="connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold"
+            className="connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-6 pr-6"
             onClick={onClicked}
         >
             <span>

@@ -7,13 +7,16 @@ import HomePage from 'pages/home';
 import TeamPage from 'pages/team';
 import FaqPage from 'pages/faq';
 import Stream from 'pages/stream';
-import SocketPage from 'pages/sockets';
+import SocketPage from 'pages/verify-user';
 import SneakersPage from 'pages/sneakers';
 import DawPage from 'pages/daw';
 
 import 'scss/main.scss';
 
 import { initWeb3 } from './web3';
+import MintSection from 'pages/home/mint-section';
+import Mint2Section from 'pages/home/mint2-section';
+import BeforeMint from 'pages/mint/before-mint';
 initWeb3();
 
 const App = () => {
@@ -44,6 +47,22 @@ const App = () => {
                 <Route exact path="/gravity">
                     <SneakersPage />
                 </Route>
+
+                <Route exact path="/before-mint">
+                    <BeforeMint />
+                </Route>
+
+                {/* <Route exact path="/mint">
+                    <MintSection />
+                </Route>
+
+                <Route exact path="/before-mint">
+                    <Mint2Section />
+                </Route>
+
+                <Route exact path="/sockets">
+                    <SocketPage />
+                </Route> */}
 
                 {/* <Route exact path="/daw">
                     <DawPage/>

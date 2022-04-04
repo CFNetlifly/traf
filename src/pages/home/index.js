@@ -7,7 +7,7 @@ import {
     // guest,
     bannerVideo,
     bananaIcon,
-    benefits,
+    // benefits,
     opensea,
     episode1Spaceship,
     episode2Spaceship,
@@ -43,9 +43,6 @@ const HomePage = props => {
     const { navbarReducer } = props;
 
     const [assetsLoaded] = useState(0);
-    console.log('🚀 ~ file: index.js ~ line 21 ~ roadMapData', roadMapData);
-    console.log('🚀 ~ file: index.js ~ line 24 ~ teamData', teamData);
-    console.log('🚀 ~ file: index.js ~ line 24 ~ castData', castData);
 
     useEffect(() => {
         // let y = 0;
@@ -218,7 +215,7 @@ const HomePage = props => {
                                             <h1 className="subtitle has-text-white has-text-weight-bold mb-1 is-3">
                                                 EPISODE 3
                                             </h1>
-                                            <h1 className="subtitle has-text-info has-text-weight-bold mb-5 is-3">
+                                            <h1 className="subtitle has-text-hlime has-text-weight-bold mb-5 is-3 is-italic">
                                                 ALLOW LIST OPEN
                                             </h1>
                                             <a
@@ -422,7 +419,7 @@ const HomePage = props => {
                                     ROADMAP
                                 </h1>
                                 <div className="pt-5 pl-5">
-                                    <h2 className="title has-text-info is-6 has-text-left has-text-weight-bold has-text-success-dark">
+                                    <h2 className="title  is-6 has-text-left has-text-weight-bold has-text-hlime">
                                         ACHIEVED
                                     </h2>
                                     <ul className="pt-5">
@@ -535,7 +532,7 @@ const HomePage = props => {
 
                         <div className="columns is-multiline px-3">
                             <div className="column" />
-                            {[...teamData].splice(0, 3).map((t, i) => (
+                            {[...teamData].slice(0, 3).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <Link to="/team">
                                         <img
@@ -568,7 +565,7 @@ const HomePage = props => {
                         <br className="is-hidden-mobile" />
                         <br className="is-hidden-mobile" />
                         <div className="columns is-multiline">
-                            {[...teamData].splice(3, 4).map((t, i) => (
+                            {[...teamData].slice(3, 7).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <Link to="/team">
                                         <img
@@ -601,7 +598,7 @@ const HomePage = props => {
 
                         <div className="columns is-multiline px-3">
                             <div className="column"></div>
-                            {[...teamData].splice(7, 3).map((t, i) => (
+                            {[...teamData].slice(7, 10).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <Link to="/team">
                                         <img
@@ -644,7 +641,7 @@ const HomePage = props => {
                         </h1>
 
                         <div className="columns">
-                            {[...castData].splice(0, 5).map((c, i) => (
+                            {[...castData].slice(0, 5).map((c, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <img
                                         className="is-rounded"
@@ -669,7 +666,7 @@ const HomePage = props => {
                         </div>
 
                         <div className="columns pt-6">
-                            {[...castData].splice(5, 5).map((c, i) => (
+                            {[...castData].slice(5, 10).map((c, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <img
                                         className="is-rounded"
@@ -695,7 +692,7 @@ const HomePage = props => {
                             ))}
                         </div>
                         <div className="columns pt-6">
-                            {[...castData].splice(10, 5).map((c, i) => (
+                            {[...castData].slice(10, 15).map((c, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <img
                                         className="is-rounded"
