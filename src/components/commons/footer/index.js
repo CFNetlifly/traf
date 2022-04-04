@@ -3,7 +3,7 @@ import React from 'react';
 
 const footer = () => {
     return (
-        <footer className="footer has-background-black py-5">
+        <footer className="footer has-background-section-9 py-5">
             <div className="container has-text-centered">
                 <img src={titleImg} alt="" style={{ width: '250px' }} />
 

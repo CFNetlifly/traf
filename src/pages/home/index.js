@@ -119,7 +119,7 @@ const HomePage = props => {
 
             {/* mint section */}
             <SectionLayout
-                className="has-background-black"
+                className="has-background-section-1"
                 content={
                     <div className="">
                         <h1 className="subtitle has-text-yellow has-text-weight-bold mb-0 has-text-centered is-size-4">
@@ -209,7 +209,7 @@ const HomePage = props => {
                                 <div className="column">
                                     <div className="column">
                                         <figure className="image">
-                                            <img src={question} alt="Episode 1 Spaceship" />
+                                            <img src={question} alt="Episode 3 Spaceship" />
                                         </figure>
                                     </div>
 
@@ -287,7 +287,7 @@ const HomePage = props => {
 
             {/* trailer */}
             <SectionLayout
-                className="has-background-primary"
+                className="has-background-section-2"
                 content={
                     <div>
                         {/* <p className="title has-text-white is-6 mb-0">
@@ -366,7 +366,7 @@ const HomePage = props => {
             />
 
             <SectionLayout
-                className="has-background-black"
+                className="has-background-section-3"
                 content={
                     <div>
                         <div className="columns">
@@ -503,7 +503,7 @@ const HomePage = props => {
             {/*F.A.Q*/}
 
             <SectionLayout
-                className="has-background-primary"
+                className="has-background-section-4"
                 content={
                     <div className="">
                         <h1 className="title has-text-white is-4 has-text-centered">FREQUENTLY ASKED QUESTIONS</h1>
@@ -525,7 +525,7 @@ const HomePage = props => {
 
             {/* team  */}
             <SectionLayout
-                className="has-background-black"
+                className="has-background-section-5"
                 content={
                     <div>
                         <h1 className="title has-text-white has-text-centered is-4">MEET THE TEAM</h1>
@@ -636,7 +636,7 @@ const HomePage = props => {
 
             {/* cast */}
             <SectionLayout
-                className="has-background-primary"
+                className="has-background-section-6"
                 content={
                     <div>
                         <h1 className="title has-text-white has-text-weight-bold has-text-centered is-4 pb-6">
@@ -725,7 +725,7 @@ const HomePage = props => {
             />
 
             <SectionLayout
-                className="has-background-black"
+                className="has-background-section-7"
                 content={
                     <div className="has-text-centered">
                         <h1 className="title has-text-warning is-4">MUSKVILLE IS WAITING!</h1>
@@ -745,13 +745,13 @@ const HomePage = props => {
                 }
             />
 
-            <SectionLayout
+            {/* <SectionLayout
                 className="has-background-black p-0 m-0"
                 content={<hr style={{ margin: '0', background: '#393939' }} />}
-            />
+            /> */}
 
             <SectionLayout
-                className="has-background-black"
+                className="has-background-section-8"
                 content={
                     <div>
                         <h1 className="title has-text-white has-text-weight-bold has-text-centered is-4 pb-4">
@@ -792,10 +792,10 @@ const HomePage = props => {
                 }
             />
 
-            <SectionLayout
+            {/* <SectionLayout
                 className="has-background-black p-0 m-0"
                 content={<hr style={{ margin: '0', background: '#393939' }} />}
-            />
+            /> */}
         </div>
     );
 };
