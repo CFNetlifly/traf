@@ -33,7 +33,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -48,7 +48,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -63,7 +63,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -78,7 +78,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -93,7 +93,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -108,7 +108,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -123,7 +123,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -138,7 +138,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -153,7 +153,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -168,7 +168,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -183,7 +183,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -198,7 +198,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -213,7 +213,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -228,7 +228,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),
@@ -243,7 +243,7 @@ const cast = [
                 rel="noreferrer noopener"
             >
                 <span className="icon">
-                    <img src={opensea} alt="NFT" />
+                    <img src={opensea} alt="" />
                 </span>
             </a>
         ),

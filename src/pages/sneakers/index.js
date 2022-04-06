@@ -35,6 +35,10 @@ const SneakersPage = props => {
         getWebData();
     }, [web3Reducer, walletReducer, triggerer]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const getWebData = async () => {
         if (
             walletReducer.currentAccount === '' ||

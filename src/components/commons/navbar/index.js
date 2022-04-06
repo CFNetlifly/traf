@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useEffect, useState } from 'react';
 
@@ -87,14 +88,6 @@ const Navbar = props => {
                             Home
                         </Link>
 
-                        {/*}<Link to="/faq" className="has-text-white navbar-item has-text-centered-mobile" onClick={e => {onBurgerIClicked(e)}}>
-                        FAQ
-                    </Link>*/}
-
-                        {/* <Link to="/home" className="has-text-white navbar-item has-text-centered-mobile" onClick={e => {props.set_section("ROADMAP"); onBurgerIClicked(e)}}>
-                        Roadmap
-                    </Link> */}
-
                         <Link
                             to="/team"
                             className="has-text-white navbar-item has-text-centered-mobile"
@@ -117,10 +110,6 @@ const Navbar = props => {
                             Whitepaper
                         </a>
 
-                        {/* <Link to="/stream" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
-                        Stream
-                    </Link> */}
-
                         <Link
                             to="/gravity"
                             className="has-text-white navbar-item has-text-centered-mobile"
@@ -131,7 +120,7 @@ const Navbar = props => {
                             Gravity
                         </Link>
                         <Link
-                            to="/before-mint"
+                            to="/mint"
                             className="has-text-white navbar-item has-text-centered-mobile"
                             onClick={e => {
                                 onBurgerIClicked(e);
@@ -139,10 +128,6 @@ const Navbar = props => {
                         >
                             Mint
                         </Link>
-                        {/* 
-                    <Link to="/daw" className="has-text-white navbar-item has-text-centered-mobile" onClick={ e => {onBurgerIClicked(e)}}>
-                        Daw
-                    </Link> */}
                     </div>
 
                     <div className="navbar-end">

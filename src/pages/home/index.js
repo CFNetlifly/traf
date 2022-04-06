@@ -34,43 +34,20 @@ import utilityData from './data-utility';
 import './brands.scss';
 import './home.scss';
 import SectionLayout from 'layouts/section';
+import VideoSlider from 'components/slider';
 
 const HomePage = props => {
     const homeSection = useRef(null);
     // const faqSection = useRef(null);
     // const roadMapSection = useRef(null);
     // const teamSection = useRef(null);
-    const { navbarReducer } = props;
+    // const { navbarReducer } = props;
 
     const [assetsLoaded] = useState(0);
 
     useEffect(() => {
-        // let y = 0;
-        switch (navbarReducer.section) {
-            case 'HOME':
-                // y = homeSection.current.scrollIntoView();
-                break;
-
-            // case "FAQ":
-            //     y = faqSection.current.scrollIntoView()
-            //     window.scrollBy(0, -45);
-            //     break;
-
-            case 'ROADMAP':
-                // y = roadMapSection.current.scrollIntoView();
-                window.scrollBy(0, -45);
-                break;
-
-            // case "TEAM":
-            //     y = teamSection.current.scrollIntoView()
-            //     window.scrollBy(0, -45);
-            //     break;
-
-            default:
-                break;
-        }
-        // console.log(y);
-    }, [navbarReducer.section]);
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className={`${assetsLoaded >= 35 ? '' : 'home-sizer-null'}`} style={{ position: 'relative' }}>
@@ -176,7 +153,7 @@ const HomePage = props => {
                                 <div className="column">
                                     <div className="column">
                                         <figure className="image">
-                                            <img src={episode2Spaceship} alt="Episode 1 Spaceship" />
+                                            <img src={episode2Spaceship} alt="Episode 2 Spaceship" />
                                         </figure>
                                     </div>
 
@@ -233,134 +210,12 @@ const HomePage = props => {
                                 </div>
                             </div>
                         </div>
-                        <hr style={{ margin: '0', background: '#393939' }} />
-                        {/* <div className="my-6 has-text-centered">
-              <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-4">
-                {" "}
-                EPISODE 3{" "}
-              </h1>
-              <h1 className="subtitle has-text-white has-text-weight-bold mb-3 is-4">
-                <span className="has-text-warning">COMING SOON</span>
-              </h1>
-              <br />
-              <h1 className="subtitle has-text-warning has-text-weight-bold mb-3 is-4">
-                {" "}
-                JOIN OUR DISCORD FOR A <br /> POSSIBILITY TO GET WHITELISTED
-              </h1>
-              <br />
-              <br />
-              <a
-                href="https://discord.gg/HxE754wj9r"
-                target="_blank"
-                className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide"
-              >
-                <strong>JOIN DISCORD</strong>
-              </a>
-            </div> */}
-
-                        {/* <hr style={{margin: '0', background: '#393939'}}/> */}
-                        <div className="my-6">{/* <MintSection/> */}</div>
+                        <hr style={{ background: '#393939' }} />
                     </div>
                 }
             />
 
-            {/* mint section episode 2 
-            <SectionLayout
-                className="has-background-primary"
-                content={
-                    <div>
-                        <h1 className="has-text-white subtitle">Episode 2 mints</h1>
-                        <MintSection2/>
-                    </div>
-                }
-            />*/}
-
-            {/* <SectionLayout
-                className="has-background-primary p-0 m-0"
-                content={
-                    <hr style={{margin: '0', background: '#393939'}}/>
-                }
-            />     */}
-
-            {/* trailer */}
-            <SectionLayout
-                className="has-background-section-2"
-                content={
-                    <div>
-                        {/* <p className="title has-text-white is-6 mb-0">
-                            It’s 2130. The earth is dying. But all is not lost! Four Bored Apes. One Dog. A Lazy Lion with a stethoscope. On a mission to Mars!
-                            <br/><br/>
-                            Muskville Let’s Fucking go!
-                        </p> */}
-                        <br />
-                        <div className="columns is-vcentered" style={{ width: '100%' }}>
-                            <div className="column ">
-                                <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">
-                                    S01:EP1
-                                </h1>
-                                <figure className="image is-16by9">
-                                    <iframe
-                                        className="has-ratio"
-                                        width="640"
-                                        height="360"
-                                        src="https://www.youtube.com/embed/8K-xkPP7Hfk"
-                                        title="YouTube video player"
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                    ></iframe>
-                                </figure>
-                            </div>
-                            {/* <div className="column">
-                <p className="has-text-white is-size-6 has-text-weight-bold nm-np-mobile">
-                  <span className="has-text-yellow is-size-5">
-                    Our Episode 1 Token Holders got the following:
-                  </span>{" "}
-                  <br /> <br />
-                  <ul className="ul2">
-                    <li>
-                      {" "}
-                      1 token holder won a{" "}
-                      <span className="has-text-yellow">Bored Ape YC</span>{" "}
-                    </li>
-                    <li>
-                      {" "}
-                      3 token holders won 3{" "}
-                      <span className="has-text-yellow">
-                        Mutant Apes YC
-                      </span>{" "}
-                    </li>
-                    <li> Ep1 Poster Airdropped </li>
-                    <li> Gravity Sneakers </li>
-                    <li> Mint Passes to mint Ep2 at half the price </li>
-                  </ul>
-                  <br />
-                  <br />
-                  And we delivered on our promise to bring TRAF to TV!! Let it
-                  rain $$$
-                </p>
-              </div> */}
-                            <div className="column">
-                                <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">
-                                    S01:EP2 TEASER
-                                </h1>
-                                <figure className="image is-16by9">
-                                    <iframe
-                                        className="has-ratio"
-                                        width="640"
-                                        height="360"
-                                        src="https://www.youtube.com/embed/RgaceRIJzmo"
-                                        title="YouTube video player"
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                    ></iframe>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                }
-            />
+            <SectionLayout className="has-background-section-2 pb-6 pt-6" content={<VideoSlider />} />
 
             <SectionLayout
                 className="has-background-section-3"

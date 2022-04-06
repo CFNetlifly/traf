@@ -36,3 +36,9 @@ export const REMOVE_USER_TOKEN = 'REMOVE_USER_TOKEN';
 export const SET_SECTION = 'SET_SECTION';
 
 export const SET_MEMBER = 'SET_MEMBER';
+
+/* *~~*~~*~~*~~*~~* MODAL REDUCER *~~*~~*~~*~~*~~* */
+
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const PLAY_CLOSE_ANIMATION = 'PLAY_CLOSE_ANIMATION';
+export const CLOSE_MODAL = 'CLOSE_MODAL';

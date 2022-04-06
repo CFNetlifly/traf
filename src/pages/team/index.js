@@ -21,10 +21,6 @@ const Team = props => {
     console.log(props.teamMemberReducer);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    useEffect(() => {
         if (props.teamMemberReducer.section != null) {
             refs[props.teamMemberReducer.section].scrollIntoView();
             window.scrollBy(0, -56);

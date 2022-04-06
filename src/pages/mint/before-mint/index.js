@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useCountdown from 'hooks/useCountDown';
 
 const BeforeMint = () => {
     const { days, hours, minutes, seconds } = useCountdown(1649948400);
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <section className="section has-text-centered has-background-section-10">
             <div className="columns is-centered ">

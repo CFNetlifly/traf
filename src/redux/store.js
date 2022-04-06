@@ -7,6 +7,8 @@ import walletReducer from './reducers/walletReducer';
 import navbarReducer from './reducers/navbarReducer';
 import teamMemberReducer from './reducers/teamMembersReducer';
 import mint2Reducer from './reducers/mint2Reducer';
+import mintButtonReducer from './reducers/mintButtonReducer';
+import modalReducer from './reducers/modalReducer';
 
 const reducer = combineReducers({
     txReducer,
@@ -15,6 +17,8 @@ const reducer = combineReducers({
     navbarReducer,
     teamMemberReducer,
     mint2Reducer,
+    mintButtonReducer,
+    modalReducer,
 });
 
 const store = createStore(reducer, applyMiddleware(thunk));
