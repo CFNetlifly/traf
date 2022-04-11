@@ -19,19 +19,10 @@ import { opensea } from 'images';
 
 import './navbar.scss';
 
-import trafABI from 'abis/TRAF.json';
-import oerc721ABI from 'abis/O_ERC721.json';
-
 const getAddressReduced = address => `${address.slice(0, 6)}...${address.slice(-4)}`;
 
 const Navbar = props => {
-    const { walletReducer, web3Reducer } = useCelesteSelector(state => state);
-    const { contracts } = web3Reducer;
-
-    const getTotalSupply = async () => {
-        const total = await contracts.traf.methods.totalSupply().call();
-        console.log('🚀 ~ file: index.js ~ line 34 ~ getTotalSupply ~ total', total);
-    };
+    const { walletReducer } = useCelesteSelector(state => state);
 
     const [scroll, setScroll] = useState(0);
     const styles = useSpring({ background: scroll > 100 ? '#3A3A3A' : 'black' });

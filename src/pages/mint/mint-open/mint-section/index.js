@@ -1,10 +1,36 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ConnectedWrapper, ConnectButton, SwitchNetworkButton, NetworkWrapper } from 'celeste-framework';
+import {
+    ConnectedWrapper,
+    ConnectButton,
+    SwitchNetworkButton,
+    NetworkWrapper,
+    useCelesteSelector,
+} from 'celeste-framework';
+
+import { totalSupply } from 'redux/actions/mint3Actions';
 
 const MintSection = () => {
     const { mintButtonReducer } = useSelector(state => state);
+    const { web3Reducer } = useCelesteSelector(state => state);
+    // console.log('🚀 ~ file: index.js ~ line 16 ~ MintSection ~ web3Reducer', web3Reducer);
+    const { contracts } = web3Reducer;
+    const { traf } = contracts;
     const dispatch = useDispatch();
+
+    // if (traf !== undefined) {
+    //     console.log(
+    //         '🚀 ~ file: index.js ~ line 28 ~ traf',
+    //         traf.methods.totalSupply().call(function (err, res) {
+    //             if (err) {
+    //                 console.log('🚀 ~ file: index.js ~ line 29 ~ err', err);
+    //             }
+    //             console.log('🚀 ~ file: index.js ~ line 30 ~ res', res);
+    //         })
+    //     );
+    // }
+
+    dispatch(() => totalSupply());
 
     const x = 8;
 

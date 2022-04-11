@@ -1,5 +1,4 @@
 import { useCelesteSelector } from 'celeste-framework';
-import trafABI from 'abis/TRAF.json';
 
 import {
     TRAF_TX_FAILED,
@@ -85,3 +84,12 @@ const public_tx_success = (txType, payload) => ({
     txType: txType,
     payload: payload,
 });
+
+export const totalSupply = () => {
+    const x = 7;
+    try {
+        return x;
+    } catch (e) {
+        return e;
+    }
+};

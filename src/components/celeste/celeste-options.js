@@ -10,8 +10,14 @@ const celesteOptions = {
 
     smartContracts: [
         {
-            address: '0x5496Dfbc129BeA28cad97d7B2591d9aFc6132c37',
+            address: '0x4ee9deF1fC2bB72C216134649bcfc5b2643eC944',
             key: 'traf',
+            abi: trafABI,
+            isMultichain: false,
+        },
+        {
+            address: '0xc38Aa9285EB3C4cf69ab287e2a8b6Cee6dDE26D4',
+            key: 'trafExtension',
             abi: trafABI,
             isMultichain: false,
         },
