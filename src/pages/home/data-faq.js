@@ -23,10 +23,9 @@ const faq = [
         question: 'HOW MANY EPISODES AND SEASONS ARE PLANNED?',
         answer: () => (
             <p className="has-text-white">
-                Season 1 will have 10 episodes (5 to 10 minutes per episode).
+                Season 1 will have 10 episodes (20 minutes per episode).
                 <br />
-                Regarding the number of seasons, the sky (and universe) is the limit! We currently have 10 seasons in
-                the pipeline and a whole galaxy of surprises in store.
+                Regarding the number of seasons, the sky is the limit! We have a whole galaxy of surprises in store.
             </p>
         ),
     },

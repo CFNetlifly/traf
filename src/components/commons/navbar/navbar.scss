@@ -5,6 +5,14 @@
 
 // }
 
+#connection{
+    @media screen and (max-width: 1023px){
+        padding-left: 5.5rem  !important;
+    }
+        margin-right: 5rem !important;
+    }
+
+
 .navbar-start {
     .navbar-item {
         &:hover {

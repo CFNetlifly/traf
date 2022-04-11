@@ -6,6 +6,7 @@ const BeforeMint = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
     return (
         <section className="section has-text-centered has-background-section-10">
             <div className="columns is-centered ">
@@ -31,7 +32,7 @@ const BeforeMint = () => {
                 <div className="column">
                     <p className="has-text-white has-text-weight-bold">TOTAL SUPPLY: 1111</p>
                     <p className="has-text-white">
-                        TRAF Holders Mint (0.3 ETH + Gas) / Allow List Mint (0.35 ETH + Gas) / Public Mint (0.4 ETH +
+                        TRAF Holders Mint (0.25 ETH + Gas) / Allow List Mint (0.35 ETH + Gas) / Public Mint (0.4 ETH +
                         Gas)
                     </p>
                     <div className="content pt-2">

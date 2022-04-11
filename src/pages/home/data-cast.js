@@ -27,13 +27,9 @@ const cast = [
         name: 'Chucky',
         discord: 'BAYC #6614',
         link: () => (
-            <a
-                href="https://opensea.io/assets/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/6614"
-                target="_blank"
-                rel="noreferrer noopener"
-            >
-                <span className="icon">
-                    <img src={opensea} alt="" />
+            <a href="https://twitter.com/chuckythebayc" target="_blank" rel="noreferrer noopener">
+                <span className="icon has-text-white is-size-4">
+                    <i className="fab fa-twitter" />
                 </span>
             </a>
         ),

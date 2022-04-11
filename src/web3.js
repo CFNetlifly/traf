@@ -11,10 +11,7 @@ import {
 import Web3 from 'web3';
 
 import ERCABI from 'abis/ERC1155.json';
-import verifyABI from 'abis/verification.json';
-import ERCABI2 from 'abis/ERC11552.json';
 import ERC721ABI from 'abis/erc721.json';
-import dawABI from 'abis/daw.json';
 import mintABI from 'abis/MintPass.json';
 import sneakersABI from 'abis/sneakers.json';
 import dawTrafABI from 'abis/daw_traf.json';

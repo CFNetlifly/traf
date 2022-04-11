@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import dataSlider from './data-slider';
 
 const VideoSlider = () => {
     const [currentVideo, setCurrentVideo] = useState(0);
-    console.log('🚀 ~ file: index.js ~ line 8 ~ VideoSlider ~ currentVideo', currentVideo);
 
     const options = {
         type: 'loop',
         gap: '1rem',
         autoplay: true,
-        pauseOnHover: false,
+        pauseOnHover: true,
         resetProgress: false,
         height: '25rem',
     };

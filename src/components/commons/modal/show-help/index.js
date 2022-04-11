@@ -26,7 +26,7 @@ const ShowHelp = () => {
                             <h1 className="has-text-white has-text-weight-bold">🟢 TRAF HOLDERS MINT</h1>
                             <p className="has-text-white pt-3">📅 | MINT DAY: April 14</p>
                             <p className="has-text-white">🕙 | MINT TIME: 8 AM PST </p>
-                            <p className="has-text-white">💎 | PRICE: 0.3 ETH + Gas</p>
+                            <p className="has-text-white">💎 | PRICE: 0.25 ETH + Gas</p>
                             <p className="has-text-white">⏱ | DURATION: 12h to 24h</p>
                             <p className="has-text-white">⚙️ | HOW: All TRAF holders are on the AL</p>
                             <p className="has-text-white">⭕️ | MINT LIMIT: 10 per holder wallet</p>

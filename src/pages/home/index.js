@@ -136,7 +136,14 @@ const HomePage = props => {
                                                 <span className="has-text-hred is-italic">SOLD OUT</span>
                                             </h1>
                                             <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
-                                                BUY ON OPENSEA
+                                                <a
+                                                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="has-text-yellow"
+                                                >
+                                                    BUY ON OPENSEA
+                                                </a>
                                             </h1>
                                             <a
                                                 href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
@@ -166,7 +173,14 @@ const HomePage = props => {
                                                 <span className="has-text-hred is-italic">SOLD OUT</span>
                                             </h1>
                                             <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
-                                                BUY ON OPENSEA
+                                                <a
+                                                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="has-text-yellow"
+                                                >
+                                                    BUY ON OPENSEA
+                                                </a>
                                             </h1>
                                             <a
                                                 href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=2&search[sortAscending]=true&search[sortBy]=PRICE"
@@ -193,7 +207,14 @@ const HomePage = props => {
                                                 EPISODE 3
                                             </h1>
                                             <h1 className="subtitle has-text-hlime has-text-weight-bold mb-5 is-3 is-italic">
-                                                ALLOW LIST OPEN
+                                                <a
+                                                    href="https://www.premint.xyz/traf-ep3/"
+                                                    target="_blank"
+                                                    className="has-text-hlime"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    ALLOW LIST OPEN
+                                                </a>
                                             </h1>
                                             <a
                                                 href="https://www.premint.xyz/traf-ep3/"
@@ -223,7 +244,7 @@ const HomePage = props => {
                     <div>
                         <div className="columns">
                             <div className="column">
-                                <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">
+                                <h1 className="title has-text-yellow is-4 has-text-left has-text-weight-bold">
                                     THE RED APE FAMILY <br />
                                     UTILITY
                                 </h1>
@@ -269,7 +290,7 @@ const HomePage = props => {
                                 </div>
                             </div>
                             <div className="column pl-6">
-                                <h1 className="title has-text-white is-4 has-text-left has-text-weight-bold">
+                                <h1 className="title has-text-yellow is-4 has-text-left has-text-weight-bold">
                                     THE RED APE FAMILY <br />
                                     ROADMAP
                                 </h1>
@@ -377,7 +398,7 @@ const HomePage = props => {
 
             {/* team  */}
             <SectionLayout
-                className="has-background-section-5"
+                className="has-background-section-6"
                 content={
                     <div>
                         <h1 className="title has-text-white has-text-centered is-4">MEET THE TEAM</h1>

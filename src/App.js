@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-
 import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
 import HomePage from 'pages/home';
@@ -9,44 +8,56 @@ import SneakersPage from 'pages/sneakers';
 import 'scss/main.scss';
 import 'animate.css';
 import BeforeMint from 'pages/mint/before-mint';
-import MintOpen from 'pages/mint/mint-open';
 
-import { initWeb3 } from './web3';
+import { CelesteProvider } from 'celeste-framework';
+
+import { initCeleste } from 'celeste-framework/dist/store-module';
+
+import celesteOptions from 'components/celeste/celeste-options';
+
 import ShowVideo from 'components/commons/modal/show-video';
 import ShowHelp from 'components/commons/modal/show-help';
-initWeb3();
+import MintOpen from 'pages/mint/mint-open';
+
+initCeleste(celesteOptions);
 
 const App = () => {
     return (
-        <Router>
-            <ShowVideo />
-            <ShowHelp />
+        <CelesteProvider>
+            <Router>
+                <ShowVideo />
+                <ShowHelp />
 
-            <Navbar />
+                <Navbar />
 
-            <Switch>
-                <Route exact path="/">
-                    <Redirect to="/home" />
-                </Route>
+                <Switch>
+                    <Route exact path="/">
+                        <Redirect to="/home" />
+                    </Route>
 
-                <Route exact path="/home">
-                    <HomePage />
-                </Route>
+                    <Route exact path="/home">
+                        <HomePage />
+                    </Route>
 
-                <Route exact path="/team">
-                    <TeamPage />
-                </Route>
+                    <Route exact path="/team">
+                        <TeamPage />
+                    </Route>
 
-                <Route exact path="/gravity">
-                    <SneakersPage />
-                </Route>
+                    <Route exact path="/gravity">
+                        <SneakersPage />
+                    </Route>
 
-                <Route exact path="/mint">
-                    <BeforeMint />
-                </Route>
-            </Switch>
-            <Footer />
-        </Router>
+                    <Route exact path="/mint">
+                        <BeforeMint />
+                    </Route>
+
+                    {/* <Route exact path="/mint-open">
+                        <MintOpen />
+                    </Route> */}
+                </Switch>
+                <Footer />
+            </Router>
+        </CelesteProvider>
     );
 };
 

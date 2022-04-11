@@ -14,8 +14,6 @@ import sign from './sign';
 import verifyABI from 'abis/verification.json';
 import { combineReducers } from 'redux';
 
-import { ethers } from 'ethers';
-
 let provider = new HDWalletProvider({
     mnemonic: {
         phrase: 'dwarf drink catch circle buffalo youth decorate curve intact bronze network robust',

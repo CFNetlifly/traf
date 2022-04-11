@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { ConnectedWrapper, ConnectButton, DisconnectButton, useCelesteSelector } from 'celeste-framework';
 
 import PropTypes from 'prop-types';
 
 import { logo } from 'images';
 
-import ConnectButton from 'components/connect-btn';
+// import ConnectButton from 'components/connect-btn';
 
 import { Link } from 'react-router-dom';
 
@@ -18,7 +19,20 @@ import { opensea } from 'images';
 
 import './navbar.scss';
 
+import trafABI from 'abis/TRAF.json';
+import oerc721ABI from 'abis/O_ERC721.json';
+
+const getAddressReduced = address => `${address.slice(0, 6)}...${address.slice(-4)}`;
+
 const Navbar = props => {
+    const { walletReducer, web3Reducer } = useCelesteSelector(state => state);
+    const { contracts } = web3Reducer;
+
+    const getTotalSupply = async () => {
+        const total = await contracts.traf.methods.totalSupply().call();
+        console.log('🚀 ~ file: index.js ~ line 34 ~ getTotalSupply ~ total', total);
+    };
+
     const [scroll, setScroll] = useState(0);
     const styles = useSpring({ background: scroll > 100 ? '#3A3A3A' : 'black' });
 
@@ -79,7 +93,7 @@ const Navbar = props => {
                     <div className="navbar-start">
                         <Link
                             to="/home"
-                            className="has-text-white navbar-item has-text-centered-mobile"
+                            className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
                                 props.set_section('HOME');
                                 onBurgerIClicked(e);
@@ -90,7 +104,7 @@ const Navbar = props => {
 
                         <Link
                             to="/team"
-                            className="has-text-white navbar-item has-text-centered-mobile"
+                            className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
                                 onBurgerIClicked(e);
                             }}
@@ -102,7 +116,7 @@ const Navbar = props => {
                             href="https://whitepaper.theredapefamily.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="has-text-white navbar-item has-text-centered-mobile"
+                            className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
                                 onBurgerIClicked(e);
                             }}
@@ -112,7 +126,7 @@ const Navbar = props => {
 
                         <Link
                             to="/gravity"
-                            className="has-text-white navbar-item has-text-centered-mobile"
+                            className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
                                 onBurgerIClicked(e);
                             }}
@@ -121,7 +135,7 @@ const Navbar = props => {
                         </Link>
                         <Link
                             to="/mint"
-                            className="has-text-white navbar-item has-text-centered-mobile"
+                            className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
                                 onBurgerIClicked(e);
                             }}
@@ -129,9 +143,20 @@ const Navbar = props => {
                             Mint
                         </Link>
                     </div>
+                    <ConnectedWrapper disconnectedComponent={<></>}>
+                        <div
+                            className="column is-flex is-justify-content-center is-flex-direction-column is-size-7 is-align-items-center navbar-item"
+                            id="connection"
+                        >
+                            <p className="has-text-white ">Connected as</p>
+                            <p className="has-text-cyellow has-text-weight-bold">
+                                {walletReducer.address && getAddressReduced(walletReducer.address)}
+                            </p>
+                        </div>
+                    </ConnectedWrapper>
 
                     <div className="navbar-end">
-                        <div className="navbar-item has-text-centered-mobile">
+                        <div className="navbar-item has-text-centered">
                             <a
                                 className="is-size-4 "
                                 href="https://twitter.com/TheRedApeFamily"
@@ -144,7 +169,7 @@ const Navbar = props => {
                                 </span>
                             </a>
                         </div>
-                        <div className="navbar-item has-text-centered-mobile">
+                        <div className="navbar-item has-text-centered">
                             <a
                                 className="is-size-4 "
                                 href="https://www.instagram.com/theredapefamily/"
@@ -157,7 +182,7 @@ const Navbar = props => {
                                 </span>
                             </a>
                         </div>
-                        <div className="navbar-item has-text-centered-mobile">
+                        <div className="navbar-item has-text-centered">
                             <a
                                 className="is-size-4 "
                                 href="https://www.youtube.com/c/TheRedApeFamily"
@@ -170,7 +195,7 @@ const Navbar = props => {
                                 </span>
                             </a>
                         </div>
-                        <div className="navbar-item has-text-centered-mobile">
+                        <div className="navbar-item has-text-centered">
                             <a
                                 className="is-size-4 "
                                 href="https://discord.gg/traf"
@@ -183,7 +208,7 @@ const Navbar = props => {
                                 </span>
                             </a>
                         </div>
-                        <div className="navbar-item has-text-centered-mobile">
+                        <div className="navbar-item has-text-centered">
                             <a
                                 className="is-size-4 "
                                 href="https://opensea.io/collection/theredapefamily"
@@ -197,8 +222,22 @@ const Navbar = props => {
                             </a>
                         </div>
 
-                        <div className="navbar-item has-text-centered-mobile">
-                            <ConnectButton />
+                        <div className="navbar-item has-text-centered">
+                            <ConnectedWrapper
+                                disconnectedComponent={
+                                    <div className="navbar-item">
+                                        <ConnectButton className="connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-5 pr-5">
+                                            <span>Connect</span>
+                                        </ConnectButton>
+                                    </div>
+                                }
+                            >
+                                <div className="navbar-item">
+                                    <DisconnectButton className="navbar-button connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-5 pr-5">
+                                        <span>Logout</span>
+                                    </DisconnectButton>
+                                </div>
+                            </ConnectedWrapper>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+
+import MintSection from './mint-section';
+
 import { useDispatch } from 'react-redux';
 import { open_modal } from 'redux/actions/modalActions';
 
@@ -16,38 +19,12 @@ const MintOpen = () => {
                     </div>
                 </div>
             </div>
-            <div className="columns is-centered is-flex">
-                <div className="column is-narrow">
-                    <button
-                        className="button is-medium is-borderless is-cyellow responsive-btn"
-                        style={{ borderRadius: '1000px' }}
-                    >
-                        <span className="icon">
-                            <i className="fas fa-minus"></i>
-                        </span>
-                    </button>
-                </div>
-                <div className="column is-2">
-                    <button className="button is-medium is-rounded is-borderless is-cyellow is-fullwidth responsive-btn">
-                        <span className="has-text-weight-bold">MINT</span>
-                    </button>
-                </div>
-                <div className="column is-narrow">
-                    <button
-                        className="button is-medium is-borderless is-cyellow responsive-btn"
-                        style={{ borderRadius: '1000px' }}
-                    >
-                        <span className="icon">
-                            <i className="fas fa-plus"></i>
-                        </span>
-                    </button>
-                </div>
-            </div>
+            <MintSection />
             <div className="columns pt-3">
                 <div className="column">
-                    <p className="has-text-white has-text-weight-bold">EPISODE 3 NFTs Left: 1111</p>
+                    <p className="is-size-4 has-text-white has-text-weight-bold">EPISODE 3 NFTs Left: 1111</p>
                     <p className="has-text-white">
-                        TRAF Holders Mint (0.3 ETH + Gas) / Allow List Mint (0.35 ETH + Gas) / Public Mint (0.4 ETH +
+                        TRAF Holders Mint (0.25 ETH + Gas) / Allow List Mint (0.35 ETH + Gas) / Public Mint (0.4 ETH +
                         Gas)
                     </p>
                     <div className="pt-3">
