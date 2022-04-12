@@ -7,6 +7,11 @@ import TeamPage from 'pages/team';
 import SneakersPage from 'pages/sneakers';
 import 'scss/main.scss';
 import 'animate.css';
+
+import { ReactNotifications } from 'react-notifications-component';
+import { custom_notification_types } from 'static/notifications';
+import 'react-notifications-component/dist/theme.css';
+
 import BeforeMint from 'pages/mint/before-mint';
 
 import { CelesteProvider } from 'celeste-framework';
@@ -25,6 +30,7 @@ const App = () => {
     return (
         <CelesteProvider>
             <Router>
+                <ReactNotifications types={custom_notification_types} />
                 <ShowVideo />
                 <ShowHelp />
 

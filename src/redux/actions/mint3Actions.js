@@ -1,4 +1,6 @@
-import { useCelesteSelector } from 'celeste-framework';
+import mint from 'patterns/singleton/mint-functions';
+import { store as notificationStore } from 'react-notifications-component';
+import { successNotification, errorNotification } from 'static/notifications';
 
 import {
     TRAF_TX_FAILED,
@@ -85,11 +87,17 @@ const public_tx_success = (txType, payload) => ({
     payload: payload,
 });
 
-export const totalSupply = () => {
-    const x = 7;
-    try {
-        return x;
-    } catch (e) {
-        return e;
-    }
+export const start_traf_tx = () => {
+    return async dispatch => {
+        dispatch(traf_tx_loading('start'));
+
+        try {
+            const res = await mint.holdersMint();
+            dispatch(traf_tx_success('start', res));
+            notificationStore.addNotification(successNotification('Minting successful'));
+        } catch (e) {
+            dispatch(traf_tx_failed('start', e));
+            notificationStore.addNotification(errorNotification('Minting failed'));
+        }
+    };
 };

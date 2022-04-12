@@ -21,6 +21,19 @@ const celesteOptions = {
             abi: trafABI,
             isMultichain: false,
         },
+
+        {
+            address: '0x28C9E6a96C69998a2B25Ee4F10dd5821F13aCebB',
+            key: 'wlPartner',
+            abi: trafABI,
+            isMultichain: false,
+        },
+        {
+            address: '0xd1E15a78ca14Af166a6895Eb7034C8115E101651',
+            key: 'nonWlPartner',
+            abi: trafABI,
+            isMultichain: false,
+        },
     ],
 };
 

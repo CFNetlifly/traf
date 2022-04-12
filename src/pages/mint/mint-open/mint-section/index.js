@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
     ConnectedWrapper,
@@ -8,31 +8,35 @@ import {
     useCelesteSelector,
 } from 'celeste-framework';
 
-import { totalSupply } from 'redux/actions/mint3Actions';
+import { traf, wlPartners, nonWlPartners } from 'patterns/singleton/mint-functions';
 
 const MintSection = () => {
+    const [nftLeft, setNftLeft] = useState(0);
+    const [balanceOfTRAF, setBalanceOfTRAF] = useState(0);
+    const [balanceOfWLPartners, setBalanceOfWLPartners] = useState(0);
+    const [balanceOfNonWLPartners, setBalanaceOfNonWLPartners] = useState(0);
+
     const { mintButtonReducer } = useSelector(state => state);
-    const { web3Reducer } = useCelesteSelector(state => state);
-    // console.log('🚀 ~ file: index.js ~ line 16 ~ MintSection ~ web3Reducer', web3Reducer);
-    const { contracts } = web3Reducer;
-    const { traf } = contracts;
+    const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
+
     const dispatch = useDispatch();
 
-    // if (traf !== undefined) {
-    //     console.log(
-    //         '🚀 ~ file: index.js ~ line 28 ~ traf',
-    //         traf.methods.totalSupply().call(function (err, res) {
-    //             if (err) {
-    //                 console.log('🚀 ~ file: index.js ~ line 29 ~ err', err);
-    //             }
-    //             console.log('🚀 ~ file: index.js ~ line 30 ~ res', res);
-    //         })
-    //     );
-    // }
-
-    dispatch(() => totalSupply());
-
-    const x = 8;
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+        (async () => {
+            try {
+                const res = await traf().getMints(walletReducer.address);
+                const trafBalance = await traf().balanceOf(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 30 ~ trafBalance', trafBalance);
+                const wlPartnersBalance = await wlPartners().balanceOf(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 32 ~ wlPartnersBalance', wlPartnersBalance);
+                const nonWlPartnersBalance = await nonWlPartners().balanceOf(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 34 ~ nonWlPartnersBalance', nonWlPartnersBalance);
+            } catch (e) {
+                console.log(e);
+            }
+        })();
+    }, [web3Reducer.initialized, walletReducer.address]);
 
     const incrementButton = () => {
         dispatch({ type: 'INCREMENT' });
@@ -99,7 +103,7 @@ const MintSection = () => {
                             className="button is-medium is-borderless is-cyellow responsive-btn"
                             style={{ borderRadius: '1000px' }}
                             onClick={incrementButton}
-                            disabled={mintButtonReducer.count === x}
+                            disabled={mintButtonReducer.count === nftLeft}
                         >
                             <span className="icon">
                                 <i className="fas fa-plus"></i>
@@ -110,7 +114,7 @@ const MintSection = () => {
                 <div className="columns is-centered is-flex">
                     <div className="column is-narrow">
                         <h2 className="is-size-4 has-text-white has-text-weight-bold">
-                            Remaining Amount To Mint: <span className="has-text-cyellow">{x}</span>
+                            Remaining Amount To Mint: <span className="has-text-cyellow">{nftLeft}</span>
                         </h2>
                     </div>
                 </div>{' '}

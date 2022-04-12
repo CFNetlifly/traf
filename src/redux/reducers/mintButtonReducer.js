@@ -1,4 +1,4 @@
-const mintButtonReducer = (state = { count: 1 }, action) => {
+const mintButtonReducer = (state = { count: 0 }, action) => {
     switch (action.type) {
         case 'INCREMENT':
             return {
