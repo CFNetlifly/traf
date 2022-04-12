@@ -136,7 +136,7 @@ const Navbar = props => {
                     </div>
                     <ConnectedWrapper disconnectedComponent={<></>}>
                         <div
-                            className="column is-flex is-justify-content-center is-flex-direction-column is-size-7 is-align-items-center navbar-item"
+                            className="column is-flex is-justify-content-center is-flex-direction-column is-size-7 is-align-items-center navbar-item has-text-centered"
                             id="connection"
                         >
                             <p className="has-text-white ">Connected as</p>
