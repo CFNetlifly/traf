@@ -60,7 +60,7 @@ const HomePage = props => {
                 ref={homeSection}
                 style={{ position: 'relative', height: '666px' }}
             >
-                <div className="video-container">
+                <div className="video-container is-fullwidth">
                     <video playsInline autoPlay muted loop>
                         <source src={bannerVideo} type="video/mp4" />
                     </video>

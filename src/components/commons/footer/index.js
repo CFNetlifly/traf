@@ -5,7 +5,7 @@ const footer = () => {
     return (
         <footer className="footer has-background-section-9 py-5">
             <div className="container">
-                <div className="columns is-centered">
+                <div className="columns is-centered is-size-7-mobile">
                     <div className="column is-narrow has-text-centered">
                         <img src={titleImg} alt="title" style={{ width: '250px' }} />
                         <p>
