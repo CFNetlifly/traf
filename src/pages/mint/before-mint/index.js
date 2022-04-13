@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 import useCountdown from 'hooks/useCountDown';
+import { Redirect } from 'react-router-dom';
+import { episode3Spaceship } from 'images';
 
 const BeforeMint = () => {
-    const { days, hours, minutes, seconds } = useCountdown(1649948400);
+    const { days, hours, minutes, seconds } = useCountdown(1650553200);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    return (
+    return days === 0 && hours === 0 && minutes === 0 && seconds === 0 ? (
+        <Redirect to="/mint-open" />
+    ) : (
         <section className="section has-text-centered has-background-section-10">
             <div className="columns is-centered ">
                 <div className="column is-narrow">
@@ -48,11 +53,23 @@ const BeforeMint = () => {
                 </div>
             </div>
             <div className="columns is-centered pt-4">
-                <div className="column">
+                <div className="column is-narrow">
                     <h2 className="has-text-white is-size-2 has-text-weight-bold">{days} Days</h2>
                     <h1 className="has-text-white is-size-1 has-text-weight-bold">
                         {hours}:{minutes}:{seconds}
                     </h1>
+                    <h2 className="has-text-white is-size-2 pt-6 has-text-weight-bold">COMING SOON</h2>
+                </div>
+            </div>
+            <div className="columns is-centered">
+                <div className="column is-narrow">
+                    <figure className="image pt-3">
+                        <img
+                            src={episode3Spaceship}
+                            alt="episode3Spaceship"
+                            style={{ width: '256px', height: '256px' }}
+                        />
+                    </figure>
                 </div>
             </div>
         </section>

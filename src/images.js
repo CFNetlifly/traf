@@ -50,6 +50,7 @@ import guestPng from 'media/guest.jpg';
 
 import episode1SpaceshipJPG from 'media/ep1-poster-from-spaceship.jpg';
 import episode2SpaceshipJPG from 'media/ep2-poster-from-spaceship.jpg';
+import episode3SpaceshipJPG from 'media/ep3-poster-from-spaceship.jpg';
 
 import partner1Png from 'media/partners/partner1.png';
 import partner2Png from 'media/partners/partner2.png';
@@ -133,6 +134,7 @@ export const guest = guestPng;
 
 export const episode1Spaceship = episode1SpaceshipJPG;
 export const episode2Spaceship = episode2SpaceshipJPG;
+export const episode3Spaceship = episode3SpaceshipJPG;
 
 //patners section
 export const partner1 = partner1Png;

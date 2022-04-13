@@ -1,103 +1,98 @@
-import mint from 'patterns/singleton/mint-functions';
-import { store as notificationStore } from 'react-notifications-component';
+import { traf, wlPartners, nonWlPartners } from 'patterns/singleton/mint-functions';
+import { Store as notificationStore } from 'react-notifications-component';
 import { successNotification, errorNotification } from 'static/notifications';
+import celesteStore from 'celeste-framework/dist/store';
 
-import {
-    TRAF_TX_FAILED,
-    TRAF_TX_LOADING,
-    TRAF_TX_SUCCESS,
-    PARTNERS_TX_FAILED,
-    PARTNERS_TX_LOADING,
-    PARTNERS_TX_SUCCESS,
-    NON_ALLOWED_TX_FAILED,
-    NON_ALLOWED_TX_LOADING,
-    NON_ALLOWED_TX_SUCCESS,
-    PUBLIC_TX_FAILED,
-    PUBLIC_TX_LOADING,
-    PUBLIC_TX_SUCCESS,
-} from '../constants';
+const fetch_data_traf_request = () => {
+    return {
+        type: 'FETCH_DATA_TRAF_REQUEST',
+    };
+};
 
-/* *~~*~~*~~*~~*~~*~~* TX PLAIN ACTIONS *~~*~~*~~*~~*~~*~~* */
+const fetch_data_traf_success = data => {
+    return {
+        type: 'FETCH_DATA_TRAF_SUCCESS',
+        data,
+    };
+};
 
-const traf_tx_loading = txType => ({
-    type: TRAF_TX_LOADING,
-    txType: txType,
-});
+const fetch_data_traf_failed = error => {
+    return {
+        type: 'FETCH_DATA_TRAF_FAILED',
+        error,
+    };
+};
 
-const traf_tx_failed = (txType, payload) => ({
-    type: TRAF_TX_FAILED,
-    txType: txType,
-    payload: payload,
-});
-
-const traf_tx_success = (txType, payload) => ({
-    type: TRAF_TX_SUCCESS,
-    txType: txType,
-    payload: payload,
-});
-
-const partners_tx_loading = txType => ({
-    type: PARTNERS_TX_LOADING,
-    txType: txType,
-});
-
-const partners_tx_failed = (txType, payload) => ({
-    type: PARTNERS_TX_FAILED,
-    txType: txType,
-    payload: payload,
-});
-
-const partners_tx_success = (txType, payload) => ({
-    type: PARTNERS_TX_SUCCESS,
-    txType: txType,
-    payload: payload,
-});
-
-const non_allowed_tx_loading = txType => ({
-    type: NON_ALLOWED_TX_LOADING,
-    txType: txType,
-});
-
-const non_allowed_tx_failed = (txType, payload) => ({
-    type: NON_ALLOWED_TX_FAILED,
-    txType: txType,
-    payload: payload,
-});
-
-const non_allowed_tx_success = (txType, payload) => ({
-    type: NON_ALLOWED_TX_SUCCESS,
-    txType: txType,
-    payload: payload,
-});
-
-const public_tx_loading = txType => ({
-    type: PUBLIC_TX_LOADING,
-    txType: txType,
-});
-
-const public_tx_failed = (txType, payload) => ({
-    type: PUBLIC_TX_FAILED,
-    txType: txType,
-    payload: payload,
-});
-
-const public_tx_success = (txType, payload) => ({
-    type: PUBLIC_TX_SUCCESS,
-    txType: txType,
-    payload: payload,
-});
-
-export const start_traf_tx = () => {
+export const fetch_data_traf = () => {
     return async dispatch => {
-        dispatch(traf_tx_loading('start'));
+        const walletReducer = celesteStore.getState().walletReducer;
+
+        dispatch(fetch_data_traf_request());
 
         try {
-            const res = await mint.holdersMint();
-            dispatch(traf_tx_success('start', res));
+            const trafBalance = await traf().balanceOf(walletReducer.address);
+            const wlPartnersBalance = await wlPartners().balanceOf(walletReducer.address);
+            const nonWlPartnersBalance = await nonWlPartners().balanceOf(walletReducer.address);
+            dispatch(
+                fetch_data_traf_success({
+                    balanceOfTRAF: trafBalance,
+                    balanceOfWLPartners: wlPartnersBalance,
+                    balanceOfNonWLPartners: nonWlPartnersBalance,
+                })
+            );
+        } catch (e) {
+            dispatch(fetch_data_traf_failed(e));
+            errorNotification(notificationStore, 'Error', 'Something went wrong');
+        }
+    };
+};
+
+export const start_traf_tx = trafAmount => {
+    return async dispatch => {
+        try {
+            const res = await traf().holdersMint(trafAmount);
+            // fetch smart contract data again
+
             notificationStore.addNotification(successNotification('Minting successful'));
         } catch (e) {
-            dispatch(traf_tx_failed('start', e));
             notificationStore.addNotification(errorNotification('Minting failed'));
         }
     };
 };
+
+export const start_partners_tx = () => {
+    return async dispatch => {
+        try {
+            const res = await wlPartners.partnersMint();
+            notificationStore.addNotification(successNotification('Minting successful'));
+        } catch (e) {
+            notificationStore.addNotification(errorNotification('Minting failed'));
+        }
+    };
+};
+
+export const start_non_allowed_tx = () => {
+    return async dispatch => {
+        try {
+            const res = await nonWlPartners.nonAllowedMint();
+            notificationStore.addNotification(successNotification('Minting successful'));
+        } catch (e) {
+            notificationStore.addNotification(errorNotification('Minting failed'));
+        }
+    };
+};
+
+// export const start_public_tx = () => {
+//     return async dispatch => {
+//         dispatch(public_tx_loading('start'));
+
+//         try {
+//             const res = await mint.publicMint();
+//             dispatch(public_tx_success('start', res));
+//             notificationStore.addNotification(successNotification('Minting successful'));
+//         } catch (e) {
+//             dispatch(public_tx_failed('start', e));
+//             notificationStore.addNotification(errorNotification('Minting failed'));
+//         }
+//     };
+// };

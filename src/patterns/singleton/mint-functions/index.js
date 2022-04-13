@@ -1,4 +1,5 @@
 import celesteStore from 'celeste-framework/dist/store';
+import BigNumber from 'bignumber.js';
 
 export const traf = () => {
     const web3Reducer = celesteStore.getState().web3Reducer;
@@ -6,8 +7,7 @@ export const traf = () => {
 
     const trafContract = web3Reducer.contracts.traf;
     const trafContractExtension = web3Reducer.contracts.trafExtension;
-    // const wlContract = web3Reducer.contracts.wlPartner;
-    // const nonWlContract = web3Reducer.contracts.nonWlPartner;
+    // console.log('🚀 ~ file: index.js ~ line 10 ~ traf ~ trafContractExtension', trafContractExtension);
 
     return {
         totalSupply: async () => {
@@ -23,13 +23,18 @@ export const traf = () => {
             return res;
         },
 
-        holdersMint: async () => {
+        holdersMint: async amount => {
             const tx = await trafContractExtension.methods.holdersMint();
+            const txData = {
+                from: walletReducer.address,
+                to: trafContractExtension.options.address,
+                data: tx.encodeABI(),
+                value: new BigNumber(Math.floor(0.25 * 10 ** 18)).times(amount).toString(),
+            };
+
             return new Promise(async (resolve, reject) => {
                 try {
-                    const res = await tx.send({
-                        from: walletReducer.address,
-                    });
+                    const res = await tx.send(txData);
                     resolve(res);
                 } catch (e) {
                     reject(e);
@@ -50,12 +55,15 @@ export const wlPartners = () => {
             const res = await wlContract.methods.balanceOf(address).call();
             return res;
         },
-        wlPartnersMint: async () => {
+        wlPartnersMint: async amount => {
             const tx = await wlContract.methods.wlPartnersMint();
             return new Promise(async (resolve, reject) => {
                 try {
                     const res = await tx.send({
                         from: walletReducer.address,
+                        to: wlContract.options.address,
+                        data: tx.encodeABI(),
+                        value: new BigNumber(Math.floor(0.35 * 10 ** 18)).times(amount).toString(),
                     });
                     resolve(res);
                 } catch (e) {
@@ -77,12 +85,15 @@ export const nonWlPartners = () => {
             const res = await nonWlContract.methods.balanceOf(address).call();
             return res;
         },
-        nonWlPartnersMint: async () => {
+        nonWlPartnersMint: async amount => {
             const tx = await nonWlContract.methods.nonWlPartnersMint();
             return new Promise(async (resolve, reject) => {
                 try {
                     const res = await tx.send({
                         from: walletReducer.address,
+                        to: nonWlContract.options.address,
+                        data: tx.encodeABI(),
+                        value: new BigNumber(Math.floor(0.4 * 10 ** 18)).times(amount).toString(),
                     });
                     resolve(res);
                 } catch (e) {

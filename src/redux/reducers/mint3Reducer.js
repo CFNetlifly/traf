@@ -1,4 +1,7 @@
 import {
+    FETCH_DATA_TRAF_FAILED,
+    FETCH_DATA_TRAF_REQUEST,
+    FETCH_DATA_TRAF_SUCCESS,
     TRAF_TX_FAILED,
     TRAF_TX_LOADING,
     TRAF_TX_SUCCESS,
@@ -8,180 +11,53 @@ import {
     NON_ALLOWED_TX_FAILED,
     NON_ALLOWED_TX_LOADING,
     NON_ALLOWED_TX_SUCCESS,
-    PUBLIC_TX_FAILED,
-    PUBLIC_TX_LOADING,
-    PUBLIC_TX_SUCCESS,
 } from '../constants';
 
 const defaultState = {
-    TRAF_TX: {
-        loading: false,
-        error: false,
-        success: false,
-        resData: {},
-    },
+    loading: false,
+    success: false,
+    error: false,
+    data: {
+        balanceOfTRAF: 0,
+        balanceOfWLPartners: 0,
+        balanceOfNonWLPartners: 0,
 
-    PARTNERS_TX: {
-        loading: false,
-        error: false,
-        success: false,
-        resData: {},
+        amountLeftTRAF: 0,
+        amountLeftWLPartners: 0,
+        amountLeftNonWLPartners: 0,
     },
-
-    NON_ALLOWED_TX: {
-        loading: false,
-        error: false,
-        success: false,
-        resData: {},
-    },
-
-    PUBLIC_TX: {
-        loading: false,
-        error: false,
-        success: false,
-        resData: {},
-    },
-
-    genericTx: {
-        loading: false,
-        error: false,
-        success: false,
-    },
+    errorData: null,
 };
 
-const mint3Reducer = (state = defaultState, action) => {
+const reducer = (state = defaultState, action) => {
     switch (action.type) {
-        case TRAF_TX_LOADING:
+        case FETCH_DATA_TRAF_REQUEST:
             return {
                 ...state,
-                TRAF_TX: {
-                    loading: true,
-                    error: false,
-                    success: false,
-                },
+                loading: true,
+                success: false,
+                error: false,
+                errorData: null,
             };
-
-        case TRAF_TX_FAILED:
+        case FETCH_DATA_TRAF_SUCCESS:
             return {
                 ...state,
-                TRAF_TX: {
-                    loading: false,
-                    error: true,
-                    success: false,
-                    resData: action.payload,
-                },
+                loading: false,
+                success: true,
+                error: false,
+                data: action.data,
             };
-
-        case TRAF_TX_SUCCESS:
+        case FETCH_DATA_TRAF_FAILED:
             return {
                 ...state,
-                TRAF_TX: {
-                    loading: false,
-                    error: false,
-                    success: true,
-                    resData: action.payload,
-                },
+                loading: false,
+                success: false,
+                error: true,
+                errorData: action.error,
             };
-
-        case PARTNERS_TX_LOADING:
-            return {
-                ...state,
-                PARTNERS_TX: {
-                    loading: true,
-                    error: false,
-                    success: false,
-                },
-            };
-
-        case PARTNERS_TX_FAILED:
-            return {
-                ...state,
-                PARTNERS_TX: {
-                    loading: false,
-                    error: true,
-                    success: false,
-                    resData: action.payload,
-                },
-            };
-
-        case PARTNERS_TX_SUCCESS:
-            return {
-                ...state,
-                PARTNERS_TX: {
-                    loading: false,
-                    error: false,
-                    success: true,
-                    resData: action.payload,
-                },
-            };
-
-        case NON_ALLOWED_TX_LOADING:
-            return {
-                ...state,
-                NON_ALLOWED_TX: {
-                    loading: true,
-                    error: false,
-                    success: false,
-                },
-            };
-
-        case NON_ALLOWED_TX_FAILED:
-            return {
-                ...state,
-                NON_ALLOWED_TX: {
-                    loading: false,
-                    error: true,
-                    success: false,
-                    resData: action.payload,
-                },
-            };
-
-        case NON_ALLOWED_TX_SUCCESS:
-            return {
-                ...state,
-                NON_ALLOWED_TX: {
-                    loading: false,
-                    error: false,
-                    success: true,
-                    resData: action.payload,
-                },
-            };
-
-        case PUBLIC_TX_LOADING:
-            return {
-                ...state,
-                PUBLIC_TX: {
-                    loading: true,
-                    error: false,
-                    success: false,
-                },
-            };
-
-        case PUBLIC_TX_FAILED:
-            return {
-                ...state,
-                PUBLIC_TX: {
-                    loading: false,
-                    error: true,
-                    success: false,
-                    resData: action.payload,
-                },
-            };
-
-        case PUBLIC_TX_SUCCESS:
-            return {
-                ...state,
-                PUBLIC_TX: {
-                    loading: false,
-                    error: false,
-                    success: true,
-                    resData: action.payload,
-                },
-            };
-
         default:
-            return { ...state };
+            return state;
     }
 };
 
-export default mint3Reducer;
+export default reducer;

@@ -11,7 +11,8 @@ import {
     opensea,
     episode1Spaceship,
     episode2Spaceship,
-    question,
+    // question,
+    episode3Spaceship,
 } from '../../images';
 
 import { Link } from 'react-router-dom';
@@ -197,7 +198,7 @@ const HomePage = props => {
                                 <div className="column">
                                     <div className="column">
                                         <figure className="image">
-                                            <img src={question} alt="Episode 3 Spaceship" />
+                                            <img src={episode3Spaceship} alt="Episode 3 Spaceship" />
                                         </figure>
                                     </div>
 
