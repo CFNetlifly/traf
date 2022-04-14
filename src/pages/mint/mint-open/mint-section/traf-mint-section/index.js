@@ -12,7 +12,7 @@ const TRAFMintSection = () => {
 
     const formik = useFormik({
         initialValues: {
-            trafAmount: 2,
+            trafAmount: 0,
         },
 
         onSubmit: async values => {
@@ -43,11 +43,17 @@ const TRAFMintSection = () => {
 
     const incrementButton = () => {
         dispatch({ type: 'INCREMENT' });
+        formik.setFieldValue('trafAmount', Number(formik.values.trafAmount) + 1);
+        console.log(
+            '🚀 ~ file: index.js ~ line 51 ~ incrementButton ~ Number(formik.values.trafAmount) + 1',
+            Number(formik.values.trafAmount) + 1
+        );
     };
 
     const decrementButton = () => {
         if (mintButtonReducer.count > 0) {
             dispatch({ type: 'DECREMENT' });
+            formik.setFieldValue('trafAmount', Number(formik.values.trafAmount) - 1);
         }
     };
 
