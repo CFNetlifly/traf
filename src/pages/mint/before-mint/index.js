@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import useCountdown from 'hooks/useCountDown';
-import { Redirect } from 'react-router-dom';
+import MintOpen from '../mint-open';
 import { episode3Spaceship } from 'images';
 
 const BeforeMint = () => {
-    const { days, hours, minutes, seconds } = useCountdown(1650564000);
+    const { days, hours, minutes, seconds } = useCountdown(1650010140);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     return days === 0 && hours === 0 && minutes === 0 && seconds === 0 ? (
-        <Redirect to="/mint-open" />
+        <MintOpen />
     ) : (
         <section className="section has-text-centered has-background-section-10">
             <div className="columns is-centered ">
@@ -37,7 +37,7 @@ const BeforeMint = () => {
                 <div className="column">
                     <p className="has-text-white has-text-weight-bold">TOTAL SUPPLY: 1111</p>
                     <p className="has-text-white">
-                        TRAF Holders Mint (0.25 ETH + Gas) / Allow List Mint (0.35 ETH + Gas) / Public Mint (0.4 ETH +
+                        TRAF Holders Mint (0.25 ETH + Gas) / Partners Mint (0.35 ETH + Gas) / Public Mint (0.4 ETH +
                         Gas)
                     </p>
                     <div className="content pt-2">

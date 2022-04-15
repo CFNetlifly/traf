@@ -24,41 +24,39 @@ const ShowHelp = () => {
                     <div className="columns pt-3">
                         <div className="column">
                             <h1 className="has-text-white has-text-weight-bold">🟢 TRAF HOLDERS MINT</h1>
-                            <p className="has-text-white pt-3">📅 | MINT DAY: April 14</p>
-                            <p className="has-text-white">🕙 | MINT TIME: 8 AM PST </p>
+                            <p className="has-text-white pt-3">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 6PM UTC to 7PM UTC</p>
                             <p className="has-text-white">💎 | PRICE: 0.25 ETH + Gas</p>
-                            <p className="has-text-white">⏱ | DURATION: 12h to 24h</p>
-                            <p className="has-text-white">⚙️ | HOW: All TRAF holders are on the AL</p>
-                            <p className="has-text-white">⭕️ | MINT LIMIT: 10 per holder wallet</p>
+                            <p className="has-text-white">⏱ | DURATION: 1 hour</p>
+                            <p className="has-text-white">⚙️ | HOW: All TRAF holders are allow listed</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 10 per wallet</p>
                         </div>
                         <div className="column">
-                            <h1 className="has-text-white has-text-weight-bold">🔵 PARTNERS MINT</h1>
-                            <p className="has-text-white pt-3">📅 | MINT DAY: April 14</p>
-                            <p className="has-text-white">🕙 | MINT TIME: 8 AM PST </p>
+                            <h1 className="has-text-white has-text-weight-bold">🔵 ALLOW LISTED PARTNERS MINT</h1>
+                            <p className="has-text-white pt-3">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 6PM UTC to 7PM UTC</p>
                             <p className="has-text-white">💎 | PRICE: 0.35 ETH + Gas</p>
-                            <p className="has-text-white">⏱ | DURATION: 12h to 24h</p>
-                            <p className="has-text-white">⚙️ | WHEN: Simultaneously with 🟢 mint</p>
-                            <p className="has-text-white">⭕️ | MINT LIMIT: 1 per Allow Listed wallet</p>
+                            <p className="has-text-white">⏱ | DURATION: 1 hour</p>
+                            <p className="has-text-white">⚙️ | HOW: 🟢&🔵 will run at the same time</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
                         </div>
                     </div>
                     <div className="columns">
                         <div className="column">
-                            <h1 className="has-text-white has-text-weight-bold">🟡 NON-ALLOW LISTED PARTNERS MINT</h1>
-                            <p className="has-text-white pt-3">📅 | MINT DAY: April 15</p>
-                            <p className="has-text-white">🕙 | MINT TIME: 8 AM PST </p>
+                            <h1 className="has-text-white has-text-weight-bold">🟡 RAFFLE WINNERS (ALLOW LIST) MINT</h1>
+                            <p className="has-text-white pt-3">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 6.30PM UTC to 7PM UTC</p>
                             <p className="has-text-white">💎 | PRICE: 0.4 ETH + Gas</p>
-                            <p className="has-text-white">⏱ | DURATION: 12h to 24h</p>
-                            <p className="has-text-white">⚙️ | WHEN: Before Public Mint / After 🟢 & 🔵</p>
-                            <p className="has-text-white">⭕️ | MINT LIMIT: 10 per wallet</p>
+                            <p className="has-text-white">⏱ | DURATION: 30 minutes</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
                         </div>
                         <div className="column">
                             <h1 className="has-text-white has-text-weight-bold">🔴 PUBLIC MINT</h1>
-                            <p className="has-text-white pt-3">📅 | MINT DAY: April 16</p>
-                            <p className="has-text-white">🕙 | MINT TIME: 8 AM PST </p>
+                            <p className="has-text-white pt-3">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 7 PM UTC</p>
                             <p className="has-text-white">💎 | PRICE: 0.4 ETH + Gas</p>
                             <p className="has-text-white">⏱ | DURATION: Till sellout</p>
-                            <p className="has-text-white">⚙️ | WHEN: After 🟢 & 🔵 & 🟡</p>
-                            <p className="has-text-white">⭕️ | MINT LIMIT: 1 per Allow Listed wallet</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 10 per wallet</p>
                         </div>
                     </div>
                     <div className="has-text-centered">

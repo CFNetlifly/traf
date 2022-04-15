@@ -56,10 +56,6 @@ const App = () => {
                     <Route exact path="/mint">
                         <BeforeMint />
                     </Route>
-
-                    {/* <Route exact path="/mint-open">
-                        <MintOpen />
-                    </Route> */}
                 </Switch>
                 <Footer />
             </Router>

@@ -56,14 +56,6 @@ $corners: 'top', 'right', 'bottom', 'left';
 }
 
 
-
-
-// @mixin generateClasses ($number) {
-//     .has-background-section- #{$number} {
-        
-//     }
-// }
-
 @include generate-color-classes($redape, 'redape');
 @include generate-color-classes($cyellow, 'cyellow');
 @include generate-color-classes($cpurple, 'cpurple');
@@ -76,6 +68,7 @@ $corners: 'top', 'right', 'bottom', 'left';
 @include generate-color-classes($hlime, 'hlime');
 @include generate-color-classes($primary, 'primary');
 @include generate-color-classes($hdarkyellow, 'hdarkyellow');
+@include generate-color-classes($hdarkgray, 'hdarkgray');
 
 .has-background-transparent {
     background: rgba(0, 0, 0, 0) !important;

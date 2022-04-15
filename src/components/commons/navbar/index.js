@@ -3,8 +3,6 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { ConnectedWrapper, ConnectButton, DisconnectButton, useCelesteSelector } from 'celeste-framework';
 
-import PropTypes from 'prop-types';
-
 import { logo } from 'images';
 
 // import ConnectButton from 'components/connect-btn';
@@ -12,9 +10,6 @@ import { logo } from 'images';
 import { Link } from 'react-router-dom';
 
 import { useSpring, animated } from 'react-spring';
-
-import { connect } from 'react-redux';
-import { set_section } from 'redux/actions/navbarActions';
 import { opensea } from 'images';
 
 import './navbar.scss';
@@ -54,13 +49,7 @@ const Navbar = props => {
         <animated.nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation" style={styles}>
             <div className="container">
                 <div className="navbar-brand">
-                    <Link
-                        to="/home"
-                        className="navbar-item"
-                        onClick={() => {
-                            props.set_section('HOME');
-                        }}
-                    >
+                    <Link to="/home" className="navbar-item">
                         <img src={logo} alt="" width="32" />
                     </Link>
 
@@ -86,7 +75,6 @@ const Navbar = props => {
                             to="/home"
                             className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
-                                props.set_section('HOME');
                                 onBurgerIClicked(e);
                             }}
                         >
@@ -237,10 +225,4 @@ const Navbar = props => {
     );
 };
 
-Navbar.propTypes = {
-    set_section: PropTypes.func.isRequired,
-};
-
-export default connect(null, {
-    set_section,
-})(Navbar);
+export default Navbar;
