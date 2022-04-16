@@ -4,7 +4,7 @@ import MintOpen from '../mint-open';
 import { episode3Spaceship } from 'images';
 
 const BeforeMint = () => {
-    const { days, hours, minutes, seconds } = useCountdown(1650010140);
+    const { days, hours, minutes, seconds } = useCountdown(1650564000);
 
     useEffect(() => {
         window.scrollTo(0, 0);

@@ -87,7 +87,7 @@ const footer = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                0xa803144e27aEf2Ac95E7Ab49214BD2f802C883dD
+                                0x81f296145c5555d7b4b426d97e4e2260c017f5d0
                             </a>
                             <h1 className="subtitle has-text-warning is-6 mb-3 pt-5">traf@zainimedia.com</h1>
                             <h1 className="subtitle has-text-warning is-6 mb-3">

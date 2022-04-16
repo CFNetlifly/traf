@@ -152,16 +152,16 @@ const SneakersPage = props => {
                                                 <h1 className="has-text-white has-text-weight-bold">Normal edition</h1>
                                                 <br />
                                                 {normalClaimables > 0 ? (
-                                                    <div>
-                                                        <button
-                                                            className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow"
-                                                            onClick={onNormalClaimClicked}
-                                                        >
-                                                            CLAIM NOW
-                                                        </button>
-                                                        <br />
-                                                    </div>
+                                                    // <div>
+                                                    //     <button
+                                                    //         className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow"
+                                                    //         onClick={onNormalClaimClicked}
+                                                    //     >
+                                                    //         CLAIM NOW
+                                                    //     </button>
+                                                    <br />
                                                 ) : (
+                                                    // </div>
                                                     <h1 className="has-text-white has-text-weight-bold">
                                                         Your wallet doesn't own any normal claimable
                                                     </h1>
@@ -180,13 +180,14 @@ const SneakersPage = props => {
                                         </button>
                                     )
                                 ) : (
-                                    <button
-                                        type="button"
-                                        className="button is-cyellow"
-                                        onClick={async e => await props.request_connection()}
-                                    >
-                                        Connect wallet
-                                    </button>
+                                    // <button
+                                    //     type="button"
+                                    //     className="button is-cyellow"
+                                    //     onClick={async e => await props.request_connection()}
+                                    // >
+                                    //     Connect wallet
+                                    // </button>
+                                    <div />
                                 )}
                                 <br />
                                 <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
