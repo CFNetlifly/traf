@@ -1,5 +1,5 @@
 import trafABI from 'abis/TRAF.json';
-
+import trafNewABI from 'abis/TRAF_NEW_ABI.json';
 const celesteOptions = {
     rpcs: [
         {
@@ -28,10 +28,17 @@ const celesteOptions = {
             abi: trafABI,
             isMultichain: false,
         },
+
         {
-            address: '0xd1E15a78ca14Af166a6895Eb7034C8115E101651',
-            key: 'nonWlPartner',
-            abi: trafABI,
+            address: '0x095953E4b76A40F595618c0201Eb6D40e6486529',
+            key: 'trafMint',
+            abi: trafNewABI,
+            isMultichain: false,
+        },
+        {
+            address: '0x103F69Be1065dDfeCd31FbB5871f38F3C43d15d2',
+            key: 'trafMintExtension',
+            abi: trafNewABI,
             isMultichain: false,
         },
     ],

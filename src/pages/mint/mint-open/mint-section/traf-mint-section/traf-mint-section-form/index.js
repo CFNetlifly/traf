@@ -5,15 +5,30 @@ import { useCelesteSelector } from 'celeste-framework';
 import { useFormik } from 'formik';
 import { traf } from 'patterns/singleton/mint-functions';
 import { start_traf_tx } from 'redux/actions/mint3Actions';
+import { primeholder_get_request_thunk } from 'redux/actions/holderActions';
 
 const TRAFMintSectionForm = () => {
     const [balanceOfTRAF, setBalanceOfTRAF] = useState(0);
     const [amountLeftTRAF, setAmountLeftTRAF] = useState(0);
 
-    const { mintButtonReducer, mint3Reducer } = useSelector(state => state);
+    const { mintButtonReducer, mint3Reducer, holderReducer } = useSelector(state => state);
+    console.log('🚀 ~ file: index.js ~ line 14 ~ TRAFMintSectionForm ~ holderReducer', holderReducer);
     const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
+    // console.log('🚀 ~ file: index.js ~ line 15 ~ TRAFMintSectionForm ~ web3Reducer', web3Reducer);
 
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+        dispatch(
+            primeholder_get_request_thunk({
+                requestName: 'isPrimeholder',
+                params: {
+                    userAddress: walletReducer.address,
+                },
+            })
+        );
+    }, [web3Reducer.initialized, walletReducer.address, dispatch]);
 
     useEffect(() => {
         if (!web3Reducer.initialized || walletReducer.address === null) return;
