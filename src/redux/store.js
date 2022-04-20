@@ -6,7 +6,6 @@ import walletReducer from './reducers/walletReducer';
 import navbarReducer from './reducers/navbarReducer';
 import teamMemberReducer from './reducers/teamMembersReducer';
 import mint2Reducer from './reducers/mint2Reducer';
-import mintButtonReducer from './reducers/mintButtonReducer';
 import modalReducer from './reducers/modalReducer';
 import mint3Reducer from './reducers/mint3Reducer';
 import holderReducer from './reducers/holderReducer';
@@ -17,7 +16,6 @@ const reducer = combineReducers({
     navbarReducer,
     teamMemberReducer,
     mint2Reducer,
-    mintButtonReducer,
     modalReducer,
     mint3Reducer,
     holderReducer,

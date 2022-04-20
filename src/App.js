@@ -22,7 +22,6 @@ import celesteOptions from 'components/celeste/celeste-options';
 
 import ShowVideo from 'components/commons/modal/show-video';
 import ShowHelp from 'components/commons/modal/show-help';
-import MintOpen from 'pages/mint/mint-open';
 
 initCeleste(celesteOptions);
 

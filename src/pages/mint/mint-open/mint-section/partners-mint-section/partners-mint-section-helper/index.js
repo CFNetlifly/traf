@@ -1,9 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useCelesteSelector } from 'celeste-framework';
 
+import { partnerholder_get_request_thunk } from 'redux/actions/holderActions';
+
+import { mintEp3 } from 'patterns/proxy/mint-functions';
 const PartnersMintSectionHelper = () => {
-    const [balanceOf] = useState(0);
+    const [isActive, setIsActive] = useState(false);
 
-    return balanceOf > 0 ? (
+    const { holderReducer } = useSelector(state => state);
+    // console.log('🚀 ~ file: index.js ~ line 15 ~ PartnersMintSectionForm ~ holderReducer', holderReducer);
+
+    const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+        dispatch(
+            partnerholder_get_request_thunk({
+                requestName: 'isPartnerHolder',
+                params: {
+                    userAddress: walletReducer.address,
+                },
+            })
+        );
+    }, [web3Reducer.initialized, walletReducer.address, dispatch]);
+
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+        (async () => {
+            try {
+                const pmData = await mintEp3().PartnersMint().Get_PM_Data(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 66 ~ hmData', pmData);
+                setIsActive(pmData.active);
+            } catch (e) {
+                console.log(e);
+            }
+        })();
+    }, [web3Reducer.initialized, walletReducer.address]);
+
+    return isActive ? (
         <div className="is-hdarkgray px-5 py-6">
             <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-hlime is-italic">
                 PARTNERS MINT

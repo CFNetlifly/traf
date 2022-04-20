@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useCelesteSelector } from 'celeste-framework';
+
+import { mintEp3 } from 'patterns/proxy/mint-functions';
 
 const PublicMintSectionHelper = () => {
-    const [balanceOf] = useState(0);
+    const [isActive, setIsActive] = useState(false);
+    const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
 
-    return balanceOf > 0 ? (
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+        (async () => {
+            try {
+                const pumData = await mintEp3().PublicMint().Get_PUM_Data(walletReducer.address);
+                setIsActive(pumData.active);
+            } catch (e) {
+                console.log(e);
+            }
+        })();
+    }, [web3Reducer.initialized, walletReducer.address]);
+
+    return isActive ? (
         <div className="is-hdarkgray px-5 py-6">
             <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-hlime is-italic">
                 PUBLIC MINT

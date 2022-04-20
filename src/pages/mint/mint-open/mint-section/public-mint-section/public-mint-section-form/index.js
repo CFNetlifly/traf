@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import BigNumber from 'bignumber.js';
+import { useDispatch } from 'react-redux';
 import { useCelesteSelector } from 'celeste-framework';
 
 import { useFormik } from 'formik';
-import { partnerholder_get_request_thunk } from 'redux/actions/holderActions';
 
 import { mintEp3 } from 'patterns/proxy/mint-functions';
+import { start_publicmint_tx } from 'redux/actions/mint3Actions';
 
-const PartnersMintSectionForm = () => {
+const PublicMintSectionForm = () => {
     const [isActive, setIsActive] = useState(false);
+    const [mintPrice, setMintPrice] = useState(0);
     const [mintsLeft, setMintsLeft] = useState(0);
     const [trigger, setTrigger] = useState(0);
-
-    const { holderReducer } = useSelector(state => state);
-    // console.log('🚀 ~ file: index.js ~ line 15 ~ PartnersMintSectionForm ~ holderReducer', holderReducer);
 
     const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
 
@@ -21,24 +20,13 @@ const PartnersMintSectionForm = () => {
 
     useEffect(() => {
         if (!web3Reducer.initialized || walletReducer.address === null) return;
-        dispatch(
-            partnerholder_get_request_thunk({
-                requestName: 'isPartnerHolder',
-                params: {
-                    userAddress: walletReducer.address,
-                },
-            })
-        );
-    }, [web3Reducer.initialized, walletReducer.address, dispatch]);
-
-    useEffect(() => {
-        if (!web3Reducer.initialized || walletReducer.address === null) return;
         (async () => {
             try {
-                const pmData = await mintEp3().PartnersMint().Get_PM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 39 ~ pmData', pmData);
-                setIsActive(pmData.active);
-                setMintsLeft(parseInt(pmData.user_mint_limit - pmData.user_mints));
+                const pumData = await mintEp3().PublicMint().Get_PUM_Data(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 26 ~ pumData', pumData);
+                setIsActive(pumData.active);
+                setMintsLeft(parseInt(pumData.user_mint_limit - pumData.user_mints));
+                setMintPrice(new BigNumber(pumData.price).toString());
             } catch (e) {
                 console.log(e);
             }
@@ -51,7 +39,12 @@ const PartnersMintSectionForm = () => {
         },
 
         onSubmit: async values => {
-            // dispatch(start_traf_tx(values.trafAmount));
+            dispatch(
+                start_publicmint_tx({
+                    amount: values.trafAmount,
+                    price: mintPrice,
+                })
+            );
         },
     });
 
@@ -115,7 +108,7 @@ const PartnersMintSectionForm = () => {
             <div className="columns is-centered pt-4">
                 <div className="column is-narrow">
                     <h2 className="is-size-6 has-text-white has-text-weight-bold">
-                        YOUR AVAILABLE MINTS FOR PARTNERS MINT:
+                        YOUR AVAILABLE MINTS FOR PUBLIC MINT:
                         <span className="has-text-cyellow"> {mintsLeft}</span>
                     </h2>
                 </div>
@@ -125,11 +118,11 @@ const PartnersMintSectionForm = () => {
         <div className="columns is-centered pt-6">
             <div className="column is-narrow">
                 <h2 className="is-size-6 has-text-redape has-text-weight-bold">
-                    YOU ARE NOT ELIGIBLE FOR THE PARTNERS MINT
+                    YOU ARE NOT ELIGIBLE FOR THE PUBLIC MINT
                 </h2>
             </div>
         </div>
     );
 };
 
-export default PartnersMintSectionForm;
+export default PublicMintSectionForm;

@@ -2,6 +2,10 @@ import React from 'react';
 import { ConnectedWrapper, ConnectButton, SwitchNetworkButton, NetworkWrapper } from 'celeste-framework';
 
 import HoldersMintSection from './holders-mint-section';
+import PartnersMintSection from './partners-mint-section';
+import PresaleMintSection from './presale-mint-section';
+import RaffleMintSection from './raffle-mint-section';
+import PublicMintSection from './public-mint-section';
 
 const MintSection = () => {
     return (
@@ -31,7 +35,25 @@ const MintSection = () => {
                     </div>
                 }
             >
-                <HoldersMintSection />
+                <div className="columns is-centered">
+                    <div className="column is-narrow">
+                        <HoldersMintSection />
+                    </div>
+                    <div className="column is-narrow">
+                        <PresaleMintSection />
+                    </div>
+                    <div className="column is-narrow">
+                        <PartnersMintSection />
+                    </div>
+                </div>
+                <div className="columns is-centered">
+                    <div className="column is-narrow">
+                        <RaffleMintSection />
+                    </div>
+                    <div className="column is-narrow">
+                        <PublicMintSection />
+                    </div>
+                </div>
             </NetworkWrapper>
         </ConnectedWrapper>
     );

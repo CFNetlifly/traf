@@ -30,13 +30,13 @@ const celesteOptions = {
         },
 
         {
-            address: '0x095953E4b76A40F595618c0201Eb6D40e6486529',
+            address: '0xa186C1af0ba02C43579343Ee0a49Cb152dA6f17a',
             key: 'trafMint',
             abi: trafNewABI,
             isMultichain: false,
         },
         {
-            address: '0x103F69Be1065dDfeCd31FbB5871f38F3C43d15d2',
+            address: '0xE0a97bC149578c76353aca8a823838eB627a4A41',
             key: 'trafMintExtension',
             abi: trafNewABI,
             isMultichain: false,

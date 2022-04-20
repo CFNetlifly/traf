@@ -17,7 +17,7 @@ const dataSlider = [
         name: 'S01:EP2',
         id: 2,
         title: 'Season 1 - Episode 2',
-        src: 'https://www.youtube.com/embed/AGMDqIjWeyo',
+        src: 'https://www.youtube.com/embed/WZQAeojf0xY',
         alt: 'Season 1 - Episode 2',
     },
 ];

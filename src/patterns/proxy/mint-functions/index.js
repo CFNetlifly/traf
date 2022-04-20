@@ -29,7 +29,6 @@ export const mintEp3 = () => {
                     const txData = {
                         from: walletReducer.address,
                         to: trafMintContractExtension.options.address,
-                        data: tx.encodeABI(),
                         value: new BigNumber(Math.floor(price)).times(amount).toString(),
                     };
 
@@ -56,7 +55,6 @@ export const mintEp3 = () => {
                     const txData = {
                         from: walletReducer.address,
                         to: trafMintContractExtension.options.address,
-                        data: tx.encodeABI(),
                         value: new BigNumber(Math.floor(price)).times(amount).toString(),
                     };
 
@@ -75,7 +73,7 @@ export const mintEp3 = () => {
         PreniumMint: () => {
             return {
                 Get_PRM_Data: async address => {
-                    const res = await trafMintContractExtension.methods.Get_PM_Data(address).call();
+                    const res = await trafMintContractExtension.methods.Get_PRM_Data(address).call();
                     return res;
                 },
                 PRM: async ({ amount, price }) => {
@@ -83,7 +81,6 @@ export const mintEp3 = () => {
                     const txData = {
                         from: walletReducer.address,
                         to: trafMintContractExtension.options.address,
-                        data: tx.encodeABI(),
                         value: new BigNumber(Math.floor(price)).times(amount).toString(),
                     };
 
@@ -109,7 +106,6 @@ export const mintEp3 = () => {
                     const txData = {
                         from: walletReducer.address,
                         to: trafMintContractExtension.options.address,
-                        data: tx.encodeABI(),
                         value: new BigNumber(Math.floor(price)).times(amount).toString(),
                     };
 
@@ -132,10 +128,10 @@ export const mintEp3 = () => {
                 },
                 ALM: async ({ amount, price }) => {
                     const tx = await trafMintContractExtension.methods.ALM();
+
                     const txData = {
                         from: walletReducer.address,
                         to: trafMintContractExtension.options.address,
-                        data: tx.encodeABI(),
                         value: new BigNumber(Math.floor(price)).times(amount).toString(),
                     };
 
@@ -144,6 +140,7 @@ export const mintEp3 = () => {
                             const res = await tx.send(txData);
                             resolve(res);
                         } catch (e) {
+                            console.log('🚀 ~ file: index.js ~ line 144 ~ returnnewPromise ~ e', e);
                             reject(e);
                         }
                     });
@@ -153,15 +150,14 @@ export const mintEp3 = () => {
         PublicMint: () => {
             return {
                 Get_PUM_Data: async address => {
-                    const res = await trafMintContractExtension.methods.Get_PM_Data(address).call();
+                    const res = await trafMintContractExtension.methods.Get_PUM_Data(address).call();
                     return res;
                 },
                 PUM: async ({ amount, price }) => {
-                    const tx = await trafMintContractExtension.methods.PM();
+                    const tx = await trafMintContractExtension.methods.PUM();
                     const txData = {
                         from: walletReducer.address,
                         to: trafMintContractExtension.options.address,
-                        data: tx.encodeABI(),
                         value: new BigNumber(Math.floor(price)).times(amount).toString(),
                     };
 

@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import BigNumber from 'bignumber.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCelesteSelector } from 'celeste-framework';
 
 import { useFormik } from 'formik';
-import {
-    primeholder_get_request_thunk,
-    generalholder_get_request_thunk,
-    partnerholder_get_request_thunk,
-} from 'redux/actions/holderActions';
-
+import { primeholder_get_request_thunk } from 'redux/actions/holderActions';
+import { start_holdersmint_tx } from 'redux/actions/mint3Actions';
 import { mintEp3 } from 'patterns/proxy/mint-functions';
 
 const HoldersMintSectionForm = () => {
-    const [amountLeftTRAF, setAmountLeftTRAF] = useState(0);
-    const [isEligible, setIsEligible] = useState(false);
-    console.log('🚀 ~ file: index.js ~ line 18 ~ TRAFMintSectionForm ~ isEligible', isEligible);
+    const [isActive, setIsActive] = useState(false);
+    const [mintsLeft, setMintsLeft] = useState(0);
+    const [mintPrice, setMintPrice] = useState(0);
+    const [trigger, setTrigger] = useState(0);
 
-    const { mintButtonReducer, holderReducer } = useSelector(state => state);
+    const { holderReducer } = useSelector(state => state);
+    // console.log('🚀 ~ file: index.js ~ line 19 ~ HoldersMintSectionForm ~ holderReducer', holderReducer);
     const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
+
+    const isEligible =
+        holderReducer.isPrimeHolder.success && holderReducer.isPrimeHolder.data.data.primeholder && isActive;
 
     const dispatch = useDispatch();
 
@@ -35,47 +37,13 @@ const HoldersMintSectionForm = () => {
 
     useEffect(() => {
         if (!web3Reducer.initialized || walletReducer.address === null) return;
-        dispatch(
-            generalholder_get_request_thunk({
-                requestName: 'isGeneralHolder',
-                params: {
-                    userAddress: walletReducer.address,
-                },
-            })
-        );
-    }, [web3Reducer.initialized, walletReducer.address, dispatch]);
-
-    useEffect(() => {
-        if (!web3Reducer.initialized || walletReducer.address === null) return;
-        dispatch(
-            partnerholder_get_request_thunk({
-                requestName: 'isPartnerHolder',
-                params: {
-                    userAddress: walletReducer.address,
-                },
-            })
-        );
-    }, [web3Reducer.initialized, walletReducer.address, dispatch]);
-
-    useEffect(() => {
-        if (!web3Reducer.initialized || walletReducer.address === null) return;
         (async () => {
             try {
-                const mintsLeft = await mintEp3().MintsLeft();
-                const generalMintsLeft = await mintEp3().GeneralMintsLeft();
                 const hmData = await mintEp3().HoldersMint().Get_HM_Data(walletReducer.address);
                 console.log('🚀 ~ file: index.js ~ line 66 ~ hmData', hmData);
-                const ghmData = await mintEp3().GeneralHoldersMint().Get_GHM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 66 ~ ghmData', ghmData);
-                const prmData = await mintEp3().PreniumMint().Get_PRM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 67 ~ prmData', prmData);
-                const pmData = await mintEp3().PartnersMint().Get_PM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 72 ~ pmData', pmData);
-                const almData = await mintEp3().AllowListMint().Get_ALM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 74 ~ almData', almData);
-                const pumData = await mintEp3().PublicMint().Get_PUM_Data(walletReducer.address);
-                setIsEligible(false);
-                console.log('🚀 ~ file: index.js ~ line 76 ~ pumData', pumData);
+                setIsActive(hmData.active);
+                setMintPrice(new BigNumber(hmData.price).toString());
+                setMintsLeft(parseInt(hmData.user_mint_limit - hmData.user_mints));
             } catch (e) {
                 console.log(e);
             }
@@ -88,23 +56,29 @@ const HoldersMintSectionForm = () => {
         },
 
         onSubmit: async values => {
-            // dispatch(start_traf_tx(values.trafAmount));
+            dispatch(
+                start_holdersmint_tx({
+                    amount: values.trafAmount,
+                    price: mintPrice,
+                    nft_id: holderReducer.isPrimeHolder.data.data.primetoken,
+                })
+            );
         },
     });
 
     const incrementButton = () => {
-        dispatch({ type: 'INCREMENT' });
+        setTrigger(trigger + 1);
         formik.setFieldValue('trafAmount', Number(formik.values.trafAmount) + 1);
     };
 
     const decrementButton = () => {
-        if (mintButtonReducer.count > 0) {
-            dispatch({ type: 'DECREMENT' });
+        if (trigger > 0) {
+            setTrigger(trigger - 1);
             formik.setFieldValue('trafAmount', Number(formik.values.trafAmount) - 1);
         }
     };
 
-    return isEligible === true ? (
+    return isEligible ? (
         <>
             <div className="columns is-centered pt-6">
                 <form onSubmit={formik.handleSubmit}>
@@ -114,7 +88,7 @@ const HoldersMintSectionForm = () => {
                                 className="button is-medium is-borderless is-cyellow responsive-btn"
                                 style={{ borderRadius: '1000px' }}
                                 onClick={decrementButton}
-                                disabled={mintButtonReducer.count === 0}
+                                disabled={trigger === 0}
                                 type="button"
                             >
                                 <span className="icon">
@@ -125,11 +99,11 @@ const HoldersMintSectionForm = () => {
                         <div className="column">
                             <button
                                 className="button is-medium is-rounded is-borderless is-cyellow is-fullwidth responsive-btn"
-                                disabled={mintButtonReducer.count === 0}
+                                disabled={trigger === 0}
                                 type="submit"
                             >
                                 <p className="has-text-weight-bold">
-                                    MINT <span className="has-text-primary">{mintButtonReducer.count}</span> NFTs
+                                    MINT <span className="has-text-primary">{trigger}</span> NFTs
                                 </p>
                             </button>
                         </div>
@@ -138,7 +112,7 @@ const HoldersMintSectionForm = () => {
                                 className="button is-medium is-borderless is-cyellow responsive-btn"
                                 style={{ borderRadius: '1000px' }}
                                 onClick={incrementButton}
-                                disabled={mintButtonReducer.count === amountLeftTRAF}
+                                disabled={trigger === mintsLeft}
                                 type="button"
                             >
                                 <span className="icon">
@@ -153,7 +127,7 @@ const HoldersMintSectionForm = () => {
                 <div className="column is-narrow">
                     <h2 className="is-size-6 has-text-white has-text-weight-bold">
                         YOUR AVAILABLE MINTS FOR HOLDERS MINT:
-                        <span className="has-text-cyellow"> {amountLeftTRAF}</span>
+                        <span className="has-text-cyellow"> {mintsLeft}</span>
                     </h2>
                 </div>
             </div>

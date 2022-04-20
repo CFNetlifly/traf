@@ -2,11 +2,6 @@ import React, { useEffect } from 'react';
 import useCountdown from 'hooks/useCountDown';
 import MintOpen from '../mint-open';
 import { episode3Spaceship } from 'images';
-import HoldersMintSectionHelper from '../mint-open/mint-section/holders-mint-section/holders-mint-section-helper';
-import PartnersMintSectionHelper from '../mint-open/mint-section/partners-mint-section/partners-mint-section-helper';
-import PresaleMintSectionHelper from '../mint-open/mint-section/presale-mint-section/presale-mint-section-helper';
-import RaffleMintSectionHelper from '../mint-open/mint-section/raffle-mint-section/raffle-mint-section-helper';
-import PublicMintSectionHelper from '../mint-open/mint-section/public-mint-section/public-mint-section-helper';
 
 const BeforeMint = () => {
     const { days, hours, minutes, seconds } = useCountdown(1650564000);
@@ -79,21 +74,91 @@ const BeforeMint = () => {
             </div>
             <div className="columns is-centered pt-5">
                 <div className="column is-narrow">
-                    <HoldersMintSectionHelper />
+                    <div className="is-hdarkgray2 px-5 py-6" style={{ opacity: '0.3' }}>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-hlime is-italic">
+                            HOLDERS MINT
+                        </h3>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-redape is-underlined">
+                            CLOSED
+                        </h3>
+                        <div className="is-size-6 is-flex is-flex-direction-column is-align-items-flex-start">
+                            <p className="has-text-white">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 6PM UTC to 7PM UTC</p>
+                            <p className="has-text-white">💎 | PRICE: 0.25 ETH + Gas</p>
+                            <p className="has-text-white">⏱ | DURATION: 1 hour</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 10 per wallet</p>
+                        </div>
+                    </div>
                 </div>
                 <div className="column is-narrow">
-                    <PresaleMintSectionHelper />
+                    <div className="is-hdarkgray2 px-5 py-6" style={{ opacity: '0.3' }}>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-hlime is-italic">
+                            PRESALE MINT
+                        </h3>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-redape is-underlined">
+                            CLOSED
+                        </h3>
+                        <div className="is-size-6 is-flex is-flex-direction-column is-align-items-flex-start">
+                            <p className="has-text-white">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 6PM UTC to 7PM UTC</p>
+                            <p className="has-text-white">💎 | PRICE: 0.35 ETH + Gas</p>
+                            <p className="has-text-white">⏱ | DURATION: 1 hour</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
+                        </div>
+                    </div>
                 </div>
                 <div className="column is-narrow">
-                    <PartnersMintSectionHelper />
+                    <div className="is-hdarkgray2 px-5 py-6" style={{ opacity: '0.3' }}>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-hlime is-italic">
+                            PARTNERS MINT
+                        </h3>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-redape is-underlined">
+                            CLOSED
+                        </h3>
+                        <div className="is-size-6 is-flex is-flex-direction-column is-align-items-flex-start">
+                            <p className="has-text-white">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 6:30PM UTC to 7PM UTC</p>
+                            <p className="has-text-white">💎 | PRICE: 0.35 ETH + Gas</p>
+                            <p className="has-text-white">⏱ | DURATION: 30 minutes</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="columns is-centered pt-2">
                 <div className="column is-narrow">
-                    <RaffleMintSectionHelper />
+                    <div className="is-hdarkgray2 px-5 py-6" style={{ opacity: '0.3' }}>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-hlime is-italic">
+                            RAFFLE MINT
+                        </h3>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-redape is-underlined">
+                            CLOSED
+                        </h3>
+                        <div className="is-size-6 is-flex is-flex-direction-column is-align-items-flex-start">
+                            <p className="has-text-white">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 6:30PM UTC to 7PM UTC</p>
+                            <p className="has-text-white">💎 | PRICE: 0.35 ETH + Gas</p>
+                            <p className="has-text-white">⏱ | DURATION: 30 minutes</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
+                        </div>
+                    </div>
                 </div>
                 <div className="column is-narrow">
-                    <PublicMintSectionHelper />
+                    <div className="is-hdarkgray2 px-5 py-6" style={{ opacity: '0.3' }}>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-hlime is-italic">
+                            PUBLIC MINT
+                        </h3>
+                        <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-redape is-underlined">
+                            CLOSED
+                        </h3>
+                        <div className="is-size-6 is-flex is-flex-direction-column is-align-items-flex-start">
+                            <p className="has-text-white">📅 | MINT DAY: April 21</p>
+                            <p className="has-text-white">🕙 | MINT TIME: 7PM UTC</p>
+                            <p className="has-text-white">💎 | PRICE: 0.4 ETH + Gas</p>
+                            <p className="has-text-white">⏱ | DURATION: Till sellout</p>
+                            <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
