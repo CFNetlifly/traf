@@ -62,9 +62,12 @@ const partnerholder_eligible_get_request = fetchData => ({
     payload: fetchData,
 });
 
-const partnerholder_eligible_get_success = data => ({
+const partnerholder_eligible_get_success = ({ name, res }) => ({
     type: PARTNERHOLDER_ELIGIBLE_GET_SUCCESS,
-    payload: data,
+    payload: {
+        name,
+        res,
+    },
 });
 
 const partnerholder_eligible_get_failed = error => ({
@@ -81,7 +84,12 @@ export const partnerholder_get_request_thunk = fetchData => {
             if (callback && typeof callback === 'function') {
                 callback(response);
             }
-            dispatch(partnerholder_eligible_get_success(response));
+            dispatch(
+                partnerholder_eligible_get_success({
+                    name: requestName,
+                    res: response,
+                })
+            );
         } catch (error) {
             dispatch(partnerholder_eligible_get_failed(error));
         }
@@ -95,9 +103,12 @@ const generalholder_eligible_get_request = fetchData => ({
     payload: fetchData,
 });
 
-const generalholder_eligible_get_success = data => ({
+const generalholder_eligible_get_success = ({ name, res }) => ({
     type: GENERALHOLDER_ELIGIBLE_GET_SUCCESS,
-    payload: data,
+    payload: {
+        name,
+        res,
+    },
 });
 
 const generalholder_eligible_get_failed = error => ({
@@ -114,7 +125,12 @@ export const generalholder_get_request_thunk = fetchData => {
             if (callback && typeof callback === 'function') {
                 callback(response);
             }
-            dispatch(generalholder_eligible_get_success(response));
+            dispatch(
+                generalholder_eligible_get_success({
+                    name: requestName,
+                    res: response,
+                })
+            );
         } catch (error) {
             dispatch(generalholder_eligible_get_failed(error));
         }

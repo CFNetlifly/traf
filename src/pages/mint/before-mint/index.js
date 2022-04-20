@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import useCountdown from 'hooks/useCountDown';
 import MintOpen from '../mint-open';
 import { episode3Spaceship } from 'images';
+import HoldersMintSectionHelper from '../mint-open/mint-section/holders-mint-section/holders-mint-section-helper';
+import PartnersMintSectionHelper from '../mint-open/mint-section/partners-mint-section/partners-mint-section-helper';
+import PresaleMintSectionHelper from '../mint-open/mint-section/presale-mint-section/presale-mint-section-helper';
+import RaffleMintSectionHelper from '../mint-open/mint-section/raffle-mint-section/raffle-mint-section-helper';
+import PublicMintSectionHelper from '../mint-open/mint-section/public-mint-section/public-mint-section-helper';
 
 const BeforeMint = () => {
     const { days, hours, minutes, seconds } = useCountdown(1650564000);
@@ -70,6 +75,25 @@ const BeforeMint = () => {
                             style={{ width: '256px', height: '256px' }}
                         />
                     </figure>
+                </div>
+            </div>
+            <div className="columns is-centered pt-5">
+                <div className="column is-narrow">
+                    <HoldersMintSectionHelper />
+                </div>
+                <div className="column is-narrow">
+                    <PresaleMintSectionHelper />
+                </div>
+                <div className="column is-narrow">
+                    <PartnersMintSectionHelper />
+                </div>
+            </div>
+            <div className="columns is-centered pt-2">
+                <div className="column is-narrow">
+                    <RaffleMintSectionHelper />
+                </div>
+                <div className="column is-narrow">
+                    <PublicMintSectionHelper />
                 </div>
             </div>
         </section>

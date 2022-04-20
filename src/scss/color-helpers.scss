@@ -69,6 +69,7 @@ $corners: 'top', 'right', 'bottom', 'left';
 @include generate-color-classes($primary, 'primary');
 @include generate-color-classes($hdarkyellow, 'hdarkyellow');
 @include generate-color-classes($hdarkgray, 'hdarkgray');
+@include generate-color-classes($hdarkgray2, 'hdarkgray2');
 
 .has-background-transparent {
     background: rgba(0, 0, 0, 0) !important;

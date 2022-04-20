@@ -1,7 +1,7 @@
 import React from 'react';
 import { ConnectedWrapper, ConnectButton, SwitchNetworkButton, NetworkWrapper } from 'celeste-framework';
 
-import TRAFMintSection from './traf-mint-section';
+import HoldersMintSection from './holders-mint-section';
 
 const MintSection = () => {
     return (
@@ -31,7 +31,7 @@ const MintSection = () => {
                     </div>
                 }
             >
-                <TRAFMintSection />
+                <HoldersMintSection />
             </NetworkWrapper>
         </ConnectedWrapper>
     );

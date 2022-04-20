@@ -6,7 +6,7 @@ import { open_modal } from 'redux/actions/modalActions';
 
 import MintSection from './mint-section';
 
-import { traf } from 'patterns/singleton/mint-functions';
+import { mintEp3 } from 'patterns/proxy/mint-functions';
 
 const MintOpen = () => {
     const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const MintOpen = () => {
         if (!web3Reducer.initialized) return;
         (async () => {
             try {
-                const res = await traf().totalSupply();
+                const res = await mintEp3().MintsLeft();
                 setTotalSupply(res);
             } catch (e) {
                 console.log(e);

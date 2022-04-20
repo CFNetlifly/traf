@@ -3,18 +3,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useCelesteSelector } from 'celeste-framework';
 
 import { useFormik } from 'formik';
-import { traf } from 'patterns/singleton/mint-functions';
-import { start_traf_tx } from 'redux/actions/mint3Actions';
-import { primeholder_get_request_thunk } from 'redux/actions/holderActions';
+import {
+    primeholder_get_request_thunk,
+    generalholder_get_request_thunk,
+    partnerholder_get_request_thunk,
+} from 'redux/actions/holderActions';
 
-const TRAFMintSectionForm = () => {
-    const [balanceOfTRAF, setBalanceOfTRAF] = useState(0);
+import { mintEp3 } from 'patterns/proxy/mint-functions';
+
+const HoldersMintSectionForm = () => {
     const [amountLeftTRAF, setAmountLeftTRAF] = useState(0);
+    const [isEligible, setIsEligible] = useState(false);
+    console.log('🚀 ~ file: index.js ~ line 18 ~ TRAFMintSectionForm ~ isEligible', isEligible);
 
-    const { mintButtonReducer, mint3Reducer, holderReducer } = useSelector(state => state);
-    console.log('🚀 ~ file: index.js ~ line 14 ~ TRAFMintSectionForm ~ holderReducer', holderReducer);
+    const { mintButtonReducer, holderReducer } = useSelector(state => state);
     const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
-    // console.log('🚀 ~ file: index.js ~ line 15 ~ TRAFMintSectionForm ~ web3Reducer', web3Reducer);
 
     const dispatch = useDispatch();
 
@@ -22,7 +25,31 @@ const TRAFMintSectionForm = () => {
         if (!web3Reducer.initialized || walletReducer.address === null) return;
         dispatch(
             primeholder_get_request_thunk({
-                requestName: 'isPrimeholder',
+                requestName: 'isPrimeHolder',
+                params: {
+                    userAddress: walletReducer.address,
+                },
+            })
+        );
+    }, [web3Reducer.initialized, walletReducer.address, dispatch]);
+
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+        dispatch(
+            generalholder_get_request_thunk({
+                requestName: 'isGeneralHolder',
+                params: {
+                    userAddress: walletReducer.address,
+                },
+            })
+        );
+    }, [web3Reducer.initialized, walletReducer.address, dispatch]);
+
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+        dispatch(
+            partnerholder_get_request_thunk({
+                requestName: 'isPartnerHolder',
                 params: {
                     userAddress: walletReducer.address,
                 },
@@ -34,12 +61,21 @@ const TRAFMintSectionForm = () => {
         if (!web3Reducer.initialized || walletReducer.address === null) return;
         (async () => {
             try {
-                const mintsUsed = await traf().getMints(walletReducer.address);
-                // console.log('🚀 ~ file: index.js ~ line 39 ~ MintSection ~ mintsUsed', mintsUsed);
-                setAmountLeftTRAF(10 - mintsUsed.TRAFholdersMints);
-
-                const trafBalance = await traf().balanceOf(walletReducer.address);
-                setBalanceOfTRAF(trafBalance);
+                const mintsLeft = await mintEp3().MintsLeft();
+                const generalMintsLeft = await mintEp3().GeneralMintsLeft();
+                const hmData = await mintEp3().HoldersMint().Get_HM_Data(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 66 ~ hmData', hmData);
+                const ghmData = await mintEp3().GeneralHoldersMint().Get_GHM_Data(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 66 ~ ghmData', ghmData);
+                const prmData = await mintEp3().PreniumMint().Get_PRM_Data(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 67 ~ prmData', prmData);
+                const pmData = await mintEp3().PartnersMint().Get_PM_Data(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 72 ~ pmData', pmData);
+                const almData = await mintEp3().AllowListMint().Get_ALM_Data(walletReducer.address);
+                console.log('🚀 ~ file: index.js ~ line 74 ~ almData', almData);
+                const pumData = await mintEp3().PublicMint().Get_PUM_Data(walletReducer.address);
+                setIsEligible(false);
+                console.log('🚀 ~ file: index.js ~ line 76 ~ pumData', pumData);
             } catch (e) {
                 console.log(e);
             }
@@ -52,7 +88,7 @@ const TRAFMintSectionForm = () => {
         },
 
         onSubmit: async values => {
-            dispatch(start_traf_tx(values.trafAmount));
+            // dispatch(start_traf_tx(values.trafAmount));
         },
     });
 
@@ -68,7 +104,7 @@ const TRAFMintSectionForm = () => {
         }
     };
 
-    return balanceOfTRAF > 0 ? (
+    return isEligible === true ? (
         <>
             <div className="columns is-centered pt-6">
                 <form onSubmit={formik.handleSubmit}>
@@ -133,4 +169,4 @@ const TRAFMintSectionForm = () => {
     );
 };
 
-export default TRAFMintSectionForm;
+export default HoldersMintSectionForm;

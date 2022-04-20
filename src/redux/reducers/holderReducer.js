@@ -63,10 +63,10 @@ const holderReducer = (state = defaultState, action) => {
         case PARTNERHOLDER_ELIGIBLE_GET_SUCCESS:
             return {
                 ...state,
-                [action.payload.requestName]: {
+                [action.payload.name]: {
                     ...defaultRequest,
                     success: true,
-                    data: action.payload.data,
+                    data: action.payload.res,
                 },
             };
         case PARTNERHOLDER_ELIGIBLE_GET_FAILED:
@@ -89,10 +89,10 @@ const holderReducer = (state = defaultState, action) => {
         case GENERALHOLDER_ELIGIBLE_GET_SUCCESS:
             return {
                 ...state,
-                [action.payload.requestName]: {
+                [action.payload.name]: {
                     ...defaultRequest,
                     success: true,
-                    data: action.payload.data,
+                    data: action.payload.res,
                 },
             };
         case GENERALHOLDER_ELIGIBLE_GET_FAILED:

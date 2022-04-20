@@ -6,19 +6,19 @@ const ENDPOINT = 'http://localhost:8080';
 const api = {
     get: {
         isPrimeHolder: ({ userAddress }) => {
-            axios({
+            return axios({
                 method: 'get',
                 url: `${ENDPOINT}/primeholder/?user=${userAddress}`,
             });
         },
         isPartnerHolder: ({ userAddress }) => {
-            axios({
+            return axios({
                 method: 'get',
                 url: `${ENDPOINT}/partnerholder/?user=${userAddress}`,
             });
         },
         isGeneralHolder: ({ userAddress }) => {
-            axios({
+            return axios({
                 method: 'get',
                 url: `${ENDPOINT}/generalholder/?user=${userAddress}`,
             });
