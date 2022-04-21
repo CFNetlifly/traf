@@ -11,6 +11,7 @@ import { start_publicmint_tx } from 'redux/actions/mint3Actions';
 const PublicMintSectionForm = () => {
     const [isActive, setIsActive] = useState(false);
     const [mintPrice, setMintPrice] = useState(0);
+    // console.log('🚀 ~ file: index.js ~ line 14 ~ PublicMintSectionForm ~ mintPrice', mintPrice);
     const [mintsLeft, setMintsLeft] = useState(0);
     const [trigger, setTrigger] = useState(0);
 
@@ -108,8 +109,8 @@ const PublicMintSectionForm = () => {
             <div className="columns is-centered pt-4">
                 <div className="column is-narrow">
                     <h2 className="is-size-6 has-text-white has-text-weight-bold">
-                        {/* YOUR AVAILABLE MINTS FOR PUBLIC MINT: */}
-                        YOUR AVAILABLE MINTS FOR RAFFLE MINT:
+                        YOUR AVAILABLE MINTS FOR PUBLIC MINT:
+                        {/* YOUR AVAILABLE MINTS FOR RAFFLE MINT: */}
                         <span className="has-text-cyellow"> {mintsLeft}</span>
                     </h2>
                 </div>
@@ -119,8 +120,8 @@ const PublicMintSectionForm = () => {
         <div className="columns is-centered pt-6">
             <div className="column is-narrow">
                 <h2 className="is-size-6 has-text-redape has-text-weight-bold">
-                    {/* YOU ARE NOT ELIGIBLE FOR THE PUBLIC MINT */}
-                    YOU ARE NOT ELIGIBLE FOR THE RAFFLE MINT
+                    YOU ARE NOT ELIGIBLE FOR THE PUBLIC MINT
+                    {/* YOU ARE NOT ELIGIBLE FOR THE RAFFLE MINT */}
                 </h2>
             </div>
         </div>
