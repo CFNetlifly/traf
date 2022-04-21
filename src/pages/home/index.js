@@ -208,25 +208,18 @@ const HomePage = props => {
                                                 EPISODE 3
                                             </h1>
                                             <h1 className="subtitle has-text-hlime has-text-weight-bold mb-5 is-3 is-italic">
-                                                <a
-                                                    href="https://www.premint.xyz/traf-ep3/"
-                                                    target="_blank"
-                                                    className="has-text-hlime"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    ALLOW LIST OPEN
-                                                </a>
+                                                <Link to="/mint" className="has-text-hlime">
+                                                    MINT IS NOW OPEN
+                                                </Link>
                                             </h1>
-                                            <a
-                                                href="https://www.premint.xyz/traf-ep3/"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                            <Link
+                                                to="/mint"
                                                 className="button is-hdarkgreen is-rounded is-size-5 is-fullwidth"
                                             >
                                                 <span className="is-italic has-text-weight-bold has-text-white">
-                                                    JOIN ALLOW LIST
+                                                    GO TO MINT
                                                 </span>
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
