@@ -134,13 +134,14 @@ const PartnersMintSectionForm = () => {
             </div>
         </>
     ) : (
-        <div className="columns is-centered pt-6">
-            <div className="column is-narrow">
-                <h2 className="is-size-6 has-text-redape has-text-weight-bold">
-                    YOU ARE NOT ELIGIBLE FOR THE PARTNERS MINT
-                </h2>
-            </div>
-        </div>
+        // <div className="columns is-centered pt-6">
+        //     <div className="column is-narrow">
+        //         <h2 className="is-size-6 has-text-redape has-text-weight-bold">
+        //             YOU ARE NOT ELIGIBLE FOR THE PARTNERS MINT
+        //         </h2>
+        //     </div>
+        // </div>
+        <></>
     );
 };
 
