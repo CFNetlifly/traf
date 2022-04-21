@@ -109,8 +109,8 @@ const PublicMintSectionForm = () => {
             <div className="columns is-centered pt-4">
                 <div className="column is-narrow">
                     <h2 className="is-size-6 has-text-white has-text-weight-bold">
-                        {/* YOUR AVAILABLE MINTS FOR PUBLIC MINT: */}
-                        YOUR AVAILABLE MINTS FOR RAFFLE MINT:
+                        YOUR AVAILABLE MINTS FOR PUBLIC MINT:
+                        {/* YOUR AVAILABLE MINTS FOR RAFFLE MINT: */}
                         <span className="has-text-cyellow"> {mintsLeft}</span>
                     </h2>
                 </div>

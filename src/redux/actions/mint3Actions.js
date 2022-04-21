@@ -88,9 +88,9 @@ export const start_publicmint_tx = ({ amount, price }) => {
     return async () => {
         try {
             const res = await mintEp3().PublicMint().PUM({ amount, price });
-            ReactNotificationsStore.addNotification(successNotification('Raffle Mint', 'Transaction sent'));
+            ReactNotificationsStore.addNotification(successNotification('Public Mint', 'Transaction sent'));
         } catch (e) {
-            ReactNotificationsStore.addNotification(errorNotification('Raffle Mint', 'Transaction failed'));
+            ReactNotificationsStore.addNotification(errorNotification('Public Mint', 'Transaction failed'));
         }
     };
 };
