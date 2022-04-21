@@ -22,6 +22,7 @@ import celesteOptions from 'components/celeste/celeste-options';
 
 import ShowVideo from 'components/commons/modal/show-video';
 import ShowHelp from 'components/commons/modal/show-help';
+import MintOpen from 'pages/mint/mint-open';
 
 initCeleste(celesteOptions);
 
@@ -54,6 +55,9 @@ const App = () => {
 
                     <Route exact path="/mint">
                         <BeforeMint />
+                    </Route>
+                    <Route exact path="/test/mint">
+                        <MintOpen />
                     </Route>
                 </Switch>
                 <Footer />

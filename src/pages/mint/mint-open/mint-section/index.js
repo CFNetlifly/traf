@@ -21,12 +21,12 @@ const MintSection = () => {
             }
         >
             <NetworkWrapper
-                chainIds={[4]}
+                chainIds={[1]}
                 info={
                     <div className="columns is-centered">
                         <div className="column">
                             <SwitchNetworkButton
-                                chainId={4}
+                                chainId={1}
                                 className="button is-medium is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-6 pr-6"
                             >
                                 <span>SWITCH TO MAINNET</span>
@@ -47,9 +47,6 @@ const MintSection = () => {
                     </div>
                 </div>
                 <div className="columns is-centered">
-                    <div className="column is-narrow">
-                        <RaffleMintSection />
-                    </div>
                     <div className="column is-narrow">
                         <PublicMintSection />
                     </div>

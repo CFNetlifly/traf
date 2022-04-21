@@ -3,8 +3,8 @@ import trafNewABI from 'abis/TRAF_NEW_ABI.json';
 const celesteOptions = {
     rpcs: [
         {
-            chainId: 4,
-            url: 'https://rinkeby.infura.io/v3/50a22921f6854e16bc4b6228ae01e2b8',
+            chainId: 1,
+            url: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
         },
     ],
 
@@ -36,7 +36,7 @@ const celesteOptions = {
             isMultichain: false,
         },
         {
-            address: '0xE0a97bC149578c76353aca8a823838eB627a4A41',
+            address: '0x9982A8BF88527756eFbE89A76aCFbfA089F54B88',
             key: 'trafMintExtension',
             abi: trafNewABI,
             isMultichain: false,
