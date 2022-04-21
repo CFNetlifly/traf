@@ -23,7 +23,7 @@ const PublicMintSectionForm = () => {
         (async () => {
             try {
                 const pumData = await mintEp3().PublicMint().Get_PUM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 26 ~ pumData', pumData);
+                // console.log('🚀 ~ file: index.js ~ line 26 ~ pumData', pumData);
                 setIsActive(pumData.active);
                 setMintsLeft(parseInt(pumData.user_mint_limit - pumData.user_mints));
                 setMintPrice(new BigNumber(pumData.price).toString());
@@ -64,7 +64,7 @@ const PublicMintSectionForm = () => {
         <>
             <div className="columns is-centered pt-6">
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="columns">
+                    <div className="columns is-flex is-centered">
                         <div className="column">
                             <button
                                 className="button is-medium is-borderless is-cyellow responsive-btn"

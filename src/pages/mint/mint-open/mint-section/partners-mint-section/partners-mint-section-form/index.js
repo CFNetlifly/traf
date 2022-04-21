@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from 'react';
+import BigNumber from 'bignumber.js';
 import { useSelector, useDispatch } from 'react-redux';
 import { useCelesteSelector } from 'celeste-framework';
 
 import { useFormik } from 'formik';
 import { partnerholder_get_request_thunk } from 'redux/actions/holderActions';
+import { start_partnersmint_tx } from 'redux/actions/mint3Actions';
 
 import { mintEp3 } from 'patterns/proxy/mint-functions';
 
 const PartnersMintSectionForm = () => {
     const [isActive, setIsActive] = useState(false);
     const [mintsLeft, setMintsLeft] = useState(0);
+    const [mintPrice, setMintPrice] = useState(0);
     const [trigger, setTrigger] = useState(0);
 
     const { holderReducer } = useSelector(state => state);
-    // console.log('🚀 ~ file: index.js ~ line 15 ~ PartnersMintSectionForm ~ holderReducer', holderReducer);
+
+    const isEligible =
+        holderReducer.isPartnerHolder.success && holderReducer.isPartnerHolder.data.data.partnerholder && isActive;
 
     const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
 
@@ -36,8 +41,9 @@ const PartnersMintSectionForm = () => {
         (async () => {
             try {
                 const pmData = await mintEp3().PartnersMint().Get_PM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 39 ~ pmData', pmData);
+                // console.log('🚀 ~ file: index.js ~ line 39 ~ pmData', pmData);
                 setIsActive(pmData.active);
+                setMintPrice(new BigNumber(pmData.price).toString());
                 setMintsLeft(parseInt(pmData.user_mint_limit - pmData.user_mints));
             } catch (e) {
                 console.log(e);
@@ -51,7 +57,13 @@ const PartnersMintSectionForm = () => {
         },
 
         onSubmit: async values => {
-            // dispatch(start_traf_tx(values.trafAmount));
+            dispatch(
+                start_partnersmint_tx({
+                    amount: values.trafAmount,
+                    price: mintPrice,
+                    address: holderReducer.isPartnerHolder.data.data.partneraddress,
+                })
+            );
         },
     });
 
@@ -67,11 +79,11 @@ const PartnersMintSectionForm = () => {
         }
     };
 
-    return isActive ? (
+    return isEligible ? (
         <>
             <div className="columns is-centered pt-6">
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="columns">
+                    <div className="columns is-flex is-centered">
                         <div className="column">
                             <button
                                 className="button is-medium is-borderless is-cyellow responsive-btn"

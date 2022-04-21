@@ -140,7 +140,6 @@ export const mintEp3 = () => {
                             const res = await tx.send(txData);
                             resolve(res);
                         } catch (e) {
-                            console.log('🚀 ~ file: index.js ~ line 144 ~ returnnewPromise ~ e', e);
                             reject(e);
                         }
                     });

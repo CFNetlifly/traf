@@ -40,7 +40,7 @@ const HoldersMintSectionForm = () => {
         (async () => {
             try {
                 const hmData = await mintEp3().HoldersMint().Get_HM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 66 ~ hmData', hmData);
+                // console.log('🚀 ~ file: index.js ~ line 66 ~ hmData', hmData);
                 setIsActive(hmData.active);
                 setMintPrice(new BigNumber(hmData.price).toString());
                 setMintsLeft(parseInt(hmData.user_mint_limit - hmData.user_mints));
@@ -82,7 +82,7 @@ const HoldersMintSectionForm = () => {
         <>
             <div className="columns is-centered pt-6">
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="columns">
+                    <div className="columns is-flex is-centered">
                         <div className="column">
                             <button
                                 className="button is-medium is-borderless is-cyellow responsive-btn"

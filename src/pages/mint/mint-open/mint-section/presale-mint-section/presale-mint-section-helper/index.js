@@ -14,7 +14,7 @@ const PresaleMintSectionHelper = () => {
         (async () => {
             try {
                 const prmData = await mintEp3().PreniumMint().Get_PRM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 17 ~ prmData', prmData);
+                // console.log('🚀 ~ file: index.js ~ line 17 ~ prmData', prmData);
                 setIsActive(prmData.active);
                 setIsListed(prmData.listed);
             } catch (e) {

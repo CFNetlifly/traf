@@ -1,11 +1,7 @@
 import { mintEp3 } from 'patterns/proxy/mint-functions';
 import { traf, nonWlPartners, wlPartners } from 'patterns/singleton/mint-functions';
-import {
-    partnerholder_get_request_thunk,
-    generalholder_get_request_thunk,
-    primeholder_get_request_thunk,
-} from './holderActions';
-import { store as ReactNotificationsStore } from 'react-notifications-component';
+
+import { Store as ReactNotificationsStore } from 'react-notifications-component';
 import { successNotification, errorNotification } from 'static/notifications';
 import celesteStore from 'celeste-framework/dist/store';
 
@@ -55,12 +51,22 @@ export const fetch_data_traf = () => {
 
 export const start_holdersmint_tx = ({ amount, price, nft_id }) => {
     return async () => {
-        const walletReducer = celesteStore.getState().walletReducer;
         try {
             const res = await mintEp3().HoldersMint().HM({ amount, price, nft_id });
-            ReactNotificationsStore.addNotification(successNotification('Holders Mint', 'Minting Successful'));
+            ReactNotificationsStore.addNotification(successNotification('Holders Mint', 'Transaction sent'));
         } catch (e) {
-            errorNotification(ReactNotificationsStore, 'Error', 'Something went wrong');
+            ReactNotificationsStore.addNotification(errorNotification('Holders Mint', 'Transaction failed'));
+        }
+    };
+};
+
+export const start_partnersmint_tx = ({ amount, price, address }) => {
+    return async () => {
+        try {
+            const res = await mintEp3().PartnersMint().PM({ amount, price, address });
+            ReactNotificationsStore.addNotification(successNotification('Partners Mint', 'Transaction sent'));
+        } catch (e) {
+            ReactNotificationsStore.addNotification(errorNotification('Partners Mint', 'Transaction failed'));
         }
     };
 };
@@ -70,9 +76,9 @@ export const start_presalemint_tx = ({ amount, price }) => {
     return async () => {
         try {
             const res = await mintEp3().PreniumMint().PRM({ amount, price });
-            ReactNotificationsStore.addNotification(successNotification('Presale Mint', 'Minting Successful'));
+            ReactNotificationsStore.addNotification(successNotification('Presale Mint', 'Transaction sent'));
         } catch (e) {
-            errorNotification(ReactNotificationsStore, 'Error', 'Something went wrong');
+            ReactNotificationsStore.addNotification(errorNotification('Presale Mint', 'Transaction failed'));
         }
     };
 };
@@ -82,10 +88,9 @@ export const start_publicmint_tx = ({ amount, price }) => {
     return async () => {
         try {
             const res = await mintEp3().PublicMint().PUM({ amount, price });
-            console.log('🚀 ~ file: mint3Actions.js ~ line 85 ~ return ~ res', res);
-            ReactNotificationsStore.addNotification(successNotification('Public Mint', 'Minting Successful'));
+            ReactNotificationsStore.addNotification(successNotification('Public Mint', 'Transaction sent'));
         } catch (e) {
-            errorNotification(ReactNotificationsStore, 'Error', 'Something went wrong');
+            ReactNotificationsStore.addNotification(errorNotification('Public Mint', 'Transaction failed'));
         }
     };
 };
@@ -95,9 +100,9 @@ export const start_raffle_tx = ({ amount, price }) => {
     return async () => {
         try {
             const res = await mintEp3().AllowListMint().ALM({ amount, price });
-            ReactNotificationsStore.addNotification(successNotification('Raffle Mint', 'Minting Successful'));
+            ReactNotificationsStore.addNotification(successNotification('Raffle Mint', 'Transaction sent'));
         } catch (e) {
-            errorNotification(ReactNotificationsStore, 'Error', 'Something went wrong');
+            ReactNotificationsStore.addNotification(errorNotification('Raffle Mint', 'Transaction failed'));
         }
     };
 };

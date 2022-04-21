@@ -24,7 +24,7 @@ const RaffleMintSectionForm = () => {
         (async () => {
             try {
                 const almData = await mintEp3().AllowListMint().Get_ALM_Data(walletReducer.address);
-                console.log('🚀 ~ file: index.js ~ line 26 ~ almData', almData);
+                // console.log('🚀 ~ file: index.js ~ line 26 ~ almData', almData);
                 setIsActive(almData.active);
                 setIsListed(almData.listed);
                 setMintsLeft(parseInt(almData.user_mint_limit - almData.user_mints));
@@ -66,7 +66,7 @@ const RaffleMintSectionForm = () => {
         <>
             <div className="columns is-centered pt-6">
                 <form onSubmit={formik.handleSubmit}>
-                    <div className="columns">
+                    <div className="columns is-flex is-centered">
                         <div className="column">
                             <button
                                 className="button is-medium is-borderless is-cyellow responsive-btn"

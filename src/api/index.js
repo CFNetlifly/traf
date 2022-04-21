@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 // const ENDPOINT = 'http://193.176.87.163:8080';
+// consr ENDPOINT = 'https://trafmintserver.herokuapp.com'
 const ENDPOINT = 'http://localhost:8080';
 
 const api = {
