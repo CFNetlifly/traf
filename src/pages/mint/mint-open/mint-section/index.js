@@ -1,14 +1,38 @@
-import React from 'react';
-import { ConnectedWrapper, ConnectButton, SwitchNetworkButton, NetworkWrapper } from 'celeste-framework';
+import React, { useEffect, useState } from 'react';
+import {
+    ConnectedWrapper,
+    ConnectButton,
+    SwitchNetworkButton,
+    NetworkWrapper,
+    useCelesteSelector,
+} from 'celeste-framework';
 
 import HoldersMintSection from './holders-mint-section';
 import PartnersMintSection from './partners-mint-section';
 import PresaleMintSection from './presale-mint-section';
 import RaffleMintSection from './raffle-mint-section';
 import PublicMintSection from './public-mint-section';
+import { mintEp3 } from 'patterns/proxy/mint-functions';
 
 const MintSection = () => {
-    return (
+    const [episodesLeft, setEpisodesLeft] = useState(0);
+
+    const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
+
+    useEffect(() => {
+        if (!web3Reducer.initialized || walletReducer.address === null) return;
+
+        (async () => {
+            try {
+                const episodesLeft = await mintEp3().MintsLeft();
+                setEpisodesLeft(episodesLeft);
+            } catch (e) {
+                console.log(e);
+            }
+        })();
+    }, [walletReducer.address, web3Reducer.initialized]);
+
+    return episodesLeft > 0 ? (
         <ConnectedWrapper
             disconnectedComponent={
                 <div className="columns is-centered">
@@ -53,6 +77,23 @@ const MintSection = () => {
                 </div>
             </NetworkWrapper>
         </ConnectedWrapper>
+    ) : (
+        <div className="columns is-centered">
+            <div className="column">
+                <div className="notification is-warning">
+                    <div className="columns is-centered">
+                        <div className="column">
+                            <p className="has-text-weight-bold">
+                                <span className="icon">
+                                    <i className="fas fa-exclamation-triangle"></i>
+                                </span>
+                                <span>No mints left!</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 
