@@ -35,7 +35,7 @@ const MintOpen = () => {
                         MINT IS NOW OPEN
                     </h2>
                     <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-white">
-                        TOTAL SUPPLY: 1111
+                        TOTAL SUPPLY: 333
                     </h3>
                     <p className="is-size-5 has-text-white has-text-weight-bold pb-2">
                         EPISODE 3 NFTs Left: <span className="has-text-cyellow">{totalSupply}</span>

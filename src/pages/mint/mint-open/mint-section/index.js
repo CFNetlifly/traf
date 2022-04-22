@@ -33,54 +33,9 @@ const MintSection = () => {
         })();
     }, [walletReducer.address, web3Reducer.initialized]);
 
-    return episodesLeft > 0 ? (
-        <ConnectedWrapper
-            disconnectedComponent={
-                <div className="columns is-centered">
-                    <div className="column ">
-                        <ConnectButton className=" button is-medium is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-6 pr-6">
-                            <span>CONNECT</span>
-                        </ConnectButton>
-                    </div>
-                </div>
-            }
-        >
-            <NetworkWrapper
-                chainIds={[1]}
-                info={
-                    <div className="columns is-centered">
-                        <div className="column">
-                            <SwitchNetworkButton
-                                chainId={1}
-                                className="button is-medium is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-6 pr-6"
-                            >
-                                <span>SWITCH TO MAINNET</span>
-                            </SwitchNetworkButton>
-                        </div>
-                    </div>
-                }
-            >
-                <div className="columns is-centered">
-                    <div className="column is-narrow">
-                        <HoldersMintSection />
-                    </div>
-                    <div className="column is-narrow">
-                        <PresaleMintSection />
-                    </div>
-                    <div className="column is-narrow">
-                        <PartnersMintSection />
-                    </div>
-                </div>
-                <div className="columns is-centered">
-                    <div className="column is-narrow">
-                        <PublicMintSection />
-                    </div>
-                </div>
-            </NetworkWrapper>
-        </ConnectedWrapper>
-    ) : (
+    return (
         <div className="columns is-centered">
-            <div className="column">
+            <div className="column is-narrow">
                 <div className="notification is-warning">
                     <div className="columns is-centered">
                         <div className="column">
@@ -95,7 +50,50 @@ const MintSection = () => {
                 </div>
             </div>
         </div>
+        // <ConnectedWrapper
+        //     disconnectedComponent={
+        //         <div className="columns is-centered">
+        //             <div className="column ">
+        //                 <ConnectButton className=" button is-medium is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-6 pr-6">
+        //                     <span>CONNECT</span>
+        //                 </ConnectButton>
+        //             </div>
+        //         </div>
+        //     }
+        // >
+        //     <NetworkWrapper
+        //         chainIds={[1]}
+        //         info={
+        //             <div className="columns is-centered">
+        //                 <div className="column">
+        //                     <SwitchNetworkButton
+        //                         chainId={1}
+        //                         className="button is-medium is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-6 pr-6"
+        //                     >
+        //                         <span>SWITCH TO MAINNET</span>
+        //                     </SwitchNetworkButton>
+        //                 </div>
+        //             </div>
+        //         }
+        //     >
+        //         <div className="columns is-centered">
+        //             <div className="column is-narrow">
+        //                 <HoldersMintSection />
+        //             </div>
+        //             <div className="column is-narrow">
+        //                 <PresaleMintSection />
+        //             </div>
+        //             <div className="column is-narrow">
+        //                 <PartnersMintSection />
+        //             </div>
+        //         </div>
+        //         <div className="columns is-centered">
+        //             <div className="column is-narrow">
+        //                 <PublicMintSection />
+        //             </div>
+        //         </div>
+        //     </NetworkWrapper>
+        // </ConnectedWrapper>
     );
 };
-
 export default MintSection;
