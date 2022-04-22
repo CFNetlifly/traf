@@ -32,7 +32,7 @@ const PublicMintSectionHelper = () => {
             <div className="is-size-6 is-flex is-flex-direction-column is-align-items-flex-start">
                 <p className="has-text-white">📅 | MINT DAY: April 21</p>
                 {/* <p className="has-text-white">🕙 | MINT TIME: 7PM UTC</p> */}
-                <p className="has-text-white">💎 | PRICE: 0.4 ETH + Gas</p>
+                <p className="has-text-white">💎 | PRICE: 0.35 ETH + Gas</p>
                 {/* <p className="has-text-white">⏱ | DURATION: Till sellout</p> */}
                 <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
                 {/* <p className="has-text-white">📅 | MINT DAY: April 21</p>
@@ -54,7 +54,7 @@ const PublicMintSectionHelper = () => {
             <div className="is-size-6 is-flex is-flex-direction-column is-align-items-flex-start">
                 <p className="has-text-white">📅 | MINT DAY: April 21</p>
                 {/* <p className="has-text-white">🕙 | MINT TIME: 7PM UTC</p> */}
-                <p className="has-text-white">💎 | PRICE: 0.4 ETH + Gas</p>
+                <p className="has-text-white">💎 | PRICE: 0.35 ETH + Gas</p>
                 {/* <p className="has-text-white">⏱ | DURATION: Till sellout</p> */}
                 <p className="has-text-white">⭕️ | MINT LIMIT: 2 per wallet</p>
                 {/* <p className="has-text-white">📅 | MINT DAY: April 21</p>
