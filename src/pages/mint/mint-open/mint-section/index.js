@@ -15,7 +15,7 @@ import PublicMintSection from './public-mint-section';
 import { mintEp3 } from 'patterns/proxy/mint-functions';
 
 const MintSection = () => {
-    const [episodesLeft, setEpisodesLeft] = useState(0);
+    const [episodesLeft, setEpisodesLeft] = useState(10);
 
     const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
 
@@ -25,6 +25,7 @@ const MintSection = () => {
         (async () => {
             try {
                 const episodesLeft = await mintEp3().MintsLeft();
+                console.log('🚀 ~ file: index.js ~ line 28 ~ episodesLeft', episodesLeft);
                 setEpisodesLeft(episodesLeft);
             } catch (e) {
                 console.log(e);
