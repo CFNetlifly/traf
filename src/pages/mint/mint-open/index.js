@@ -31,8 +31,8 @@ const MintOpen = () => {
             <div className="columns is-centered">
                 <div className="column is-narrow">
                     <h1 className="title has-text-centered has-text-white">EPISODE 3</h1>
-                    <h2 className="subtitle has-text-centered is-size-4 has-text-weight-bold has-text-hlime">
-                        MINT IS NOW OPEN
+                    <h2 className="subtitle has-text-centered is-size-4 has-text-weight-bold has-text-redape">
+                        MINT IS NOW CLOSED
                     </h2>
                     <h3 className="subtitle has-text-centered is-size-5 has-text-weight-bold has-text-white">
                         TOTAL SUPPLY: 333
@@ -54,9 +54,9 @@ const MintOpen = () => {
                         HOW TO MINT FROM YOUR SMARTPHONE
                     </a>
 
-                    <div className="content pt-6">
+                    {/* <div className="content pt-6">
                         <h1 className="title has-text-centered is-italic has-text-cyellow">SELECT YOUR MINT</h1>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

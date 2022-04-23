@@ -7,6 +7,8 @@ import {
     useCelesteSelector,
 } from 'celeste-framework';
 
+import { opensea } from 'images';
+
 import HoldersMintSection from './holders-mint-section';
 import PartnersMintSection from './partners-mint-section';
 import PresaleMintSection from './presale-mint-section';
@@ -36,15 +38,28 @@ const MintSection = () => {
     return (
         <div className="columns is-centered">
             <div className="column is-narrow">
-                <div className="notification is-warning">
-                    <div className="columns is-centered">
-                        <div className="column">
-                            <p className="has-text-weight-bold">
-                                <span className="icon">
-                                    <i className="fas fa-exclamation-triangle"></i>
-                                </span>
-                                <span>No mints left!</span>
-                            </p>
+                <div className="columns is-centered">
+                    <div className="column">
+                        <a
+                            className="title has-text-weight-bold has-text-hlime"
+                            href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            BUY ON OPENSEA
+                        </a>
+                        <div className="columns is-centered pt-5">
+                            <div className="column is-narrow">
+                                <a
+                                    href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <figure className="image is-32x32 is-inline-block">
+                                        <img src={opensea} alt="" />
+                                    </figure>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

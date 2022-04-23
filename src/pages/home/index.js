@@ -208,9 +208,14 @@ const HomePage = props => {
                                                 EPISODE 3
                                             </h1>
                                             <h1 className="subtitle has-text-hlime has-text-weight-bold mb-5 is-3 is-italic">
-                                                <Link to="/mint" className="has-text-hred">
+                                                <a
+                                                    href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="has-text-hred"
+                                                >
                                                     SOLD OUT <br />( 1st Batch )
-                                                </Link>
+                                                </a>
                                             </h1>
                                             {/* <Link
                                                 to="/mint"
@@ -220,6 +225,15 @@ const HomePage = props => {
                                                     GO TO MINT
                                                 </span>
                                             </Link> */}
+                                            <a
+                                                href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                <figure className="image is-32x32 is-inline-block">
+                                                    <img src={opensea} alt="" />
+                                                </figure>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
