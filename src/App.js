@@ -45,20 +45,20 @@ const App = () => {
                         <HomePage />
                     </Route>
 
-                    <Route exact path="/team">
+                    {/* <Route exact path="/team">
                         <TeamPage />
-                    </Route>
+                    </Route> */}
 
                     <Route exact path="/gravity">
                         <SneakersPage />
                     </Route>
 
-                    <Route exact path="/mint">
+                    {/* <Route exact path="/mint">
                         <BeforeMint />
                     </Route>
                     <Route exact path="/test/mint">
                         <MintOpen />
-                    </Route>
+                    </Route> */}
                 </Switch>
                 <Footer />
             </Router>

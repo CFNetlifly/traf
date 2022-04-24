@@ -123,9 +123,15 @@ const HomePage = props => {
                             <div className="columns">
                                 <div className="column">
                                     <div className="column">
-                                        <figure className="image">
-                                            <img src={episode1Spaceship} alt="Episode 1 Spaceship" />
-                                        </figure>
+                                        <a
+                                            href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            <figure className="image">
+                                                <img src={episode1Spaceship} alt="Episode 1 Spaceship" />
+                                            </figure>
+                                        </a>
                                     </div>
 
                                     <div className="has-text-centered">
@@ -151,18 +157,30 @@ const HomePage = props => {
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
-                                                <figure className="image is-32x32 is-inline-block">
-                                                    <img src={opensea} alt="" />
-                                                </figure>
+                                                <a
+                                                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <figure className="image is-32x32 is-inline-block">
+                                                        <img src={opensea} alt="" />
+                                                    </figure>
+                                                </a>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="column">
                                     <div className="column">
-                                        <figure className="image">
-                                            <img src={episode2Spaceship} alt="Episode 2 Spaceship" />
-                                        </figure>
+                                        <a
+                                            href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=2&search[sortAscending]=true&search[sortBy]=PRICE"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            <figure className="image">
+                                                <img src={episode2Spaceship} alt="Episode 2 Spaceship" />
+                                            </figure>
+                                        </a>
                                     </div>
 
                                     <div className="has-text-centered">
@@ -175,7 +193,7 @@ const HomePage = props => {
                                             </h1>
                                             <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
                                                 <a
-                                                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
+                                                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=2&search[sortAscending]=true&search[sortBy]=PRICE"
                                                     target="_blank"
                                                     rel="noreferrer"
                                                     className="has-text-yellow"
@@ -197,9 +215,16 @@ const HomePage = props => {
                                 </div>
                                 <div className="column">
                                     <div className="column">
-                                        <figure className="image">
-                                            <img src={episode3Spaceship} alt="Episode 3 Spaceship" />
-                                        </figure>
+                                        <a
+                                            href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="has-text-hred"
+                                        >
+                                            <figure className="image">
+                                                <img src={episode3Spaceship} alt="Episode 3 Spaceship" />
+                                            </figure>
+                                        </a>
                                     </div>
 
                                     <div className="has-text-centered">
@@ -214,7 +239,7 @@ const HomePage = props => {
                                                     rel="noreferrer"
                                                     className="has-text-hred"
                                                 >
-                                                    SOLD OUT <br />( 1st Batch )
+                                                    SOLD OUT
                                                 </a>
                                             </h1>
                                             {/* <Link
@@ -449,7 +474,8 @@ const HomePage = props => {
                         <br className="is-hidden-mobile" />
                         <br className="is-hidden-mobile" />
                         <div className="columns is-multiline">
-                            {[...teamData].slice(3, 7).map((t, i) => (
+                            <div className="column" />
+                            {[...teamData].slice(3, 6).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <Link to="/team">
                                         <img
@@ -476,13 +502,14 @@ const HomePage = props => {
                                     <t.link />
                                 </div>
                             ))}
+                            <div className="column" />
                         </div>
                         <br className="is-hidden-mobile" />
                         <br className="is-hidden-mobile" />
 
                         <div className="columns is-multiline px-3">
                             <div className="column"></div>
-                            {[...teamData].slice(7, 10).map((t, i) => (
+                            {[...teamData].slice(6, 9).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <Link to="/team">
                                         <img

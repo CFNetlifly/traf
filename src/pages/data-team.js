@@ -83,19 +83,19 @@ const team = [
             </a>
         ),
     },
-    {
-        sortId: 7,
-        imageurl: member7,
-        name: 'Nadeem Ladki',
-        charge: 'Head Of Partnerships',
-        link: () => (
-            <a href="https://twitter.com/Disciple_13" target="_blank" rel="noreferrer noopener">
-                <span className="icon is-size-2 has-text-white">
-                    <i className="fab fa-twitter"></i>
-                </span>
-            </a>
-        ),
-    },
+    // {
+    //     sortId: 7,
+    //     imageurl: member7,
+    //     name: 'Nadeem Ladki',
+    //     charge: 'Head Of Partnerships',
+    //     link: () => (
+    //         <a href="https://twitter.com/Disciple_13" target="_blank" rel="noreferrer noopener">
+    //             <span className="icon is-size-2 has-text-white">
+    //                 <i className="fab fa-twitter"></i>
+    //             </span>
+    //         </a>
+    //     ),
+    // },
     {
         sortId: 8,
         imageurl: member8,

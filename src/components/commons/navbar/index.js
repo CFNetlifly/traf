@@ -81,7 +81,7 @@ const Navbar = props => {
                             Home
                         </Link>
 
-                        <Link
+                        {/* <Link
                             to="/team"
                             className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
@@ -89,7 +89,7 @@ const Navbar = props => {
                             }}
                         >
                             Team
-                        </Link>
+                        </Link> */}
 
                         <a
                             href="https://whitepaper.theredapefamily.com/"
@@ -112,7 +112,7 @@ const Navbar = props => {
                         >
                             Gravity
                         </Link>
-                        <Link
+                        {/* <Link
                             to="/mint"
                             className="has-text-white navbar-item has-text-centered"
                             onClick={e => {
@@ -120,7 +120,7 @@ const Navbar = props => {
                             }}
                         >
                             Mint
-                        </Link>
+                        </Link> */}
                     </div>
                     <ConnectedWrapper disconnectedComponent={<></>}>
                         <div
