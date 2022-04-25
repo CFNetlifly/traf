@@ -213,13 +213,13 @@ const HomePage = props => {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="column">
                                     <div className="column">
                                         <a
                                             href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="has-text-hred"
                                         >
                                             <figure className="image">
                                                 <img src={episode3Spaceship} alt="Episode 3 Spaceship" />
@@ -232,32 +232,33 @@ const HomePage = props => {
                                             <h1 className="subtitle has-text-white has-text-weight-bold mb-1 is-3">
                                                 EPISODE 3
                                             </h1>
-                                            <h1 className="subtitle has-text-hlime has-text-weight-bold mb-5 is-3 is-italic">
+                                            <h1 className="subtitle has-text-white has-text-weight-bold mb-1 is-3">
+                                                <span className="has-text-hred is-italic">SOLD OUT</span>
+                                            </h1>
+                                            <h1 className="subtitle has-text-yellow is-italic has-text-weight-bold mb-5 is-3">
                                                 <a
                                                     href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
                                                     target="_blank"
                                                     rel="noreferrer"
-                                                    className="has-text-hred"
+                                                    className="has-text-yellow"
                                                 >
-                                                    SOLD OUT
+                                                    BUY ON OPENSEA
                                                 </a>
                                             </h1>
-                                            {/* <Link
-                                                to="/mint"
-                                                className="button is-hdarkgreen is-rounded is-size-5 is-fullwidth"
-                                            >
-                                                <span className="is-italic has-text-weight-bold has-text-white">
-                                                    GO TO MINT
-                                                </span>
-                                            </Link> */}
                                             <a
                                                 href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
-                                                <figure className="image is-32x32 is-inline-block">
-                                                    <img src={opensea} alt="" />
-                                                </figure>
+                                                <a
+                                                    href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    <figure className="image is-32x32 is-inline-block">
+                                                        <img src={opensea} alt="" />
+                                                    </figure>
+                                                </a>
                                             </a>
                                         </div>
                                     </div>
