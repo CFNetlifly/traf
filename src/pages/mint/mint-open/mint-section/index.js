@@ -1,23 +1,24 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import {
-    ConnectedWrapper,
-    ConnectButton,
-    SwitchNetworkButton,
-    NetworkWrapper,
+    // ConnectedWrapper,
+    // ConnectButton,
+    // SwitchNetworkButton,
+    // NetworkWrapper,
     useCelesteSelector,
 } from 'celeste-framework';
 
 import { opensea } from 'images';
 
-import HoldersMintSection from './holders-mint-section';
-import PartnersMintSection from './partners-mint-section';
-import PresaleMintSection from './presale-mint-section';
-import RaffleMintSection from './raffle-mint-section';
-import PublicMintSection from './public-mint-section';
+// import HoldersMintSection from './holders-mint-section';
+// import PartnersMintSection from './partners-mint-section';
+// import PresaleMintSection from './presale-mint-section';
+// import RaffleMintSection from './raffle-mint-section';
+// import PublicMintSection from './public-mint-section';
 import { mintEp3 } from 'patterns/proxy/mint-functions';
 
 const MintSection = () => {
-    const [episodesLeft, setEpisodesLeft] = useState(10);
+    const [setEpisodesLeft] = useState(10);
 
     const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
 

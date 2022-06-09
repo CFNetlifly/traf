@@ -22,6 +22,7 @@ const Stream = props => {
                         <div className="column is-3-desktop is-6-tablet" key={i}>
                             <figure className="image is-16by9">
                                 <iframe
+                                    title="video"
                                     className="has-ratio"
                                     width="640"
                                     height="360"

@@ -30,7 +30,7 @@ export const start_minting_ep2_tx = txData => {
     return async (dispatch, getState) => {
         dispatch(tx_loading('MINT_EP2_TX'));
 
-        const { web3Reducer, walletReducer } = getState();
+        const { web3Reducer } = getState();
         const { contracts } = web3Reducer;
         const wallet = getState().walletReducer;
 
@@ -41,7 +41,7 @@ export const start_minting_ep2_tx = txData => {
         // console.log(mintPassContract.methods);
         // console.log(ercContract.methods);
 
-        const balanceOfUser = await mintPassContract.methods.balanceOf(wallet.currentAccount, 0).call();
+        // const balanceOfUser = await mintPassContract.methods.balanceOf(wallet.currentAccount, 0).call();
         let pureAmount = await mintPassContract.methods.pureNFTsOf(wallet.currentAccount).call();
 
         const { purePrice, impurePrice } = await mintPassContract.methods.prices().call();

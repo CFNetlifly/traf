@@ -31,7 +31,7 @@ export const start_minting_tx = txData => {
         dispatch(tx_loading('MINT_TX'));
 
         const { web3Reducer, walletReducer } = getState();
-        const { contracts } = web3Reducer;
+        // const { contracts } = web3Reducer;
 
         const erc_contract = web3Reducer.contracts['ERC_CONTRACT'];
         // console.log(erc_contract.methods);
@@ -71,9 +71,9 @@ export const daw_minting_tx = txData => {
         dispatch(tx_loading('MINT_DAW_TX'));
 
         const { web3Reducer, walletReducer } = getState();
-        const { contracts } = web3Reducer;
+        // const { contracts } = web3Reducer;
 
-        const { value, amount } = txData;
+        const { amount } = txData;
 
         const daw_contract = web3Reducer.contracts['DAW_TRAF'];
 

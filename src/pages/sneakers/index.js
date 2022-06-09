@@ -68,6 +68,7 @@ const SneakersPage = () => {
                 console.log(e);
             }
         })();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [walletReducer.address, web3Reducer.initialized]);
 
     return (
