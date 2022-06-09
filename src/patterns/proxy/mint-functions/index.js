@@ -173,3 +173,35 @@ export const mintEp3 = () => {
         },
     };
 };
+
+export const GravityHeelsProxy = () => {
+    const { web3Reducer } = celesteStore.getState();
+    // const { web3 } = web3Reducer;
+
+    const { HeelsClaim } = web3Reducer.contracts;
+
+    return {
+        // READ FUNCTIONS
+
+        Get_Heels_Data: async address => {
+            const res = await HeelsClaim.methods.heels(address).call();
+            return res;
+        },
+
+        // WRITE FUNCTIONS
+
+        Claim: async ({ from }) => {
+            const tx = await HeelsClaim.methods.claim();
+
+            const res = new Promise((resolve, reject) => {
+                try {
+                    const txRes = tx.send({ from });
+                    resolve(txRes);
+                } catch (e) {
+                    reject(e);
+                }
+            });
+            return res;
+        },
+    };
+};

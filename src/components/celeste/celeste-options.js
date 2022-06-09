@@ -1,10 +1,12 @@
 import trafABI from 'abis/TRAF.json';
 import trafNewABI from 'abis/TRAF_NEW_ABI.json';
+import gravityHeelsABI from 'abis/Gravity_Heels.json';
+
 const celesteOptions = {
     rpcs: [
         {
-            chainId: 1,
-            url: 'https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161',
+            chainId: 4,
+            url: 'https://rinkeby.arbitrum.io/rpc',
         },
     ],
 
@@ -39,6 +41,18 @@ const celesteOptions = {
             address: '0x9982A8BF88527756eFbE89A76aCFbfA089F54B88',
             key: 'trafMintExtension',
             abi: trafNewABI,
+            isMultichain: false,
+        },
+        {
+            address: '0xE365c31a1E7Bcd970BCEB8819CD18c2EcD9e0065',
+            key: 'DAW',
+            abi: gravityHeelsABI,
+            isMultichain: false,
+        },
+        {
+            address: '0xEfAF113254FBdcb5439b7A3DdE28e71E27dA5425',
+            key: 'HeelsClaim',
+            abi: gravityHeelsABI,
             isMultichain: false,
         },
     ],
