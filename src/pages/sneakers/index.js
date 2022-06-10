@@ -100,10 +100,7 @@ const SneakersPage = () => {
                                         <div className="columns is-centered">
                                             <div className="column is-4 has-text-centered">
                                                 <ConnectButton className="button is-cyellow is-fullwidth">
-                                                    <span className="icon">
-                                                        <i className="fas fa-plug" />
-                                                    </span>
-                                                    <span>Connect</span>
+                                                    <span>Connect Wallet</span>
                                                 </ConnectButton>
                                             </div>
                                         </div>
@@ -121,7 +118,7 @@ const SneakersPage = () => {
                                                         <span className="icon">
                                                             <i className="fas fa-exchange" />
                                                         </span>
-                                                        <span>Switch Network</span>
+                                                        <span>Switch to ETH Mainnet</span>
                                                     </SwitchNetworkButton>
                                                 </div>
                                             </div>
@@ -263,7 +260,7 @@ const SneakersPage = () => {
             />
 
             {/* BUY ON OPENSEA */}
-            <SectionLayout
+            {/* <SectionLayout
                 className="has-background-black"
                 content={
                     <div className="columns is-vcentered">
@@ -303,12 +300,12 @@ const SneakersPage = () => {
                         </div>
                     </div>
                 }
-            />
+            /> */}
 
-            <SectionLayout
+            {/* <SectionLayout
                 className="has-background-black p-0 m-0"
                 content={<hr style={{ margin: '0', background: '#393939' }} />}
-            />
+            /> */}
 
             <SectionLayout
                 className="has-background-black"
