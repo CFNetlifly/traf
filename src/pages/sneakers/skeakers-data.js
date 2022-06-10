@@ -1,21 +1,21 @@
-import { baseURL } from 'images';
+// import { baseURL } from 'images';
 
 const data = [
     {
         name: 'FOUNDERS',
-        src: baseURL + '135lZ9JiF84jVtoI2kQRp8gqdj4Efr-_j',
+        src: 'public/Gravity/heels/founders-heel.mov',
     },
     {
-        name: 'SILVER',
-        src: baseURL + '1Pw2CWpbSYgq38xP0UFZv7tI9pRAp8bH8',
+        name: 'DAW',
+        src: 'public/Gravity/heels/daw-heel.mp4',
     },
     {
-        name: 'CARBON',
-        src: baseURL + '1TJHksoycz9EV9GeBgLnfHsfjQBENR3vM',
+        name: 'CODE',
+        src: 'public/Gravity/heels/code-heel.mp4',
     },
     {
         name: 'O2',
-        src: baseURL + '1tuzC36TqSzhHKOQ9CMRxUtha-aWcRPWE',
+        src: 'public/Gravity/heels/o2-heel.mp4',
     },
 ];
 
