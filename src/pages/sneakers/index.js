@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { baseURL } from 'images';
+import { baseURL, mainHeel } from 'images';
 import SectionLayout from 'layouts/section';
 
 import { opensea } from 'images';
@@ -85,7 +85,7 @@ const SneakersPage = () => {
                 >
                     <div className="column is-flex is-flex-direction-column p-0" style={{ minHeight: 'inherit' }}>
                         <video autoPlay loop muted>
-                            <source src="public/Gravity/heels/heel-main.mp4" type="video/mp4" />
+                            <source src={mainHeel} type="video/mp4" />
                         </video>
 
                         <div className="is-flex is-align-items-center has-background-hbrown is-flex-grow-1 py-6">

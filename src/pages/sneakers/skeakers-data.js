@@ -1,21 +1,21 @@
-// import { baseURL } from 'images';
+import { o2Heel, foundersHeel, codeHeel, dawHeel } from 'images';
 
 const data = [
     {
         name: 'FOUNDERS',
-        src: 'public/Gravity/heels/founders-heel.mov',
+        src: foundersHeel,
     },
     {
         name: 'DAW',
-        src: 'public/Gravity/heels/daw-heel.mp4',
+        src: dawHeel,
     },
     {
         name: 'CODE',
-        src: 'public/Gravity/heels/code-heel.mp4',
+        src: codeHeel,
     },
     {
         name: 'O2',
-        src: 'public/Gravity/heels/o2-heel.mp4',
+        src: o2Heel,
     },
 ];
 

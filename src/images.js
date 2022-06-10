@@ -70,6 +70,12 @@ import rokuPng from 'media/brand-logos/roku.png';
 import sonyPng from 'media/brand-logos/sony.png';
 import lgPng from 'media/brand-logos/lg.png';
 
+import mainHeelAnimation from 'media/heels/heel-main.mp4';
+import codeHeelAnimation from 'media/heels/code-heel.mp4';
+import dawHeelAnimation from 'media/heels/daw-heel.mp4';
+import foundersHeelAnimation from 'media/heels/founders-heel.mov';
+import o2HeelAnimation from 'media/heels/o2-heel.mp4';
+
 /* *~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~* */
 
 export const baseURL = 'https://drive.google.com/uc?export=view&id=';
@@ -154,3 +160,9 @@ export const samsung = samsungPng;
 export const roku = rokuPng;
 export const sony = sonyPng;
 export const lg = lgPng;
+
+export const mainHeel = mainHeelAnimation;
+export const codeHeel = codeHeelAnimation;
+export const dawHeel = dawHeelAnimation;
+export const foundersHeel = foundersHeelAnimation;
+export const o2Heel = o2HeelAnimation;
