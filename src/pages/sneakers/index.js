@@ -68,7 +68,6 @@ const SneakersPage = () => {
             if (!web3Reducer.initialized || walletReducer.address === null) return;
             try {
                 const amountOfHeels = await checkHeels();
-                console.log('🚀 ~ file: index.js ~ line 36 ~ amountOfHeels', amountOfHeels);
                 setAmountOfHeels(amountOfHeels);
             } catch (e) {
                 console.log(e);
@@ -86,7 +85,7 @@ const SneakersPage = () => {
                 >
                     <div className="column is-flex is-flex-direction-column p-0" style={{ minHeight: 'inherit' }}>
                         <video autoPlay loop muted>
-                            <source src={baseURL + '1D9271Uiy0cTgxZpc_bQ8JLOb3YH2KEmq'} type="video/mp4" />
+                            <source src="public/Gravity/heels/heel-main.mp4" type="video/mp4" />
                         </video>
 
                         <div className="is-flex is-align-items-center has-background-hbrown is-flex-grow-1 py-6">
