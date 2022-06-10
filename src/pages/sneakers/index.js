@@ -16,7 +16,13 @@ import { set_heels_request, set_heels_success, set_heels_failed } from '../../re
 import { Store as NotificationsStore } from 'react-notifications-component';
 import { successNotification, errorNotification } from 'static/notifications';
 
-import { useCelesteSelector } from 'celeste-framework';
+import {
+    useCelesteSelector,
+    ConnectButton,
+    ConnectedWrapper,
+    SwitchNetworkButton,
+    NetworkWrapper,
+} from 'celeste-framework';
 
 import { GravityHeelsProxy } from 'patterns/proxy/mint-functions';
 
@@ -90,40 +96,79 @@ const SneakersPage = () => {
                                         <h1 className="title has-text-white">Founders edition</h1>
                                     </div>
                                 </div>
-                                <div className="columns is-centered">
-                                    <div className="column has-text-centered">
-                                        {amountOfHeels > 0 ? (
-                                            <div>
-                                                <h2 className="subtitle has-text-white">
-                                                    You have {amountOfHeels} heels to claim
-                                                </h2>
-                                                <div className="columns is-centered">
-                                                    <div className="column is-4">
-                                                        <button
-                                                            className={`button ${
-                                                                heelsReducer.loading ? 'is-loading' : ''
-                                                            } is-cyellow is-fullwidth`}
-                                                            onClick={claimHeels}
-                                                        >
-                                                            Claim
-                                                        </button>
-                                                    </div>
+                                <ConnectedWrapper
+                                    disconnectedComponent={
+                                        <div className="columns is-centered">
+                                            <div className="column is-4 has-text-centered">
+                                                <ConnectButton className="button is-cyellow is-fullwidth">
+                                                    <span className="icon">
+                                                        <i className="fas fa-plug" />
+                                                    </span>
+                                                    <span>Connect</span>
+                                                </ConnectButton>
+                                            </div>
+                                        </div>
+                                    }
+                                >
+                                    <NetworkWrapper
+                                        chainIds={[4]}
+                                        info={
+                                            <div className="columns is-centered">
+                                                <div className="column is-4 has-text-centered">
+                                                    <SwitchNetworkButton
+                                                        className="button is-fullwidth is-cyellow"
+                                                        chainId={4}
+                                                    >
+                                                        <span className="icon">
+                                                            <i className="fas fa-exchange" />
+                                                        </span>
+                                                        <span>Switch Network</span>
+                                                    </SwitchNetworkButton>
                                                 </div>
                                             </div>
-                                        ) : (
-                                            <div>
-                                                <h2 className="subtitle has-text-white">You have no heels to claim</h2>
-                                                <div className="columns is-centered">
-                                                    <div className="column is-4">
-                                                        <button className="button is-cyellow is-fullwidth" disabled>
-                                                            Claim
-                                                        </button>
+                                        }
+                                    >
+                                        <div className="columns is-centered">
+                                            <div className="column has-text-centered">
+                                                {amountOfHeels > 0 ? (
+                                                    <div>
+                                                        <h2 className="subtitle has-text-white">
+                                                            You have {amountOfHeels} heels to claim
+                                                        </h2>
+                                                        <div className="columns is-centered">
+                                                            <div className="column is-4">
+                                                                <button
+                                                                    className={`button ${
+                                                                        heelsReducer.loading ? 'is-loading' : ''
+                                                                    } is-cyellow is-fullwidth`}
+                                                                    onClick={claimHeels}
+                                                                >
+                                                                    Claim
+                                                                </button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                ) : (
+                                                    <div>
+                                                        <h2 className="subtitle has-text-white">
+                                                            You have no heels to claim
+                                                        </h2>
+                                                        <div className="columns is-centered">
+                                                            <div className="column is-4">
+                                                                <button
+                                                                    className="button is-cyellow is-fullwidth"
+                                                                    disabled
+                                                                >
+                                                                    Claim
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
-                                        )}
-                                    </div>
-                                </div>
+                                        </div>
+                                    </NetworkWrapper>
+                                </ConnectedWrapper>
                             </div>
                         </div>
                     </div>
