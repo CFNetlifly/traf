@@ -64,21 +64,21 @@ const cast = [
             </a>
         ),
     },
-    {
-        imageurl: ape4,
-        name: 'Hunky',
-        discord: 'BAYC #7296',
-        link: () => (
-            <a
-                href="https://opensea.io/assets/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/7296"
-                rel="noreferrer noopener"
-            >
-                <span className="icon">
-                    <img src={opensea} alt="" />
-                </span>
-            </a>
-        ),
-    },
+    // {
+    //     imageurl: ape4,
+    //     name: 'Hunky',
+    //     discord: 'BAYC #7296',
+    //     link: () => (
+    //         <a
+    //             href="https://opensea.io/assets/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/7296"
+    //             rel="noreferrer noopener"
+    //         >
+    //             <span className="icon">
+    //                 <img src={opensea} alt="" />
+    //             </span>
+    //         </a>
+    //     ),
+    // },
     {
         imageurl: ape5,
         name: 'Rocky',
