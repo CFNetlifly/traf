@@ -51,7 +51,7 @@ const cast = [
     },
     {
         imageurl: ape3,
-        name: 'Ceasar',
+        name: 'Ceasar & Hunky',
         discord: 'BAYC #9463',
         link: () => (
             <a
