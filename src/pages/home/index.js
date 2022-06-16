@@ -37,6 +37,8 @@ import './home.scss';
 import SectionLayout from 'layouts/section';
 import VideoSlider from 'components/slider';
 
+console.log(teamData.slice(0, 3));
+
 const HomePage = props => {
     const homeSection = useRef(null);
     // const faqSection = useRef(null);
@@ -444,20 +446,17 @@ const HomePage = props => {
                             <div className="column" />
                             {[...teamData].slice(0, 3).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
-                                    <Link to="/team">
-                                        <img
-                                            className="is-rounded bwToColorImg"
-                                            onClick={() => props.set_member(i)}
-                                            src={t.imageurl}
-                                            alt=""
-                                            width="150"
-                                            style={{
-                                                boxShadow:
-                                                    '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
-                                                borderRadius: '50%',
-                                            }}
-                                        />
-                                    </Link>
+                                    <img
+                                        className="is-rounded bwToColorImg"
+                                        onClick={() => props.set_member(i)}
+                                        src={t.imageurl}
+                                        alt=""
+                                        width="150"
+                                        style={{
+                                            boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
+                                            borderRadius: '50%',
+                                        }}
+                                    />
 
                                     <br />
                                     <br />
@@ -478,20 +477,17 @@ const HomePage = props => {
                             <div className="column" />
                             {[...teamData].slice(3, 6).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
-                                    <Link to="/team">
-                                        <img
-                                            className="is-rounded bwToColorImg"
-                                            onClick={() => props.set_member(i + 3)}
-                                            src={t.imageurl}
-                                            alt=""
-                                            width="150"
-                                            style={{
-                                                boxShadow:
-                                                    '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
-                                                borderRadius: '50%',
-                                            }}
-                                        />
-                                    </Link>
+                                    <img
+                                        className="is-rounded bwToColorImg"
+                                        onClick={() => props.set_member(i + 3)}
+                                        src={t.imageurl}
+                                        alt=""
+                                        width="150"
+                                        style={{
+                                            boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
+                                            borderRadius: '50%',
+                                        }}
+                                    />
 
                                     <br />
                                     <br />
@@ -510,22 +506,19 @@ const HomePage = props => {
 
                         <div className="columns is-multiline px-3">
                             <div className="column"></div>
-                            {[...teamData].slice(6, 9).map((t, i) => (
+                            {[...teamData].slice(6, 7).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
-                                    <Link to="/team">
-                                        <img
-                                            className="is-rounded bwToColorImg"
-                                            onClick={() => props.set_member(i)}
-                                            src={t.imageurl}
-                                            alt=""
-                                            width="150"
-                                            style={{
-                                                boxShadow:
-                                                    '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
-                                                borderRadius: '50%',
-                                            }}
-                                        />
-                                    </Link>
+                                    <img
+                                        className="is-rounded bwToColorImg"
+                                        onClick={() => props.set_member(i)}
+                                        src={t.imageurl}
+                                        alt=""
+                                        width="150"
+                                        style={{
+                                            boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
+                                            borderRadius: '50%',
+                                        }}
+                                    />
 
                                     <br />
                                     <br />

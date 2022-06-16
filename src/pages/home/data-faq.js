@@ -12,10 +12,10 @@ const faq = [
         ),
     },
     {
-        question: 'HOW MANY TRAF TOKENS ARE THERE?',
+        question: 'HOW MANY TRAF NFTs ARE THERE?',
         answer: () => (
             <p className="has-text-white">
-                The Genesis episodes (Episode 1 and 2) had 333 NFTs, and all other episodes have 1111 NFTs per episode.
+                The first 3 episodes have 333 NFTs each. Upcoming episodes will have 2500 NFTs each.
             </p>
         ),
     },

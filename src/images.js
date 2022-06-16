@@ -13,6 +13,8 @@ import member7Jpg from 'media/member7.jpg';
 import member8Jpg from 'media/member8.jpg';
 import member9Jpg from 'media/member9.jpg';
 import member10Svg from 'media/member10.svg';
+import member11Jpg from 'media/member11.jpg';
+import member12Jpg from 'media/member12.jpg';
 
 import background1SectionJpg from 'media/backgrounds/section1-background.jpg';
 import background2SectionJpg from 'media/backgrounds/section2-background.jpg';
@@ -93,6 +95,8 @@ export const member7 = member7Jpg; //Nadeem Ladki
 export const member8 = member8Jpg; //Zaini Media
 export const member9 = member9Jpg; //DigiToonz
 export const member10 = member10Svg; //Orcania
+export const member11 = member11Jpg; //Edy
+export const member12 = member12Jpg; //Jason
 
 //team cast
 export const ape1 = cast1Png;

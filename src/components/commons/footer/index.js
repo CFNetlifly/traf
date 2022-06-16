@@ -89,7 +89,7 @@ const footer = () => {
                             >
                                 0x81f296145c5555d7b4b426d97e4e2260c017f5d0
                             </a>
-                            <h1 className="subtitle has-text-warning is-6 mb-3 pt-5">traf@zainimedia.com</h1>
+                            <h1 className="subtitle has-text-warning is-6 mb-3 pt-5">hello@traf.world</h1>
                             <h1 className="subtitle has-text-warning is-6 mb-3">
                                 © 2022 The Red Ape Family. All rights reserved
                             </h1>
