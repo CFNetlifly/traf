@@ -37,7 +37,7 @@ import './home.scss';
 import SectionLayout from 'layouts/section';
 import VideoSlider from 'components/slider';
 
-console.log(teamData.slice(0, 3));
+console.log(teamData);
 
 const HomePage = props => {
     const homeSection = useRef(null);
@@ -444,7 +444,7 @@ const HomePage = props => {
 
                         <div className="columns is-multiline px-3">
                             <div className="column" />
-                            {[...teamData].slice(0, 3).map((t, i) => (
+                            {[...teamData].slice(0, 2).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <img
                                         className="is-rounded bwToColorImg"
@@ -475,7 +475,7 @@ const HomePage = props => {
                         <br className="is-hidden-mobile" />
                         <div className="columns is-multiline">
                             <div className="column" />
-                            {[...teamData].slice(3, 6).map((t, i) => (
+                            {[...teamData].slice(2, 5).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <img
                                         className="is-rounded bwToColorImg"
@@ -506,7 +506,7 @@ const HomePage = props => {
 
                         <div className="columns is-multiline px-3">
                             <div className="column"></div>
-                            {[...teamData].slice(6, 7).map((t, i) => (
+                            {[...teamData].slice(5, 7).map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <img
                                         className="is-rounded bwToColorImg"

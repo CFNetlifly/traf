@@ -57,19 +57,7 @@ const team = [
     //     ),
     //     info: `Multi-award winning director and entrepreneur, Hashem has worked with a galaxy of artists, creatives and major global brands (ranging from Nike to National Geographic). Of Moroccan and Iraqi descent, Hashem started making movies as a child and quickly fell in love with the art of cinema and storytelling. He set up Zaini Media in Dubai in 2012 and, since then, has worked with everyone from recording artists to Hollywood directors. He is now one of the region's most sought after filmmakers.`,
     // },
-    {
-        sortId: 2,
-        imageurl: member4,
-        name: 'Adam G. Simon',
-        charge: 'Screen Writer',
-        link: () => (
-            <a href="https://www.instagram.com/adambelgabe/" target="_blank" rel="noreferrer noopener">
-                <span className="icon is-size-2 has-text-white">
-                    <i className="fab fa-instagram"></i>
-                </span>
-            </a>
-        ),
-    },
+
     // {
     //     sortId: 5,
     //     imageurl: member5,
@@ -84,7 +72,7 @@ const team = [
     //     ),
     // },
     {
-        sortId: 3,
+        sortId: 2,
         imageurl: member11,
         name: 'Edy Haddad',
         charge: 'Chief Technology Officer',
@@ -92,6 +80,19 @@ const team = [
             <a href="https://twitter.com/eaoe_orcania" target="_blank" rel="noreferrer noopener">
                 <span className="icon is-size-2 has-text-white">
                     <i className="fab fa-twitter"></i>
+                </span>
+            </a>
+        ),
+    },
+    {
+        sortId: 3,
+        imageurl: member4,
+        name: 'Adam G. Simon',
+        charge: 'Screen Writer',
+        link: () => (
+            <a href="https://www.instagram.com/adambelgabe/" target="_blank" rel="noreferrer noopener">
+                <span className="icon is-size-2 has-text-white">
+                    <i className="fab fa-instagram"></i>
                 </span>
             </a>
         ),
