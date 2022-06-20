@@ -1,21 +1,21 @@
-import { baseURL } from 'images';
+import { o2Heel, foundersHeel, codeHeel, dawHeel } from 'images';
 
 const data = [
     {
         name: 'FOUNDERS',
-        src: baseURL + '135lZ9JiF84jVtoI2kQRp8gqdj4Efr-_j',
+        src: foundersHeel,
     },
     {
-        name: 'SILVER',
-        src: baseURL + '1Pw2CWpbSYgq38xP0UFZv7tI9pRAp8bH8',
+        name: 'DAW',
+        src: dawHeel,
     },
     {
-        name: 'CARBON',
-        src: baseURL + '1TJHksoycz9EV9GeBgLnfHsfjQBENR3vM',
+        name: 'CODE',
+        src: codeHeel,
     },
     {
         name: 'O2',
-        src: baseURL + '1tuzC36TqSzhHKOQ9CMRxUtha-aWcRPWE',
+        src: o2Heel,
     },
 ];
 

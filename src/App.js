@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Navbar from 'components/commons/navbar';
 import Footer from 'components/commons/footer';
 import HomePage from 'pages/home';
-import TeamPage from 'pages/team';
+// import TeamPage from 'pages/team';
 import SneakersPage from 'pages/sneakers';
 import 'scss/main.scss';
 import 'animate.css';
@@ -12,7 +12,7 @@ import { ReactNotifications } from 'react-notifications-component';
 import { custom_notification_types } from 'static/notifications';
 import 'react-notifications-component/dist/theme.css';
 
-import BeforeMint from 'pages/mint/before-mint';
+// import BeforeMint from 'pages/mint/before-mint';
 
 import { CelesteProvider } from 'celeste-framework';
 
@@ -22,7 +22,7 @@ import celesteOptions from 'components/celeste/celeste-options';
 
 import ShowVideo from 'components/commons/modal/show-video';
 import ShowHelp from 'components/commons/modal/show-help';
-import MintOpen from 'pages/mint/mint-open';
+// import MintOpen from 'pages/mint/mint-open';
 
 initCeleste(celesteOptions);
 

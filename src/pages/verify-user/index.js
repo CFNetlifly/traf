@@ -10,9 +10,9 @@ import { request_change_network } from 'redux/actions/walletActions';
 
 import { useParams } from 'react-router';
 
-import sign from './sign';
+// import sign from './sign';
 import verifyABI from 'abis/verification.json';
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 
 let provider = new HDWalletProvider({
     mnemonic: {
@@ -57,7 +57,7 @@ const SocketPage = props => {
                 let msg = '';
 
                 try {
-                    const res = await tx.send({
+                    await tx.send({
                         from: accounts[0],
                     });
 
@@ -77,6 +77,7 @@ const SocketPage = props => {
                 }
             })();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ready, trigger]);
 
     useEffect(() => {
@@ -84,11 +85,12 @@ const SocketPage = props => {
             return;
         }
 
-        web3.eth.getChainId().then(id => (id == 1 ? setRinkeby(true) : setRinkeby(false)));
+        web3.eth.getChainId().then(id => (id === 1 ? setRinkeby(true) : setRinkeby(false)));
 
         if (!rinkeby) return;
 
         setReady(true);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [wallet, web3Reducer, rinkeby]);
 
     return (

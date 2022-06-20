@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
@@ -116,6 +118,7 @@ const Form = props => {
                 <div className="modal-content">
                     <figure className="image is-16by9">
                         <iframe
+                            title="video"
                             className="has-ratio"
                             width="640"
                             height="360"
@@ -151,7 +154,7 @@ const Form = props => {
                                 type="button"
                                 style={{ height: '', width: '40px' }}
                                 onClick={onDecreaseClicked}
-                                disabled={Number(formik.values.mintQuantity) == 1}
+                                disabled={Number(formik.values.mintQuantity) === 1}
                             >
                                 -
                             </button>{' '}
@@ -163,7 +166,7 @@ const Form = props => {
                                 type="submit"
                                 disabled={
                                     !props.wallet.connectedToOperatingNetwork ||
-                                    (webData && webData.balance == 0) ||
+                                    (webData && webData.balance === 0) ||
                                     !(webData && webData.isMintingAvailable)
                                 }
                             >
@@ -175,7 +178,7 @@ const Form = props => {
                                 type="button"
                                 style={{ height: '', width: '40px' }}
                                 onClick={onIncreaseClicked}
-                                disabled={webData && webData.mintsLeft == formik.values.mintQuantity}
+                                disabled={webData && webData.mintsLeft === formik.values.mintQuantity}
                             >
                                 +
                             </button>
@@ -210,7 +213,7 @@ const Form = props => {
                 )}
 
                 <div>
-                    {webData && webData.mintsLeft == 0
+                    {webData && webData.mintsLeft === 0
                         ? 'You have reached the minting limit for this episode! Thank you so much!'
                         : ''}
                 </div>

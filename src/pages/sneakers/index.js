@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { baseURL } from 'images';
+import { baseURL, mainHeel } from 'images';
 import SectionLayout from 'layouts/section';
 
 import { opensea } from 'images';
@@ -10,193 +11,160 @@ import faqData from './faq-data';
 
 import sneakersData from './skeakers-data';
 
-import { useSelector } from 'react-redux';
+import { set_heels_request, set_heels_success, set_heels_failed } from '../../redux/actions/heelsActions';
 
-import { connect } from 'react-redux';
+import { Store as NotificationsStore } from 'react-notifications-component';
+import { successNotification, errorNotification } from 'static/notifications';
+
 import {
-    request_change_network,
-    check_connected_to_operating_network,
-    request_connection,
-} from 'redux/actions/walletActions';
+    useCelesteSelector,
+    ConnectButton,
+    ConnectedWrapper,
+    SwitchNetworkButton,
+    NetworkWrapper,
+} from 'celeste-framework';
 
-const SneakersPage = props => {
-    const { web3Reducer, walletReducer } = useSelector(state => state);
+import { GravityHeelsProxy } from 'patterns/proxy/mint-functions';
 
-    const [triggerer, setTriggerer] = useState(0);
+const SneakersPage = () => {
+    const dispatch = useDispatch();
 
-    const [foundationClaimables, setFoundationClaimables] = useState(0);
-    const [normalClaimables, setNormalClaimables] = useState(0);
+    const { web3Reducer, walletReducer } = useCelesteSelector(state => state);
 
-    useEffect(() => {
-        props.check_connected_to_operating_network();
-    }, [walletReducer.networkId]);
+    const { heelsReducer } = useSelector(state => state);
+    const [amountOfHeels, setAmountOfHeels] = useState(0);
 
-    useEffect(() => {
-        getWebData();
-    }, [web3Reducer, walletReducer, triggerer]);
+    const checkHeels = async () => {
+        const { address } = walletReducer;
+        const heels = GravityHeelsProxy();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+        const amountOfHeels = await heels.Get_Heels_Data(address);
 
-    const getWebData = async () => {
-        if (
-            walletReducer.currentAccount === '' ||
-            !web3Reducer.initialized ||
-            !walletReducer.connectedToOperatingNetwork
-        )
-            return;
-
-        const sneakersContract_f = web3Reducer.contracts[`SNEAKERS_F`];
-        const sneakersContract = web3Reducer.contracts[`SNEAKERS_N`];
-        const traf_testnet = web3Reducer.contracts[`ERC_CONTRACT`];
-
-        /* *~~*~~*~~*~~*~~*~~*~~* FOUNDATION EDITION *~~*~~*~~*~~*~~*~~*~~* */
-        let claims = await sneakersContract_f.methods.mints(walletReducer.currentAccount).call();
-
-        let balance = (await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call()) / 2;
-        balance = Math.floor(balance);
-        balance += (await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call()) / 2;
-        balance = Math.floor(balance);
-
-        if (balance < claims) claims = balance;
-
-        setFoundationClaimables(claims);
-
-        /* *~~*~~*~~*~~*~~*~~*~~* NORMAL EDITION *~~*~~*~~*~~*~~*~~*~~* */
-        let claims_n = await sneakersContract.methods.mints(walletReducer.currentAccount).call();
-
-        let balance_n = await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 0).call();
-        balance_n += await traf_testnet.methods.balanceOf(walletReducer.currentAccount, 1).call();
-
-        if (balance_n < claims_n) claims_n = balance_n;
-
-        setNormalClaimables(claims_n);
+        return amountOfHeels;
     };
 
-    const onFoundationClaimClicked = async () => {
-        const sneakersContract = web3Reducer.contracts[`SNEAKERS_F`];
-
-        const tx = await sneakersContract.methods.mint();
+    const claimHeels = async () => {
+        const { address } = walletReducer;
+        const heels = GravityHeelsProxy();
 
         try {
-            await tx.send({
-                from: walletReducer.currentAccount,
-                gas: 100000,
+            dispatch(set_heels_request());
+            await heels.Claim({
+                from: address,
             });
+            dispatch(set_heels_success());
+            setAmountOfHeels(0);
+            NotificationsStore.addNotification(
+                successNotification('Claimed', 'You have successfully claimed your heels.')
+            );
         } catch (e) {
-            console.log(e);
-        } finally {
-            setTriggerer(triggerer + 1);
+            dispatch(set_heels_failed(e));
+            NotificationsStore.addNotification(errorNotification('Error', 'There was an error claiming your heels.'));
         }
     };
 
-    const onNormalClaimClicked = async () => {
-        const sneakersContract = web3Reducer.contracts[`SNEAKERS_N`];
-
-        const tx = await sneakersContract.methods.mint();
-
-        try {
-            await tx.send({
-                from: walletReducer.currentAccount,
-            });
-        } catch (e) {
-            console.log(e);
-        } finally {
-            setTriggerer(triggerer + 1);
-        }
-    };
+    useEffect(() => {
+        (async () => {
+            if (!web3Reducer.initialized || walletReducer.address === null) return;
+            try {
+                const amountOfHeels = await checkHeels();
+                setAmountOfHeels(amountOfHeels);
+            } catch (e) {
+                console.log(e);
+            }
+        })();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [walletReducer.address, web3Reducer.initialized]);
 
     return (
         <div>
-            <section className="banner " style={{ minHeight: '100vh', position: 'relative' }}>
+            <section className="banner" style={{ minHeight: '100vh', position: 'relative' }}>
                 <div
                     className="columns has-background-black is-marginless has-bottom-border-hbrown"
                     style={{ minHeight: 'inherit' }}
                 >
                     <div className="column is-flex is-flex-direction-column p-0" style={{ minHeight: 'inherit' }}>
                         <video autoPlay loop muted>
-                            <source src={baseURL + '1D9271Uiy0cTgxZpc_bQ8JLOb3YH2KEmq'} type="video/mp4" />
+                            <source src={mainHeel} type="video/mp4" />
                         </video>
 
-                        <div
-                            className="has-background-hbrown is-flex-grow-1 py-6"
-                            style={{ display: 'grid', placeItems: 'center' }}
-                        >
-                            <div className="has-text-centered has-background-dangaer">
-                                {props.wallet.currentAccount ? (
-                                    props.wallet.connectedToOperatingNetwork ? (
-                                        <div className="columns has-background-daark">
-                                            <div className="column">
-                                                <h1 className="has-text-white has-text-weight-bold">Founder edition</h1>
-                                                <br />
-                                                {foundationClaimables > 0 ? (
-                                                    <div>
-                                                        <button
-                                                            className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow"
-                                                            onClick={onFoundationClaimClicked}
-                                                        >
-                                                            CLAIM NOW
-                                                        </button>
-                                                        <br />
-                                                    </div>
-                                                ) : (
-                                                    <h1 className="has-text-white has-text-weight-bold">
-                                                        Your wallet doesn't own any foundation claimable
-                                                    </h1>
-                                                )}
-                                                <br />
-                                                <h1 className="has-text-white">{foundationClaimables} claimable(s)</h1>
-                                            </div>
-                                            <div className="column">
-                                                <h1 className="has-text-white has-text-weight-bold">Normal edition</h1>
-                                                <br />
-                                                {normalClaimables > 0 ? (
-                                                    // <div>
-                                                    //     <button
-                                                    //         className="button has-background-transparent has-border-3-cyellow-o-10 has-text-cyellow"
-                                                    //         onClick={onNormalClaimClicked}
-                                                    //     >
-                                                    //         CLAIM NOW
-                                                    //     </button>
-                                                    <br />
-                                                ) : (
-                                                    // </div>
-                                                    <h1 className="has-text-white has-text-weight-bold">
-                                                        Your wallet doesn't own any normal claimable
-                                                    </h1>
-                                                )}
-                                                <br />
-                                                <h1 className="has-text-white">{normalClaimables} claimable(s)</h1>
+                        <div className="is-flex is-align-items-center has-background-hbrown is-flex-grow-1 py-6">
+                            <div className="container">
+                                <div className="columns is-centered">
+                                    <div className="column is-narrow has-text-centered">
+                                        <h1 className="title has-text-white">Founders edition</h1>
+                                    </div>
+                                </div>
+                                <ConnectedWrapper
+                                    disconnectedComponent={
+                                        <div className="columns is-centered">
+                                            <div className="column is-4 has-text-centered">
+                                                <ConnectButton className="button is-cyellow is-fullwidth">
+                                                    <span>Connect Wallet</span>
+                                                </ConnectButton>
                                             </div>
                                         </div>
-                                    ) : (
-                                        <button
-                                            type="button"
-                                            className="button is-cyellow"
-                                            onClick={e => props.request_change_network(1)}
-                                        >
-                                            Switch to ETH Mainnet
-                                        </button>
-                                    )
-                                ) : (
-                                    // <button
-                                    //     type="button"
-                                    //     className="button is-cyellow"
-                                    //     onClick={async e => await props.request_connection()}
-                                    // >
-                                    //     Connect wallet
-                                    // </button>
-                                    <div />
-                                )}
-                                <br />
-                                <h1 className="has-text-white has-text-weight-bold">Founders edition</h1>
-                                <br />
-                                {/* <h1 className="has-text-white has-text-weight-bold">You can claim {claimables} Gravity Sneakers</h1> */}
-                                <br />
-                                <h1 className="has-text-white">Free + Gas / MetaMask only</h1>
-                                <br />
-                                <h1 className="has-text-warning">HOW TO CLAIM YOUR SNEAKERS FROM YOUR SMARTPHONE</h1>
+                                    }
+                                >
+                                    <NetworkWrapper
+                                        chainIds={[1]}
+                                        info={
+                                            <div className="columns is-centered">
+                                                <div className="column is-4 has-text-centered">
+                                                    <SwitchNetworkButton
+                                                        className="button is-fullwidth is-cyellow"
+                                                        chainId={1}
+                                                    >
+                                                        <span className="icon">
+                                                            <i className="fas fa-exchange" />
+                                                        </span>
+                                                        <span>Switch to ETH Mainnet</span>
+                                                    </SwitchNetworkButton>
+                                                </div>
+                                            </div>
+                                        }
+                                    >
+                                        <div className="columns is-centered">
+                                            <div className="column has-text-centered">
+                                                {amountOfHeels > 0 ? (
+                                                    <div>
+                                                        <h2 className="subtitle has-text-white">
+                                                            You have {amountOfHeels} heels to claim
+                                                        </h2>
+                                                        <div className="columns is-centered">
+                                                            <div className="column is-4">
+                                                                <button
+                                                                    className={`button ${
+                                                                        heelsReducer.loading ? 'is-loading' : ''
+                                                                    } is-cyellow is-fullwidth`}
+                                                                    onClick={claimHeels}
+                                                                >
+                                                                    Claim
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ) : (
+                                                    <div>
+                                                        <h2 className="subtitle has-text-white">
+                                                            You have no heels to claim
+                                                        </h2>
+                                                        <div className="columns is-centered">
+                                                            <div className="column is-4">
+                                                                <button
+                                                                    className="button is-cyellow is-fullwidth"
+                                                                    disabled
+                                                                >
+                                                                    Claim
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </NetworkWrapper>
+                                </ConnectedWrapper>
                             </div>
                         </div>
                     </div>
@@ -212,7 +180,7 @@ const SneakersPage = props => {
                                 <hr className="has-background-hbrown" style={{ width: '250px', margin: '40px auto' }} />
 
                                 <h1 className="title has-text-hgold is-4">
-                                    GRAVITY SNEAKERS
+                                    GRAVITY HEELS
                                     <br />
                                     BY THE RED APE FAMILY
                                 </h1>
@@ -221,15 +189,18 @@ const SneakersPage = props => {
 
                                 <hr className="has-background-hgold" style={{ width: '250px', margin: '40px auto' }} />
 
-                                <p className="subtitle has-text-centered has-text-hgold has-text-weight-bold">
-                                    Designed as a futuristic hi-top basketball shoe, <br />
-                                    the Gravity Sneaker counteracts the difference in <br />
-                                    gravity on the red planet and stops wearers from <br />
-                                    floating away to certain death.
-                                </p>
+                                <div className="columns is-centered">
+                                    <div className="column is-8">
+                                        <p className="subtitle has-text-centered has-text-hgold has-text-weight-bold">
+                                            Designed as a futuristic heel, the Gravity Heels counteracts the difference
+                                            in gravity on the red planet and stops wearers from floating away to certain
+                                            death.
+                                        </p>
+                                    </div>
+                                </div>
 
                                 <p className="subtitle has-text-hgold has-text-weight-bold">
-                                    There are only 333 sneakers out there, and 1 TRAF founders’ edition.
+                                    There are only 333 heels out there, 1 TRAF founders' edition, and 1 DAW edition.
                                 </p>
                             </div>
                         </div>
@@ -245,7 +216,7 @@ const SneakersPage = props => {
                         <div className="columns">
                             {sneakersData.map((sneaker, index) => (
                                 <div className="column" key={index}>
-                                    <figure className="image is-square has-border-2-hbrown-o-10">
+                                    <figure className="image has-border-2-hbrown-o-10">
                                         <video autoPlay loop muted src={sneaker.src}></video>
                                     </figure>
                                     <br />
@@ -289,7 +260,7 @@ const SneakersPage = props => {
             />
 
             {/* BUY ON OPENSEA */}
-            <SectionLayout
+            {/* <SectionLayout
                 className="has-background-black"
                 content={
                     <div className="columns is-vcentered">
@@ -306,7 +277,11 @@ const SneakersPage = props => {
                             <br />
                             <br />
                             <div className="has-text-centered">
-                                <a href="https://opensea.io/assets/gravity-sneakers" target="_blank">
+                                <a
+                                    href="https://opensea.io/assets/gravity-sneakers"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <figure className="image is-64x64 is-inline-block">
                                         <img src={opensea} alt="" />
                                     </figure>
@@ -325,12 +300,12 @@ const SneakersPage = props => {
                         </div>
                     </div>
                 }
-            />
+            /> */}
 
-            <SectionLayout
+            {/* <SectionLayout
                 className="has-background-black p-0 m-0"
                 content={<hr style={{ margin: '0', background: '#393939' }} />}
-            />
+            /> */}
 
             <SectionLayout
                 className="has-background-black"
@@ -342,6 +317,7 @@ const SneakersPage = props => {
                         <a
                             href="https://discord.gg/HxE754wj9r"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="button is-cpurple has-text-white is-size-4 is-rounded has-font-audiowide"
                             style={{ width: '200px' }}
                         >
@@ -360,13 +336,4 @@ const SneakersPage = props => {
     );
 };
 
-const mapStateToProps = state => ({
-    wallet: state.walletReducer,
-    web3Reducer: state.web3Reducer,
-});
-
-export default connect(mapStateToProps, {
-    request_change_network,
-    check_connected_to_operating_network,
-    request_connection,
-})(SneakersPage);
+export default SneakersPage;

@@ -1,5 +1,7 @@
 import trafABI from 'abis/TRAF.json';
 import trafNewABI from 'abis/TRAF_NEW_ABI.json';
+import gravityHeelsABI from 'abis/Gravity_Heels.json';
+
 const celesteOptions = {
     rpcs: [
         {
@@ -39,6 +41,18 @@ const celesteOptions = {
             address: '0x9982A8BF88527756eFbE89A76aCFbfA089F54B88',
             key: 'trafMintExtension',
             abi: trafNewABI,
+            isMultichain: false,
+        },
+        {
+            address: '0xE365c31a1E7Bcd970BCEB8819CD18c2EcD9e0065',
+            key: 'DAW',
+            abi: gravityHeelsABI,
+            isMultichain: false,
+        },
+        {
+            address: '0x43852278D655857e964cC392AF565144a449Bb47',
+            key: 'HeelsClaim',
+            abi: gravityHeelsABI,
             isMultichain: false,
         },
     ],
