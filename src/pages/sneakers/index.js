@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { baseURL, mainHeel } from 'images';
+import { mainHeel } from 'images';
 import SectionLayout from 'layouts/section';
 
-import { opensea } from 'images';
+// import { opensea } from 'images';
 import goldLogo from 'media/sneakers/gravity-gold-logo.png';
 
 import faqData from './faq-data';
