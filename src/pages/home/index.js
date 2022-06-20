@@ -15,7 +15,6 @@ import {
     episode3Spaceship,
 } from '../../images';
 
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { set_section } from 'redux/actions/navbarActions';
 import { set_member } from 'redux/actions/teamMembersActions';
