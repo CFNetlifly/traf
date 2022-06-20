@@ -50,7 +50,7 @@ const celesteOptions = {
             isMultichain: false,
         },
         {
-            address: '0x43852278D655857e964cC392AF565144a449Bb47',
+            address: '0x91dF4dC16e49ce235FF5D855E6Ee580EF94Cc03F',
             key: 'HeelsClaim',
             abi: gravityHeelsABI,
             isMultichain: false,
