@@ -68,7 +68,7 @@ const SneakersPage = () => {
             if (!web3Reducer.initialized || walletReducer.address === null) return;
             try {
                 const amountOfHeels = await checkHeels();
-                setAmountOfHeels(amountOfHeels);
+                setAmountOfHeels(amountOfHeels - 1);
             } catch (e) {
                 console.log(e);
             }

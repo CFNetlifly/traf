@@ -37,8 +37,6 @@ import './home.scss';
 import SectionLayout from 'layouts/section';
 import VideoSlider from 'components/slider';
 
-console.log(teamData);
-
 const HomePage = props => {
     const homeSection = useRef(null);
     // const faqSection = useRef(null);
