@@ -121,6 +121,17 @@ const Navbar = props => {
                         >
                             Mint
                         </Link> */}
+                        <a
+                            href="https://staking.theredapefamily.com/staking"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="has-text-white navbar-item has-text-centered"
+                            onClick={e => {
+                                onBurgerIClicked(e);
+                            }}
+                        >
+                            Stake
+                        </a>
                     </div>
                     <ConnectedWrapper disconnectedComponent={<></>}>
                         <div
