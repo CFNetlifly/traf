@@ -92,7 +92,7 @@ const Navbar = props => {
                         </Link> */}
 
                         <a
-                            href="https://whitepaper.theredapefamily.com/"
+                            href="https://traf-1.gitbook.io/traf-whitepaper/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="has-text-white navbar-item has-text-centered"
