@@ -118,10 +118,7 @@ const SneakersPage = () => {
                                                         className="button is-fullwidth is-cyellow"
                                                         chainId={1}
                                                     >
-                                                        <span className="icon">
-                                                            <i className="fas fa-exchange" />
-                                                        </span>
-                                                        <span>Switch to ETH Mainnet</span>
+                                                        <b>Switch to ETH Mainnet</b>
                                                     </SwitchNetworkButton>
                                                 </div>
                                             </div>

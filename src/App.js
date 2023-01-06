@@ -45,9 +45,9 @@ const App = () => {
                         <TeamPage />
                     </Route> */}
 
-                        {/* <Route exact path="/gravity">
+                        <Route exact path="/gravity">
                             <SneakersPage />
-                        </Route> */}
+                        </Route>
 
                         {/* <Route exact path="/mint">
                         <BeforeMint />
