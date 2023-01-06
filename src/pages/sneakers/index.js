@@ -22,7 +22,7 @@ import {
     ConnectedWrapper,
     SwitchNetworkButton,
     NetworkWrapper,
-} from 'celeste-framework';
+} from '@celestejs/react';
 
 import { GravityHeelsProxy } from 'patterns/proxy/mint-functions';
 
@@ -100,7 +100,10 @@ const SneakersPage = () => {
                                     disconnectedComponent={
                                         <div className="columns is-centered">
                                             <div className="column is-4 has-text-centered">
-                                                <ConnectButton className="button is-cyellow is-fullwidth">
+                                                <ConnectButton
+                                                    className="button is-cyellow is-fullwidth"
+                                                    onErrorCB={console.log}
+                                                >
                                                     <span>Connect Wallet</span>
                                                 </ConnectButton>
                                             </div>
@@ -108,7 +111,6 @@ const SneakersPage = () => {
                                     }
                                 >
                                     <NetworkWrapper
-                                        chainIds={[1]}
                                         info={
                                             <div className="columns is-centered">
                                                 <div className="column is-4 has-text-centered">

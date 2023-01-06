@@ -39,7 +39,7 @@ const Modal = props => {
 
     // close modal on esc key press
     useEffect(() => {
-        if (!isOpen) return null;
+        if (!isOpen) return undefined;
         const handleKeyDown = e => {
             if (e.key === 'Escape') dispatch(start_close_modal());
         };

@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { ConnectedWrapper, ConnectButton, DisconnectButton, useCelesteSelector } from 'celeste-framework';
+import { ConnectedWrapper, ConnectButton, DisconnectButton, useCelesteSelector } from '@celestejs/react';
+import { providers } from '@celestejs/core/dist/constants';
 
 import { logo } from 'images';
 
@@ -9,7 +10,7 @@ import { logo } from 'images';
 
 import { Link } from 'react-router-dom';
 
-import { useSpring, animated } from 'react-spring';
+// import { useSpring, animated } from 'react-spring';
 import { opensea } from 'images';
 
 import './navbar.scss';
@@ -20,7 +21,7 @@ const Navbar = props => {
     const { walletReducer } = useCelesteSelector(state => state);
 
     const [scroll, setScroll] = useState(0);
-    const styles = useSpring({ background: scroll > 100 ? '#3A3A3A' : 'black' });
+    // const styles = useSpring({ background: scroll > 100 ? '#3A3A3A' : 'black' });
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -46,7 +47,12 @@ const Navbar = props => {
     };
 
     return (
-        <animated.nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation" style={styles}>
+        <nav
+            className="navbar is-fixed-top"
+            role="navigation"
+            aria-label="main navigation"
+            style={{ background: '#3A3A3A' }}
+        >
             <div className="container">
                 <div className="navbar-brand">
                     <Link to="/home" className="navbar-item">
@@ -133,7 +139,7 @@ const Navbar = props => {
                             Stake
                         </a>
                     </div>
-                    <ConnectedWrapper disconnectedComponent={<></>}>
+                    <ConnectedWrapper>
                         <div
                             className="column is-flex is-justify-content-center is-flex-direction-column is-size-7 is-align-items-center navbar-item has-text-centered"
                             id="connection"
@@ -216,14 +222,21 @@ const Navbar = props => {
                             <ConnectedWrapper
                                 disconnectedComponent={
                                     <div className="navbar-item">
-                                        <ConnectButton className="connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-5 pr-5">
+                                        <ConnectButton
+                                            className="connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-5 pr-5"
+                                            onErrorCB={console.log}
+                                            providerType={providers.INJECTED}
+                                        >
                                             <span>Connect</span>
                                         </ConnectButton>
                                     </div>
                                 }
                             >
                                 <div className="navbar-item">
-                                    <DisconnectButton className="navbar-button connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-5 pr-5">
+                                    <DisconnectButton
+                                        className="navbar-button connect-btn button is-small is-rounded is-cyellow has-font-alegreya has-text-weight-bold pl-5 pr-5"
+                                        onErrorCB={console.log}
+                                    >
                                         <span>Logout</span>
                                     </DisconnectButton>
                                 </div>
@@ -232,7 +245,7 @@ const Navbar = props => {
                     </div>
                 </div>
             </div>
-        </animated.nav>
+        </nav>
     );
 };
 

@@ -152,20 +152,15 @@ const HomePage = props => {
                                                     BUY ON OPENSEA
                                                 </a>
                                             </h1>
+
                                             <a
                                                 href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
-                                                <a
-                                                    href="https://opensea.io/assets/theredapefamily?search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=1&search[sortAscending]=true&search[sortBy]=PRICE"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <figure className="image is-32x32 is-inline-block">
-                                                        <img src={opensea} alt="" />
-                                                    </figure>
-                                                </a>
+                                                <figure className="image is-32x32 is-inline-block">
+                                                    <img src={opensea} alt="" />
+                                                </figure>
                                             </a>
                                         </div>
                                     </div>
@@ -245,20 +240,15 @@ const HomePage = props => {
                                                     BUY ON OPENSEA
                                                 </a>
                                             </h1>
+
                                             <a
                                                 href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
-                                                <a
-                                                    href="https://opensea.io/collection/theredapefamily?search[sortAscending]=true&search[sortBy]=PRICE&search[stringTraits][0][name]=Episode&search[stringTraits][0][values][0]=3"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                >
-                                                    <figure className="image is-32x32 is-inline-block">
-                                                        <img src={opensea} alt="" />
-                                                    </figure>
-                                                </a>
+                                                <figure className="image is-32x32 is-inline-block">
+                                                    <img src={opensea} alt="" />
+                                                </figure>
                                             </a>
                                         </div>
                                     </div>

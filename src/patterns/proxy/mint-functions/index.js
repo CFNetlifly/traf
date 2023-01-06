@@ -1,4 +1,4 @@
-import celesteStore from 'celeste-framework/dist/store';
+import { store as celesteStore } from '@celestejs/store';
 import BigNumber from 'bignumber.js';
 
 export const mintEp3 = () => {

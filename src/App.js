@@ -12,57 +12,54 @@ import { ReactNotifications } from 'react-notifications-component';
 import { custom_notification_types } from 'static/notifications';
 import 'react-notifications-component/dist/theme.css';
 
-// import BeforeMint from 'pages/mint/before-mint';
-
-import { CelesteProvider } from 'celeste-framework';
-
-import { initCeleste } from 'celeste-framework/dist/store-module';
-
-import celesteOptions from 'components/celeste/celeste-options';
+import { CelesteStoreProvider, CelesteProvider } from '@celestejs/react';
+import CelesteJS from '@celestejs/core';
+import celesteConfig from 'celeste.config';
 
 import ShowVideo from 'components/commons/modal/show-video';
 import ShowHelp from 'components/commons/modal/show-help';
-// import MintOpen from 'pages/mint/mint-open';
 
-initCeleste(celesteOptions);
+const celeste = new CelesteJS(celesteConfig);
 
 const App = () => {
     return (
-        <CelesteProvider>
-            <Router>
-                <ReactNotifications types={custom_notification_types} />
-                <ShowVideo />
-                <ShowHelp />
+        <CelesteStoreProvider>
+            <CelesteProvider celeste={celeste}>
+                <Router>
+                    <ReactNotifications types={custom_notification_types} />
+                    <ShowVideo />
+                    <ShowHelp />
 
-                <Navbar />
+                    <Navbar />
 
-                <Switch>
-                    <Route exact path="/">
-                        <Redirect to="/home" />
-                    </Route>
+                    <Switch>
+                        <Route exact path="/">
+                            <Redirect to="/home" />
+                        </Route>
 
-                    <Route exact path="/home">
-                        <HomePage />
-                    </Route>
+                        <Route exact path="/home">
+                            <HomePage />
+                        </Route>
 
-                    {/* <Route exact path="/team">
+                        {/* <Route exact path="/team">
                         <TeamPage />
                     </Route> */}
 
-                    <Route exact path="/gravity">
-                        <SneakersPage />
-                    </Route>
+                        {/* <Route exact path="/gravity">
+                            <SneakersPage />
+                        </Route> */}
 
-                    {/* <Route exact path="/mint">
+                        {/* <Route exact path="/mint">
                         <BeforeMint />
                     </Route>
                     <Route exact path="/test/mint">
                         <MintOpen />
                     </Route> */}
-                </Switch>
-                <Footer />
-            </Router>
-        </CelesteProvider>
+                    </Switch>
+                    <Footer />
+                </Router>
+            </CelesteProvider>
+        </CelesteStoreProvider>
     );
 };
 

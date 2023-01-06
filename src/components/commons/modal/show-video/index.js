@@ -26,8 +26,7 @@ const ShowVideo = () => {
                             <iframe
                                 title="Mint On Smartphones"
                                 className="has-ratio"
-                                src="https://www.youtube.com/embed/kuWPm0w1bfE"
-                                frameBorder="0"
+                                src="https://www.youtube-nocookie.com/embed/kuWPm0w1bfE"
                                 allowFullScreen
                             ></iframe>
                         </figure>

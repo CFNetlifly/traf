@@ -122,7 +122,7 @@ const Form = props => {
                             className="has-ratio"
                             width="640"
                             height="360"
-                            src="https://www.youtube.com/embed/kuWPm0w1bfE"
+                            src="https://www.youtube-nocookie.com/embed/kuWPm0w1bfE"
                             frameBorder="0"
                             allowFullScreen
                         ></iframe>

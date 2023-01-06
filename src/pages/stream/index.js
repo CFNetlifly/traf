@@ -26,7 +26,7 @@ const Stream = props => {
                                     className="has-ratio"
                                     width="640"
                                     height="360"
-                                    src={'https://www.youtube.com/embed/' + e.video_id}
+                                    src={'https://www.youtube-nocookie.com/embed/' + e.video_id}
                                     frameBorder="0"
                                     allowFullScreen
                                 ></iframe>
