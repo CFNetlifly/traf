@@ -430,40 +430,9 @@ const HomePage = props => {
                         <br />
                         <br />
 
-                        <div className="columns is-multiline px-3">
-                            <div className="column" />
-                            {[...teamData].slice(0, 2).map((t, i) => (
-                                <div className="column has-text-centered" key={i}>
-                                    <img
-                                        className="is-rounded bwToColorImg"
-                                        onClick={() => props.set_member(i)}
-                                        src={t.imageurl}
-                                        alt=""
-                                        width="150"
-                                        style={{
-                                            boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
-                                            borderRadius: '50%',
-                                        }}
-                                    />
-
-                                    <br />
-                                    <br />
-
-                                    <div className="" style={{ height: '80px' }}>
-                                        <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
-                                        <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
-                                    </div>
-
-                                    <t.link />
-                                </div>
-                            ))}
-                            <div className="column" />
-                        </div>
-                        <br className="is-hidden-mobile" />
-                        <br className="is-hidden-mobile" />
                         <div className="columns is-multiline">
                             <div className="column" />
-                            {[...teamData].slice(2, 5).map((t, i) => (
+                            {[...teamData].map((t, i) => (
                                 <div className="column has-text-centered" key={i}>
                                     <img
                                         className="is-rounded bwToColorImg"
@@ -491,35 +460,6 @@ const HomePage = props => {
                         </div>
                         <br className="is-hidden-mobile" />
                         <br className="is-hidden-mobile" />
-
-                        <div className="columns is-multiline px-3">
-                            <div className="column"></div>
-                            {[...teamData].slice(5, 7).map((t, i) => (
-                                <div className="column has-text-centered" key={i}>
-                                    <img
-                                        className="is-rounded bwToColorImg"
-                                        onClick={() => props.set_member(i)}
-                                        src={t.imageurl}
-                                        alt=""
-                                        width="150"
-                                        style={{
-                                            boxShadow: '0px 0px 1px 5px #585858, 3px 3px 1px 5px rgba(0, 0, 0, 0.5)',
-                                            borderRadius: '50%',
-                                        }}
-                                    />
-
-                                    <br />
-                                    <br />
-
-                                    <div className="" style={{ height: '80px' }}>
-                                        <h1 className="title has-text-white is-5 has-text-centered">{t.name}</h1>
-                                        <h1 className="subtitle has-text-white is-6 has-text-centered">{t.charge}</h1>
-                                    </div>
-                                    <t.link />
-                                </div>
-                            ))}
-                            <div className="column"></div>
-                        </div>
                     </div>
                 }
             />

@@ -15,6 +15,7 @@ import member9Jpg from 'media/member9.jpg';
 import member10Svg from 'media/member10.svg';
 import member11Jpg from 'media/member11.jpg';
 import member12Jpg from 'media/member12.jpg';
+import member13Png from 'media/traf_team.png';
 
 import background1SectionJpg from 'media/backgrounds/section1-background.jpg';
 import background2SectionJpg from 'media/backgrounds/section2-background.jpg';
@@ -103,6 +104,7 @@ export const member9 = member9Jpg; //DigiToonz
 export const member10 = member10Svg; //Orcania
 export const member11 = member11Jpg; //Edy
 export const member12 = member12Jpg; //Jason
+export const member13 = member13Png; // traf team
 
 //team cast
 export const ape1 = cast1Png;

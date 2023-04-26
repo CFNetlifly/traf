@@ -20,7 +20,8 @@ const getAddressReduced = address => `${address.slice(0, 6)}...${address.slice(-
 const Navbar = props => {
     const { walletReducer } = useCelesteSelector(state => state);
 
-    const [scroll, setScroll] = useState(0);
+    // eslint-disable-next-line no-unused-vars
+    const [_scroll, setScroll] = useState(0);
     // const styles = useSpring({ background: scroll > 100 ? '#3A3A3A' : 'black' });
 
     useEffect(() => {

@@ -1,34 +1,35 @@
 import React from 'react';
 import {
-    member1,
+    // member1,
     // member2,
     // member3,
-    member4,
+    // member4,
     // member5,
-    member6,
+    // member6,
     // member7,
     // member8,
     member9,
     member10,
-    member11,
-    member12,
+    // member11,
+    // member12,
+    member13,
 } from 'images';
 
 const team = [
-    {
-        sortId: 1,
-        imageurl: member1,
-        name: 'TheBlessedSon',
-        charge: 'Executive Producer & COO',
-        link: () => (
-            <a href="https://twitter.com/theblesseds0n" target="_blank" rel="noreferrer noopener">
-                <span className="icon is-size-2 has-text-white">
-                    <i className="fab fa-twitter"></i>
-                </span>
-            </a>
-        ),
-        info: 'Youssouf (A.K.A. TheBlessedSon or TBS) has been a crypto enthusiast and trader since 2017. Hailing from Tetouan, Morocco, he initially got into NFTs to help his father, a smartphone artist, to sell his art. He then acquired an entire shrewdness of Bored Apes, which allowed him to deep dive into the NFT world. With a Master’s Degree in Engineering and a passion for Project Management, TBS has worked for large companies in different sectors and contributed to build several start-ups in healthcare-IT and Teleco.',
-    },
+    // {
+    //     sortId: 1,
+    //     imageurl: member1,
+    //     name: 'TheBlessedSon',
+    //     charge: 'Executive Producer & COO',
+    //     link: () => (
+    //         <a href="https://twitter.com/theblesseds0n" target="_blank" rel="noreferrer noopener">
+    //             <span className="icon is-size-2 has-text-white">
+    //                 <i className="fab fa-twitter"></i>
+    //             </span>
+    //         </a>
+    //     ),
+    //     info: 'Youssouf (A.K.A. TheBlessedSon or TBS) has been a crypto enthusiast and trader since 2017. Hailing from Tetouan, Morocco, he initially got into NFTs to help his father, a smartphone artist, to sell his art. He then acquired an entire shrewdness of Bored Apes, which allowed him to deep dive into the NFT world. With a Master’s Degree in Engineering and a passion for Project Management, TBS has worked for large companies in different sectors and contributed to build several start-ups in healthcare-IT and Teleco.',
+    // },
     // {
     //     sortId: 2,
     //     imageurl: member2,
@@ -71,58 +72,58 @@ const team = [
     //         </a>
     //     ),
     // },
-    {
-        sortId: 2,
-        imageurl: member11,
-        name: 'Edy Haddad',
-        charge: 'Chief Technology Officer',
-        link: () => (
-            <a href="https://twitter.com/eaoe_orcania" target="_blank" rel="noreferrer noopener">
-                <span className="icon is-size-2 has-text-white">
-                    <i className="fab fa-twitter"></i>
-                </span>
-            </a>
-        ),
-    },
-    {
-        sortId: 3,
-        imageurl: member4,
-        name: 'Adam G. Simon',
-        charge: 'Screen Writer',
-        link: () => (
-            <a href="https://www.instagram.com/adambelgabe/" target="_blank" rel="noreferrer noopener">
-                <span className="icon is-size-2 has-text-white">
-                    <i className="fab fa-instagram"></i>
-                </span>
-            </a>
-        ),
-    },
-    {
-        sortId: 4,
-        imageurl: member12,
-        name: 'Jason Neese',
-        charge: 'Voice Actor & Producer',
-        link: () => (
-            <a href="https://instagram.com/vonngilmore?igshid=YmMyMTA2M2Y=" target="_blank" rel="noreferrer noopener">
-                <span className="icon is-size-2 has-text-white">
-                    <i className="fab fa-instagram"></i>
-                </span>
-            </a>
-        ),
-    },
-    {
-        sortId: 5,
-        imageurl: member6,
-        name: 'Don Fuego',
-        charge: 'Music Producer',
-        link: () => (
-            <a href="https://www.instagram.com/donfuego.beats/?hl=en" target="_blank" rel="noreferrer noopener">
-                <span className="icon is-size-2 has-text-white">
-                    <i className="fab fa-instagram"></i>
-                </span>
-            </a>
-        ),
-    },
+    // {
+    //     sortId: 2,
+    //     imageurl: member11,
+    //     name: 'Edy Haddad',
+    //     charge: 'Chief Technology Officer',
+    //     link: () => (
+    //         <a href="https://twitter.com/eaoe_orcania" target="_blank" rel="noreferrer noopener">
+    //             <span className="icon is-size-2 has-text-white">
+    //                 <i className="fab fa-twitter"></i>
+    //             </span>
+    //         </a>
+    //     ),
+    // },
+    // {
+    //     sortId: 3,
+    //     imageurl: member4,
+    //     name: 'Adam G. Simon',
+    //     charge: 'Screen Writer',
+    //     link: () => (
+    //         <a href="https://www.instagram.com/adambelgabe/" target="_blank" rel="noreferrer noopener">
+    //             <span className="icon is-size-2 has-text-white">
+    //                 <i className="fab fa-instagram"></i>
+    //             </span>
+    //         </a>
+    //     ),
+    // },
+    // {
+    //     sortId: 4,
+    //     imageurl: member12,
+    //     name: 'Jason Neese',
+    //     charge: 'Voice Actor & Producer',
+    //     link: () => (
+    //         <a href="https://instagram.com/vonngilmore?igshid=YmMyMTA2M2Y=" target="_blank" rel="noreferrer noopener">
+    //             <span className="icon is-size-2 has-text-white">
+    //                 <i className="fab fa-instagram"></i>
+    //             </span>
+    //         </a>
+    //     ),
+    // },
+    // {
+    //     sortId: 5,
+    //     imageurl: member6,
+    //     name: 'Don Fuego',
+    //     charge: 'Music Producer',
+    //     link: () => (
+    //         <a href="https://www.instagram.com/donfuego.beats/?hl=en" target="_blank" rel="noreferrer noopener">
+    //             <span className="icon is-size-2 has-text-white">
+    //                 <i className="fab fa-instagram"></i>
+    //             </span>
+    //         </a>
+    //     ),
+    // },
     // {
     //     sortId: 7,
     //     imageurl: member7,
@@ -150,7 +151,20 @@ const team = [
     //     ),
     // },
     {
-        sortId: 6,
+        sortId: 1,
+        imageurl: member13,
+        name: 'TRAF Entertainment',
+        charge: 'Creative Studio',
+        link: () => (
+            <a href="https://www.digitoonz.com/" target="_blank" rel="noreferrer noopener">
+                <span className="icon is-size-2 has-text-white">
+                    <i className="fal fa-globe"></i>
+                </span>
+            </a>
+        ),
+    },
+    {
+        sortId: 2,
         imageurl: member9,
         name: 'DigiToonz',
         charge: 'Animation Studio',
@@ -163,7 +177,7 @@ const team = [
         ),
     },
     {
-        sortId: 7,
+        sortId: 3,
         imageurl: member10,
         name: 'Orcania',
         charge: 'Blockchain Team',
